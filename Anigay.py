@@ -4,6 +4,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from MainCog import *
 import asyncio, asqlite
+from datetime import datetime, timedelta
 
 
 # Set up Logging
@@ -25,8 +26,8 @@ async def on_ready():
 	logger.info(f"Logged in as {bot.user}")
 	await bot.add_cog(Debug(bot))
 	await bot.add_cog((sync(bot)))
-	await bot.add_cog((ProfileStart(bot)))
-	await bot.add_cog( User(bot) )
+	await bot.add_cog(ProfileStart(bot))
+	await bot.add_cog(User(bot))
 	await bot.add_cog(currency(bot))
 
 
@@ -36,5 +37,3 @@ TOKEN = os.getenv("Token")
 
 
 bot.run(TOKEN)
-
-
