@@ -1,10 +1,12 @@
-import discord, logging,json, random, asyncio, asqlite
+
+import discord, logging,json, random, asyncio, asqlite, datetime
 from discord.ext import *
 from discord import *
 from discord.ext import commands
 from discord.ext.commands import *
 from typing import Optional, Literal
-
+from discord.ext.commands.cooldowns import BucketType
+from datetime import timedelta
 
 # Set up Logging
 logging.basicConfig(
@@ -80,30 +82,28 @@ class currency(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.hybrid_command(name="devgive")
+    @commands.hybrid_command(name="devgive", aliases=['give','grant'])
     async def give(self, ctx, user: discord.Member, amount: int):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
 
                 user_id = int(ctx.author.id)
-                if user_id == 533672241448091660 or user_id == 301494278901989378:
+                user_id = str(user.id)
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user_data = await cursor.fetchall()
 
-                    user_id = str(user.id)
-                    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
-                    user_data = await cursor.fetchall()
-
-                    if len(user_data) != 0:  ## User is found
-                        user_data = user_data[0]
-                        new_balance = user_data["wun"] + amount
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
-                        embed = discord.Embed(title=f"a Dev has blessed you",
-                                              description=f"{ctx.author} has given you {Wuns}{amount} wuns", color=0x04980f)
-                        await ctx.send(embed=embed)
-                    else:  ## User not found
-                        embed = discord.Embed(title=f"{user.name} not found",
-                                              description=f"Have {user.name} type a!start!",
+                if len(user_data) != 0:  ## User is found
+                    user_data = user_data[0]
+                    new_balance = user_data["wun"] + amount
+                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+                    embed = discord.Embed(title=f"a Dev has blessed you",
+                                          description=f"{ctx.author} has given you {Wuns}{amount} wuns", color=0x04980f)
+                    await ctx.send(embed=embed)
+                else:  ## User not found
+                    embed = discord.Embed(title=f"{user.name} not found",
+                                          description=f"Have {user.name} type a!start!",
                                               color=0xA80108)
-                        await ctx.send(embed=embed)
+                    await ctx.send(embed=embed)
 # Views a user balance if "None" returns Command Authors balance
     @commands.hybrid_command(aliases=['bal'])
     async def balance(self, ctx, user: discord.Member = None):
@@ -122,8 +122,10 @@ class currency(commands.Cog):
                     user_data = user_data[0]
                     balance = user_data["wun"]
 
-                    embed = discord.Embed(title=f"{user} Balance", color=0x03F76A)
+                    embed = discord.Embed(title=f"{user}'s Balance", color=0x03F76A)
                     embed.add_field(name="", value=f"{user} has {Wuns}{user_data['wun']} wun's")
+                    embed.set_thumbnail(url=user.avatar)
+                    embed.set_author(name=f"__{ctx.author}__", icon_url=ctx.author.avatar)
                     await ctx.send(embed=embed)
                 else:
                     embed = discord.Embed(title=f"{user.display_name} not found", description=f"ask {user.display_name} to type a!start",
@@ -132,7 +134,10 @@ class currency(commands.Cog):
 
         # Random Claim command, need to add a cooldown. possible feature early on to earn Currency?
     @commands.hybrid_command(name="claim", description="get a random amount of gold added to your balance")
-    async def claim(self, ctx, ):
+    @commands.cooldown(1, 28800, type=BucketType.user)
+    @commands.has_permissions(view_channel=True, read_messages=True, send_messages=True)
+    async def claim(self, ctx):
+        """Claim Gold"""
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
@@ -144,8 +149,22 @@ class currency(commands.Cog):
                     new_balance = user_data["wun"] + claim_value
                     await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, ctx.author.id))
                     embed = discord.Embed(title="**Claim Complete**", color=discord.Color.purple())
-                    embed.add_field(name=f"Amount Claimed {Wuns}{claim_value} wun's", value=f"Your new balance is {Wuns}{new_balance}")
+                    embed.add_field(name=f"Amount Claimed {Wuns}{claim_value} wun's",
+                                        value=f"Your new balance is {Wuns}{new_balance}")
                 await ctx.send(embed=embed)
+        @self.claim.error
+        async def claim(self, ctx, error):
+            if isinstance(error, CommandOnCooldown):
+                retry_after_seconds = error.retry_after
+                time_remaining = datetime.datetime.now() + timedelta(seconds=retry_after_seconds)
+                timestamp = int(time_remaining.timestamp())
+                time_remaining = f"<t:{timestamp}:R>"
+                await ctx.send(f"{ctx.author.mention}, you can claim again in {time_remaining}.")
+
+            else:
+                raise error
+
+
     @commands.hybrid_command()
     async def reset(self, ctx, user: discord.Member):
         async with asqlite.connect("player_data.db") as connection:

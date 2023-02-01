@@ -3142,3 +3142,1104 @@ discord.ext.commands.errors.MissingRequiredArgument: user is a required argument
 2023-01-31 23:33:54,227 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6794dea1e27e1abb852948f453a3cb92).
 2023-01-31 23:33:56,223 - root - INFO - Logged in as Anigay 2.0#7825
 2023-01-31 23:35:57,819 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 41.3s behind.
+2023-02-01 09:43:49,821 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 09:43:49,849 - discord.client - INFO - logging in using static token
+2023-02-01 09:43:50,483 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 61f7a7cdc42facd94600da840f6bb2c3).
+2023-02-01 09:43:52,522 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 09:44:18,383 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 09:44:18,390 - discord.client - INFO - logging in using static token
+2023-02-01 09:44:19,062 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f425e6d7730ed8f1f661e034976fe0ec).
+2023-02-01 09:44:21,087 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 09:45:56,018 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 09:45:56,026 - discord.client - INFO - logging in using static token
+2023-02-01 09:45:56,615 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1c873955b383f389e623b6b04c91205a).
+2023-02-01 09:45:58,633 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:06:35,988 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:06:35,995 - discord.client - INFO - logging in using static token
+2023-02-01 10:06:36,602 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 71abdf7c307502fb4b21eeda91930118).
+2023-02-01 10:06:38,624 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:06:42,290 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.61s
+2023-02-01 10:06:44,566 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 296.39s
+2023-02-01 10:10:27,928 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:10:27,934 - discord.client - INFO - logging in using static token
+2023-02-01 10:10:28,514 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 34712d8d8e9d25a6b564ee14f38224ab).
+2023-02-01 10:10:30,519 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:11:09,497 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 138, in claim
+    cooldown = self.claim.get_cooldown(ctx)
+AttributeError: 'HybridCommand' object has no attribute 'get_cooldown'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'HybridCommand' object has no attribute 'get_cooldown'
+2023-02-01 10:20:29,066 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:20:29,071 - discord.client - INFO - logging in using static token
+2023-02-01 10:20:29,756 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ddb6902ba9aec8e52df8530921771e53).
+2023-02-01 10:20:31,779 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:20:41,362 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 138, in claim
+    if isinstance(error, CommandOnCooldown):
+NameError: name 'error' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'error' is not defined
+2023-02-01 10:20:42,067 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 299.00s
+2023-02-01 10:20:56,210 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:20:56,216 - discord.client - INFO - logging in using static token
+2023-02-01 10:20:56,841 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fa1762e3e583def4b62a1aec0d74a945).
+2023-02-01 10:20:58,172 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 10:20:58,922 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:21:01,347 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 138, in claim
+    if isinstance(error, CommandOnCooldown):
+NameError: name 'error' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'error' is not defined
+2023-02-01 10:21:03,794 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.37s
+2023-02-01 10:21:16,463 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:21:16,471 - discord.client - INFO - logging in using static token
+2023-02-01 10:21:16,980 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: acf6ce8120c83347a45ce394757e96f3).
+2023-02-01 10:21:19,006 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:21:19,989 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 138, in claim
+    if isinstance(CommandOnCooldown):
+TypeError: isinstance expected 2 arguments, got 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: isinstance expected 2 arguments, got 1
+2023-02-01 10:21:21,918 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.08s
+2023-02-01 10:22:38,022 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:22:38,028 - discord.client - INFO - logging in using static token
+2023-02-01 10:22:38,611 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 00caa469087ea1b927f37988fa554353).
+2023-02-01 10:22:40,634 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:23:05,693 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:23:05,699 - discord.client - INFO - logging in using static token
+2023-02-01 10:23:06,187 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6f606cccba519f4ac4aa3d11c8f88a59).
+2023-02-01 10:23:08,188 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:23:09,921 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 138, in claim
+    if isinstance(error, CommandOnCooldown):
+NameError: name 'error' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'error' is not defined
+2023-02-01 10:31:34,822 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:31:34,827 - discord.client - INFO - logging in using static token
+2023-02-01 10:31:36,161 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: df19def9ec73cb4e39bc9d81e9d367d3).
+2023-02-01 10:31:38,182 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:31:43,811 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 140, in claim
+    if retry_after > 0:
+TypeError: '>' not supported between instances of 'NoneType' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: '>' not supported between instances of 'NoneType' and 'int'
+2023-02-01 10:32:07,250 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:32:07,258 - discord.client - INFO - logging in using static token
+2023-02-01 10:32:07,938 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 20b2dce2a4d281da32e95f479bb099cc).
+2023-02-01 10:32:09,949 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:32:11,452 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 141, in claim
+    if retry_after > 0:
+TypeError: '>' not supported between instances of 'NoneType' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: '>' not supported between instances of 'NoneType' and 'int'
+2023-02-01 10:33:47,572 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:33:47,578 - discord.client - INFO - logging in using static token
+2023-02-01 10:33:48,138 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 559067ac0d28214d74dc7336d72c277d).
+2023-02-01 10:33:50,151 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:33:53,894 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.83s
+2023-02-01 10:34:19,653 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 158, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-01 10:34:34,090 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:34:34,096 - discord.client - INFO - logging in using static token
+2023-02-01 10:34:34,644 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 464b65b89c2688117f4055176fcb0455).
+2023-02-01 10:34:35,285 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 10:34:36,657 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:34:39,553 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 155, in claim
+    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, ctx.author.id))
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-02-01 10:35:38,958 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:35:38,968 - discord.client - INFO - logging in using static token
+2023-02-01 10:35:39,481 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0e823296adc4cb0613f53cf2284f53d3).
+2023-02-01 10:35:40,280 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 10:35:41,486 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:35:48,638 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 296.07s
+2023-02-01 10:36:50,911 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 158, in claim
+    if user_id == 533672241448091660 or user_id == 301494278901989378:
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-01 10:37:01,702 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 289.20s
+2023-02-01 10:37:09,647 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 281.29s
+2023-02-01 10:37:27,358 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 291.43s
+2023-02-01 10:41:22,827 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28.10s
+2023-02-01 10:43:45,794 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:43:45,804 - discord.client - INFO - logging in using static token
+2023-02-01 10:43:46,341 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 29698260fe83df1d321896fd0ae3ce47).
+2023-02-01 10:43:46,432 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 10:43:48,360 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:43:51,973 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.60s
+2023-02-01 10:44:03,066 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 286.41s
+2023-02-01 10:45:07,998 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profi" is not found
+2023-02-01 10:46:03,158 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:46:03,168 - discord.client - INFO - logging in using static token
+2023-02-01 10:46:03,819 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 73fac24b1113e8a6fdf0aac0e1221883).
+2023-02-01 10:46:05,828 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:46:21,786 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 128, in balance
+    embed.set_thumbnail(user.avatar)
+TypeError: Embed.set_thumbnail() takes 1 positional argument but 2 were given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Embed.set_thumbnail() takes 1 positional argument but 2 were given
+2023-02-01 10:46:42,919 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:46:42,924 - discord.client - INFO - logging in using static token
+2023-02-01 10:46:43,547 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d541d47cac694170b0d6d0009d2694e1).
+2023-02-01 10:46:45,557 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:47:06,785 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-01 10:47:30,356 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:47:30,361 - discord.client - INFO - logging in using static token
+2023-02-01 10:47:30,935 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 10742b41518422fab55bdbf6f290235f).
+2023-02-01 10:47:32,930 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:47:37,132 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "Sensei" not found.
+2023-02-01 10:48:28,279 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:48:28,288 - discord.client - INFO - logging in using static token
+2023-02-01 10:48:29,112 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2e88c1aa1ef6f0291f48cc13c7bcf27c).
+2023-02-01 10:48:31,116 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:49:10,071 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:49:10,083 - discord.client - INFO - logging in using static token
+2023-02-01 10:49:10,689 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: edafae9cb83a7b83bbd9df5bab141094).
+2023-02-01 10:49:12,702 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:49:23,553 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "give" is not found
+2023-02-01 10:49:24,762 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "give" is not found
+2023-02-01 10:49:52,521 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:49:52,526 - discord.client - INFO - logging in using static token
+2023-02-01 10:49:53,019 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 40a005f5c56cce2afb621da0659d49a8).
+2023-02-01 10:49:55,020 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:49:55,021 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\Anigay.py", line 31, in on_ready
+    await bot.add_cog(currency(bot))
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 782, in add_cog
+    cog = await cog._inject(self, override=override, guild=guild, guilds=guilds)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\cog.py", line 687, in _inject
+    raise e
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\cog.py", line 678, in _inject
+    bot.add_command(command)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 245, in add_command
+    super().add_command(command)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1354, in add_command
+    raise CommandRegistrationError(alias, alias_conflict=True)
+discord.ext.commands.errors.CommandRegistrationError: The alias devgive is already an existing command or alias.
+2023-02-01 10:50:14,480 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:50:14,487 - discord.client - INFO - logging in using static token
+2023-02-01 10:50:15,123 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: adb90e7d4085f9d4ff1c77c856604e2d).
+2023-02-01 10:50:17,137 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 10:53:30,923 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 10:53:30,929 - discord.client - INFO - logging in using static token
+2023-02-01 10:53:31,659 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1f5477c1ee03896f5e70b24aea17ddd7).
+2023-02-01 10:53:33,678 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:02:36,152 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:02:36,159 - discord.client - INFO - logging in using static token
+2023-02-01 11:02:36,994 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 56a01f68e605c1241c626610c4ea1d24).
+2023-02-01 11:02:39,000 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:02:54,442 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.07s
+2023-02-01 11:05:40,696 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:05:40,702 - discord.client - INFO - logging in using static token
+2023-02-01 11:05:41,304 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9e0d63d4d66ce86200d749007e3f1733).
+2023-02-01 11:05:43,317 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:05:47,270 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.73s
+2023-02-01 11:06:12,680 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 296.45s
+2023-02-01 11:07:55,877 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:07:55,883 - discord.client - INFO - logging in using static token
+2023-02-01 11:07:56,578 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f123a7efe1b73a53e40dda4a504af04e).
+2023-02-01 11:07:58,591 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:08:03,950 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.77s
+2023-02-01 11:12:27,544 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "balanxe" is not found
+2023-02-01 11:28:14,344 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.49s
+2023-02-01 11:28:15,750 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 296.10s
+2023-02-01 11:44:59,223 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:44:59,237 - discord.client - INFO - logging in using static token
+2023-02-01 11:45:00,971 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f2b36a4eba740852ddda7447c43d2ff0).
+2023-02-01 11:45:02,979 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:45:04,685 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 153, in claim
+    await self.claim_logic
+TypeError: object method can't be used in 'await' expression
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: object method can't be used in 'await' expression
+2023-02-01 11:45:11,030 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 293.54s
+2023-02-01 11:45:52,492 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:45:52,504 - discord.client - INFO - logging in using static token
+2023-02-01 11:45:54,256 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 585081e2b48b3a455cc65f8480760d61).
+2023-02-01 11:45:56,263 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:46:02,826 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 295.73s
+2023-02-01 11:49:35,093 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:49:35,100 - discord.client - INFO - logging in using static token
+2023-02-01 11:49:35,681 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c197666194887fcaecca4789ba0f695b).
+2023-02-01 11:49:37,673 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:49:41,596 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.73s
+2023-02-01 11:50:13,392 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 152, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-01 11:52:04,357 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:52:04,366 - discord.client - INFO - logging in using static token
+2023-02-01 11:52:05,986 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 66bace39fa977f41be2e63e08f86cc9b).
+2023-02-01 11:52:07,021 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 11:52:07,999 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:52:10,336 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 139, in claim
+    if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
+UnboundLocalError: local variable 'error' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'error' referenced before assignment
+2023-02-01 11:52:18,508 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 139, in claim
+    if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
+UnboundLocalError: local variable 'error' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'error' referenced before assignment
+2023-02-01 11:52:27,859 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 139, in claim
+    if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
+UnboundLocalError: local variable 'error' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'error' referenced before assignment
+2023-02-01 11:53:55,875 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:53:55,885 - discord.client - INFO - logging in using static token
+2023-02-01 11:53:58,047 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7c1f787885f9a1e38f8ef592a24ea938).
+2023-02-01 11:54:00,059 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 11:54:07,898 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 294.39s
+2023-02-01 11:54:17,196 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 292.55s
+2023-02-01 11:59:39,939 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 11:59:39,948 - discord.client - INFO - logging in using static token
+2023-02-01 11:59:41,921 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6ff23f5167cb719c8c805812d9e05f0a).
+2023-02-01 11:59:43,927 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:00:34,338 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.56s
+2023-02-01 12:12:20,921 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:12:20,931 - discord.client - INFO - logging in using static token
+2023-02-01 12:12:23,155 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3d368ee204e6b7b546a8fe07c52afe57).
+2023-02-01 12:12:25,159 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:12:27,521 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 154, in claim
+    @claim.error
+UnboundLocalError: local variable 'claim' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'claim' referenced before assignment
+2023-02-01 12:12:29,006 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 298.25s
+2023-02-01 12:21:50,881 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:21:50,893 - discord.client - INFO - logging in using static token
+2023-02-01 12:21:53,486 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0f4625e3d82349454c624524602f86e0).
+2023-02-01 12:21:55,496 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:21:58,313 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 154, in claim
+    @claim.error
+UnboundLocalError: local variable 'claim' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'claim' referenced before assignment
+2023-02-01 12:22:00,347 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 297.69s
+2023-02-01 12:22:12,017 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:22:16,096 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:22:16,106 - discord.client - INFO - logging in using static token
+2023-02-01 12:22:17,032 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ebacfe035f7579c75ceac12fb9e2833a).
+2023-02-01 12:22:17,448 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 12:22:19,057 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:22:23,054 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 154, in claim
+    @claim.error
+UnboundLocalError: local variable 'claim' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'claim' referenced before assignment
+2023-02-01 12:23:30,964 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 231.40s
+2023-02-01 12:23:49,875 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:23:49,881 - discord.client - INFO - logging in using static token
+2023-02-01 12:23:51,370 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 72d224a235a9a18edc83cd7542691c77).
+2023-02-01 12:23:53,383 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:24:12,079 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:24:12,086 - discord.client - INFO - logging in using static token
+2023-02-01 12:24:12,716 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7e3f790261ba766b226dcc6d32f46452).
+2023-02-01 12:24:14,724 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:28:26,247 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:28:26,255 - discord.client - INFO - logging in using static token
+2023-02-01 12:28:28,127 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3669504a988d620b6a2e03d989d0d0fe).
+2023-02-01 12:28:29,435 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 12:28:30,126 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:31:29,146 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:31:29,153 - discord.client - INFO - logging in using static token
+2023-02-01 12:31:30,620 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bf72d27166213a0a3c0895034998780d).
+2023-02-01 12:31:32,641 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:32:05,934 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:32:05,941 - discord.client - INFO - logging in using static token
+2023-02-01 12:32:06,987 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c2e47924a87411a418b4740fe1d7541f).
+2023-02-01 12:32:08,996 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:44:45,470 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:44:45,480 - discord.client - INFO - logging in using static token
+2023-02-01 12:44:46,822 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c37a273c6845a7446900b58e15333f8a).
+2023-02-01 12:44:47,817 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 12:44:48,828 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:44:53,976 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28798.23s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 160, in claim
+    timestamp = int((time.time() + retry_after) * 1000)
+NameError: name 'time' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'time' is not defined
+2023-02-01 12:44:55,524 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28796.42s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 160, in claim
+    timestamp = int((time.time() + retry_after) * 1000)
+NameError: name 'time' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'time' is not defined
+2023-02-01 12:45:10,708 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:45:10,714 - discord.client - INFO - logging in using static token
+2023-02-01 12:45:13,037 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0d2d2b8ec51eda79f09ceb4a7c4a6bb9).
+2023-02-01 12:45:15,041 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:45:18,162 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28797.03s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 160, in claim
+    timestamp = int((datetime.time.time() + retry_after) * 1000)
+AttributeError: type object 'datetime.time' has no attribute 'time'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: type object 'datetime.time' has no attribute 'time'
+2023-02-01 12:45:31,087 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 12:45:31,093 - discord.client - INFO - logging in using static token
+2023-02-01 12:45:32,286 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3529179a608f49334eaec5415697d773).
+2023-02-01 12:45:32,942 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 12:45:34,290 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 12:45:38,879 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 931, in prepare
+    self._prepare_cooldowns(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 914, in _prepare_cooldowns
+    raise CommandOnCooldown(bucket, retry_after, self._buckets.type)  # type: ignore
+discord.ext.commands.errors.CommandOnCooldown: You are on cooldown. Try again in 28797.51s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 160, in claim
+    timestamp = int((datetime.time() + retry_after) * 1000)
+TypeError: unsupported operand type(s) for +: 'datetime.time' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 217, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: unsupported operand type(s) for +: 'datetime.time' and 'int'
+2023-02-01 13:00:08,467 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:00:08,474 - discord.client - INFO - logging in using static token
+2023-02-01 13:00:09,111 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b91e4602395392501c6e4900e2e048e).
+2023-02-01 13:00:11,138 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:04:36,696 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:04:36,706 - discord.client - INFO - logging in using static token
+2023-02-01 13:04:37,390 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8d31fb01b68b1e8a6607989fb11b5511).
+2023-02-01 13:04:38,072 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 13:04:39,411 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:05:56,115 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:05:56,122 - discord.client - INFO - logging in using static token
+2023-02-01 13:05:56,816 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 81d89a8b835a5cd4b44d50a419be833b).
+2023-02-01 13:05:58,812 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:09:41,807 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:09:41,813 - discord.client - INFO - logging in using static token
+2023-02-01 13:09:42,402 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 73406bb41d014c0de9fe0832d9a083aa).
+2023-02-01 13:09:44,411 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:10:51,035 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:10:51,044 - discord.client - INFO - logging in using static token
+2023-02-01 13:10:51,583 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d0176912bec69c921c65b5c8cb64216a).
+2023-02-01 13:10:53,315 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claim" is not found
+2023-02-01 13:10:53,586 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:14:59,752 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:14:59,769 - discord.client - INFO - logging in using static token
+2023-02-01 13:15:00,485 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 19b198ca4c779b9b88feadb6a9ea1cda).
+2023-02-01 13:15:02,502 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:17:18,904 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "g" is not found
+2023-02-01 13:17:21,940 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 154, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 165, in claim
+    raise error
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
