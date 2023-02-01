@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 /.env
+=======
+*.env
+env
+.env
+>>>>>>> Anigay-2.0/main
