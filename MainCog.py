@@ -87,7 +87,6 @@ class currency(commands.Cog):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
 
-                user_id = int(ctx.author.id)
                 user_id = str(user.id)
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                 user_data = await cursor.fetchall()
@@ -97,12 +96,14 @@ class currency(commands.Cog):
                     new_balance = user_data["wun"] + amount
                     await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
                     embed = discord.Embed(title=f"a Dev has blessed you",
-                                          description=f"{ctx.author} has given you {Wuns}{amount} wuns", color=0x04980f)
+                                          description=f"{ctx.author} has given {user} {Wuns}{amount} wuns", color=0x04980f)
+                    embed.set_thumbnail(url=ctx.author.avatar)
                     await ctx.send(embed=embed)
                 else:  ## User not found
-                    embed = discord.Embed(title=f"{user.name} not found",
-                                          description=f"Have {user.name} type a!start!",
+                    embed = discord.Embed(title=f"{user} not found",
+                                          description=f"Have {user} type a!start!",
                                               color=0xA80108)
+                    embed.set_thumbnail(url=user.avatar)
                     await ctx.send(embed=embed)
 # Views a user balance if "None" returns Command Authors balance
     @commands.hybrid_command(aliases=['bal'])
@@ -128,7 +129,7 @@ class currency(commands.Cog):
                     embed.set_author(name=f"__{ctx.author}__", icon_url=ctx.author.avatar)
                     await ctx.send(embed=embed)
                 else:
-                    embed = discord.Embed(title=f"{user.display_name} not found", description=f"ask {user.display_name} to type a!start",
+                    embed = discord.Embed(title=f"{user.name} not found", description=f"ask {user.mention} to type a!start",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
 
@@ -186,8 +187,8 @@ class currency(commands.Cog):
                                               description=f"{ctx.author} has taken away {Wuns}{balance} wun's from your account", color=0xA80108)
                         await ctx.send(embed=embed)
                     else:  ## User not found
-                        embed = discord.Embed(title=f"{user.name} not found",
-                                              description=f"Have {user.name} type a!start!",
+                        embed = discord.Embed(title=f"{user.display_name} not found",
+                                              description=f"Have {user.mention} type a!start!",
                                               color=0xA80108)
                         await ctx.send(embed=embed)
 
@@ -213,8 +214,7 @@ class User(commands.Cog):
                     user_data = user_data[0]
 
                     embed = discord.Embed(title=f"__{user.name}'s__ Profile",
-                                          description="",
-                                          color=0x75FFEE)
+                                          description="", color=0x2f3136)
                     embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
                     embed.add_field(name="**Experience**", value=f'{user_data["exp"]}/{user_data["mexp"]}', inline=True)
                     embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wun"]} wuns', inline=True)
