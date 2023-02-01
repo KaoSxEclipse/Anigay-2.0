@@ -1,0 +1,1359 @@
+2023-01-31 10:55:41,834 - discord.client - INFO - logging in using static token
+2023-01-31 10:57:14,424 - discord.client - INFO - logging in using static token
+2023-01-31 10:57:15,265 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7a9bf5f83bb846a387c48251c846ac11).
+2023-01-31 10:57:17,271 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:05:00,934 - discord.client - INFO - logging in using static token
+2023-01-31 11:05:01,651 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e17e2ca2a69565bc6f26127a799f3018).
+2023-01-31 11:05:03,657 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:08:47,352 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profiIe" is not found
+2023-01-31 11:18:09,341 - discord.client - INFO - logging in using static token
+2023-01-31 11:18:09,855 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 540f624122fd78b2891e95d582885e7c).
+2023-01-31 11:18:11,862 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:20:37,268 - discord.client - INFO - logging in using static token
+2023-01-31 11:20:37,741 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c244141ea490662b2c35f12de5defb95).
+2023-01-31 11:20:39,752 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:21:16,080 - discord.client - INFO - logging in using static token
+2023-01-31 11:21:16,629 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8dde773b6339da007c7465100e5accaf).
+2023-01-31 11:21:18,632 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:44:55,823 - discord.client - INFO - logging in using static token
+2023-01-31 11:44:56,318 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 269ee2fb019e1ab5651a9d0e44135f1e).
+2023-01-31 11:44:58,324 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:45:07,497 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 11:45:14,044 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "currency" is not found
+2023-01-31 11:49:25,237 - discord.client - INFO - logging in using static token
+2023-01-31 11:49:25,942 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e7aedeedf2d032613c5b57323082637c).
+2023-01-31 11:49:27,946 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:49:32,419 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 11:52:49,862 - discord.client - INFO - logging in using static token
+2023-01-31 11:52:50,437 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 70369bb12f6ab01be3d14f826050f98b).
+2023-01-31 11:52:52,441 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:52:55,738 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 11:53:31,335 - discord.client - INFO - logging in using static token
+2023-01-31 11:53:31,714 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3a6856f1636d51c90fd7f575566f30fe).
+2023-01-31 11:53:33,720 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:54:26,328 - discord.client - INFO - logging in using static token
+2023-01-31 11:54:26,699 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bb747f963fe913a0549d7f86294d3567).
+2023-01-31 11:54:28,704 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:54:35,436 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 11:55:07,800 - discord.client - INFO - logging in using static token
+2023-01-31 11:55:08,278 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ab4234282371ad5ea13b8e1750f36a93).
+2023-01-31 11:55:10,284 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 11:55:52,782 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 11:57:35,497 - discord.client - INFO - logging in using static token
+2023-01-31 11:57:35,975 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8252d16cf355e2a1263e370a1ec9dcd5).
+2023-01-31 11:57:37,980 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 12:00:21,214 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "star" is not found
+2023-01-31 12:28:21,916 - discord.client - INFO - logging in using static token
+2023-01-31 12:28:22,624 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a8930b7cd15561c8fc7ef3f9df0e1bb8).
+2023-01-31 12:28:24,633 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1064, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 535, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2023-01-31 12:29:11,363 - discord.client - INFO - logging in using static token
+2023-01-31 12:29:11,940 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6cbcc4551ce92e43a7056ed6d7a288d5).
+2023-01-31 12:29:13,949 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1064, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 535, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('10.151.174.161', 5432)
+2023-01-31 12:29:37,971 - discord.client - INFO - logging in using static token
+2023-01-31 12:29:38,501 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2bda6a83fe506cbc86bead54c66076c6).
+2023-01-31 12:29:40,512 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1072, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 5432, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2023-01-31 12:30:00,624 - discord.client - INFO - logging in using static token
+2023-01-31 12:30:01,020 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4b3654406ac2cf072f5a661075d31737).
+2023-01-31 12:30:03,032 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1072, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 5432, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2023-01-31 12:30:24,005 - discord.client - INFO - logging in using static token
+2023-01-31 12:30:24,558 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d72e094ea72aab51cc0eff30e3b1f898).
+2023-01-31 12:30:26,567 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1064, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 535, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2023-01-31 12:32:05,730 - discord.client - INFO - logging in using static token
+2023-01-31 12:32:06,102 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c79a40e1071d872c93860a25a63c8439).
+2023-01-31 12:32:08,107 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 874, in _connect
+    addrs, params, config = _parse_connect_arguments(timeout=timeout, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 633, in _parse_connect_arguments
+    addrs, params = _parse_connect_dsn_and_args(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 461, in _parse_connect_dsn_and_args
+    if h.startswith('/'):
+AttributeError: 'tuple' object has no attribute 'startswith'
+2023-01-31 12:32:17,222 - discord.client - INFO - logging in using static token
+2023-01-31 12:32:17,630 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9476c686ad6c992d521c053787ab84b3).
+2023-01-31 12:32:19,636 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 874, in _connect
+    addrs, params, config = _parse_connect_arguments(timeout=timeout, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 633, in _parse_connect_arguments
+    addrs, params = _parse_connect_dsn_and_args(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 461, in _parse_connect_dsn_and_args
+    if h.startswith('/'):
+AttributeError: 'int' object has no attribute 'startswith'
+2023-01-31 12:34:57,430 - discord.client - INFO - logging in using static token
+2023-01-31 12:35:11,643 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 23aabff31b519fd130d0f14680051510).
+2023-01-31 12:35:13,649 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1072, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 111] Connect call failed ('::1', 5432, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 5432)
+2023-01-31 12:35:24,687 - discord.client - INFO - logging in using static token
+2023-01-31 12:35:25,070 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 26d90d8701efa9656a3da194e93fba82).
+2023-01-31 12:35:41,899 - discord.client - INFO - logging in using static token
+2023-01-31 12:35:42,444 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d1744449f4df9e8ca6e7221cc429637b).
+2023-01-31 12:35:56,819 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-01-31 12:36:00,837 - discord.app_commands.tree - ERROR - Ignoring exception in command tree
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1091, in wrapper
+    await self._call(interaction)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1221, in _call
+    command, options = self._get_app_command_options(data)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1127, in _get_app_command_options
+    raise CommandNotFound(name, parents)
+discord.app_commands.errors.CommandNotFound: Application command 'profile' not found
+2023-01-31 12:36:13,684 - discord.app_commands.tree - ERROR - Ignoring exception in command tree
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1091, in wrapper
+    await self._call(interaction)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1221, in _call
+    command, options = self._get_app_command_options(data)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1127, in _get_app_command_options
+    raise CommandNotFound(name, parents)
+discord.app_commands.errors.CommandNotFound: Application command 'balance' not found
+2023-01-31 12:36:44,468 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 684, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 456, in wait_for
+    return fut.result()
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    db = await asyncpg.create_pool(**credentials)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 409, in _async__init__
+    await self._initialize()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 437, in _initialize
+    await first_ch.connect()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 129, in connect
+    self._con = await self._pool._get_new_connection()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/pool.py", line 507, in _get_new_connection
+    con = await connection.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connection.py", line 2092, in connect
+    return await connect_utils._connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 895, in _connect
+    raise last_error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 881, in _connect
+    return await _connect_addr(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 773, in _connect_addr
+    return await __connect_addr(params, timeout, True, *args)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/connect_utils.py", line 825, in __connect_addr
+    tr, pr = await compat.wait_for(connector, timeout=timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asyncpg/compat.py", line 56, in wait_for
+    return await asyncio.wait_for(fut, timeout)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 458, in wait_for
+    raise exceptions.TimeoutError() from exc
+asyncio.exceptions.TimeoutError
+2023-01-31 12:42:31,931 - discord.client - INFO - logging in using static token
+2023-01-31 12:42:32,417 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 82d8634413c6baf90ee4071e69d2dea3).
+2023-01-31 12:42:34,423 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 12:54:28,009 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-01-31 12:54:33,442 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cdd018875c660d7e11bb9158f878e058).
+2023-01-31 12:54:35,453 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 12:54:35,454 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-01-31 13:19:57,544 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-01-31 13:20:03,031 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 064511b5b7e6cb2b9ebe40f4e5cdf8df).
+2023-01-31 13:20:05,045 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 13:20:05,046 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 26, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-01-31 13:24:02,919 - discord.client - ERROR - Attempting a reconnect in 1.57s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:24:09,755 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 064511b5b7e6cb2b9ebe40f4e5cdf8df.
+2023-01-31 13:26:03,576 - discord.client - ERROR - Attempting a reconnect in 0.61s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:26:04,199 - discord.client - ERROR - Attempting a reconnect in 3.16s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:26:07,381 - discord.client - ERROR - Attempting a reconnect in 9.66s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:26:17,093 - discord.client - ERROR - Attempting a reconnect in 7.53s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:26:24,664 - discord.client - ERROR - Attempting a reconnect in 41.39s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-01-31 13:27:06,622 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 064511b5b7e6cb2b9ebe40f4e5cdf8df.
+2023-01-31 14:02:21,682 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 064511b5b7e6cb2b9ebe40f4e5cdf8df.
+2023-01-31 14:13:54,278 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+2023-01-31 14:15:08,622 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+2023-01-31 14:18:14,091 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 876, in send
+    await self.interaction.response.send_message(**kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/interactions.py", line 769, in send_message
+    await adapter.create_interaction_response(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/webhook/async_.py", line 218, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2023-01-31 14:18:55,260 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "terminate" is not found
+2023-01-31 14:19:02,607 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "terminate" is not found
+2023-01-31 14:19:30,602 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 112, in balance
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 876, in send
+    await self.interaction.response.send_message(**kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/interactions.py", line 769, in send_message
+    await adapter.create_interaction_response(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/webhook/async_.py", line 218, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'balance' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'balance' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2023-01-31 14:20:40,503 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "terminate" is not found
+2023-01-31 14:20:44,291 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "Help" is not found
+2023-01-31 14:22:44,681 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 108, in balance
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 876, in send
+    await self.interaction.response.send_message(**kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/interactions.py", line 769, in send_message
+    await adapter.create_interaction_response(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/webhook/async_.py", line 220, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'balance' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'balance' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2023-01-31 14:24:34,808 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 064511b5b7e6cb2b9ebe40f4e5cdf8df.
+2023-01-31 20:28:20,126 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-01-31 21:38:11,472 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-01-31 21:38:11,478 - discord.client - INFO - logging in using static token
+2023-01-31 21:38:11,946 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7e67c662d0703fa954479f4d37d3b3f0).
+2023-01-31 21:38:13,951 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:38:13,997 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.var/app/com.jetbrains.PyCharm-Community/data/python/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 39, in on_ready
+    await cursor.execute("INSERT INTO Users (0, TestUser, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.var/app/com.jetbrains.PyCharm-Community/data/python/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.var/app/com.jetbrains.PyCharm-Community/data/python/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: near "0": syntax error
+2023-01-31 21:41:07,108 - discord.client - INFO - logging in using static token
+2023-01-31 21:41:07,709 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cde52d94d9c0eb6fecefe960f44ac386).
+2023-01-31 21:41:09,721 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:41:09,724 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 35, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+2023-01-31 21:43:35,105 - discord.client - INFO - logging in using static token
+2023-01-31 21:43:35,683 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 04d41c4be6b07d900b2eb662fcc24710).
+2023-01-31 21:43:37,686 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:43:37,692 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 39, in on_ready
+    except sqlite3.OperationalError:
+NameError: name 'sqlite3' is not defined
+2023-01-31 21:43:48,725 - discord.client - INFO - logging in using static token
+2023-01-31 21:43:49,473 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7152e53f0c65f29ed6e2ed114e8229b7).
+2023-01-31 21:43:51,479 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:43:51,487 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT INTO Users (0, TestUser, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: near "0": syntax error
+2023-01-31 21:44:55,379 - discord.client - INFO - logging in using static token
+2023-01-31 21:44:55,825 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3a15e60985e185e798bd2e0a89bced23).
+2023-01-31 21:44:57,829 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:44:57,836 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT INTO Users (0, 'TestUser', 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: near "0": syntax error
+2023-01-31 21:45:47,115 - discord.client - INFO - logging in using static token
+2023-01-31 21:45:47,555 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1807d09a9b212cf91e99cb190b134e76).
+2023-01-31 21:45:49,577 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:49:51,971 - discord.client - INFO - logging in using static token
+2023-01-31 21:49:52,513 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cfd5e384180ca442c51333bb01f750f8).
+2023-01-31 21:49:54,517 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:49:54,526 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT INTO Users VALUES (0, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users has 8 columns but 7 values were supplied
+2023-01-31 21:50:09,971 - discord.client - INFO - logging in using static token
+2023-01-31 21:50:10,482 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fb40fc968a793815105d25726cb70577).
+2023-01-31 21:50:12,504 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:51:13,457 - discord.client - INFO - logging in using static token
+2023-01-31 21:51:13,983 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d94cb53bc0164acbcda2b963bb58c6fd).
+2023-01-31 21:51:15,988 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:51:16,023 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 47, in on_ready
+    for row in rows:
+TypeError: 'coroutine' object is not iterable
+2023-01-31 21:51:58,603 - discord.client - INFO - logging in using static token
+2023-01-31 21:51:59,084 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c5705237c9b3f50d60e0ef227b33313a).
+2023-01-31 21:52:01,089 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:52:01,097 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT INTO Users VALUES (0, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.IntegrityError: UNIQUE constraint failed: Users.id
+2023-01-31 21:54:06,014 - discord.client - INFO - logging in using static token
+2023-01-31 21:54:06,525 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b5e46a83c76e6a4a302e08d593be1017).
+2023-01-31 21:54:08,532 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:54:08,540 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT INTO Users VALUES (0, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.IntegrityError: UNIQUE constraint failed: Users.id
+2023-01-31 21:54:53,906 - discord.client - INFO - logging in using static token
+2023-01-31 21:54:54,326 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f4aae0fda9afb8e5fffaecc1f4d404bc).
+2023-01-31 21:54:56,337 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:55:05,866 - discord.client - INFO - logging in using static token
+2023-01-31 21:55:06,453 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c001fb51b8994908a3f5f84c4e0c146f).
+2023-01-31 21:55:08,457 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:55:55,021 - discord.client - INFO - logging in using static token
+2023-01-31 21:55:55,550 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 11a29b2972e4a74bd7ac7a8f03ac3961).
+2023-01-31 21:55:57,553 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:56:26,437 - discord.client - INFO - logging in using static token
+2023-01-31 21:56:26,832 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bdddba807cc6a0c3531a0d2603a3b09c).
+2023-01-31 21:56:28,838 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:57:08,547 - discord.client - INFO - logging in using static token
+2023-01-31 21:57:09,098 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6b9112cd85f6c09d32d749cc6c928f87).
+2023-01-31 21:57:11,102 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:58:07,449 - discord.client - INFO - logging in using static token
+2023-01-31 21:58:07,919 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3acd6b09556c5bd0930b0ab91ce2b6d4).
+2023-01-31 21:58:09,925 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:59:45,914 - discord.client - INFO - logging in using static token
+2023-01-31 21:59:46,354 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d2bd82ca4244dcebf760287925b09de7).
+2023-01-31 21:59:48,359 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 21:59:48,368 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 47, in on_ready
+    user1 = await cursor.execute("SELECT * WHERE id=0")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no tables specified
+2023-01-31 21:59:57,514 - discord.client - INFO - logging in using static token
+2023-01-31 21:59:57,951 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 07951311da6ef87ff48dce482adc23bc).
+2023-01-31 21:59:59,956 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:00:55,688 - discord.client - INFO - logging in using static token
+2023-01-31 22:00:56,482 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: de7cb18955cdcdad1af1c08df7ec4bbb).
+2023-01-31 22:00:58,488 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:00:58,496 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 47, in on_ready
+    user1 = await cursor.execute("SELECT * FROM Users WHERE id=0").fetchall()
+AttributeError: 'coroutine' object has no attribute 'fetchall'
+2023-01-31 22:01:49,046 - discord.client - INFO - logging in using static token
+2023-01-31 22:01:49,730 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5b8336c617b987c5aee1dc71f8e3c0e9).
+2023-01-31 22:01:51,736 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:02:21,893 - discord.client - INFO - logging in using static token
+2023-01-31 22:02:22,395 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 44dedc83a6b493ab1f82493ba1e9f1c5).
+2023-01-31 22:02:24,400 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:14:04,652 - discord.client - INFO - logging in using static token
+2023-01-31 22:14:05,164 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e4c44c82bb13ac3185af25e357e87a4f).
+2023-01-31 22:14:07,169 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:14:07,178 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 51, in on_ready
+    print(user1["id"])
+TypeError: list indices must be integers or slices, not str
+2023-01-31 22:14:24,977 - discord.client - INFO - logging in using static token
+2023-01-31 22:14:25,540 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 19909225392c0a8012f54a33098d4868).
+2023-01-31 22:14:27,545 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:15:39,148 - discord.client - INFO - logging in using static token
+2023-01-31 22:15:39,971 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 240e45cd9f0bfa3e049195e5aa66b721).
+2023-01-31 22:15:41,976 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:15:41,984 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 51, in on_ready
+    print(user1["id"])
+TypeError: list indices must be integers or slices, not str
+2023-01-31 22:15:47,371 - discord.client - INFO - logging in using static token
+2023-01-31 22:15:47,809 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 342a0041c6d507a4a58c9df15c02a60a).
+2023-01-31 22:15:49,818 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:16:14,977 - discord.client - INFO - logging in using static token
+2023-01-31 22:16:15,527 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4aff93ecf30b4d3bbe49a2f3600e023b).
+2023-01-31 22:16:17,532 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:18:11,244 - discord.client - INFO - logging in using static token
+2023-01-31 22:18:11,639 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f57a949025940581da0816d51ff625bf).
+2023-01-31 22:18:13,653 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:18:23,631 - discord.client - INFO - logging in using static token
+2023-01-31 22:18:24,190 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f5062adb6a69379612dcccc2f10576e2).
+2023-01-31 22:18:26,195 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:18:31,906 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 41, in start
+    async with asqlite.connect("player_data.db") as connection:
+NameError: name 'asqlite' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: NameError: name 'asqlite' is not defined
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: NameError: name 'asqlite' is not defined
+2023-01-31 22:19:06,975 - discord.client - INFO - logging in using static token
+2023-01-31 22:19:07,305 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 79090dddb212905a976f04f9990ab2ae).
+2023-01-31 22:19:09,309 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:21:23,297 - discord.client - INFO - logging in using static token
+2023-01-31 22:21:23,767 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0a6fd10145917227ad95e5ddf6f0a1ff).
+2023-01-31 22:21:25,772 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:21:26,904 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (user_id, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: no such column: user_id
+2023-01-31 22:21:30,786 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 36, in on_ready
+    await cursor.execute(""" CREATE TABLE Users
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 41, in on_ready
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (1, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: database is locked
+2023-01-31 22:22:15,433 - discord.client - INFO - logging in using static token
+2023-01-31 22:22:15,900 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ab7260222191658e591322f9cb34481e).
+2023-01-31 22:22:17,906 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:22:21,879 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (user_id, 1, 0, 500, 0, 10, 10)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: no such column: user_id
+2023-01-31 22:23:33,262 - discord.client - INFO - logging in using static token
+2023-01-31 22:23:33,909 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7d4f38961bb16cd45620903440897e77).
+2023-01-31 22:23:35,914 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:23:43,426 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 1, 0, 500, 0, 10, 10)", (user_id, ))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: database is locked
+2023-01-31 22:25:16,172 - discord.client - INFO - logging in using static token
+2023-01-31 22:25:16,597 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 291a089076088a726ade5f134a371b12).
+2023-01-31 22:25:18,601 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:25:28,493 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 57, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 1, 0, 500, 0, 10, 10)", (user_id, ))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: database is locked
+2023-01-31 22:26:39,660 - discord.client - INFO - logging in using static token
+2023-01-31 22:26:40,074 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f72d074c9575d48d07410f226ef9b75e).
+2023-01-31 22:26:42,096 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:26:45,548 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES ((?), 1, 0, 500, 0, 10, 10), (user_id)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: no such column: user_id
+2023-01-31 22:27:09,379 - discord.client - INFO - logging in using static token
+2023-01-31 22:27:09,843 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5ac31e133ea018c543b574de0454e612).
+2023-01-31 22:27:11,848 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:27:14,497 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users (id) VALUES ((?), 1, 0, 500, 0, 10, 10), (user_id)")
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: no such column: user_id
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: no such column: user_id
+2023-01-31 22:28:21,568 - discord.client - INFO - logging in using static token
+2023-01-31 22:28:21,998 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c64d3fcb3ec103d74325804e54e83a91).
+2023-01-31 22:28:24,009 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:28:33,014 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 52, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 1, 0, 500, 0, 10, 10)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'start' raised an exception: OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'start' raised an exception: OperationalError: database is locked
+2023-01-31 22:31:01,865 - discord.client - INFO - logging in using static token
+2023-01-31 22:31:02,241 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6fa6e7bee18959641f8eac58d3af1bbe).
+2023-01-31 22:31:04,245 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:42:01,215 - discord.client - INFO - logging in using static token
+2023-01-31 22:42:01,612 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4860764bf79e0f0bfae2cfc424a1cfbe).
+2023-01-31 22:42:03,617 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:42:23,613 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 90, in give
+    new_balance = user_data["wun"] + amount
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'devgive' raised an exception: TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'devgive' raised an exception: TypeError: list indices must be integers or slices, not str
+2023-01-31 22:43:32,218 - discord.client - INFO - logging in using static token
+2023-01-31 22:43:32,596 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e1d1e472f4cee6d5621295c29a6e306f).
+2023-01-31 22:43:34,617 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:44:04,977 - discord.app_commands.tree - ERROR - Ignoring exception in command tree
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1091, in wrapper
+    await self._call(interaction)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1221, in _call
+    command, options = self._get_app_command_options(data)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1127, in _get_app_command_options
+    raise CommandNotFound(name, parents)
+discord.app_commands.errors.CommandNotFound: Application command 'cleargold' not found
+2023-01-31 22:49:20,693 - discord.client - INFO - logging in using static token
+2023-01-31 22:49:21,177 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 60955b0a303dfd7ff66ab5c2a81210f5).
+2023-01-31 22:49:23,183 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:50:07,795 - discord.client - INFO - logging in using static token
+2023-01-31 22:50:08,196 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 59b2317c6b72cb9313e73b11e24ba5d0).
+2023-01-31 22:50:10,202 - root - INFO - Logged in as Anigay 2.0#7825
+2023-01-31 22:56:26,489 - discord.client - INFO - logging in using static token
+2023-01-31 22:56:26,998 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8393a1b1ef196b56e3b794d0c094f896).
+2023-01-31 22:56:29,003 - root - INFO - Logged in as Anigay 2.0#7825
