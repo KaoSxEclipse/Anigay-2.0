@@ -4243,3 +4243,77 @@ Traceback (most recent call last):
   File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-01 15:48:13,267 - discord.client - INFO - logging in using static token
+2023-02-01 15:48:13,649 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b5cc877e4d8e092c4a8015e926aa5b20).
+2023-02-01 15:48:15,653 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 15:49:16,702 - discord.client - INFO - logging in using static token
+2023-02-01 15:49:17,158 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a874e57cb85c8ddcbaa84a3e184935ec).
+2023-02-01 15:49:19,164 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 15:50:33,235 - discord.client - INFO - logging in using static token
+2023-02-01 15:50:33,828 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cdd5713f5ab03d753d93dba2e6d844b0).
+2023-02-01 15:50:35,833 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 15:52:18,460 - discord.client - INFO - logging in using static token
+2023-02-01 15:52:19,080 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2aef2ddd99c7863b44cf234955d213f6).
+2023-02-01 15:52:21,085 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 15:59:52,499 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "reser" is not found
+2023-02-01 16:02:42,111 - discord.client - INFO - logging in using static token
+2023-02-01 16:02:42,800 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c01af8c250fe2f4de0697e9acb8606a0).
+2023-02-01 16:02:44,804 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 16:03:36,761 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 99, in devgive
+    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-01 16:05:55,540 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 99, in devgive
+    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-01 16:52:08,884 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-01 16:52:14,619 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6f5c89a27a53735c85e865a8ece3a842).
+2023-02-01 16:52:16,631 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 16:52:16,632 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-01 19:49:33,537 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6f5c89a27a53735c85e865a8ece3a842.
