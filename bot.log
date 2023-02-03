@@ -4243,3 +4243,295 @@ Traceback (most recent call last):
   File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-01 13:43:04,535 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:43:14,980 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:43:14,989 - discord.client - INFO - logging in using static token
+2023-02-01 13:43:15,728 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7cf627bafc13463d2c09bf2812d5864b).
+2023-02-01 13:43:17,740 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:43:24,116 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "kyle" not found.
+2023-02-01 13:43:59,906 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:43:59,913 - discord.client - INFO - logging in using static token
+2023-02-01 13:44:00,483 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d85cb5976a831ea9a07541bbadbb757b).
+2023-02-01 13:44:02,478 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:44:05,983 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "blooky" not found.
+2023-02-01 13:44:55,100 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "blooky" not found.
+2023-02-01 13:47:30,024 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "KaoSxEclipe" not found.
+2023-02-01 13:49:37,772 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:49:37,778 - discord.client - INFO - logging in using static token
+2023-02-01 13:49:38,412 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d39f49fce03f15c2380b317c5fc6f46e).
+2023-02-01 13:49:40,417 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:49:57,295 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:49:57,302 - discord.client - INFO - logging in using static token
+2023-02-01 13:49:57,951 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bd63a21378f1ed7b25f3b7c41fef8cb8).
+2023-02-01 13:49:59,973 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 13:51:08,512 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 13:51:08,519 - discord.client - INFO - logging in using static token
+2023-02-01 13:51:09,154 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2ccfd0ff3309ac024c2a95878ff6f892).
+2023-02-01 13:51:11,173 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:18:49,733 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:18:49,740 - discord.client - INFO - logging in using static token
+2023-02-01 14:18:50,523 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1d0423aa2c1eca04c0ba314e66bedf53).
+2023-02-01 14:18:52,540 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:19:46,449 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:19:46,457 - discord.client - INFO - logging in using static token
+2023-02-01 14:19:46,943 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b604bcb3a592a2edf149278436b0f9d8).
+2023-02-01 14:19:48,951 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:20:27,679 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:20:27,684 - discord.client - INFO - logging in using static token
+2023-02-01 14:20:28,293 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d1a6608fe5b282b7dc1b069f1642358b).
+2023-02-01 14:20:29,244 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+2023-02-01 14:20:30,302 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:21:58,894 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:21:58,903 - discord.client - INFO - logging in using static token
+2023-02-01 14:21:59,608 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c81885331004356409ebb8ce10c8ab78).
+2023-02-01 14:22:01,456 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-02-01 14:22:01,622 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:22:28,656 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:22:28,662 - discord.client - INFO - logging in using static token
+2023-02-01 14:22:29,337 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 28abc3c6fc9a8551f63a27eea04a9bb9).
+2023-02-01 14:22:31,069 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-02-01 14:22:31,365 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-01 14:27:11,977 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-01 14:27:11,987 - discord.client - INFO - logging in using static token
+2023-02-01 14:27:12,519 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bbc4067068d83c1647230057e3a43f93).
+2023-02-01 14:27:12,648 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-02-01 14:27:14,527 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 08:42:09,738 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:42:09,771 - discord.client - INFO - logging in using static token
+2023-02-02 08:42:11,388 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 033cff2e685d86a8f68e5dd3af2e2dbe).
+2023-02-02 08:42:13,413 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 08:44:18,940 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:44:38,280 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:44:38,287 - discord.client - INFO - logging in using static token
+2023-02-02 08:44:39,726 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0ebe9aeeb35534fedc02163f9e017db9).
+2023-02-02 08:44:41,716 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 08:44:43,995 - discord.app_commands.tree - ERROR - Ignoring exception in command 'give'
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\tree.py", line 1242, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 533, in _parse_arguments
+    ctx.kwargs = await self.app_command._transform_arguments(interaction, interaction.namespace)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 351, in _transform_arguments
+    raise app_commands.CommandSignatureMismatch(self) from None
+discord.app_commands.errors.CommandSignatureMismatch: The signature for command 'give' is different from the one provided by Discord. This can happen because either your code is out of date or you have not synced the commands with Discord, causing the mismatch in data. It is recommended to sync the command tree to fix this issue.
+2023-02-02 08:45:14,873 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:45:14,880 - discord.client - INFO - logging in using static token
+2023-02-02 08:45:16,293 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f020d2e2d0d13dbc84bda60647b6806f).
+2023-02-02 08:45:18,302 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 08:45:39,135 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:45:39,142 - discord.client - INFO - logging in using static token
+2023-02-02 08:45:40,896 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cbf45b18242cf74645f65c297edc8a96).
+2023-02-02 08:45:42,895 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 08:46:30,837 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 08:46:30,842 - discord.client - INFO - logging in using static token
+2023-02-02 08:46:32,968 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 56a66627bb162afe14b5f7c8498b5295).
+2023-02-02 08:46:34,986 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 09:04:28,377 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 56a66627bb162afe14b5f7c8498b5295.
+2023-02-02 09:48:39,519 - discord.ext.commands.bot - ERROR - Ignoring exception in command claim
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 209, in claim
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'claim' raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'claim' raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-02 09:49:10,503 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 09:49:10,513 - discord.client - INFO - logging in using static token
+2023-02-02 09:49:11,853 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8a31b591c14ecdcd0ec8960a95150817).
+2023-02-02 09:49:13,867 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 09:49:23,011 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='CommandTree-invoker' coro=<CommandTree._from_interaction.<locals>.wrapper() done, defined at C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\tree.py:1089> exception=HybridCommandError("Hybrid command raised an error: Command 'claim' raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment")>
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\commands.py", line 861, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 208, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 438, in _invoke_with_namespace
+    value = await self._do_call(ctx, ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\commands.py", line 880, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'claim' raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\tree.py", line 1091, in wrapper
+    await self._call(interaction)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\app_commands\tree.py", line 1242, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 448, in _invoke_with_namespace
+    await command.dispatch_error(ctx, exc)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 220, in claim
+    raise error
+discord.ext.commands.errors.HybridCommandError: Hybrid command raised an error: Command 'claim' raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-02 09:49:47,292 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 09:49:47,303 - discord.client - INFO - logging in using static token
+2023-02-02 09:49:48,911 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 146f16b11d4b6a36ad19b6c3c86b1d86).
+2023-02-02 09:49:50,908 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 18:30:40,848 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 18:30:40,873 - discord.client - INFO - logging in using static token
+2023-02-02 18:30:49,657 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fb69a3bdab8e3889fdbe3bacd2c5bb58).
+2023-02-02 18:30:51,669 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 18:36:22,405 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 18:36:22,422 - discord.client - INFO - logging in using static token
+2023-02-02 18:37:20,761 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 18:37:20,768 - discord.client - INFO - logging in using static token
+2023-02-02 18:37:22,846 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e4944fcbdf1b538df21bcdb921daa9d1).
+2023-02-02 18:37:24,859 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 18:41:07,491 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 18:41:07,499 - discord.client - INFO - logging in using static token
+2023-02-02 18:41:08,812 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 10bbcdeacd583c3520da5d9b3f478969).
+2023-02-02 18:41:09,300 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "reset" is not found
+2023-02-02 18:41:10,826 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 18:41:12,714 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-02-02 18:41:36,438 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-02 18:41:36,447 - discord.client - INFO - logging in using static token
+2023-02-02 18:41:37,835 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 33f5d42705b59a414fc3f8cefa207179).
+2023-02-02 18:41:39,423 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "devgive" is not found
+2023-02-02 18:41:39,838 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 18:42:56,284 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 97, in devgive
+    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
