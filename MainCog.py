@@ -5,6 +5,7 @@ from discord.ext.commands import *
 from typing import Optional, Literal
 from discord.ext.commands.cooldowns import BucketType
 from datetime import timedelta
+from discord.utils import get
 
 # Set up Logging
 logging.basicConfig(
@@ -86,6 +87,7 @@ class currency(commands.Cog):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
 
+                user_id = int(ctx.author.id)
                 user_id = str(user.id)
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                 user_data = await cursor.fetchall()
@@ -227,7 +229,7 @@ class currency(commands.Cog):
             async with connection.cursor() as cursor:
 
                 user_id = int(ctx.author.id)
-                if user_id == 533672241448091660 or user_id == 301494278901989378:
+                if user_id == 533672241448091660 or user_id == 301494278901989378 or user_id == 755186746966147082:
 
                     user_id = str(user.id)
                     await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
@@ -244,8 +246,8 @@ class currency(commands.Cog):
                                               color=0xA80108)
                         await ctx.send(embed=embed)
                     else:  ## User not found
-                        embed = discord.Embed(title=f"{user.display_name} not found",
-                                              description=f"Have {user.mention} type a!start!",
+                        embed = discord.Embed(title=f"{user.name} not found",
+                                              description=f"Have {user.name} type a!start!",
                                               color=0xA80108)
                         await ctx.send(embed=embed)
 
@@ -253,17 +255,37 @@ class currency(commands.Cog):
 class User(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-    # View's profile of others, if no user specified returns your profile
-    @commands.hybrid_command(name="profile", description="Get an overview of your profile.", aliases=['p'])
-    async def profile(self, ctx, user: discord.User = None):
-        """View your, or someone else's profile"""
+# View's profile of others, if no user specified returns your profile
+    @commands.hybrid_command(name="profile", description="Get an overview of your profile.")
+    @bot.listen('on_message')
+    async def profile(self, ctx, message="<", user: discord.Member = None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
-                if not user:
-                    user = ctx.author
+                print("message:", message)
 
-                user_id = str(ctx.author.id) if user is None else str(user.id)
+                if message == "<":
+                    user = ctx.author
+                elif not "<"  in str(message):
+                    return
+                else:
+
+                    user_id = int(message[2:-1])
+
+                    user = await ctx.bot.fetch_user( user_id )
+
+                    print("member:", member)
+                    #user = member
+
+
+
+                #user = bot.get_user(user)
+
+                print("user", user)
+
+                if user == None or user == ctx.author:
+                    user_id = str(ctx.author.id)
+                #else:
+                #    user = member
 
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                 user_data = await cursor.fetchall()
@@ -272,7 +294,8 @@ class User(commands.Cog):
                     user_data = user_data[0]
 
                     embed = discord.Embed(title=f"__{user.name}'s__ Profile",
-                                          description="", color=0x2f3136)
+                                          description="",
+                                          color=0x75FFEE)
                     embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
                     embed.add_field(name="**Experience**", value=f'{user_data["exp"]}/{user_data["mexp"]}', inline=True)
                     embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wun"]} wuns', inline=True)
@@ -282,7 +305,7 @@ class User(commands.Cog):
 
                     await ctx.send(embed=embed)
                 else:
-                    embed = discord.Embed(title=f"{user.name} not found", description=f"{user.name} has no profile",
+                    embed = discord.Embed(title=f"{user.name} not found", description=f"{user} has no profile",
                                           color=0xA80108)
                     await ctx.send(embed=embed)
 
@@ -336,4 +359,3 @@ async def setup(bot):
     await bot.add_cog(sync(bot))
     await bot.add_cog(User(bot))
     await bot.add_cog(currency(bot))
-
