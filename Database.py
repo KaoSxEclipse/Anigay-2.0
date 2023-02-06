@@ -1,45 +1,50 @@
 import asyncio, asqlite
-"""'''
-with asqlite.connect("card_data.db") as connection:
-	with connection.cursor() as cursor():
-		cursor.execute( '''CREATE TABLE Index
-							()
-			''' )"""
+
+
+async def cardDB():
+	# Create the Card databases from scratch
+	async with asqlite.connect("card_data.db") as connection:
+		async with connection.cursor() as cursor:
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Dex (dex integer, name text, hp integer, atk integer, def integer, spd integer, talent text)''' )
+
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Upper (uid bigint, owner bigint, 'dex' int, rarity text, evo int, exp int, cd int) ''' )
+
+			#await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 0, 'Zenith', 80, 80, 80, 80, 'Self Destruct' )" )
+			#await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 1, 'DPython', 100, 100, 100, 100, 'White Justice' )" )
+
+			#await cursor.execute( "INSERT OR IGNORE INTO Upper VALUES ( 1, 0, 'sr', 1, 0, 0 )" )
+
+			await connection.commit()
+
+
+async def playerDB():
+	# Create the User Database if it doesn't exist
+	async with asqlite.connect("player_data.db") as connection:
+		async with connection.cursor() as cursor:
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Users (id bigint, exp int, wuns int, stamina int, card int)''' )
+
+			await connection.commit()
 
 
 
-integer = 1092387000
+async def generateCard( index, owner, rarity, evo ):
+	async with asqlite.connect("card_data.db") as connection:
+		async with connection.cursor() as cursor:
+			await cursor.execute("SELECT max(uid) FROM Upper")
 
-integer = str(integer)
-new_num = ""
+			max_id = await cursor.fetchall()
+			try:
+				new_id = int(max_id[0][0]) + 1
+			except TypeError:
+				new_id = 0
 
-for i in range(len(integer)-1, -1, -1):
-	if i%3 == 0:
-		print("comma")
-		new_num += ","
+			await cursor.execute( "INSERT OR IGNORE INTO Upper VALUES ( ?, ?, ?, ?, ?, 0, 0 )", (new_id, owner, index, rarity, evo) )
 
-	##print(i)
-	new_num += integer[i]
-
-new_num = new_num[1:]
-new_num = new_num[::-1]
-
-
-print(new_num)
+			await connection.commit()
 
 
-def displayNumber( number ):
-	integer = str(integer)
-	new_num = ""
 
-	for i in range(len(integer)-1, -1, -1):
-		if i%3 == 0:
-			print("comma")
-			new_num += ","
 
-		new_num += integer[i]
-
-	new_num = new_num[1:]
-	new_num = new_num[::-1]
-
-	return new_num #String
+asyncio.run(playerDB())
+asyncio.run(cardDB())
+#asyncio.run(generateCard(0, 0, 'sr', 1))

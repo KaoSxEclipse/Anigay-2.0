@@ -29,6 +29,7 @@ async def on_ready():
 	await bot.add_cog(ProfileStart(bot))
 	await bot.add_cog(User(bot))
 	await bot.add_cog(currency(bot))
+	await bot.add_cog(Card(bot))
 
 
 # Load Env file and load it then set the token var
