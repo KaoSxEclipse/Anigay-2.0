@@ -6,6 +6,9 @@ from typing import Optional, Literal
 from discord.ext.commands.cooldowns import BucketType
 from datetime import timedelta
 from discord.utils import get
+import Database
+from CardClass import CardClass
+import random
 
 # Set up Logging
 logging.basicConfig(
@@ -56,7 +59,19 @@ class ProfileStart(commands.Cog):
 
                 if len(user_data) == 0:
                     ## User doesn't exist
-                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 1, 0, 500, 0, 10, 10)", (user_id))
+                    ## Insert id, exp, stamina, card
+                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+
+                    ## Change code later on so it selects randomly from db
+
+                    async with asqlite.connect("card_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute("SELECT * FROM Dex")
+
+                            cards = await cursor.fetchall()
+                            cards = len(cards)
+
+                    await Database.generateCard( random.randint(0, cards-1), user_id, 'sr', 1 )
 
                     embed = discord.Embed(title=f"Welcome to Anigame 2.0 {ctx.author}",
                                           description="You've been given *Super Rare* __card__ to start your Journey!",
@@ -309,6 +324,101 @@ class User(commands.Cog):
                                           color=0xA80108)
                     await ctx.send(embed=embed)
 
+    # Return the Player inventory by cycling through card database
+    @commands.hybrid_command(aliases=["inv"])
+    async def inventory(self, ctx):
+        async with asqlite.connect("card_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user = ctx.author.id
+                await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
+                player_inventory = await cursor.fetchall()
+
+                embed = discord.Embed(title=f"{ctx.author}'s Inventory:", color=0x03F76A)
+
+                for i in range( 0, len(player_inventory) ):
+                    card = CardClass( player_inventory[i]['rarity'], player_inventory[i]['uid'] )
+
+                    await card.Query()
+                    embed.add_field(name=i+1, value=f"{card.card_stats['name']}")
+
+                await ctx.send(embed=embed)
+
+                await connection.commit()
+
+    # Select a card and assign it to the user for battling
+    @commands.hybrid_command()
+    async def select(self, ctx, message=0):
+        async with asqlite.connect("card_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user = ctx.author.id
+                await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
+                player_inventory = await cursor.fetchall()
+
+                if 0 < int(message) <= len(player_inventory):
+                    # Proper card is in inventory
+                    card_index = int(message)-1
+                    card_id = player_inventory[card_index]["uid"]
+                    async with asqlite.connect("player_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute( """UPDATE Users set card=? WHERE id=?""", ( card_id, user ) )
+
+                    card = CardClass( player_inventory[card_index]['rarity'], player_inventory[card_index]['uid'] )
+                    await card.Query()
+
+                    embed = discord.Embed(title=f"Card Selected!", description=f"{card.card_stats['name']} was selected for battle!", color=0x03F76A)
+
+                    await ctx.send(embed=embed)
+
+                    await connection.commit()
+
+
+
+class Card(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+    # Show the Information on a single card in the index
+    @commands.hybrid_command(aliases=['ci'])
+    async def cinfo(self, ctx, message = None, message2 = None):
+        async with asqlite.connect("card_data.db") as connection:
+            async with connection.cursor() as cursor:
+
+                if message2 != None:
+                    message = message.capitalize() + " " + message2.capitalize()
+                else:
+                    message = message.capitalize()
+
+                if message == None:
+                    embed = discord.Embed(title=f"Card not found",
+                                          description=f"Please specify a legitamate card name!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+                    return
+
+                else:
+
+                    await cursor.execute( "SELECT * FROM Dex WHERE name=?", (message,))
+
+                    card_index = await cursor.fetchall()
+
+                    if len(card_index) != 0:  # User is found
+                        card_data = card_index[0]
+
+                        embed = discord.Embed(title=f"{card_data['name']}", color=0x03F76A)
+                        embed.add_field(name="HP", value=f"{card_data['hp']}")
+                        embed.add_field(name="Attack", value=f"{card_data['atk']}")
+                        embed.add_field(name="Defense", value=f"{card_data['def']}")
+                        embed.add_field(name="Speed", value=f"{card_data['spd']}")
+                        embed.add_field(name="Talent:", value=f"{card_data['talent']}")
+                        embed.set_thumbnail(url=ctx.author.avatar)
+                        embed.set_author(name=f"{ctx.author}", icon_url=ctx.author.avatar)
+                        await ctx.send(embed=embed)
+                    else:
+                        embed = discord.Embed(title=f"Card not found",
+                                          description=f"Please specify a legitamate card name!",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+
+
 
 # SYNCS Commands to all GUILDS DO NOT TOUCH / ALTER
 class sync(commands.Cog):
@@ -358,4 +468,5 @@ async def setup(bot):
     await bot.add_cog(Debug(bot))
     await bot.add_cog(sync(bot))
     await bot.add_cog(User(bot))
+    await bot.add_cog(currency(bot))
     await bot.add_cog(currency(bot))
