@@ -40,6 +40,8 @@ class MyHelp(commands.HelpCommand):
                         emoji = "<:star2:1072373582165975050>"
                     if cog_name == 'User':
                         emoji = "<:bust_in_silhouette:1072373688885854272>"
+                    if cog_name == 'Card':
+                        emoji = "<:diamonds:1072645673582858250>"
 
                 # Adding embed fields for each command category.
                 # Not displaying hidden categories.
