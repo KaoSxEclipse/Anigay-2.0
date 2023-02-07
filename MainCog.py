@@ -276,7 +276,7 @@ class User(commands.Cog):
     async def profile(self, ctx, message="<", user: discord.Member = None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
-                print("message:", message)
+                #print("message:", message)
 
                 if message == "<":
                     user = ctx.author
@@ -288,14 +288,14 @@ class User(commands.Cog):
 
                     user = await ctx.bot.fetch_user( user_id )
 
-                    print("member:", member)
+                    #print("member:", member)
                     #user = member
 
 
 
                 #user = bot.get_user(user)
 
-                print("user", user)
+                #print("user", user)
 
                 if user == None or user == ctx.author:
                     user_id = str(ctx.author.id)
@@ -308,6 +308,13 @@ class User(commands.Cog):
                 if len(user_data) != 0:  # User is found
                     user_data = user_data[0]
 
+                    if user_data["card"] != 0:
+                        card = CardClass( uid=user_data['card'] )
+
+                        await card.Query()
+                    else:
+                        card = None
+
                     embed = discord.Embed(title=f"__{user.name}'s__ Profile",
                                           description="",
                                           color=0x75FFEE)
@@ -316,6 +323,10 @@ class User(commands.Cog):
                     embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wuns"]} wuns', inline=True)
                     embed.add_field(name="**Stamina**", value=f'{user_data["stamina"]}/{user_data["stamina"]}',
                                     inline=True)
+                    if card == None:
+                        embed.add_field(name="**Card Selected:**", value=f"{card}", inline=False)
+                    else:
+                        embed.add_field(name="**Card Selected:**", value=f"{card.card_stats['name']}", inline=False)
                     embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar)
 
                     await ctx.send(embed=embed)
@@ -339,7 +350,7 @@ class User(commands.Cog):
                     card = CardClass( player_inventory[i]['rarity'], player_inventory[i]['uid'] )
 
                     await card.Query()
-                    embed.add_field(name=i+1, value=f"{card.card_stats['name']}")
+                    embed.add_field(name=f"#{str(i+1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]", value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}")
 
                 await ctx.send(embed=embed)
 
@@ -387,6 +398,12 @@ class Card(commands.Cog):
                 else:
                     message = message.capitalize()
 
+                cards = await Database.generateCardList()
+
+                for i in cards:
+                    if message in i:
+                        message = i
+
                 if message == None:
                     embed = discord.Embed(title=f"Card not found",
                                           description=f"Please specify a legitamate card name!",
@@ -404,11 +421,11 @@ class Card(commands.Cog):
                         card_data = card_index[0]
 
                         embed = discord.Embed(title=f"{card_data['name']}", color=0x03F76A)
-                        embed.add_field(name="HP", value=f"{card_data['hp']}")
-                        embed.add_field(name="Attack", value=f"{card_data['atk']}")
-                        embed.add_field(name="Defense", value=f"{card_data['def']}")
-                        embed.add_field(name="Speed", value=f"{card_data['spd']}")
-                        embed.add_field(name="Talent:", value=f"{card_data['talent']}")
+                        embed.add_field(name=f"HP: {card_data['hp']}", value="", inline=False)
+                        embed.add_field(name=f"Attack: {card_data['atk']}", value="", inline=False)
+                        embed.add_field(name=f"Defense: {card_data['def']}", value="", inline=False)
+                        embed.add_field(name=f"Speed: {card_data['spd']}", value="", inline=False)
+                        embed.add_field(name=f"Talent: {card_data['talent']}", value="", inline=False)
                         embed.set_thumbnail(url=ctx.author.avatar)
                         embed.set_author(name=f"{ctx.author}", icon_url=ctx.author.avatar)
                         await ctx.send(embed=embed)

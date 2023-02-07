@@ -1,4 +1,5 @@
 import asyncio, asqlite
+import json
 
 
 async def cardDB():
@@ -7,7 +8,7 @@ async def cardDB():
 		async with connection.cursor() as cursor:
 			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Dex (dex integer, name text, hp integer, atk integer, def integer, spd integer, talent text)''' )
 
-			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Upper (uid bigint, owner bigint, 'dex' int, rarity text, evo int, exp int, cd int) ''' )
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Upper (uid bigint, owner bigint, dex int, rarity text, evo int, exp int, cd int) ''' )
 
 			#await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 0, 'Zenith', 80, 80, 80, 80, 'Self Destruct' )" )
 			#await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 1, 'DPython', 100, 100, 100, 100, 'White Justice' )" )
@@ -26,7 +27,6 @@ async def playerDB():
 			await connection.commit()
 
 
-
 async def generateCard( index, owner, rarity, evo ):
 	async with asqlite.connect("card_data.db") as connection:
 		async with connection.cursor() as cursor:
@@ -36,15 +36,32 @@ async def generateCard( index, owner, rarity, evo ):
 			try:
 				new_id = int(max_id[0][0]) + 1
 			except TypeError:
-				new_id = 0
+				new_id = 1
 
 			await cursor.execute( "INSERT OR IGNORE INTO Upper VALUES ( ?, ?, ?, ?, ?, 0, 0 )", (new_id, owner, index, rarity, evo) )
 
 			await connection.commit()
 
 
+async def generateCardList():
+	async with asqlite.connect("card_data.db") as connection:
+		async with connection.cursor() as cursor:
+			await cursor.execute("SELECT * FROM Dex")
+
+			cards = await cursor.fetchall()
+			names = []
+			for i in cards:
+				names.append(i["name"])
 
 
-asyncio.run(playerDB())
-asyncio.run(cardDB())
+			cards = names
+			print(cards)
+			return cards
+
+
+#asyncio.run(playerDB())
+#asyncio.run(cardDB())
+
+#asyncio.run( generateCardList() )
+
 #asyncio.run(generateCard(0, 0, 'sr', 1))

@@ -1,7 +1,7 @@
 import asyncio, asqlite
 
 class CardClass():
-	def __init__( self, rarity, uid ):
+	def __init__( self, rarity="sr", uid='0' ):
 		self.rarity = rarity
 		self.uid = uid
 		self.card_data = None
@@ -21,6 +21,7 @@ class CardClass():
 				await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
 
 				self.card_data = await cursor.fetchall()
+				print(self.card_data)
 				self.card_data = self.card_data[0]
 				index = self.card_data["dex"]
 
@@ -38,6 +39,9 @@ class CardClass():
 					self.card_stats = self.card_stats[0]
 
 				await connection.commit()
+
+	def checkRarity( self ):
+		return
 
 
 	def CalcLevel( self ):

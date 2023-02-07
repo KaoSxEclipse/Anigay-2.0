@@ -7489,3 +7489,540 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Ind
 2023-02-06 15:20:35,542 - discord.client - INFO - logging in using static token
 2023-02-06 15:20:36,021 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d68bc3fee6640af65251cd875878c97).
 2023-02-06 15:20:38,039 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 15:32:42,383 - discord.client - INFO - logging in using static token
+2023-02-06 15:32:42,946 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fa161bda2c7acafead0dcd348ba7e90f).
+2023-02-06 15:32:44,975 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 15:46:32,250 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 15:46:32,252 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 15:58:51,495 - discord.client - INFO - logging in using static token
+2023-02-06 15:58:52,108 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 55595ebad7c546755a2a20a106dda07a).
+2023-02-06 15:58:54,129 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 16:03:16,693 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 16:03:16,694 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 16:03:21,157 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-06 16:03:25,354 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "battle" is not found
+2023-02-06 16:03:28,623 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
+2023-02-06 16:05:28,274 - discord.client - INFO - logging in using static token
+2023-02-06 16:05:28,758 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 156b299fb8af6d74cd3023162d0b976f).
+2023-02-06 16:05:30,782 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 16:24:00,848 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fda01d626e0>
+2023-02-06 16:24:01,872 - discord.client - INFO - logging in using static token
+2023-02-06 16:24:02,435 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a867b22c42cb4ee70c97b7b1191f4fd4).
+2023-02-06 16:24:04,446 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 16:37:05,805 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 16:37:05,805 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 16:47:13,214 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 227, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 239, in claim
+    raise error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+2023-02-06 16:58:23,401 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 92, in start
+    await connection.commit()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-02-06 16:58:41,280 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "claimgold" is not found
+2023-02-06 16:59:10,603 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-06 17:29:39,750 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 17:29:39,751 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 17:49:40,549 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+2023-02-06 18:19:08,639 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+2023-02-06 18:20:23,803 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "info" is not found
+2023-02-06 18:20:32,641 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "view" is not found
+2023-02-06 18:20:37,466 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "show" is not found
+2023-02-06 18:22:14,635 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-06 18:22:19,733 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "battle" is not found
+2023-02-06 18:22:50,065 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-02-06 18:23:02,544 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 18:23:02,544 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 18:23:21,730 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 18:23:59,399 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 18:24:04,033 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 18:24:08,649 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 18:24:33,009 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profike" is not found
+2023-02-06 18:24:48,057 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "battle" is not found
+2023-02-06 18:27:17,588 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 18:27:18,563 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-06 19:30:04,434 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a867b22c42cb4ee70c97b7b1191f4fd4.
+2023-02-06 19:51:40,120 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 19:51:40,120 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-02-06 19:51:40,121 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 19:51:40,133 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-02-06 21:02:54,672 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "burn" is not found
+2023-02-06 21:12:48,290 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "view" is not found
+2023-02-06 21:13:28,431 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f53faa4af20>
+2023-02-06 21:13:29,040 - discord.client - INFO - logging in using static token
+2023-02-06 21:13:29,553 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3404169fd007813c76768971d5ea4a64).
+2023-02-06 21:13:31,562 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:14:40,605 - discord.client - INFO - logging in using static token
+2023-02-06 21:14:41,143 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b30c00494caf3e77b88a8f4eddecbe45).
+2023-02-06 21:14:43,170 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:15:14,418 - discord.ext.commands.bot - ERROR - Ignoring exception in command cinfo
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 416, in cinfo
+    embed.add_field(name=f"Talent: {card_data['talent']}", inline=False)
+TypeError: Embed.add_field() missing 1 required keyword-only argument: 'value'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Embed.add_field() missing 1 required keyword-only argument: 'value'
+2023-02-06 21:15:30,393 - discord.client - INFO - logging in using static token
+2023-02-06 21:15:30,994 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 521774e1acc4293bbee03a008bdef9d8).
+2023-02-06 21:15:33,006 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:27:13,844 - discord.client - INFO - logging in using static token
+2023-02-06 21:27:14,249 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 75667f7804d1905e9370b2682917088b).
+2023-02-06 21:27:16,274 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:27:22,386 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "zi" is not found
+2023-02-06 21:32:05,884 - discord.client - INFO - logging in using static token
+2023-02-06 21:32:06,322 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f2571bbc285949febcba336129dbdf74).
+2023-02-06 21:32:08,338 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:32:13,004 - discord.ext.commands.bot - ERROR - Ignoring exception in command cinfo
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 418, in cinfo
+    embed.add_field(name=f"HP: {card_data['hp']}", inline=False)
+TypeError: Embed.add_field() missing 1 required keyword-only argument: 'value'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Embed.add_field() missing 1 required keyword-only argument: 'value'
+2023-02-06 21:32:50,663 - discord.client - INFO - logging in using static token
+2023-02-06 21:32:51,038 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: eaafe9828c99de9fe72575c313b5886e).
+2023-02-06 21:32:53,050 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:33:13,144 - discord.client - INFO - logging in using static token
+2023-02-06 21:33:13,529 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1c44c1e434c9e0e1c28c45c57423ebff).
+2023-02-06 21:33:15,558 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:35:06,142 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 1c44c1e434c9e0e1c28c45c57423ebff.
+2023-02-06 21:39:08,755 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 313, in profile
+    await card.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 24, in Query
+    self.card_data = self.card_data[0]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-02-06 21:41:09,795 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 313, in profile
+    await card.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 24, in Query
+    self.card_data = self.card_data[0]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-02-06 21:43:00,181 - discord.client - INFO - logging in using static token
+2023-02-06 21:43:05,578 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d21e051d9dc592ed7a8e0276ae7820d2).
+2023-02-06 21:43:07,590 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:43:26,973 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 314, in profile
+    await card.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 24, in Query
+    self.card_data = self.card_data[0]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-02-06 21:45:06,107 - discord.client - INFO - logging in using static token
+2023-02-06 21:45:06,591 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8d4031e5e01af7afa36f89a86d249729).
+2023-02-06 21:45:08,609 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 21:45:11,253 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 314, in profile
+    await card.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 25, in Query
+    self.card_data = self.card_data[0]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-02-06 21:46:05,893 - discord.client - INFO - logging in using static token
+2023-02-06 21:46:06,328 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0580cf3b26a1db7c7d0867bc7888dbe4).
+2023-02-06 21:46:08,362 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 22:26:36,320 - discord.client - INFO - logging in using static token
+2023-02-06 22:26:36,806 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d3dfe71ecb9ef5cb7f2ac193ebce375d).
+2023-02-06 22:26:38,840 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 22:30:38,337 - discord.client - INFO - logging in using static token
+2023-02-06 22:30:38,752 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 86b00d357adeda21175c785bf682973b).
+2023-02-06 22:30:40,763 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 22:30:54,603 - discord.client - INFO - logging in using static token
+2023-02-06 22:30:55,103 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6b09e65df4b210d83567c5afc4f80417).
+2023-02-06 22:30:57,116 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 22:31:09,102 - discord.client - INFO - logging in using static token
+2023-02-06 22:31:09,566 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 41912513461e1c46b07b2dedba78de85).
+2023-02-06 22:31:11,574 - root - INFO - Logged in as Anigay 2.0#7825
