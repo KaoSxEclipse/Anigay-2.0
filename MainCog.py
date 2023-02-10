@@ -336,4 +336,3 @@ async def setup(bot):
     await bot.add_cog(sync(bot))
     await bot.add_cog(User(bot))
     await bot.add_cog(currency(bot))
-
