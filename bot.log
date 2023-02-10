@@ -8909,6 +8909,7 @@ Traceback (most recent call last):
   File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Database' is not defined
+<<<<<<< HEAD
 =======
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
@@ -9003,11 +9004,24 @@ Traceback (most recent call last):
     ret = await coro(*args, **kwargs)
   File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 304, in profile
     embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
+=======
+2023-02-07 16:32:48,666 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:32:48,675 - discord.client - INFO - logging in using static token
+2023-02-07 16:32:49,237 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 88891b3d9748c6efc46e9d2b97f1b076).
+2023-02-07 16:32:51,291 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:33:32,183 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 611, in reset
+    balance = user_data["wun"]
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 IndexError: No item with that key
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -10723,10 +10737,50 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
     ret = await coro(*args, **kwargs)
 RuntimeError: coroutine ignored GeneratorExit
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-07 16:34:15,164 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:34:15,172 - discord.client - INFO - logging in using static token
+2023-02-07 16:34:15,769 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c5b2d251d59515c12d1d299a6f2f9a39).
+2023-02-07 16:34:17,832 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:35:45,303 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-02-07 16:35:57,463 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 614, in reset
+    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: no such column: wun
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11712,12 +11766,69 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 234, in fetchall
     return await self._post(self._cursor.fetchall)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: no such column: wun
+2023-02-07 16:36:28,115 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:36:28,121 - discord.client - INFO - logging in using static token
+2023-02-07 16:36:28,821 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e60a0c3e769c691d083f4838fc68de0c).
+2023-02-07 16:36:30,866 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:38:29,706 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:38:29,715 - discord.client - INFO - logging in using static token
+2023-02-07 16:38:30,478 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3fca1fa26c52da457083b361411c2e3b).
+2023-02-07 16:38:32,666 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:39:25,636 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:39:25,644 - discord.client - INFO - logging in using static token
+2023-02-07 16:39:26,244 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0e062cee5cd219f23ae5132eacf6aabc).
+2023-02-07 16:39:28,267 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:40:03,845 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:40:03,856 - discord.client - INFO - logging in using static token
+2023-02-07 16:40:04,721 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a12ac0f589d6d36346254ab0a0781a92).
+2023-02-07 16:40:06,809 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:40:12,077 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 642, in devgive
+    new_balance = user_data["wun"] + amount
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-07 16:40:33,680 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-07 16:40:33,692 - discord.client - INFO - logging in using static token
+2023-02-07 16:40:34,818 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b80907af7fcc4c0834cca6295fb591ff).
+2023-02-07 16:40:36,940 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-07 16:40:40,757 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 644, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
     result = entry.func(*entry.args, **entry.kwargs)
 sqlite3.ProgrammingError: Cannot operate on a closed cursor.
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11739,10 +11850,34 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
     result = entry.func(*entry.args, **entry.kwargs)
 sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-02-07 17:46:09,351 - discord.gateway - INFO - Shard ID None has successfully RESUMED session b80907af7fcc4c0834cca6295fb591ff.
+2023-02-09 21:40:56,059 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:40:56,079 - discord.client - INFO - logging in using static token
+2023-02-09 21:40:56,835 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 115e254dfde70cc87c272fea7e88031a).
+2023-02-09 21:40:59,095 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:41:27,802 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 208, in balance
+    balance = user_data["wun"]
+              ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11907,10 +12042,171 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
     ret = await coro(*args, **kwargs)
 RuntimeError: coroutine ignored GeneratorExit
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-09 21:41:31,761 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\converter.py", line 323, in convert
+    raise UserNotFound(argument)
+discord.ext.commands.errors.UserNotFound: User "@user" not found.
+2023-02-09 21:41:35,319 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 208, in balance
+    balance = user_data["wun"]
+              ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-09 21:41:37,503 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 208, in balance
+    balance = user_data["wun"]
+              ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-09 21:41:56,321 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "loc" is not found
+2023-02-09 21:42:32,270 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "loc" is not found
+2023-02-09 21:42:57,096 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 208, in balance
+    balance = user_data["wun"]
+              ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-09 21:44:09,853 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:44:09,859 - discord.client - INFO - logging in using static token
+2023-02-09 21:44:10,540 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a8fe1e93750a96089965018afa62c286).
+2023-02-09 21:44:12,816 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:47:59,484 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:47:59,493 - discord.client - INFO - logging in using static token
+2023-02-09 21:48:01,314 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b7a424f82d8cdfc7a993ce40ae7df60b).
+2023-02-09 21:48:03,455 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:48:07,562 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-02-09 21:49:19,570 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:49:19,576 - discord.client - INFO - logging in using static token
+2023-02-09 21:49:20,271 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c63e5cb7ae5765453b2f84b8402930ae).
+2023-02-09 21:49:22,754 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:51:02,572 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:51:02,583 - discord.client - INFO - logging in using static token
+2023-02-09 21:51:06,118 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4592fcc8d290a75b4e3c70268f5b637f).
+2023-02-09 21:51:08,355 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:58:22,583 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:58:22,591 - discord.client - INFO - logging in using static token
+2023-02-09 21:58:23,459 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b27cbf721ea77a8d2bfabd2ce2314364).
+2023-02-09 21:58:25,739 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 21:59:25,299 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 21:59:25,304 - discord.client - INFO - logging in using static token
+2023-02-09 21:59:26,377 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d426487395c08b52ff5137be381ad65b).
+2023-02-09 21:59:29,106 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:05:08,746 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:05:08,753 - discord.client - INFO - logging in using static token
+2023-02-09 22:05:09,374 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ef75afcc5bb550624fae875e5f681d35).
+2023-02-09 22:05:11,483 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:05:14,790 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 91, in send_command_help
+    value=f"```{bot.command_prefix if 'Slash command only.' not in command.descriptio else '/'}{command.name} {signature}```",
+                                                                   ^^^^^^^^^^^^^^^^^^
+AttributeError: 'HybridCommand' object has no attribute 'descriptio'
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11938,10 +12234,37 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
     result = entry.func(*entry.args, **entry.kwargs)
 sqlite3.ProgrammingError: Cannot operate on a closed database.
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'HybridCommand' object has no attribute 'descriptio'
+2023-02-09 22:05:58,980 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:05:58,989 - discord.client - INFO - logging in using static token
+2023-02-09 22:06:01,389 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fd101ac236f49c901ff0746fcf4f786).
+2023-02-09 22:06:03,726 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:06:05,314 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 98, in send_command_help
+    embed.set_footer(text=f'Use {bot.prefix}help [command] for more info on a specific command.',
+                                 ^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'prefix'
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11958,10 +12281,37 @@ Traceback (most recent call last):
   File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 470, in summon
     card_index = card_data["dex"]
 UnboundLocalError: local variable 'card_data' referenced before assignment
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Bot' object has no attribute 'prefix'
+2023-02-09 22:06:30,412 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:06:30,425 - discord.client - INFO - logging in using static token
+2023-02-09 22:06:30,897 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 713fa753e91b5e6aeb29d5252f9c504e).
+2023-02-09 22:06:32,954 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:06:34,689 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11980,10 +12330,33 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
     result = entry.func(*entry.args, **entry.kwargs)
 sqlite3.ProgrammingError: Cannot operate on a closed database.
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:06:36,846 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -11998,10 +12371,33 @@ Traceback (most recent call last):
   File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 470, in summon
     card_index = card_data["dex"]
 UnboundLocalError: local variable 'card_data' referenced before assignment
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:07:32,415 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
     await ctx.command.invoke(ctx)
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
@@ -12022,3 +12418,275 @@ Traceback (most recent call last):
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
+=======
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:07:41,968 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:07:41,977 - discord.client - INFO - logging in using static token
+2023-02-09 22:07:42,526 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9e8248a438d8f256fff17f0b5a2905b0).
+2023-02-09 22:07:44,602 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:07:46,554 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:07:49,636 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:08:15,515 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:08:15,524 - discord.client - INFO - logging in using static token
+2023-02-09 22:08:16,104 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 059300ec3ad36841658c571b2574ff9d).
+2023-02-09 22:08:18,159 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:08:22,499 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.avatar)
+             ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'avatar'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'avatar'
+2023-02-09 22:08:49,374 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:08:49,380 - discord.client - INFO - logging in using static token
+2023-02-09 22:08:49,864 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0ccf423214d8f26b5f9fb269123f2519).
+2023-02-09 22:08:51,960 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:08:53,020 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=bot.user.display_avatar)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'display_avatar'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'display_avatar'
+2023-02-09 22:09:09,568 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:09:09,575 - discord.client - INFO - logging in using static token
+2023-02-09 22:09:10,143 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 204590a8004377fd3e9c44868229073b).
+2023-02-09 22:09:12,288 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:09:15,306 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 99, in send_command_help
+    icon_url=ctx.author.avatar)
+             ^^^
+NameError: name 'ctx' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'ctx' is not defined
+2023-02-09 22:09:56,510 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:09:56,516 - discord.client - INFO - logging in using static token
+2023-02-09 22:09:57,778 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 47fd2ea5dd1f02c3560c46d3f025f366).
+2023-02-09 22:09:59,868 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:10:57,887 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:10:57,896 - discord.client - INFO - logging in using static token
+2023-02-09 22:10:58,865 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 302a5d94d1b9f13971ee76556c41f500).
+2023-02-09 22:11:00,982 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:11:47,340 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:11:47,346 - discord.client - INFO - logging in using static token
+2023-02-09 22:11:47,822 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0093cca0cd48e5368f657d26ff510eac).
+2023-02-09 22:11:49,928 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:11:53,304 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 72, in send_command_help
+    color=0x00f780())
+          ^^^^^^^^^^
+TypeError: 'int' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'int' object is not callable
+2023-02-09 22:11:57,471 - discord.ext.commands.bot - ERROR - Ignoring exception in command help
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\help.py", line 977, in command_callback
+    return await self.send_command_help(cmd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 72, in send_command_help
+    color=0x00f780())
+          ^^^^^^^^^^
+TypeError: 'int' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'int' object is not callable
+2023-02-09 22:12:10,255 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:12:10,260 - discord.client - INFO - logging in using static token
+2023-02-09 22:12:11,534 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f2c6b6be54316e24b94d1c38453a9c99).
+2023-02-09 22:12:13,671 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:13:01,729 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:13:01,735 - discord.client - INFO - logging in using static token
+2023-02-09 22:13:02,222 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2d27a995f77b60a2a45fe7ad4c735b2d).
+2023-02-09 22:13:04,317 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:14:01,803 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 352, in inventory
+    card = CardClass(player_inventory[i]['rarity'], player_inventory[i]['uid'])
+           ^^^^^^^^^
+NameError: name 'CardClass' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'CardClass' is not defined
+2023-02-09 22:14:56,527 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:14:56,536 - discord.client - INFO - logging in using static token
+2023-02-09 22:14:57,118 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4787765526e6de6e69f053afdf8472a6).
+2023-02-09 22:14:59,203 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:15:49,439 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:15:49,446 - discord.client - INFO - logging in using static token
+2023-02-09 22:15:49,953 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f1b08a00bba2ddd8f7ae7b823cdee88d).
+2023-02-09 22:15:52,051 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:16:10,796 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:16:10,804 - discord.client - INFO - logging in using static token
+2023-02-09 22:16:11,579 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cf82cde258f896b53dbe7e8fa7029bbc).
+2023-02-09 22:16:13,712 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:16:28,360 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-02-09 22:16:28,367 - discord.client - INFO - logging in using static token
+2023-02-09 22:16:29,062 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 061d292469673148c3320395dcf69e6b).
+2023-02-09 22:16:31,133 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-09 22:17:10,715 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\MainCog.py", line 352, in inventory
+    card = CardClass(player_inventory[i]['rarity'], player_inventory[i]['uid'])
+           ^^^^^^^^^
+NameError: name 'CardClass' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dalto\PycharmProjects\pythonProject\venv\Lib\site-packages\discord\ext\commands\core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'CardClass' is not defined
+>>>>>>> 7dbeefe109926d31b5e5929aaee329b8cd40b4b9
