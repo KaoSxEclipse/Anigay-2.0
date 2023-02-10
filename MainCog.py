@@ -12,13 +12,14 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[logging.FileHandler("bot.log"), logging.StreamHandler()]
 )
+# Dev ID's
+devids = [533672241448091660, 301494278901989378, 318306707493093376, 552151385127256064]
 # Privileged Intents
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 bot = commands.Bot(command_prefix='a!', intents=intents)
 # Create variables for emojis in json dict
-# Emojis
 with open("CustomEmojis", "r") as f:
     emojis = json.load(f)
     for key, value in emojis.items():
@@ -40,6 +41,8 @@ class MyHelp(commands.HelpCommand):
                         emoji = "<:star2:1072373582165975050>"
                     if cog_name == 'User':
                         emoji = "<:bust_in_silhouette:1072373688885854272>"
+                    if cog_name == 'Card':
+                        emoji = "<:diamonds:1072645673582858250>"
 
                 # Adding embed fields for each command category.
                 # Not displaying hidden categories.
@@ -59,17 +62,39 @@ class MyHelp(commands.HelpCommand):
 
     async def send_command_help(self, command):
         cog_name = command.cog_name
+        if cog_name in ['Dev'] and self.context.author.id not in devids:
+            return
 
         if command.cog:
             cog_name = cog_name.replace('_', ' ')
 
         embed = discord.Embed(title=f'{cog_name} › {command.name}', description=command.description,
-                              color=discord.Color.purple())
-        embed.add_field(name='Usage:', value=command.signature, inline=False)
-        embed.set_footer(text="<> is required, [] is optional.")
+                              color=0x00f780)
+        if True:
+            required = ''
+            optional = ''
+            foobar = ''
+            if '<' in command.signature:
+                required = '`<> - required`\n'
+            if '[' in command.signature:
+                optional = '`[] - optional`\n'
+            if '|' in command.signature:
+                foobar = '`item1/item2 - choose either item1 or item2`\n'
+
+        if required != '' or optional != '':
+            embed.add_field(name='Syntax:', value=required + optional + foobar, inline=False)
+
+        signature = command.signature.replace("=", "").replace("None", "").replace("...", "").replace("|", "/").replace(
+            '"', "").replace("_", " ")
+        embed.add_field(name='Usage:',
+                        value=f"```{bot.command_prefix if 'Slash command only.' not in command.description else '/'}{command.name} {signature}```",
+                        inline=False)
 
         if command.aliases:
-            embed.add_field(name='Aliases:', value=command.aliases, inline=False)
+            embed.add_field(name='Aliases:', value='`' + '`, `'.join(command.aliases) + f'`, `{command.name}`',
+                            inline=False)
+
+        embed.set_footer(text=f'Use {bot.command_prefix}help [command] for more info on a specific command.')
 
         await self.context.reply(embed=embed)
 
@@ -97,7 +122,7 @@ class Start(commands.Cog):
         self.bot = bot
 
     @commands.hybrid_command(name="start", description="Start your journey!",
-                             usage="'ype a!start or /start to begin playin!")
+                             usage="type a!start or /start to begin playin!")
     async def start(self, ctx):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -137,7 +162,7 @@ class Currency(commands.Cog):
         self.bot = bot
 
     # Gives a user money from own balance
-    @commands.hybrid_command(name="give", aliases=['g'], usage="a!give <@user> <amount> , /give @user <amount>")
+    @commands.hybrid_command(name="give", aliases=['g'], usage=" <@user> <amount> , /give @user <amount>")
     async def give(self, ctx, user: discord.User, amount: int):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -156,13 +181,13 @@ class Currency(commands.Cog):
                     user_data_giver = user_giver_data[0]
                     user_data_target = user_target_data[0]
 
-                    if user_data_giver["wun"] >= amount:
+                    if user_data_giver["wuns"] >= amount:
 
-                        new_balance_target = user_data_target["wun"] + amount
-                        new_balance_giver = user_data_giver["wun"] - amount
+                        new_balance_target = user_data_target["wuns"] + amount
+                        new_balance_giver = user_data_giver["wuns"] - amount
                         amount_readable = "{:,}".format(amount)
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_giver, user_giver))
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_target, user_target))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_giver, user_giver))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_target, user_target))
                         embed = discord.Embed(title=f"{ctx.author} has blessed you",
                                               description=f"{ctx.author} has given {user_target} {Wuns}{amount_readable} wuns",
                                               color=0x04980f)
@@ -188,7 +213,7 @@ class Currency(commands.Cog):
 
     # Views a user balance if "None" returns Command Authors balance
     @commands.hybrid_command(aliases=['bal'], description=" View the Balance of yourself or others.",
-                             usage="a!bal [@user], /bal [@user]")
+                             usage="[@user], /bal [@user]")
     async def balance(self, ctx, user: discord.User = None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -203,7 +228,7 @@ class Currency(commands.Cog):
 
                 if len(user_data) != 0:  # User is found
                     user_data = user_data[0]
-                    balance = user_data["wun"]
+                    balance = user_data["wuns"]
                     balance_readable = "{:,}".format(balance)
 
                     embed = discord.Embed(title=f"{user}'s Balance", color=0x03F76A)
@@ -234,8 +259,8 @@ class Currency(commands.Cog):
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    new_balance = user_data["wun"] + claim_value
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, ctx.author.id))
+                    new_balance = user_data["wuns"] + claim_value
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, ctx.author.id))
                     embed = discord.Embed(title="**Claim Complete**", color=discord.Color.purple())
                     embed.add_field(name=f"Amount Claimed {Wuns}{claim_value} wuns",
                                     value=f"Your new balance is {Wuns}{new_balance}")
@@ -313,7 +338,7 @@ class User(commands.Cog):
                     await ctx.send(embed=embed)
 
     # Returns User's Inventory
-    @commands.hybrid_command(aliases=["inv", "i"], usage="a!inv,/inv")
+    @commands.hybrid_command(aliases=["inv", "i"], usage="or a!inv or /inv")
     async def inventory(self, ctx):
         async with asqlite.connect("card_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -336,7 +361,7 @@ class User(commands.Cog):
                 await connection.commit()
             # Select a card and assign it to the user for battling
 
-    @commands.hybrid_command(usage="a!select <Inventory ID> , /select <Inventory ID> ")
+    @commands.hybrid_command(usage=" <Inventory ID> , /select <Inventory ID> ")
     async def select(self, ctx, message=0):
         async with asqlite.connect("card_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -513,6 +538,8 @@ class Dev(commands.Cog):
                 user = await cursor.fetchall()
 
                 await connection.commit()
+                if ctx.author.id not in devids:
+                    return
 
                 if user == []:  # User not found in database
                     embed = discord.Embed(title=f"Unregistered User",
@@ -555,7 +582,7 @@ class Dev(commands.Cog):
     @commands.command(description='Syncs all commands globally. Only accessible to developers.')
     async def sync(self, ctx: Context, guilds: Greedy[discord.Object],
                    spec: Optional[Literal["~", "*", "^"]] = None) -> None:
-        if ctx.author.id != 301494278901989378 or 533672241448091660:
+        if ctx.author.id not in devids:
             return
 
         embed = discord.Embed(description="Syncing...", color=discord.Color.red())
@@ -595,21 +622,22 @@ class Dev(commands.Cog):
 
     @commands.hybrid_command()
     async def reset(self, ctx, user: discord.User):
+
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
+                if ctx.author.id not in devids:
+                    return
+                user_id = str(user.id)
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user_data = await cursor.fetchall()
 
-                user_id = int(ctx.author.id)
-                if user_id == 533672241448091660 or user_id == 301494278901989378:
-                    user_id = str(user.id)
-                    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
-                    user_data = await cursor.fetchall()
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    balance = user_data["wun"]
-                    new_balance = user_data["wun"] * 0
+                    balance = user_data["wuns"]
+                    new_balance = user_data["wuns"] * 0
                     balance_readable = "{:,}".format(balance)
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
                     embed = discord.Embed(title=f"a Dev has cursed you",
                                           description=f"{ctx.author} has taken away {Wuns}{balance_readable} wuns from your account",
                                           color=0xA80108)
@@ -620,10 +648,13 @@ class Dev(commands.Cog):
                                           color=0xA80108)
                     await ctx.send(embed=embed)
 
-    @commands.hybrid_command(name="devgive", aliases=['grant'], hidden=True)
-    async def devgive(self, ctx, user: discord.User, amount: int, hidden=True):
+    @commands.hybrid_command(name="devgive", aliases=['grant'])
+    async def devgive(self, ctx, user: discord.User, amount: int):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
+                if ctx.author.id not in devids:
+                    await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")
+                    return
 
                 user_id = str(user.id)
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
@@ -631,9 +662,9 @@ class Dev(commands.Cog):
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    new_balance = user_data["wun"] + amount
+                    new_balance = user_data["wuns"] + amount
                     amount_readable = "{:,}".format(amount)
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
                     embed = discord.Embed(title=f"a Dev has blessed you",
                                           description=f"{ctx.author} has given {user} {Wuns}{amount_readable} wuns",
                                           color=0x04980f)
