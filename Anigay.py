@@ -5,24 +5,36 @@ from dotenv import load_dotenv
 from MainCog import *
 import asyncio, asqlite
 from datetime import datetime, timedelta
-
+import re
 
 # Set up Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[  logging.FileHandler("bot.log"), logging.StreamHandler()]
+    handlers=[logging.FileHandler("bot.log"), logging.StreamHandler()]
 )
 logger = logging.getLogger()
-# Privileged Intents
-intents = discord.Intents.default()
-intents.members = True
-intents.message_content = True
-bot = commands.Bot(command_prefix='a!', intents=intents)
 
-#On_Ready runs the bot when the code is ran. Add's the cogs (commands)
+
+# Privileged Intents
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix="a!", intents=intents, case_insensitive=True, status="Self Creating")
+bot.help_command = MyHelp()
+
+
+
+# On_Ready runs the bot when the code is ran. Add's the cogs (commands)
 @bot.event
 async def on_ready():
+<<<<<<< HEAD
+    logger.info(f"Logged in as {bot.user}")
+    await bot.add_cog(Dev(bot))
+    await bot.add_cog(Start(bot))
+    await bot.add_cog(User(bot))
+    await bot.add_cog(Currency(bot))
+    await bot.add_cog(Help(bot))
+    await bot.add_cog(Card(bot))
+=======
 	logger.info(f"Logged in as {bot.user}")
 	await bot.add_cog(Debug(bot))
 	await bot.add_cog((sync(bot)))
@@ -31,10 +43,9 @@ async def on_ready():
 	await bot.add_cog(currency(bot))
 	await bot.add_cog(Card(bot))
 
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
 # Load Env file and load it then set the token var
 load_dotenv()
 TOKEN = os.getenv("Token")
-
-
-bot.run(TOKEN)
+bot.run(TOKEN, reconnect=True)
