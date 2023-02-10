@@ -493,7 +493,7 @@ class User(commands.Cog):
                     if card == None:
                         embed.add_field(name="**Card Selected:**", value=f"{card}", inline=False)
                     else:
-                        embed.add_field(name="**Card Selected:**", value=f"{card.card_stats['name']}", inline=False)
+                        embed.add_field(name="**Card Selected:**", value=f"{card.stats['name']}", inline=False)
                     embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar)
 
                     await ctx.send(embed=embed)
@@ -536,11 +536,15 @@ class User(commands.Cog):
                                     inline=False)
 =======
                 for i in range( 0, len(player_inventory) ):
-                    card = CardClass( player_inventory[i]['rarity'], player_inventory[i]['uid'] )
+                    card = CardClass( player_inventory[i]['uid'], player_inventory[i]['rarity'] )
 
                     await card.Query()
+<<<<<<< HEAD
                     embed.add_field(name=f"#{str(i+1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]", value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}", inline=False)
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
+=======
+                    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+>>>>>>> battle
 
                 await ctx.send(embed=embed)
 
@@ -591,11 +595,15 @@ class User(commands.Cog):
                         async with connection.cursor() as cursor:
                             await cursor.execute( """UPDATE Users set card=? WHERE id=?""", ( card_id, user ) )
 
-                    card = CardClass( player_inventory[card_index]['rarity'], player_inventory[card_index]['uid'] )
+                    card = CardClass( player_inventory[card_index]['uid'], player_inventory[card_index]['rarity'] )
                     await card.Query()
 
+<<<<<<< HEAD
                     embed = discord.Embed(title=f"Card Selected!", description=f"{card.card_stats['name']} was selected for battle!", color=0x03F76A)
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
+=======
+                    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+>>>>>>> battle
 
                     await ctx.send(embed=embed)
 
@@ -691,6 +699,83 @@ class Card(commands.Cog):
     @commands.hybrid_command(aliases=['ci'])
     async def cinfo(self, ctx, message=None, message2=None):
 =======
+
+    # Battle function TESTING!!
+    @commands.hybrid_command(aliases=["bt"])
+    async def battle( self, ctx, amount=1 ):
+        user_id = ctx.author.id
+        user = await Database.verifyUser( user_id )
+
+        if user == []:
+            embed = discord.Embed(title=f"Unregistered User",
+                                  description=f"Looks like you haven't started yet!! Type a!start!",
+                                  color=0xA80108)
+            await ctx.send(embed=embed)
+        else:
+
+            user = user[0]
+
+            if user["card"] != 0:
+                card = CardClass(user["card"])
+                await card.Query()
+                card_hp = card.stats["hp"] * 10
+
+                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
+                embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
+
+                bt = await ctx.send(embed=embed)
+
+
+                while card_hp > 0:
+                    card_hp -= random.randint(10, 25)
+
+                    new_embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
+                    new_embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
+
+                    await bt.edit(embed=new_embed)
+                    await asyncio.sleep(1)
+
+            else:
+                embed = discord.Embed(title=f"No Card!!",
+                                    description=f"Please equip a card before battling!!",
+                                    color=0xA80108)
+
+
+class Game(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    # Manage Locations
+    @commands.hybrid_command(aliases=["loc"])
+    async def location(self, ctx, message=None):
+        async with asqlite.connect("player_data.db") as connection:
+            async with connection.cursor() as cursor:
+
+                if message == None:
+                    with open("cards.json", "r") as file:
+                        series = json.load(file)
+
+                    realms = []
+
+                    for i in series:
+                        realms.append(i)
+                    embed = discord.Embed(title=f"Realms",
+                                          description=f"List of Realms listed below",
+                                          color=0xF76103)
+
+                    index = 1
+                    for i in realms:
+                        embed.add_field(name=f"Realm {index}", value=f"{i}", inline=False)
+                        index += 1
+
+                    await ctx.send(embed=embed)
+
+                else:
+                    embed = discord.Embed(title=f"Realm not found!!",
+                                          description=f"Please specify a legitamate realm number!!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+
 
 
 
@@ -791,8 +876,13 @@ class Dev(commands.Cog):
                     return
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if name == None or rarity == None:  # Verify arguments
 =======
+=======
+                rarity = rarity.lower()
+
+>>>>>>> battle
 
                 if name == None or rarity == None: #Verify arguments
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
@@ -800,7 +890,11 @@ class Dev(commands.Cog):
                                           description=f"One or more arguments invalid",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
-
+                elif not rarity in ("ur", "sr"):
+                    embed = discord.Embed(title=f"Error!",
+                                          description=f"Invalid Rarity!!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
                 else:
                     card_list = await Database.generateCardList()
 
@@ -956,5 +1050,11 @@ async def setup(bot):
     await bot.add_cog(Currency(bot))
 =======
     await bot.add_cog(currency(bot))
+<<<<<<< HEAD
     await bot.add_cog(currency(bot))
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
+=======
+    await bot.add_cog(Card(bot))
+    await bot.add_cog(Game(bot))
+
+>>>>>>> battle
