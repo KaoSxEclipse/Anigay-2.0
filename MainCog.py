@@ -419,18 +419,28 @@ class Game(commands.Cog):
 
     # Manage Locations
     @commands.hybrid_command(aliases=["loc"])
-    async def location(self, ctx, message=None):
+    async def location(self, ctx, loc=None, floor=None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
+                user_id = str(ctx.author.id)
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user = await cursor.fetchall()
+                user = user[0]
 
-                if message == None:
-                    with open("cards.json", "r") as file:
-                        series = json.load(file)
-
+                with open("cards.json", "r") as file:
+                    series = json.load(file)
                     realms = []
 
                     for i in series:
                         realms.append(i)
+
+                max_loc = int(str(user["maxloc"]).split(".")[0])
+                max_floor = int(str(user["maxloc"]).split(".")[1])
+                
+                if loc != None:
+                    loc = int(loc) - 1
+
+                if loc == None:
                     embed = discord.Embed(title=f"Realms",
                                           description=f"List of Realms listed below",
                                           color=0xF76103)
@@ -441,6 +451,34 @@ class Game(commands.Cog):
                         index += 1
 
                     await ctx.send(embed=embed)
+
+                elif 0 <= int(loc) < len(realms): ## Existing Realms
+                    if int(loc) > max_loc: # Player has not cleared the previous location yet
+                        embed = discord.Embed(title=f"You have not unlocked this Realm!!",
+                                          description=f"Please clear the previous Realms and floors before ascending to this realm.",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+                    else:
+                        if int(floor) > max_floor: # Player has not cleared the previous floor yet
+                            embed = discord.Embed(title=f"You have not unlocked this area!!",
+                                          description=f"Please clear the previous areas before progressing your journey.",
+                                          color=0xF76103)
+                            await ctx.send(embed=embed)
+                        else:
+                            location = float(str(loc)+".00"+str(floor))
+                            print(location)
+                            await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
+
+                            card = series[realms[int(loc)]][int(floor)]
+
+                            print(card)
+
+                            embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
+                                          description=f"{card[1]} stands before you.",
+                                          color=0xF76103)
+                            await ctx.send(embed=embed)
+
+
 
                 else:
                     embed = discord.Embed(title=f"Realm not found!!",
