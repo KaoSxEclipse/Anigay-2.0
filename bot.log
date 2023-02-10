@@ -7662,4 +7662,49 @@ discord.ext.commands.errors.CommandNotFound: Command "info" is not found
 2023-02-06 10:32:45,872 - root - INFO - Logged in as Anigay 2.0#7825
 2023-02-06 10:51:53,496 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "credits" is not found
->>>>>>> 4ab6fc0 (update WIP)
+2023-02-06 14:52:48,029 - discord.client - INFO - logging in using static token
+2023-02-06 14:52:49,067 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a696feaad492624de032923d01b48908).
+2023-02-06 14:52:51,106 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 14:52:54,760 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 314, in profile
+    embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-06 15:19:14,941 - discord.client - INFO - logging in using static token
+2023-02-06 15:19:15,358 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d9433f02a1914be6c22c0fe226654347).
+2023-02-06 15:19:17,375 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-06 15:20:10,453 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 316, in profile
+    embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wun"]} wuns', inline=True)
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-02-06 15:20:35,542 - discord.client - INFO - logging in using static token
+2023-02-06 15:20:36,021 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d68bc3fee6640af65251cd875878c97).
+2023-02-06 15:20:38,039 - root - INFO - Logged in as Anigay 2.0#7825
+>>>>>>> d742c9d (Fixed commands (Profile and all currency commands))

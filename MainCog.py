@@ -109,9 +109,9 @@ class currency(commands.Cog):
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    new_balance = user_data["wun"] + amount
+                    new_balance = user_data["wuns"] + amount
                     amount_readable = "{:,}".format(amount)
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
                     embed = discord.Embed(title=f"a Dev has blessed you",
                                           description=f"{ctx.author} has given {user} {Wuns}{amount_readable} wuns",
                                           color=0x04980f)
@@ -144,13 +144,13 @@ class currency(commands.Cog):
                     user_data_giver = user_giver_data[0]
                     user_data_target = user_target_data[0]
 
-                    if user_data_giver["wun"] >= amount:
+                    if user_data_giver["wuns"] >= amount:
 
-                        new_balance_target = user_data_target["wun"] + amount
-                        new_balance_giver = user_data_giver["wun"] - amount
+                        new_balance_target = user_data_target["wuns"] + amount
+                        new_balance_giver = user_data_giver["wuns"] - amount
                         amount_readable = "{:,}".format(amount)
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_giver, user_giver))
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_target, user_target))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_giver, user_giver))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_target, user_target))
                         embed = discord.Embed(title=f"{ctx.author} has blessed you",
                                               description=f"{ctx.author} has given {user_target} {Wuns}{amount_readable} wuns",
                                               color=0x04980f)
@@ -190,7 +190,7 @@ class currency(commands.Cog):
 
                 if len(user_data) != 0:  # User is found
                     user_data = user_data[0]
-                    balance = user_data["wun"]
+                    balance = user_data["wuns"]
                     balance_readable = "{:,}".format(balance)
 
                     embed = discord.Embed(title=f"{user}'s Balance", color=0x03F76A)
@@ -219,8 +219,8 @@ class currency(commands.Cog):
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    new_balance = user_data["wun"] + claim_value
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, ctx.author.id))
+                    new_balance = user_data["wuns"] + claim_value
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, ctx.author.id))
                     embed = discord.Embed(title="**Claim Complete**", color=discord.Color.purple())
                     embed.add_field(name=f"Amount Claimed {Wuns}{claim_value} wuns",
                                     value=f"Your new balance is {Wuns}{new_balance}")
@@ -252,10 +252,10 @@ class currency(commands.Cog):
 
                     if len(user_data) != 0:  ## User is found
                         user_data = user_data[0]
-                        balance = user_data["wun"]
-                        new_balance = user_data["wun"] * 0
+                        balance = user_data["wuns"]
+                        new_balance = user_data["wuns"] * 0
                         balance_readable = "{:,}".format(balance)
-                        await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, user_id))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
                         embed = discord.Embed(title=f"a Dev has cursed you",
                                               description=f"{ctx.author} has taken away {Wuns}{balance_readable} wuns from your account",
                                               color=0xA80108)
@@ -271,7 +271,7 @@ class User(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 # View's profile of others, if no user specified returns your profile
-    @commands.hybrid_command(name="profile", description="Get an overview of your profile.")
+    @commands.hybrid_command(name="profile", description="Get an overview of your profile.", aliases=["p"])
     @bot.listen('on_message')
     async def profile(self, ctx, message="<", user: discord.Member = None):
         async with asqlite.connect("player_data.db") as connection:
@@ -311,10 +311,10 @@ class User(commands.Cog):
                     embed = discord.Embed(title=f"__{user.name}'s__ Profile",
                                           description="",
                                           color=0x75FFEE)
-                    embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
-                    embed.add_field(name="**Experience**", value=f'{user_data["exp"]}/{user_data["mexp"]}', inline=True)
-                    embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wun"]} wuns', inline=True)
-                    embed.add_field(name="**Stamina**", value=f'{user_data["stamina"]}/{user_data["mstamina"]}',
+                    #embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
+                    embed.add_field(name="**Experience**", value=f'{user_data["exp"]}/{user_data["exp"]}', inline=True)
+                    embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wuns"]} wuns', inline=True)
+                    embed.add_field(name="**Stamina**", value=f'{user_data["stamina"]}/{user_data["stamina"]}',
                                     inline=True)
                     embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar)
 
