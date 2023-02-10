@@ -246,7 +246,7 @@ class Currency(commands.Cog):
 
     @commands.hybrid_command(name="claim",
                              description="get a random amount of gold added to your balance every 8 hours.",
-                             usage="a!claim or /claim")
+                             usage=" or /claim")
     @commands.cooldown(1, 28800, type=BucketType.user)
     @commands.has_permissions(view_channel=True, read_messages=True, send_messages=True)
     async def claim(self, ctx):
