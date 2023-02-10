@@ -5,6 +5,10 @@ from discord.ext.commands import *
 from typing import Optional, Literal
 from discord.ext.commands.cooldowns import BucketType
 from datetime import timedelta
+from discord.utils import get
+import Database
+from CardClass import CardClass
+import random
 
 # Set up Logging
 logging.basicConfig(
@@ -25,6 +29,7 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 
+<<<<<<< HEAD
 class MyHelp(commands.HelpCommand):
     async def send_bot_help(self, mapping, filter_commands=True):
         embed = discord.Embed(title='Need a hand?', color=discord.Color.teal())
@@ -83,14 +88,26 @@ class MyHelp(commands.HelpCommand):
 
 
 class Help(commands.Cog):
+=======
+# test command can be removed / ignored
+class Debug(commands.Cog):
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     def __init__(self, bot):
         self.bot = bot
         self._original_help_command = bot.help_command
         bot.help_command = MyHelp()
         bot.help_command.cog = self
 
+<<<<<<< HEAD
     def cog_unload(self):
         self.bot.help_command = self._original_help_command
+=======
+    @commands.hybrid_command(name="test", description="Test Command")
+    async def test(self, ctx):
+        """Test Command"""
+        embed = discord.Embed(title="Test Embed", description="App Command Invoked")
+        await ctx.send(embed=embed, ephemeral=True)
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
 
 # Profile Start commands, prints User's ID and name, returns an embed for now
@@ -112,7 +129,19 @@ class Start(commands.Cog):
 
                 if len(user_data) == 0:
                     ## User doesn't exist
-                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 1, 0, 500, 0, 10, 10)", (user_id))
+                    ## Insert id, exp, stamina, card
+                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+
+                    ## Change code later on so it selects randomly from db
+
+                    async with asqlite.connect("card_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute("SELECT * FROM Dex")
+
+                            cards = await cursor.fetchall()
+                            cards = len(cards)
+
+                    await Database.generateCard( random.randint(0, cards-1), user_id, 'sr', 1 )
 
                     embed = discord.Embed(title=f"Welcome to Anigame 2.0 {ctx.author}",
                                           description="You've been given *Super Rare* __card__ to start your Journey!",
@@ -138,14 +167,47 @@ class Currency(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+<<<<<<< HEAD
     # Gives a user money from own balance
     @commands.hybrid_command(name="give", aliases=['g'], usage="a!give <@user> <amount> , /give @user <amount>")
+    async def give(self, ctx, user: discord.User, amount: int):
+=======
+    @commands.hybrid_command(name="devgive", aliases=['grant'])
+    async def devgive(self, ctx, user: discord.User, amount: int):
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
+        async with asqlite.connect("player_data.db") as connection:
+            async with connection.cursor() as cursor:
+
+                user_giver = int(ctx.author.id)
+
+<<<<<<< HEAD
+=======
+                if len(user_data) != 0:  ## User is found
+                    user_data = user_data[0]
+                    new_balance = user_data["wuns"] + amount
+                    amount_readable = "{:,}".format(amount)
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+                    embed = discord.Embed(title=f"a Dev has blessed you",
+                                          description=f"{ctx.author} has given {user} {Wuns}{amount_readable} wuns",
+                                          color=0x04980f)
+                    embed.set_thumbnail(url=ctx.author.avatar)
+                    await ctx.send(embed=embed)
+                else:  ## User not found
+                    embed = discord.Embed(title=f"{user} not found",
+                                          description=f"Have {user} type a!start!",
+                                          color=0xA80108)
+                    embed.set_thumbnail(url=user.avatar)
+                    await ctx.send(embed=embed)
+
+    # Gives a user money from own balance
+    @commands.hybrid_command(name="give", aliases=['g'])
     async def give(self, ctx, user: discord.User, amount: int):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
 
                 user_giver = int(ctx.author.id)
 
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                 user_target = int(user.id)
 
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_giver,))
@@ -158,6 +220,7 @@ class Currency(commands.Cog):
                     user_data_giver = user_giver_data[0]
                     user_data_target = user_target_data[0]
 
+<<<<<<< HEAD
                     if user_data_giver["wun"] >= amount:
 
                         new_balance_target = user_data_target["wun"] + amount
@@ -165,6 +228,15 @@ class Currency(commands.Cog):
                         amount_readable = "{:,}".format(amount)
                         await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_giver, user_giver))
                         await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance_target, user_target))
+=======
+                    if user_data_giver["wuns"] >= amount:
+
+                        new_balance_target = user_data_target["wuns"] + amount
+                        new_balance_giver = user_data_giver["wuns"] - amount
+                        amount_readable = "{:,}".format(amount)
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_giver, user_giver))
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance_target, user_target))
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                         embed = discord.Embed(title=f"{ctx.author} has blessed you",
                                               description=f"{ctx.author} has given {user_target} {Wuns}{amount_readable} wuns",
                                               color=0x04980f)
@@ -189,8 +261,12 @@ class Currency(commands.Cog):
                         await ctx.send(embed=embed)
 
     # Views a user balance if "None" returns Command Authors balance
+<<<<<<< HEAD
     @commands.hybrid_command(aliases=['bal'], description=" View the Balance of yourself or others.",
                              usage="a!bal [@user], /bal [@user]")
+=======
+    @commands.hybrid_command(aliases=['bal'])
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     async def balance(self, ctx, user: discord.User = None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
@@ -205,7 +281,11 @@ class Currency(commands.Cog):
 
                 if len(user_data) != 0:  # User is found
                     user_data = user_data[0]
+<<<<<<< HEAD
                     balance = user_data["wun"]
+=======
+                    balance = user_data["wuns"]
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                     balance_readable = "{:,}".format(balance)
 
                     embed = discord.Embed(title=f"{user}'s Balance", color=0x03F76A)
@@ -221,9 +301,13 @@ class Currency(commands.Cog):
 
         # Random Claim command, need to add a cooldown. possible feature early on to earn Currency?
 
+<<<<<<< HEAD
     @commands.hybrid_command(name="claim",
                              description="get a random amount of gold added to your balance every 8 hours.",
                              usage="a!claim or /claim")
+=======
+    @commands.hybrid_command(name="claim", description="get a random amount of gold added to your balance")
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     @commands.cooldown(1, 28800, type=BucketType.user)
     @commands.has_permissions(view_channel=True, read_messages=True, send_messages=True)
     async def claim(self, ctx):
@@ -236,12 +320,16 @@ class Currency(commands.Cog):
 
                 if len(user_data) != 0:  ## User is found
                     user_data = user_data[0]
-                    new_balance = user_data["wun"] + claim_value
-                    await cursor.execute("""UPDATE Users set wun=? WHERE id=?""", (new_balance, ctx.author.id))
+                    new_balance = user_data["wuns"] + claim_value
+                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, ctx.author.id))
                     embed = discord.Embed(title="**Claim Complete**", color=discord.Color.purple())
                     embed.add_field(name=f"Amount Claimed {Wuns}{claim_value} wuns",
                                     value=f"Your new balance is {Wuns}{new_balance}")
+<<<<<<< HEAD
                     await ctx.send(embed=embed)
+=======
+                await ctx.send(embed=embed)
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
         @self.claim.error
         async def claim(self, ctx, error):
@@ -255,28 +343,76 @@ class Currency(commands.Cog):
             else:
                 raise error
 
+<<<<<<< HEAD
+=======
+    @commands.hybrid_command()
+    async def reset(self, ctx, user: discord.User):
+        async with asqlite.connect("player_data.db") as connection:
+            async with connection.cursor() as cursor:
+
+                user_id = int(ctx.author.id)
+                if user_id == 533672241448091660 or user_id == 301494278901989378 or user_id == 755186746966147082:
+
+                    user_id = str(user.id)
+                    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                    user_data = await cursor.fetchall()
+
+                    if len(user_data) != 0:  ## User is found
+                        user_data = user_data[0]
+                        balance = user_data["wuns"]
+                        new_balance = user_data["wuns"] * 0
+                        balance_readable = "{:,}".format(balance)
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+                        embed = discord.Embed(title=f"a Dev has cursed you",
+                                              description=f"{ctx.author} has taken away {Wuns}{balance_readable} wuns from your account",
+                                              color=0xA80108)
+                        await ctx.send(embed=embed)
+                    else:  ## User not found
+                        embed = discord.Embed(title=f"{user.name} not found",
+                                              description=f"Have {user.name} type a!start!",
+                                              color=0xA80108)
+                        await ctx.send(embed=embed)
+
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
 class User(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+<<<<<<< HEAD
 
     # View's profile of others, if no user specified returns your profile
+=======
+# View's profile of others, if no user specified returns your profile
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     @commands.hybrid_command(name="profile", description="Get an overview of your profile.", aliases=["p"])
     @bot.listen('on_message')
     async def profile(self, ctx, message="<", user: discord.Member = None):
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
+<<<<<<< HEAD
                 # print("message:", message)
 
                 if message == "<":
                     user = ctx.author
                 elif not "<" in str(message):
+=======
+                #print("message:", message)
+
+                if message == "<":
+                    user = ctx.author
+                elif not "<"  in str(message):
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                     return
                 else:
 
                     user_id = int(message[2:-1])
 
+<<<<<<< HEAD
                     user = await ctx.bot.fetch_user(user_id)
+=======
+                    user = await ctx.bot.fetch_user( user_id )
+
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                 if user == None or user == ctx.author:
                     user_id = str(ctx.author.id)
@@ -288,7 +424,11 @@ class User(commands.Cog):
                     user_data = user_data[0]
 
                     if user_data["card"] != 0:
+<<<<<<< HEAD
                         card = CardClass(uid=user_data['card'])
+=======
+                        card = CardClass( uid=user_data['card'] )
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                         await card.Query()
                     else:
@@ -297,7 +437,11 @@ class User(commands.Cog):
                     embed = discord.Embed(title=f"__{user.name}'s__ Profile",
                                           description="",
                                           color=0x75FFEE)
+<<<<<<< HEAD
                     # embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
+=======
+                    #embed.add_field(name="**Level**", value=f'{user_data["level"]}', inline=True)
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                     embed.add_field(name="**Experience**", value=f'{user_data["exp"]}/{user_data["exp"]}', inline=True)
                     embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wuns"]} wuns', inline=True)
                     embed.add_field(name="**Stamina**", value=f'{user_data["stamina"]}/{user_data["stamina"]}',
@@ -314,17 +458,27 @@ class User(commands.Cog):
                                           color=0xA80108)
                     await ctx.send(embed=embed)
 
+<<<<<<< HEAD
     # Returns User's Inventory
     @commands.hybrid_command(aliases=["inv", "i"], usage="a!inv,/inv")
+=======
+    # Return the Player inventory by cycling through card database
+    @commands.hybrid_command(aliases=["inv"])
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     async def inventory(self, ctx):
         async with asqlite.connect("card_data.db") as connection:
             async with connection.cursor() as cursor:
                 user = ctx.author.id
+<<<<<<< HEAD
                 await cursor.execute("SELECT * FROM Upper WHERE owner=?", (user,))
+=======
+                await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                 player_inventory = await cursor.fetchall()
 
                 embed = discord.Embed(title=f"{ctx.author}'s Inventory:", color=0x03F76A)
 
+<<<<<<< HEAD
                 for i in range(0, len(player_inventory)):
                     card = CardClass(player_inventory[i]['rarity'], player_inventory[i]['uid'])
 
@@ -332,22 +486,40 @@ class User(commands.Cog):
                     embed.add_field(name=f"#{str(i + 1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]",
                                     value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}",
                                     inline=False)
+=======
+                for i in range( 0, len(player_inventory) ):
+                    card = CardClass( player_inventory[i]['rarity'], player_inventory[i]['uid'] )
+
+                    await card.Query()
+                    embed.add_field(name=f"#{str(i+1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]", value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}", inline=False)
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                 await ctx.send(embed=embed)
 
                 await connection.commit()
+<<<<<<< HEAD
             # Select a card and assign it to the user for battling
 
     @commands.hybrid_command(usage="a!select <Inventory ID> , /select <Inventory ID> ")
+=======
+
+    # Select a card and assign it to the user for battling
+    @commands.hybrid_command()
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
     async def select(self, ctx, message=0):
         async with asqlite.connect("card_data.db") as connection:
             async with connection.cursor() as cursor:
                 user = ctx.author.id
+<<<<<<< HEAD
                 await cursor.execute("SELECT * FROM Upper WHERE owner=?", (user,))
+=======
+                await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                 player_inventory = await cursor.fetchall()
 
                 if 0 < int(message) <= len(player_inventory):
                     # Proper card is in inventory
+<<<<<<< HEAD
                     card_index = int(message) - 1
                     card_id = player_inventory[card_index]["uid"]
                     async with asqlite.connect("player_data.db") as connection:
@@ -360,10 +532,23 @@ class User(commands.Cog):
                     embed = discord.Embed(title=f"Card Selected!",
                                           description=f"{card.card_stats['name']} was selected for battle!",
                                           color=0x03F76A)
+=======
+                    card_index = int(message)-1
+                    card_id = player_inventory[card_index]["uid"]
+                    async with asqlite.connect("player_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute( """UPDATE Users set card=? WHERE id=?""", ( card_id, user ) )
+
+                    card = CardClass( player_inventory[card_index]['rarity'], player_inventory[card_index]['uid'] )
+                    await card.Query()
+
+                    embed = discord.Embed(title=f"Card Selected!", description=f"{card.card_stats['name']} was selected for battle!", color=0x03F76A)
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                     await ctx.send(embed=embed)
 
                     await connection.commit()
+<<<<<<< HEAD
     # Select a card and assign it to the user for battling
 
 
@@ -453,6 +638,17 @@ class Card(commands.Cog):
     # Show the Information on a single card in the index
     @commands.hybrid_command(aliases=['ci'])
     async def cinfo(self, ctx, message=None, message2=None):
+=======
+
+
+
+class Card(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+    # Show the Information on a single card in the index
+    @commands.hybrid_command(aliases=['ci'])
+    async def cinfo(self, ctx, message = None, message2 = None):
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
         async with asqlite.connect("card_data.db") as connection:
             async with connection.cursor() as cursor:
 
@@ -476,7 +672,11 @@ class Card(commands.Cog):
 
                 else:
 
+<<<<<<< HEAD
                     await cursor.execute("SELECT * FROM Dex WHERE name=?", (message,))
+=======
+                    await cursor.execute( "SELECT * FROM Dex WHERE name=?", (message,))
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                     card_index = await cursor.fetchall()
 
@@ -494,6 +694,7 @@ class Card(commands.Cog):
                         await ctx.send(embed=embed)
                     else:
                         embed = discord.Embed(title=f"Card not found",
+<<<<<<< HEAD
                                               description=f"Please specify a legitamate card name!",
                                               color=0xF76103)
                         await ctx.send(embed=embed)
@@ -507,6 +708,14 @@ class Dev(commands.Cog):
 
     @commands.hybrid_command(name="summon", description="Summon a card. Param: target, card name, rarity")
     async def summon(self, ctx, name=None, rarity="sr"):
+=======
+                                          description=f"Please specify a legitamate card name!",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+
+    @commands.hybrid_command(name="summon", description="Summon a card. Param: target, card name, rarity")
+    async def summon(self, ctx, name=None, rarity="sr" ):
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
         async with asqlite.connect("player_data.db") as connection:
             async with connection.cursor() as cursor:
                 user_id = ctx.author.id
@@ -516,14 +725,23 @@ class Dev(commands.Cog):
 
                 await connection.commit()
 
+<<<<<<< HEAD
                 if user == []:  # User not found in database
+=======
+                if user == []: # User not found in database
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                     embed = discord.Embed(title=f"Unregistered User",
                                           description=f"Looks like you haven't started yet!! Type a!start!",
                                           color=0xA80108)
                     await ctx.send(embed=embed)
                     return
 
+<<<<<<< HEAD
                 if name == None or rarity == None:  # Verify arguments
+=======
+
+                if name == None or rarity == None: #Verify arguments
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
                     embed = discord.Embed(title=f"Error!",
                                           description=f"One or more arguments invalid",
                                           color=0xF76103)
@@ -536,9 +754,16 @@ class Dev(commands.Cog):
                         if name.lower() in i.lower():
                             name = i
 
+<<<<<<< HEAD
                     async with asqlite.connect("card_data.db") as connection:
                         async with connection.cursor() as cursor:
                             await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
+=======
+                    
+                    async with asqlite.connect("card_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute( "SELECT * FROM Dex WHERE name=?", (name,))
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
                             card_index = await cursor.fetchall()
 
@@ -547,12 +772,24 @@ class Dev(commands.Cog):
 
                     card_index = card_data["dex"]
 
+<<<<<<< HEAD
                     await Database.generateCard(card_index, user_id, rarity, 1)
 
                     embed = discord.Embed(title=f"Card Summoned!",
                                           description=f"A {rarity.upper()} {name} was summoned", color=0x03F76A)
 
                     await ctx.send(embed=embed)
+=======
+
+                    await Database.generateCard( card_index, user_id, rarity, 1 )
+
+                    embed = discord.Embed(title=f"Card Summoned!", description=f"A {rarity.upper()} {name} was summoned", color=0x03F76A)
+
+                    await ctx.send(embed=embed)
+
+
+
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
     @commands.command(description='Syncs all commands globally. Only accessible to developers.')
     async def sync(self, ctx: Context, guilds: Greedy[discord.Object],
@@ -591,8 +828,12 @@ class Dev(commands.Cog):
             else:
                 ret += 1
 
+<<<<<<< HEAD
         await ctx.send(embed=discord.Embed(description=f"Synced the tree to {ret}/{len(guilds)}.",
                                            color=discord.Color.green()))
+=======
+        await ctx.send(embed=discord.Embed(description=f"Synced the tree to {ret}/{len(guilds)}.", color=discord.Color.green()))
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
         print("Synced.")
 
     @commands.hybrid_command()
@@ -653,4 +894,9 @@ class Dev(commands.Cog):
 async def setup(bot):
     await bot.add_cog((bot))
     await bot.add_cog(User(bot))
+<<<<<<< HEAD
     await bot.add_cog(Currency(bot))
+=======
+    await bot.add_cog(currency(bot))
+    await bot.add_cog(currency(bot))
+>>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
