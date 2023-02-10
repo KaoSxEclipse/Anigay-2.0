@@ -42,6 +42,7 @@ async def on_ready():
 	await bot.add_cog(User(bot))
 	await bot.add_cog(currency(bot))
 	await bot.add_cog(Card(bot))
+	await bot.add_cog(Game(bot))
 
 >>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 

@@ -1,0 +1,242 @@
+{
+    "jujutsu kaisen": [
+        [
+            5,
+            "Kento Nanami",
+            69,
+            92,
+            84,
+            80,
+            "Pain for Power"
+        ],
+        [
+            6,
+            "Megumi Fushiguro",
+            86,
+            71,
+            92,
+            78,
+            "Endurance"
+        ],
+        [
+            7,
+            "Nobara Kugisaki",
+            95,
+            73,
+            78,
+            85,
+            "Evasion"
+        ],
+        [
+            8,
+            "Ryomen Sukuna",
+            85,
+            78,
+            85,
+            78,
+            "Life Sap"
+        ],
+        [
+            9,
+            "Satoru Gojo",
+            86,
+            83,
+            78,
+            78,
+            "Berserker"
+        ],
+        [
+            10,
+            "Toge Inumaki",
+            86,
+            89,
+            73,
+            81,
+            "Paralysis"
+        ],
+        [
+            11,
+            "Yuji Itadori",
+            80,
+            90,
+            75,
+            85,
+            "Unlucky Coin"
+        ]
+    ],
+    "demon slayer": [
+        [
+            12,
+            "Yuta Okkotsu",
+            85,
+            93,
+            73,
+            76,
+            "Paralysis"
+        ],
+        [
+            13,
+            "Giyu Tomioka",
+            76,
+            80,
+            81,
+            93,
+            "Double-edged Strike"
+        ],
+        [
+            14,
+            "Inosuke Hashibira",
+            90,
+            88,
+            81,
+            62,
+            "Amplifier"
+        ],
+        [
+            15,
+            "Kanao Tsuyuri",
+            69,
+            81,
+            96,
+            77,
+            "Berserker"
+        ],
+        [
+            16,
+            "Kyojuro Rengoku",
+            81,
+            93,
+            74,
+            80,
+            "Berserker"
+        ],
+        [
+            17,
+            "Muzan Kibutsuji",
+            95,
+            75,
+            80,
+            75,
+            "Devour"
+        ],
+        [
+            18,
+            "Nezuko Kamado",
+            84,
+            82,
+            80,
+            78,
+            "Vengeance"
+        ],
+        [
+            19,
+            "Obanai Iguro",
+            77,
+            90,
+            85,
+            75,
+            "Poison"
+        ],
+        [
+            20,
+            "Shinobu Kocho",
+            93,
+            83,
+            80,
+            72,
+            "Poison"
+        ],
+        [
+            21,
+            "Tanjiro Kamado",
+            80,
+            82,
+            77,
+            89,
+            "Berserker"
+        ],
+        [
+            22,
+            "Zenitsu Agatsuma",
+            80,
+            73,
+            87,
+            88,
+            "Paralysis"
+        ]
+    ],
+    "chainsaw man": [
+        [
+            23,
+            "Aki Hayakawa",
+            79,
+            94,
+            76,
+            80,
+            "Temporal Rewind"
+        ],
+        [
+            24,
+            "Angel Devil",
+            88,
+            91,
+            73,
+            76,
+            "Life Sap"
+        ],
+        [
+            25,
+            "Chainsaw man",
+            69,
+            102,
+            86,
+            69,
+            "Bloodthirster"
+        ],
+        [
+            26,
+            "Denji",
+            84,
+            88,
+            91,
+            70,
+            "Paralysis"
+        ],
+        [
+            27,
+            "Himeno",
+            78,
+            93,
+            82,
+            72,
+            "Pain for Power"
+        ],
+        [
+            28,
+            "Makima",
+            84,
+            92,
+            80,
+            76,
+            "Miracle Injection"
+        ],
+        [
+            29,
+            "Power",
+            73,
+            92,
+            86,
+            82,
+            "Regeneration"
+        ],
+        [
+            30,
+            "Reze",
+            73,
+            101,
+            83,
+            70,
+            "Time Bomb"
+        ]
+    ]
+}
