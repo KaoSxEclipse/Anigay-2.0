@@ -125,12 +125,6 @@ class Debug(commands.Cog):
     def cog_unload(self):
         self.bot.help_command = self._original_help_command
 =======
-    @commands.hybrid_command(name="test", description="Test Command")
-    async def test(self, ctx):
-        """Test Command"""
-        embed = discord.Embed(title="Test Embed", description="App Command Invoked")
-        await ctx.send(embed=embed, ephemeral=True)
->>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
 
 # Profile Start commands, prints User's ID and name, returns an embed for now
@@ -185,7 +179,7 @@ class Start(commands.Cog):
                 await connection.commit()
 
 
-# Allows Devs (Anyone atm) to give others currency + view the Balance of yourself and others.
+# Currency Based Commands go in this Cog
 class Currency(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
