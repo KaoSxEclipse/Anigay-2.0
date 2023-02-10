@@ -4608,4 +4608,1172 @@ Traceback (most recent call last):
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
 2023-02-01 19:49:33,537 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6f5c89a27a53735c85e865a8ece3a842.
+<<<<<<< HEAD
 >>>>>>> 351d4b2 (Added Give command, fixed devgive)
+=======
+2023-02-02 10:54:46,861 - discord.client - INFO - logging in using static token
+2023-02-02 10:54:47,877 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 28115a6df2622a6d004f36564ef5cd56).
+2023-02-02 10:54:49,889 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 10:55:49,333 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "select" is not found
+2023-02-02 10:57:55,546 - discord.client - INFO - logging in using static token
+2023-02-02 10:57:55,934 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0071a3203a42bd1f6474268e62d60077).
+2023-02-02 10:57:57,940 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 12:03:41,465 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-02 12:03:59,229 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: da86e97a6ef67a33bd542d7f6b409a56).
+2023-02-02 12:04:01,240 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 12:04:01,241 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-02 12:04:47,086 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 22.0s behind.
+2023-02-02 13:24:15,029 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-02 13:24:20,343 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4018974c2a506fc8f74e4def9d2d753b).
+2023-02-02 13:24:22,371 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 13:24:22,372 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-02 14:51:16,099 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-02 14:51:21,493 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 38a4715561547e7256353537650676e7).
+2023-02-02 14:51:23,507 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-02 14:51:23,508 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-02 16:51:12,704 - discord.client - ERROR - Attempting a reconnect in 1.85s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-02-02 16:51:14,577 - discord.client - ERROR - Attempting a reconnect in 2.14s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-02-02 16:51:16,731 - discord.client - ERROR - Attempting a reconnect in 7.17s
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 624, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 536, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-d.discord.gg:443 ssl:default [Temporary failure in name resolution]
+2023-02-02 16:51:24,038 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 38a4715561547e7256353537650676e7.
+2023-02-03 01:19:45,431 - discord.client - INFO - logging in using static token
+2023-02-03 01:19:45,825 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 918254e7d15490c962c2cbfd7d71edd6).
+2023-02-03 01:19:47,830 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:21:44,722 - discord.client - INFO - logging in using static token
+2023-02-03 01:21:45,178 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bd690b8483bea3d42da6e248f30d5703).
+2023-02-03 01:21:47,181 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:21:49,147 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 261, in profile
+    if user != client.author:
+AttributeError: module 'discord.client' has no attribute 'author'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.client' has no attribute 'author'
+2023-02-03 01:21:51,930 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 261, in profile
+    if user != client.author:
+AttributeError: module 'discord.client' has no attribute 'author'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.client' has no attribute 'author'
+2023-02-03 01:21:55,498 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 261, in profile
+    if user != client.author:
+AttributeError: module 'discord.client' has no attribute 'author'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.client' has no attribute 'author'
+2023-02-03 01:21:59,388 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 261, in profile
+    if user != client.author:
+AttributeError: module 'discord.client' has no attribute 'author'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.client' has no attribute 'author'
+2023-02-03 01:28:41,756 - discord.client - INFO - logging in using static token
+2023-02-03 01:28:42,118 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 79916ace453dae782bfa181b16b3684e).
+2023-02-03 01:28:44,126 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:29:22,409 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "startr" is not found
+2023-02-03 01:30:03,058 - discord.client - INFO - logging in using static token
+2023-02-03 01:30:03,454 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ef7fae9b185b60d9cc2a40d96bebd980).
+2023-02-03 01:30:04,153 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+2023-02-03 01:30:05,458 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:30:09,341 - discord.ext.commands.bot - ERROR - Ignoring exception in command balance
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "@firj" not found.
+2023-02-03 01:30:10,299 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 261, in profile
+    print(user.hash)
+AttributeError: 'Member' object has no attribute 'hash'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Member' object has no attribute 'hash'
+2023-02-03 01:32:11,120 - discord.client - INFO - logging in using static token
+2023-02-03 01:32:11,642 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b07d70b2e5ca1a58f5d8056a8687d46).
+2023-02-03 01:32:13,645 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:32:37,475 - discord.client - INFO - logging in using static token
+2023-02-03 01:32:37,915 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c9c1e0a4c9a17bef60d8519c2b260c8b).
+2023-02-03 01:32:39,920 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:33:30,042 - discord.client - INFO - logging in using static token
+2023-02-03 01:33:30,588 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 54c5fe18839edfbc8981e2d99efb812a).
+2023-02-03 01:33:32,592 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:33:39,531 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "Kaos" not found.
+2023-02-03 01:34:45,977 - discord.client - INFO - logging in using static token
+2023-02-03 01:34:46,294 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8c3131675e12ee105615f8964deadcc6).
+2023-02-03 01:34:48,328 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:35:09,497 - discord.client - INFO - logging in using static token
+2023-02-03 01:35:09,864 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f8c08800b293ca3113af1dfb40afac7c).
+2023-02-03 01:35:11,868 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:36:38,845 - discord.client - INFO - logging in using static token
+2023-02-03 01:36:39,211 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fc67d966e664a269181fae153368e0f4).
+2023-02-03 01:36:41,227 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:41:04,932 - discord.client - INFO - logging in using static token
+2023-02-03 01:41:05,288 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7657d93b6af5c4767981559bc15c7c7e).
+2023-02-03 01:41:07,293 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:45:58,139 - discord.client - INFO - logging in using static token
+2023-02-03 01:45:58,597 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 18c43bbade3675e5346ddff49ad10fb7).
+2023-02-03 01:46:00,601 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:46:36,278 - discord.client - INFO - logging in using static token
+2023-02-03 01:46:36,746 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a2e82f23f3e0c6e33baabad62965f910).
+2023-02-03 01:46:38,753 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:52:28,753 - discord.client - INFO - logging in using static token
+2023-02-03 01:52:29,292 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 08e9080e86c8aebd77c0c164a920ae7d).
+2023-02-03 01:52:31,296 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:53:45,212 - discord.client - INFO - logging in using static token
+2023-02-03 01:53:45,593 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3ae9c523a24498082d1f12c3ee900b69).
+2023-02-03 01:53:47,596 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:53:48,952 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: message is a required argument that is missing.
+2023-02-03 01:55:49,264 - discord.client - INFO - logging in using static token
+2023-02-03 01:55:49,642 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1a0cc591bfc240f83881503228284186).
+2023-02-03 01:55:51,646 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:55:52,558 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: message is a required argument that is missing.
+2023-02-03 01:57:01,995 - discord.client - INFO - logging in using static token
+2023-02-03 01:57:02,498 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2a5817ee7970c03d5d998faeb2c63343).
+2023-02-03 01:57:04,293 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "profile" is not found
+2023-02-03 01:57:04,502 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 01:58:38,508 - discord.client - INFO - logging in using static token
+2023-02-03 01:58:38,885 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a4b82b5d91b0e7a4731f1b8b76bd22bf).
+2023-02-03 01:58:40,888 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:00:44,176 - discord.client - INFO - logging in using static token
+2023-02-03 02:00:44,568 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0083742115883f187b5a2675c8edc0e0).
+2023-02-03 02:00:46,572 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:01:22,340 - discord.client - INFO - logging in using static token
+2023-02-03 02:01:23,001 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a745938aa72f94c62284bba4807e5792).
+2023-02-03 02:01:25,005 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:01:29,665 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 267, in profile
+    user_id = str(ctx.author.id) if user is None else str(user.id)
+AttributeError: 'str' object has no attribute 'id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'str' object has no attribute 'id'
+2023-02-03 02:02:08,927 - discord.client - INFO - logging in using static token
+2023-02-03 02:02:09,340 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0036ad8d49ed2c07b1ecda5f11b237ff).
+2023-02-03 02:02:11,345 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:02:16,257 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 275, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'str' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'str' object has no attribute 'name'
+2023-02-03 02:04:03,726 - discord.client - INFO - logging in using static token
+2023-02-03 02:04:04,158 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7bde2560e064b35acab0f8843d30f732).
+2023-02-03 02:04:06,162 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:04:10,254 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 279, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:04:27,851 - discord.client - INFO - logging in using static token
+2023-02-03 02:04:28,349 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b8d8d3aff4d9546c7b367f0b8092a13a).
+2023-02-03 02:04:30,357 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:04:34,191 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 283, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:05:16,985 - discord.client - INFO - logging in using static token
+2023-02-03 02:05:17,278 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 76026cf1222e03ec6c124b32c6eb2006).
+2023-02-03 02:05:19,282 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:05:24,749 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 267, in profile
+    user = get(bot.get_all_members(), id=user)
+NameError: name 'get' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'get' is not defined
+2023-02-03 02:05:53,503 - discord.client - INFO - logging in using static token
+2023-02-03 02:05:53,862 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7370be0f4e98d002a8871f9f1db4dcba).
+2023-02-03 02:05:55,866 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:06:02,018 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 285, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:06:34,507 - discord.client - INFO - logging in using static token
+2023-02-03 02:06:34,932 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d32047f93ea7f8f1a9e9695b3bce5a4f).
+2023-02-03 02:06:36,935 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:06:41,476 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 285, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:07:35,982 - discord.client - INFO - logging in using static token
+2023-02-03 02:07:36,463 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9be2aed4dbf93a65f10181c900aa1ddb).
+2023-02-03 02:07:38,468 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:07:40,882 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 269, in profile
+    ctx.message.server.get_member(user)
+AttributeError: 'Message' object has no attribute 'server'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Message' object has no attribute 'server'
+2023-02-03 02:09:01,072 - discord.client - INFO - logging in using static token
+2023-02-03 02:09:01,505 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0fcf3389dd62f531f6c20fc6d0fcb652).
+2023-02-03 02:09:03,510 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:09:07,322 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 269, in profile
+    member = discord.utils.find(lambda m: m.id == user, channel.guild.members)
+AttributeError: module 'discord.channel' has no attribute 'guild'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.channel' has no attribute 'guild'
+2023-02-03 02:10:53,989 - discord.client - INFO - logging in using static token
+2023-02-03 02:10:54,412 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7cef2f3fbc3c683452f445e33ffe0674).
+2023-02-03 02:10:56,418 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:10:59,219 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 270, in profile
+    member = discord.utils.find(lambda m: m.id == user, channel.guild.members)
+AttributeError: module 'discord.channel' has no attribute 'guild'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.channel' has no attribute 'guild'
+2023-02-03 02:11:16,240 - discord.client - INFO - logging in using static token
+2023-02-03 02:11:16,672 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b096d430f47e4479c06c5b1962f33e4d).
+2023-02-03 02:11:18,676 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:11:21,747 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 272, in profile
+    member = discord.utils.find(lambda m: m.id == user, channel.guild.members)
+AttributeError: module 'discord.channel' has no attribute 'guild'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.channel' has no attribute 'guild'
+2023-02-03 02:11:58,509 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 272, in profile
+    member = discord.utils.find(lambda m: m.id == user, channel.guild.members)
+AttributeError: module 'discord.channel' has no attribute 'guild'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.channel' has no attribute 'guild'
+2023-02-03 02:14:33,864 - discord.client - INFO - logging in using static token
+2023-02-03 02:14:34,239 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fedc8ea3403786edef2190331d871386).
+2023-02-03 02:14:36,244 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:14:44,165 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 273, in profile
+    for member in ctx.message.server.members:
+AttributeError: 'Message' object has no attribute 'server'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Message' object has no attribute 'server'
+2023-02-03 02:16:31,836 - discord.client - INFO - logging in using static token
+2023-02-03 02:16:32,212 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e780db26fb451e6094c732378f01c0d9).
+2023-02-03 02:16:34,214 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:16:35,538 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 273, in profile
+    for member in ctx.message.server.members:
+AttributeError: 'Message' object has no attribute 'server'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Message' object has no attribute 'server'
+2023-02-03 02:17:52,602 - discord.client - INFO - logging in using static token
+2023-02-03 02:17:53,040 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 80c29d62d62a51fe60bd43f74d3b0370).
+2023-02-03 02:17:55,045 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:17:56,401 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 275, in profile
+    for member in ctx.message.server.members:
+AttributeError: 'Message' object has no attribute 'server'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Message' object has no attribute 'server'
+2023-02-03 02:21:44,924 - discord.client - INFO - logging in using static token
+2023-02-03 02:21:45,391 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a7e03a178cbeb5869f33c34f6a34d0aa).
+2023-02-03 02:21:47,395 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:21:49,771 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 288, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:22:25,304 - discord.client - INFO - logging in using static token
+2023-02-03 02:22:25,790 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: afd7c67d3a12695111f7a0a32a624ae9).
+2023-02-03 02:22:27,794 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 02:22:34,318 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 288, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 02:22:47,558 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 288, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 03:22:14,414 - discord.client - INFO - logging in using static token
+2023-02-03 03:22:14,973 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2e11d1731d5ffaf55d928767bd30894a).
+2023-02-03 03:23:00,928 - discord.client - INFO - logging in using static token
+2023-02-03 03:23:01,282 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fa8ebfd32514b65cfb193f0f8224ffb9).
+2023-02-03 03:23:03,288 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:23:11,812 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 270, in profile
+    user = await fetch_user(user)
+NameError: name 'fetch_user' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'fetch_user' is not defined
+2023-02-03 03:24:09,736 - discord.client - INFO - logging in using static token
+2023-02-03 03:24:10,351 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cbe9b6cc29c3c13403bf23bc839d9c45).
+2023-02-03 03:24:12,356 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:24:19,704 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 270, in profile
+    user = await discord.Client.fetch_user(user)
+TypeError: Client.fetch_user() missing 1 required positional argument: 'user_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Client.fetch_user() missing 1 required positional argument: 'user_id'
+2023-02-03 03:25:25,797 - discord.client - INFO - logging in using static token
+2023-02-03 03:25:26,157 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d26d5c9d0a25dbb17e4e7300f8e544e).
+2023-02-03 03:25:28,164 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:25:30,359 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 270, in profile
+    user = await discord.Client.fetch_user( user_id )
+TypeError: Client.fetch_user() missing 1 required positional argument: 'user_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Client.fetch_user() missing 1 required positional argument: 'user_id'
+2023-02-03 03:26:39,457 - discord.client - INFO - logging in using static token
+2023-02-03 03:26:39,910 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1e902b605f13ad5c40bb5a6b84757ef4).
+2023-02-03 03:26:41,916 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:26:44,149 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 288, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 03:27:07,898 - discord.client - INFO - logging in using static token
+2023-02-03 03:27:08,208 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 41221d3c0d92627c35b947765216aceb).
+2023-02-03 03:27:10,216 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:27:17,019 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 282, in profile
+    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: InterfaceError: Error binding parameter 0 - probably unsupported type.
+2023-02-03 03:28:44,481 - discord.client - INFO - logging in using static token
+2023-02-03 03:28:44,828 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3271642ad73edb1e4689844271e698ce).
+2023-02-03 03:28:46,832 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:28:54,648 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 268, in profile
+    user_id = int(message[2:-1])
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: ''
+2023-02-03 03:30:22,330 - discord.client - INFO - logging in using static token
+2023-02-03 03:30:22,743 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 52f8f4578f3b019a83a04bdd61bd301c).
+2023-02-03 03:30:24,752 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:30:25,580 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 266, in profile
+    user_id = int(message[2:-1])
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: ''
+2023-02-03 03:30:41,608 - discord.client - INFO - logging in using static token
+2023-02-03 03:30:42,048 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 17b0545b23916c2a7216aa1ba6eecb1b).
+2023-02-03 03:30:44,052 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:30:45,352 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 268, in profile
+    user_id = int(message[2:-1])
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: ''
+2023-02-03 03:31:02,966 - discord.client - INFO - logging in using static token
+2023-02-03 03:31:03,568 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a447b02f13f79701041d7023196d3c86).
+2023-02-03 03:31:05,572 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:31:06,389 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 283, in profile
+    user_id = user_id
+UnboundLocalError: local variable 'user_id' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'user_id' referenced before assignment
+2023-02-03 03:31:28,221 - discord.client - INFO - logging in using static token
+2023-02-03 03:31:28,805 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9769e684b4c6e99e57323d67e2232630).
+2023-02-03 03:31:30,812 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:31:31,424 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 283, in profile
+    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+UnboundLocalError: local variable 'user_id' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'user_id' referenced before assignment
+2023-02-03 03:32:35,695 - discord.client - INFO - logging in using static token
+2023-02-03 03:32:36,120 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 832d1179ba830a8e42846941aab7bc97).
+2023-02-03 03:32:38,127 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:32:38,682 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 283, in profile
+    user = member
+UnboundLocalError: local variable 'member' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'member' referenced before assignment
+2023-02-03 03:32:59,723 - discord.client - INFO - logging in using static token
+2023-02-03 03:33:00,129 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bb7571921869b2c603f8660fcd6823e7).
+2023-02-03 03:33:02,168 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:33:04,178 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 285, in profile
+    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+UnboundLocalError: local variable 'user_id' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'user_id' referenced before assignment
+2023-02-03 03:34:19,198 - discord.client - INFO - logging in using static token
+2023-02-03 03:34:19,524 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 94a5dccdba06217dc48b6834ebe600c8).
+2023-02-03 03:34:21,532 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:34:29,766 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 291, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 03:35:06,854 - discord.client - INFO - logging in using static token
+2023-02-03 03:35:07,384 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 77f1abdc894151320a51f758b294d881).
+2023-02-03 03:35:09,390 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:35:20,662 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 291, in profile
+    embed = discord.Embed(title=f"__{user.name}'s__ Profile",
+AttributeError: 'NoneType' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'name'
+2023-02-03 03:35:52,350 - discord.client - INFO - logging in using static token
+2023-02-03 03:35:52,830 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b2b35617f8b09a13d9b3686230d67386).
+2023-02-03 03:35:54,835 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:38:37,920 - discord.app_commands.tree - ERROR - Ignoring exception in command 'give'
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1242, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 533, in _parse_arguments
+    ctx.kwargs = await self.app_command._transform_arguments(interaction, interaction.namespace)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 351, in _transform_arguments
+    raise app_commands.CommandSignatureMismatch(self) from None
+discord.app_commands.errors.CommandSignatureMismatch: The signature for command 'give' is different from the one provided by Discord. This can happen because either your code is out of date or you have not synced the commands with Discord, causing the mismatch in data. It is recommended to sync the command tree to fix this issue.
+2023-02-03 03:39:20,835 - discord.client - INFO - logging in using static token
+2023-02-03 03:39:21,242 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 01134f1bef5373b87ce49f8a88f9e647).
+2023-02-03 03:39:23,248 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:41:00,711 - discord.client - INFO - logging in using static token
+2023-02-03 03:41:01,261 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a8229cdd3ec8249686a98bd453451f1a).
+2023-02-03 03:41:03,267 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 03:41:53,301 - discord.app_commands.tree - ERROR - Ignoring exception in command 'give'
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/app_commands/tree.py", line 1242, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 436, in _invoke_with_namespace
+    await command.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 533, in _parse_arguments
+    ctx.kwargs = await self.app_command._transform_arguments(interaction, interaction.namespace)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 351, in _transform_arguments
+    raise app_commands.CommandSignatureMismatch(self) from None
+discord.app_commands.errors.CommandSignatureMismatch: The signature for command 'give' is different from the one provided by Discord. This can happen because either your code is out of date or you have not synced the commands with Discord, causing the mismatch in data. It is recommended to sync the command tree to fix this issue.
+2023-02-03 13:45:55,071 - discord.client - INFO - logging in using static token
+2023-02-03 13:45:55,681 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 50154a66c976b60a2be397a0eec63cff).
+2023-02-03 13:45:57,691 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-03 13:51:55,005 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "p" is not found
+2023-02-03 15:19:36,604 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "h" is not found
+2023-02-03 15:19:41,109 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "h" is not found
+2023-02-03 15:21:28,506 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "h" is not found
+2023-02-03 15:44:57,854 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 50154a66c976b60a2be397a0eec63cff.
+2023-02-03 16:01:07,144 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 50154a66c976b60a2be397a0eec63cff.
+2023-02-04 12:25:56,472 - discord.client - INFO - logging in using static token
+2023-02-04 12:25:57,618 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c0989d0c51001c0c57ee8d078c0aa7d3).
+2023-02-04 12:25:59,622 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-04 12:32:20,639 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-04 13:20:05,298 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1222, in _actual_conversion
+    return await converter().convert(ctx, argument)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 262, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "10000" not found.
+2023-02-04 13:39:23,377 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "inventory" is not found
+2023-02-04 13:41:05,375 - discord.client - ERROR - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 209, in claim
+    await ctx.send(embed=embed)
+UnboundLocalError: local variable 'embed' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1394, in on_message
+    await self.process_commands(message)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1391, in process_commands
+    await self.invoke(ctx)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1353, in invoke
+    await ctx.command.dispatch_error(ctx, exc)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 633, in dispatch_error
+    await injected(cog, ctx, error)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 211, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 220, in claim
+    raise error
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'embed' referenced before assignment
+>>>>>>> c999370 (Fixed merge conflict)
