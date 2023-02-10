@@ -288,19 +288,9 @@ class User(commands.Cog):
 
                     user = await ctx.bot.fetch_user( user_id )
 
-                    #print("member:", member)
-                    #user = member
-
-
-
-                #user = bot.get_user(user)
-
-                #print("user", user)
 
                 if user == None or user == ctx.author:
                     user_id = str(ctx.author.id)
-                #else:
-                #    user = member
 
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                 user_data = await cursor.fetchall()
@@ -350,7 +340,7 @@ class User(commands.Cog):
                     card = CardClass( player_inventory[i]['rarity'], player_inventory[i]['uid'] )
 
                     await card.Query()
-                    embed.add_field(name=f"#{str(i+1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]", value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}")
+                    embed.add_field(name=f"#{str(i+1)} | {card.card_stats['name']}  [Evo {card.card_data['evo']}]", value=f"{card.card_data['rarity'].upper()} | Exp: {card.card_data['exp']} | ID: {card.uid}", inline=False)
 
                 await ctx.send(embed=embed)
 
@@ -434,6 +424,58 @@ class Card(commands.Cog):
                                           description=f"Please specify a legitamate card name!",
                                           color=0xF76103)
                         await ctx.send(embed=embed)
+
+    @commands.hybrid_command(name="summon", description="Summon a card. Param: target, card name, rarity")
+    async def summon(self, ctx, name=None, rarity="sr" ):
+        async with asqlite.connect("player_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user_id = ctx.author.id
+
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user = await cursor.fetchall()
+
+                await connection.commit()
+
+                if user == []: # User not found in database
+                    embed = discord.Embed(title=f"Unregistered User",
+                                          description=f"Looks like you haven't started yet!! Type a!start!",
+                                          color=0xA80108)
+                    await ctx.send(embed=embed)
+                    return
+
+
+                if name == None or rarity == None: #Verify arguments
+                    embed = discord.Embed(title=f"Error!",
+                                          description=f"One or more arguments invalid",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+
+                else:
+                    card_list = await Database.generateCardList()
+
+                    for i in card_list:
+                        if name.lower() in i.lower():
+                            name = i
+
+                    
+                    async with asqlite.connect("card_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            await cursor.execute( "SELECT * FROM Dex WHERE name=?", (name,))
+
+                            card_index = await cursor.fetchall()
+
+                    if len(card_index) != 0:  # card is found
+                        card_data = card_index[0]
+
+                    card_index = card_data["dex"]
+
+
+                    await Database.generateCard( card_index, user_id, rarity, 1 )
+
+                    embed = discord.Embed(title=f"Card Summoned!", description=f"A {rarity.upper()} {name} was summoned", color=0x03F76A)
+
+                    await ctx.send(embed=embed)
+
 
 
 

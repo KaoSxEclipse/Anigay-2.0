@@ -55,7 +55,7 @@ async def generateCardList():
 
 
 			cards = names
-			print(cards)
+			#print(cards)
 			return cards
 
 
