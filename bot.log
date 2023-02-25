@@ -12848,3 +12848,710 @@ discord.ext.commands.errors.CommandNotFound: Command "inv" is not found
 2023-02-10 01:11:35,664 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
 >>>>>>> 159fae5 (working on locations)
+2023-02-10 10:27:07,239 - discord.client - INFO - logging in using static token
+2023-02-10 10:27:07,812 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6dd4023320338a6afdaaf10d979e35be).
+2023-02-10 10:27:10,543 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-10 10:46:04,806 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "dev" is not found
+2023-02-10 10:46:15,558 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:19,721 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:26,310 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:42,790 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:43,411 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:43,825 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:44,137 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:44,462 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:48,437 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:48,774 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:49,168 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:49,494 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:50,240 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:50,594 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:46:50,907 - discord.ext.commands.bot - ERROR - Ignoring exception in command devgive
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 114, in devgive
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+OverflowError: Python int too large to convert to SQLite INTEGER
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OverflowError: Python int too large to convert to SQLite INTEGER
+2023-02-10 10:48:18,388 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1231, in _actual_conversion
+    return converter(argument)
+ValueError: invalid literal for int() with base 10: 'all'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1240, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "amount".
+2023-02-10 10:48:21,835 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hourly" is not found
+2023-02-10 10:48:23,841 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "hel[" is not found
+2023-02-10 10:50:14,521 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "nick" is not found
+2023-02-10 11:00:47,820 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 11:25:15,133 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 12:33:36,005 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 14:39:43,974 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 15:37:57,558 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 17:18:55,153 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 18:53:41,415 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 19:32:27,600 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 19:51:32,816 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 20:30:56,469 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 20:53:47,036 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 21:25:02,258 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 22:19:10,216 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-10 23:39:07,245 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 00:08:18,703 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 01:00:30,233 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 01:20:07,335 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 01:39:25,113 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 01:56:10,345 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6dd4023320338a6afdaaf10d979e35be.
+2023-02-11 10:38:00,607 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-11 10:38:05,944 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f0acec256e14425faddf8ad72311891e).
+2023-02-11 10:38:08,716 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-11 10:38:08,717 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-11 12:42:24,451 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 373, in select
+    await connection.commit()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-02-11 12:46:33,519 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "fl" is not found
+2023-02-11 14:16:12,981 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-11 14:48:49,241 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-11 16:52:48,687 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-11 18:53:19,029 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-11 19:31:49,136 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-11 20:14:11,139 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-12 00:13:04,683 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f0acec256e14425faddf8ad72311891e.
+2023-02-13 15:04:18,634 - discord.client - INFO - logging in using static token
+2023-02-13 15:04:19,232 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cb0b7b1831526b979f043a79630b82de).
+2023-02-13 15:04:21,817 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 15:04:25,862 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 474, in battle
+    card = series[realms[int(loc)]][int(floor)]
+NameError: name 'loc' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'loc' is not defined
+2023-02-13 15:15:02,497 - discord.client - INFO - logging in using static token
+2023-02-13 15:15:04,732 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 605d40933f752b84ce3f10b43de58881).
+2023-02-13 15:15:07,267 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-13 15:15:07,803 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 15:15:10,703 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 493, in battle
+    oppo = FloorCard(loc, floor)
+NameError: name 'FloorCard' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'FloorCard' is not defined
+2023-02-13 15:16:30,343 - discord.client - INFO - logging in using static token
+2023-02-13 15:16:31,461 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1b245fffdd0df80c955bc82c3b9765e0).
+2023-02-13 15:16:34,299 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 15:16:38,496 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await card.Query()
+AttributeError: 'list' object has no attribute 'Query'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'list' object has no attribute 'Query'
+2023-02-13 15:21:19,900 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f3149c86ce0>
+2023-02-13 15:21:20,721 - discord.client - INFO - logging in using static token
+2023-02-13 15:21:23,535 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e707631f36002e95459469d8005b13d5).
+2023-02-13 15:21:24,543 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-02-13 15:21:27,121 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 15:21:27,440 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+AttributeError: 'FloorCard' object has no attribute 'Query'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'Query'
+2023-02-13 15:24:33,835 - discord.client - INFO - logging in using static token
+2023-02-13 15:24:48,843 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: dc13fbabeed9b5f12c7d2a72f46befc7).
+2023-02-13 15:24:55,864 - discord.state - WARNING - Shard ID 0 timed out waiting for chunks for guild_id 1069643077913948190.
+2023-02-13 15:24:56,665 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 15:27:17,173 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bta!bt" is not found
+2023-02-13 15:27:19,462 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 21, in Query
+    await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
+AttributeError: 'FloorCard' object has no attribute 'table'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'table'
+2023-02-13 15:56:16,185 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 21, in Query
+    await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
+AttributeError: 'FloorCard' object has no attribute 'table'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'table'
+2023-02-13 15:56:24,615 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 21, in Query
+    await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
+AttributeError: 'FloorCard' object has no attribute 'table'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'table'
+2023-02-13 16:24:36,336 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-13 16:24:41,583 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f9f99cb0c5fc988f64a5b5cb1ee155b5).
+2023-02-13 16:24:44,217 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 16:24:44,218 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-13 16:35:39,109 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-13 16:35:44,400 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0968394b2fe50f8d83929268f57b143a).
+2023-02-13 16:35:46,961 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 16:35:46,962 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-13 17:52:44,180 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-13 17:52:49,441 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3d36b9f4276cb61e1a0f6bd69286a280).
+2023-02-13 17:52:52,159 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-13 17:52:52,160 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-13 17:53:52,370 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3d36b9f4276cb61e1a0f6bd69286a280.
+2023-02-13 19:16:41,712 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3d36b9f4276cb61e1a0f6bd69286a280.
+2023-02-13 21:19:24,110 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3d36b9f4276cb61e1a0f6bd69286a280.
+2023-02-13 21:59:28,054 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 3d36b9f4276cb61e1a0f6bd69286a280.
+2023-02-13 23:21:43,849 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 21, in Query
+    await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
+AttributeError: 'FloorCard' object has no attribute 'table'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'table'
+2023-02-13 23:21:50,107 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 496, in battle
+    await oppo.Query()
+  File "/home/christopherchay/___/Anigay-2.0/CardClass.py", line 21, in Query
+    await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
+AttributeError: 'FloorCard' object has no attribute 'table'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'table'
+2023-02-22 11:27:13,904 - discord.client - INFO - logging in using static token
+2023-02-22 11:27:14,370 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b8b86f1d39203afe8d3b9310d6bd43f2).
+2023-02-22 11:27:16,899 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-22 11:27:55,156 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-02-22 13:59:31,884 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-22 13:59:37,079 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 689da0f5a17d038408193d7409efc2c0).
+2023-02-22 13:59:39,706 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-22 13:59:39,707 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-02-22 19:42:11,739 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-02-22 19:42:16,918 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d53412f54bb5b6e99531cbaa74c530a1).
+2023-02-22 19:42:19,500 - root - INFO - Logged in as Anigay 2.0#7825
+2023-02-22 19:42:19,501 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded

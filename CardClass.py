@@ -1,4 +1,4 @@
-import asyncio, asqlite
+import asyncio, asqlite, json
 
 class CardClass():
 	def __init__( self, uid, rarity="sr" ):
@@ -56,3 +56,25 @@ class CardClass():
 		self.Query()
 		self.CalcLevel()
 		self.CalcStats()
+
+
+
+
+class FloorCard(CardClass):
+	def __init__(self, location, floor):
+		with open("cards.json", "r") as file:
+			series = json.load(file)
+
+		realms = []
+		for i in series:
+			realms.append(i)
+
+		card = series[realms[location]][floor]
+		self.name = card[1]
+		self.evo = 1
+		self.level = location+floor
+		self.hp = card[2]
+		self.atk = card[3]
+		self.df = card[4]
+		self.spd = card[5]
+		self.talent = card[6]

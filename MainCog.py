@@ -7,7 +7,7 @@ from discord.ext.commands.cooldowns import BucketType
 from datetime import timedelta
 from discord.utils import get
 import Database
-from CardClass import CardClass
+from CardClass import *
 import random
 
 # Set up Logging
@@ -372,46 +372,6 @@ class User(commands.Cog):
 
                     await connection.commit()
 
-    # Battle function TESTING!!
-    @commands.hybrid_command(aliases=["bt"])
-    async def battle( self, ctx, amount=1 ):
-        user_id = ctx.author.id
-        user = await Database.verifyUser( user_id )
-
-        if user == []:
-            embed = discord.Embed(title=f"Unregistered User",
-                                  description=f"Looks like you haven't started yet!! Type a!start!",
-                                  color=0xA80108)
-            await ctx.send(embed=embed)
-        else:
-
-            user = user[0]
-
-            if user["card"] != 0:
-                card = CardClass(user["card"])
-                await card.Query()
-                card_hp = card.stats["hp"] * 10
-
-                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
-                embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
-
-                bt = await ctx.send(embed=embed)
-
-
-                while card_hp > 0:
-                    card_hp -= random.randint(10, 25)
-
-                    new_embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
-                    new_embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
-
-                    await bt.edit(embed=new_embed)
-                    await asyncio.sleep(1)
-
-            else:
-                embed = discord.Embed(title=f"No Card!!",
-                                    description=f"Please equip a card before battling!!",
-                                    color=0xA80108)
-
 
 class Game(commands.Cog):
     def __init__(self, bot):
@@ -485,6 +445,76 @@ class Game(commands.Cog):
                                           description=f"Please specify a legitamate realm number!!",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
+
+    # Battle function TESTING!!
+    @commands.hybrid_command(aliases=["bt"])
+    async def battle( self, ctx, amount=1 ):
+        user_id = ctx.author.id
+        user = await Database.verifyUser( user_id )
+
+        if user == []:
+            embed = discord.Embed(title=f"Unregistered User",
+                                  description=f"Looks like you haven't started yet!! Type a!start!",
+                                  color=0xA80108)
+            await ctx.send(embed=embed)
+        else:
+
+            user = user[0]
+
+            if user["card"] != 0:
+                card = CardClass(user["card"])
+
+                with open("cards.json", "r") as file:
+                    series = json.load(file)
+                    realms = []
+
+                    for i in series:
+                        realms.append(i)
+
+                async with asqlite.connect("player_data.db") as connection:
+                    async with connection.cursor() as cursor:
+                        user_id = str(ctx.author.id)
+                        await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                        user = await cursor.fetchall()
+                        user = user[0]
+
+                        with open("cards.json", "r") as file:
+                            series = json.load(file)
+                            realms = []
+
+                            for i in series:
+                                realms.append(i)
+
+                        loc = int(str(user["location"]).split(".")[0])
+                        floor = int(str(user["location"]).split(".")[1])
+
+                card = series[realms[int(loc)]][int(floor)]
+
+                oppo = FloorCard(loc, floor)
+
+
+                await oppo.Query()
+                card_hp = oppo.stats["hp"] * 10
+
+                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
+                embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
+
+                bt = await ctx.send(embed=embed)
+
+
+                while card_hp > 0:
+                    card_hp -= random.randint(10, 25)
+
+                    new_embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
+                    new_embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
+
+                    await bt.edit(embed=new_embed)
+                    await asyncio.sleep(1)
+
+            else:
+                embed = discord.Embed(title=f"No Card!!",
+                                    description=f"Please equip a card before battling!!",
+                                    color=0xA80108)
 
 
 
