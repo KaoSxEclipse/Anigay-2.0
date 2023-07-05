@@ -372,6 +372,48 @@ class User(commands.Cog):
 
                     await connection.commit()
 
+    # Shows the full stats of a card
+    @commands.hybrid_command()
+    async def info(self, ctx, message = None):
+        async with asqlite.connect("card_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user = ctx.author.id
+                await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
+                player_inventory = await cursor.fetchall()
+
+                try:
+                    message = int(message) - 1
+                except:
+                    embed = discord.Embed(title=f"Card not found",
+                                          description=f"Please specify a legitamate card name!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+                    return
+
+                card = player_inventory[message]
+                card_dex = player_inventory[message]["dex"]
+
+                await cursor.execute( "SELECT * FROM Dex WHERE dex=?", (card_dex,) )
+                data = await cursor.fetchall()
+                data = data[0]
+
+                await connection.commit()
+
+
+        user_card = UserCard(card, data)
+
+        embed = discord.Embed(title=f"{user_card.name} | Level {user_card.level}", color=0x03F76A)
+        embed.add_field(name="", value=f"**Evo:** {user_card.evo}", inline=False)
+        embed.add_field(name="", value=f"**Rarity:** {user_card.rarity}", inline=False)
+        embed.add_field(name="", value=f"**Hp:** {user_card.hp}", inline=False)
+        embed.add_field(name="", value=f"**ATK:** {user_card.atk}", inline=False)
+        embed.add_field(name="", value=f"**DEF:** {user_card.df}", inline=False)
+        embed.add_field(name="", value=f"**SPD:** {user_card.spd}", inline=False)
+        embed.add_field(name="", value=f"**Talent:** {user_card.talent}", inline=False)
+        embed.set_footer(text="Card ID: " + str(user_card.id))
+
+        await ctx.send(embed=embed)
+
 
 class Game(commands.Cog):
     def __init__(self, bot):
@@ -402,7 +444,7 @@ class Game(commands.Cog):
 
                 if loc == None:
                     embed = discord.Embed(title=f"Realms",
-                                          description=f"List of Realms listed below",
+                                          description=f"You are at realm {user['location']}",
                                           color=0xF76103)
 
                     index = 1
@@ -448,17 +490,18 @@ class Game(commands.Cog):
 
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
-    async def battle( self, ctx, amount=1 ):
+    async def battle(self, ctx, amount=1):
         user_id = ctx.author.id
-        user = await Database.verifyUser( user_id )
+        user = await Database.verifyUser(user_id)
 
         if user == []:
-            embed = discord.Embed(title=f"Unregistered User",
-                                  description=f"Looks like you haven't started yet!! Type a!start!",
-                                  color=0xA80108)
+            embed = discord.Embed(
+                title="Unregistered User",
+                description="Looks like you haven't started yet! Type a!start!",
+                color=0xA80108
+            )
             await ctx.send(embed=embed)
         else:
-
             user = user[0]
 
             if user["card"] != 0:
@@ -466,55 +509,99 @@ class Game(commands.Cog):
 
                 with open("cards.json", "r") as file:
                     series = json.load(file)
-                    realms = []
+                    realms = [i for i in series]
 
-                    for i in series:
-                        realms.append(i)
-
-                async with asqlite.connect("player_data.db") as connection:
+                async with asqlite.connect("player_data.db") as connection: # Get Player data
                     async with connection.cursor() as cursor:
                         user_id = str(ctx.author.id)
                         await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                         user = await cursor.fetchall()
                         user = user[0]
 
-                        with open("cards.json", "r") as file:
-                            series = json.load(file)
-                            realms = []
-
-                            for i in series:
-                                realms.append(i)
-
                         loc = int(str(user["location"]).split(".")[0])
                         floor = int(str(user["location"]).split(".")[1])
 
-                card = series[realms[int(loc)]][int(floor)]
+                        await connection.commit()
+
+                async with asqlite.connect("card_data.db") as connection: # Get User card data
+                    async with connection.cursor() as cursor:
+                        user_id = ctx.author.id
+                        await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user_id,) )
+                        player_inventory = await cursor.fetchall()
+
+                        for c in player_inventory:
+                            if c["uid"] == user["card"]:
+                                card_dex = c["dex"]
+
+                        await cursor.execute( "SELECT * FROM Dex WHERE dex=?", (card_dex,) )
+                        user_card = await cursor.fetchall()
+                        user_card = user_card[0]
+
+                        await connection.commit()
+
+
+                #print(user_card["name"]) ## Raw Dex card. Will calculate the stats later.
+
+
+                # user card = dictionary
+                # Enemy Floor card is a Class
+
+                card = series[realms[loc]][floor]
+
+                user_card = UserCard(c, user_card)
+
+                #print(user_card.name)
 
                 oppo = FloorCard(loc, floor)
 
+                player_hp = user_card.hp*10
+                enemy_hp = oppo.hp*10
 
-                await oppo.Query()
-                card_hp = oppo.stats["hp"] * 10
+                hp_bar_length = 20
 
-                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
-                embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
-
+                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x00FF00)
                 bt = await ctx.send(embed=embed)
 
+                battle_round = 1
 
-                while card_hp > 0:
-                    card_hp -= random.randint(10, 25)
+                while player_hp > 0 and enemy_hp > 0:
+                    player_hp -= random.randint(10, 15)
+                    enemy_hp -= random.randint(10, 15)
 
-                    new_embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x03F76A)
-                    new_embed.add_field( name=f"Hp: {card_hp}", value="", inline=False )
+                    player_hp_percentage = player_hp / user_card.hp * 100
+                    player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
+                    player_hp_empty = hp_bar_length - player_hp_filled
 
+                    enemy_hp_percentage = enemy_hp / oppo.hp * 100
+                    enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
+                    enemy_hp_empty = hp_bar_length - enemy_hp_filled
+
+                    player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
+                    enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
+
+                    new_embed = discord.Embed(title=f"{ctx.author}is challenging Floor {loc}-{floor}", color=0x00FF00)
+                    new_embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
+                    new_embed.add_field(name="", value="Element: ", inline=False)
+                    new_embed.add_field(name=f"**{player_hp} / {user_card.hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+                    new_embed.add_field(name=f"**{oppo.name}**", value="", inline=False)
+                    new_embed.add_field(name="", value="Element: ", inline=False)
+                    new_embed.add_field(name=f"**{enemy_hp} / {oppo.hp} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+                    new_embed.add_field(name=f"Round {battle_round}", value="", inline=False)
+
+                    battle_round += 1
                     await bt.edit(embed=new_embed)
-                    await asyncio.sleep(1)
+                    await asyncio.sleep(2)
 
             else:
-                embed = discord.Embed(title=f"No Card!!",
-                                    description=f"Please equip a card before battling!!",
-                                    color=0xA80108)
+                embed = discord.Embed(
+                    title="No Card Equipped",
+                    description="Please equip a card before battling!",
+                    color=0xA80108
+                )
+                await ctx.send(embed=embed)
+
+
+
 
 
 
