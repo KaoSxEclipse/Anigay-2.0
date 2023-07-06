@@ -14496,3 +14496,92 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Att
 2023-07-05 18:46:38,241 - discord.client - INFO - logging in using static token
 2023-07-05 18:46:39,536 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ea74710477ea34ff52c9e7ad408b9a4f).
 2023-07-05 18:46:42,199 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 18:53:14,896 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 18:53:14,899 - discord.client - INFO - logging in using static token
+2023-07-05 18:53:16,609 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4305be8ac29cb275d7bf8748146745d5).
+2023-07-05 18:53:19,228 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 18:53:46,626 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-05 18:53:46,626 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-05 18:55:25,357 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-05 18:55:25,358 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-05 19:00:28,183 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 4305be8ac29cb275d7bf8748146745d5.
+2023-07-05 19:34:25,048 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 15.6s behind.
+2023-07-05 19:46:09,802 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 4305be8ac29cb275d7bf8748146745d5.
+2023-07-05 19:54:00,548 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 19:54:00,552 - discord.client - INFO - logging in using static token
+2023-07-05 19:54:01,446 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b9785aa159618f59f326fe7374f79eb5).
+2023-07-05 19:54:04,022 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 19:56:16,367 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 19:56:16,370 - discord.client - INFO - logging in using static token
+2023-07-05 19:56:17,230 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 939df3f0690128b4ffbb1396b786fafb).
+2023-07-05 19:56:19,819 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 20:00:17,589 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 20:00:17,593 - discord.client - INFO - logging in using static token
+2023-07-05 20:00:18,621 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: df518b0caeedbc30936a47a2e7b1f2aa).
+2023-07-05 20:00:21,281 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 20:01:57,128 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 20:01:57,131 - discord.client - INFO - logging in using static token
+2023-07-05 20:01:58,255 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 800d549f754f5dec379da945ee131c1e).
+2023-07-05 20:02:00,920 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 20:03:25,194 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 20:03:25,198 - discord.client - INFO - logging in using static token
+2023-07-05 20:03:26,055 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3f8b812ba5fb07ee789e1badc0df4cb4).
+2023-07-05 20:03:28,675 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 20:03:30,519 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 589, in battle
+    if oppo_hp <= 0:
+NameError: name 'oppo_hp' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'oppo_hp' is not defined
+2023-07-05 20:03:49,655 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 20:03:49,659 - discord.client - INFO - logging in using static token
+2023-07-05 20:03:50,384 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e4e0c94ef4ab54bf078ad330934daaed).
+2023-07-05 20:03:53,046 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-05 20:04:39,300 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-05 20:04:39,304 - discord.client - INFO - logging in using static token
+2023-07-05 20:04:40,308 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c77e9f66da86cca45b7b93e71f26fb2c).
+2023-07-05 20:04:42,917 - root - INFO - Logged in as Anigay 2.0#7825
