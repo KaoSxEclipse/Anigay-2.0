@@ -340,6 +340,9 @@ class User(commands.Cog):
                     card = CardClass( player_inventory[i]['uid'], player_inventory[i]['rarity'] )
 
                     await card.Query()
+
+                    print("card: ", card.stats)
+
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
 
                 await ctx.send(embed=embed)
@@ -468,12 +471,12 @@ class Game(commands.Cog):
                             await ctx.send(embed=embed)
                         else:
                             location = float(str(loc)+".00"+str(floor))
-                            print(location)
+                            #print(location)
                             await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
 
                             card = series[realms[int(loc)]][int(floor)]
 
-                            print(card)
+                            #print(card)
 
                             embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
                                           description=f"{card[1]} stands before you.",
@@ -491,6 +494,43 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
+        def displayHP(player_hp, enemy_hp, battle_round):
+            player_hp_percentage = player_hp / (user_card.hp*10) * 100
+            player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
+            player_hp_empty = hp_bar_length - player_hp_filled
+
+            enemy_hp_percentage = enemy_hp / (oppo.hp*10) * 100
+            enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
+            enemy_hp_empty = hp_bar_length - enemy_hp_filled
+
+            if player_hp <= 0:
+                player_hp = 0
+                player_filled = 0
+                player_hp_empty = 20
+
+            if enemy_hp <= 0:
+                enemy_hp = 0
+                enemy_filled = 0
+                enemy_hp_empty = 20
+
+            player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
+            enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
+
+            embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0x00FF00)
+            embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
+            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{oppo.name}**", value="", inline=False)
+            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+
+            if battle_round >= 1:
+                embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
+                embed.add_field(name=f"{user_card.name} deals {player_dmg} to {oppo.name}", value="", inline=False)
+                embed.add_field(name=f"{oppo.name} deals {enemy_dmg} to {user_card.name}", value="", inline=False)
+
+            return embed
+
         user_id = ctx.author.id
         user = await Database.verifyUser(user_id)
 
@@ -559,10 +599,11 @@ class Game(commands.Cog):
 
                 hp_bar_length = 20
 
-                embed = discord.Embed(title=f"{ctx.author}'s Battle", color=0x00FF00)
-                bt = await ctx.send(embed=embed)
+                battle_round = 0
 
-                battle_round = 1
+                embed = displayHP(player_hp, enemy_hp, battle_round)
+                bt = await ctx.send(embed=embed)
+                await asyncio.sleep(1.5)
 
                 ELEMENT_MULTIPLIER = 1
                 CRITICAL_MULTIPLIER = 1
@@ -574,39 +615,11 @@ class Game(commands.Cog):
                     player_hp -= enemy_dmg
                     enemy_hp -= player_dmg
 
-                    player_hp_percentage = player_hp / (user_card.hp*10) * 100
-                    player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
-                    player_hp_empty = hp_bar_length - player_hp_filled
-
-                    enemy_hp_percentage = enemy_hp / (oppo.hp*10) * 100
-                    enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
-                    enemy_hp_empty = hp_bar_length - enemy_hp_filled
-
-                    if player_hp <= 0:
-                        player_filled = 0
-                        player_hp_empty = 20
-
-                    if enemy_hp <= 0:
-                        enemy_filled = 0
-                        enemy_hp_empty = 20
-
-                    player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
-                    enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
-
-                    new_embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0x00FF00)
-                    new_embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
-                    new_embed.add_field(name="", value="Element: ", inline=False)
-                    new_embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-                    new_embed.add_field(name=f"**{oppo.name}**", value="", inline=False)
-                    new_embed.add_field(name="", value="Element: ", inline=False)
-                    new_embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
-                    new_embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
-                    new_embed.add_field(name=f"{user_card.name} deals {player_dmg} to {oppo.name}", value="", inline=False)
-                    new_embed.add_field(name=f"{oppo.name} deals {enemy_dmg} to {user_card.name}", value="", inline=False)
-
                     battle_round += 1
-                    await bt.edit(embed=new_embed)
-                    await asyncio.sleep(3)
+                    embed = displayHP(player_hp, enemy_hp, battle_round)
+
+                    await bt.edit(embed=embed)
+                    await asyncio.sleep(2.5)
 
             else:
                 embed = discord.Embed(

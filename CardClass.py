@@ -21,18 +21,18 @@ class CardClass():
 				await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
 
 				self.data = await cursor.fetchall()
-				print(self.uid)
+				#print(self.uid)
 				self.data = self.data[0]
 				index = self.data["dex"]
 				self.rarity = self.data["rarity"]
 
-				print("index:", index)
+				#print("index:", index)
 
 				# Get Card stats using corresponding index from table
 				await cursor.execute("SELECT * FROM Dex WHERE dex=?", (index,))
 				self.stats = await cursor.fetchall()
 
-				print("Card Stats:", self.stats)
+				#print("Card Stats:", self.stats)
 
 				if self.stats == []:
 					return

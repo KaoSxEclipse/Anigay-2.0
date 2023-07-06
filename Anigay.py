@@ -18,7 +18,7 @@ logger = logging.getLogger()
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
-bot = commands.Bot(command_prefix='a!', intents=intents)
+bot = commands.Bot(command_prefix='.', intents=intents)
 
 #On_Ready runs the bot when the code is ran. Add's the cogs (commands)
 @bot.event

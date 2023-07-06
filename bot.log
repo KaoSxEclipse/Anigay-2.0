@@ -14658,3 +14658,309 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-06 12:48:53,120 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-06 12:48:58,558 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9d1b46355f34e95f66b67e8416992dac).
+2023-07-06 12:49:01,362 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 12:49:01,363 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-06 13:08:21,195 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d1b46355f34e95f66b67e8416992dac.
+2023-07-06 13:43:51,840 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d1b46355f34e95f66b67e8416992dac.
+2023-07-06 14:07:35,677 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 343, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 14:07:43,375 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 369, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 14:07:48,114 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9d1b46355f34e95f66b67e8416992dac.
+2023-07-06 14:07:58,409 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 343, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 15:18:28,604 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-06 15:18:34,211 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6a22635ab89839bd7ca68637667242bd).
+2023-07-06 15:18:34,237 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-06 15:18:34,253 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-06 15:18:36,891 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 15:18:36,892 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 27, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-06 15:26:41,738 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6a22635ab89839bd7ca68637667242bd.
+2023-07-06 15:37:59,144 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 17.5s behind.
+2023-07-06 15:48:43,446 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 6a22635ab89839bd7ca68637667242bd.
+2023-07-06 16:16:46,223 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 16:16:46,227 - discord.client - INFO - logging in using static token
+2023-07-06 16:16:47,056 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cb18e4332722595e2569ed34c7cd6477).
+2023-07-06 16:16:49,686 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 16:18:03,847 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 16:18:03,851 - discord.client - INFO - logging in using static token
+2023-07-06 16:18:04,584 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f940d0c4dbc0fa2f07b557e765c47f08).
+2023-07-06 16:18:07,208 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 16:45:21,356 - discord.gateway - INFO - Shard ID None has successfully RESUMED session f940d0c4dbc0fa2f07b557e765c47f08.
+2023-07-06 16:53:35,410 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 343, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 16:53:46,265 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 319, in profile
+    embed.add_field(name="**Card Selected:**", value=f"{card.stats['name']}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 16:53:58,963 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 319, in profile
+    embed.add_field(name="**Card Selected:**", value=f"{card.stats['name']}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 16:54:24,770 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 369, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 16:54:54,251 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "Balance" is not found
+2023-07-06 16:55:19,654 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 343, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-06 17:20:00,668 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 17:20:00,672 - discord.client - INFO - logging in using static token
+2023-07-06 17:20:01,411 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 82d67835821d559ec41afbc63ec7177a).
+2023-07-06 17:20:04,052 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 17:23:04,715 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 17:23:04,719 - discord.client - INFO - logging in using static token
+2023-07-06 17:23:05,395 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a198ffb271e861455f905706ccd98fa5).
+2023-07-06 17:23:07,965 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 17:23:29,315 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 17:23:29,318 - discord.client - INFO - logging in using static token
+2023-07-06 17:23:30,332 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e06c272e5cc3badf3eb52f81eef0aa50).
+2023-07-06 17:23:33,054 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 17:38:39,355 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e06c272e5cc3badf3eb52f81eef0aa50.
+2023-07-06 18:02:31,635 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e06c272e5cc3badf3eb52f81eef0aa50.
+2023-07-06 18:11:10,706 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e06c272e5cc3badf3eb52f81eef0aa50.
+2023-07-06 19:32:42,218 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:32:42,222 - discord.client - INFO - logging in using static token
+2023-07-06 19:32:43,593 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7932d837289a8e77b27f5095f6aeba4d).
+2023-07-06 19:32:46,256 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:32:47,295 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 601, in battle
+    displayHP(battle_round)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 525, in displayHP
+    new_embed.add_field(name=f"{user_card.name} deals {player_dmg} to {oppo.name}", value="", inline=False)
+NameError: free variable 'player_dmg' referenced before assignment in enclosing scope
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: free variable 'player_dmg' referenced before assignment in enclosing scope
+2023-07-06 19:34:00,573 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:34:00,577 - discord.client - INFO - logging in using static token
+2023-07-06 19:34:01,520 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a0fd8c35d6d015faa3e1d0e4df11cbc7).
+2023-07-06 19:34:04,184 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:34:05,911 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 618, in battle
+    await bt.edit(embed=new_embed)
+NameError: name 'new_embed' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'new_embed' is not defined
+2023-07-06 19:35:38,379 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:35:38,383 - discord.client - INFO - logging in using static token
+2023-07-06 19:35:39,112 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ddced2eff6e776318b4ea6528dcf16d5).
+2023-07-06 19:35:41,771 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:36:25,956 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:36:25,959 - discord.client - INFO - logging in using static token
+2023-07-06 19:36:27,027 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2d34c5d003f91d2b58054bc5f65ce550).
+2023-07-06 19:36:29,695 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:36:33,470 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "t" is not found
+2023-07-06 19:37:35,331 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:37:35,335 - discord.client - INFO - logging in using static token
+2023-07-06 19:37:36,054 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5035088d1e7bed5cc7b30c2edd2804ef).
+2023-07-06 19:37:38,618 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:37:39,344 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 604, in battle
+    embed = displayHP(battle_round)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 498, in displayHP
+    player_hp_percentage = player_hp / (user_card.hp*10) * 100
+UnboundLocalError: local variable 'player_hp' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'player_hp' referenced before assignment
+2023-07-06 19:38:47,798 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:38:47,802 - discord.client - INFO - logging in using static token
+2023-07-06 19:38:48,539 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c21d1eb1bef4fcd05e51dee6dbf9d256).
+2023-07-06 19:38:51,121 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 19:40:36,199 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-06 19:40:36,203 - discord.client - INFO - logging in using static token
+2023-07-06 19:40:36,820 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cddb8496ee05253ae1152c44c4beda7e).
+2023-07-06 19:40:39,452 - root - INFO - Logged in as Anigay 2.0#7825
