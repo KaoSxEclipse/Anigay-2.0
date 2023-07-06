@@ -60,7 +60,7 @@ class ProfileStart(commands.Cog):
                 if len(user_data) == 0:
                     ## User doesn't exist
                     ## Insert id, exp, stamina, card
-                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0, 1.001, 1.001)", (user_id))
 
                     ## Change code later on so it selects randomly from db
 
