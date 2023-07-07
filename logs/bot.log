@@ -14986,3 +14986,94 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-06 23:46:30,225 - discord.client - INFO - logging in using static token
+2023-07-06 23:46:30,990 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 61250a85c798088f00dcf22b2698b7c4).
+2023-07-06 23:46:33,650 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 23:46:35,912 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 190, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 122, in __init__
+    with open("cards.json", "r") as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'cards.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: FileNotFoundError: [Errno 2] No such file or directory: 'cards.json'
+2023-07-06 23:46:57,382 - discord.client - INFO - logging in using static token
+2023-07-06 23:46:58,430 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 08116740d1607e0cf601911ec16aba61).
+2023-07-06 23:47:01,092 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 23:47:12,851 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/User.py", line 64, in profile
+    embed.add_field(name=f" {Wuns} **Balance**", value=f'{user_data["wuns"]} wuns', inline=True)
+NameError: name 'Wuns' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Wuns' is not defined
+2023-07-06 23:48:21,860 - discord.client - INFO - logging in using static token
+2023-07-06 23:48:22,910 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0014704f660459a6bf96f7558a67677b).
+2023-07-06 23:48:25,674 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 23:48:30,410 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 23, in location
+    async with asqlite.connect(path_to_db+path+"player_data.db") as connection:
+NameError: name 'path' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'path' is not defined
+2023-07-06 23:48:53,636 - discord.client - INFO - logging in using static token
+2023-07-06 23:48:54,655 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 10dd28af5436ca89e1970322ad1b740c).
+2023-07-06 23:48:57,316 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-06 23:49:06,839 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
+2023-07-06 23:49:18,761 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Currency.py", line 75, in give
+    description=f"{ctx.author} has given {user_target} {Wuns}{amount_readable} wuns",
+NameError: name 'Wuns' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Wuns' is not defined
+2023-07-06 23:49:34,748 - discord.client - INFO - logging in using static token
+2023-07-06 23:49:35,513 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9d733f7906fd59afa0aa403bf1f0d06d).
+2023-07-06 23:49:38,176 - root - INFO - Logged in as Anigay 2.0#7825

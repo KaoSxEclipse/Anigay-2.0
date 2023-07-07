@@ -6,6 +6,11 @@ from MainCog import *
 import asyncio, asqlite
 from datetime import datetime, timedelta
 
+from Start import ProfileStart
+from User import User
+from Currency import Currency
+from Card import Card
+from Game import Game
 
 # Set up Logging
 logging.basicConfig(
@@ -25,10 +30,10 @@ bot = commands.Bot(command_prefix='.', intents=intents)
 async def on_ready():
 	logger.info(f"Logged in as {bot.user}")
 	await bot.add_cog(Debug(bot))
-	await bot.add_cog((sync(bot)))
+	await bot.add_cog(Sync(bot))
 	await bot.add_cog(ProfileStart(bot))
 	await bot.add_cog(User(bot))
-	await bot.add_cog(currency(bot))
+	await bot.add_cog(Currency(bot))
 	await bot.add_cog(Card(bot))
 	await bot.add_cog(Game(bot))
 

@@ -1,5 +1,7 @@
 import asyncio, asqlite, json
 
+path_to_db = "../db/"
+
 class CardClass():
 	def __init__( self, uid, rarity="sr" ):
 		self.rarity = rarity
@@ -15,7 +17,7 @@ class CardClass():
 
 	async def Query( self ):
 		# Obtain the card information from the Index database and the global card database
-		async with asqlite.connect("card_data.db") as connection:
+		async with asqlite.connect(path_to_db+"card_data.db") as connection:
 			async with connection.cursor() as cursor:
 				# Get unique card id from Global Upper Card Table
 				await cursor.execute("SELECT * FROM {} WHERE uid={}".format(self.table, self.uid,))
@@ -117,7 +119,7 @@ class UserCard:
 
 class FloorCard(UserCard):
 	def __init__(self, location, floor):
-		with open("cards.json", "r") as file:
+		with open(path_to_db+"cards.json", "r") as file:
 			series = json.load(file)
 
 		realms = []
