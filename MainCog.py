@@ -341,7 +341,8 @@ class User(commands.Cog):
 
                     await card.Query()
 
-                    print("card: ", card.stats)
+                    print("card stats: ", card.stats)
+                    print("card data: ", card.data)
 
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
 
