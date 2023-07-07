@@ -15875,3 +15875,5 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Att
 2023-02-09 22:42:25,145 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 48e8130ad4cbf4ae039f1828d21eba57).
 2023-02-09 22:42:27,276 - root - INFO - Logged in as Anigay 2.0#7825
 >>>>>>> battle
+2023-07-07 18:15:57,750 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-07 18:15:57,753 - discord.client - INFO - logging in using static token

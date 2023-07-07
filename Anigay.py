@@ -26,25 +26,14 @@ bot.help_command = MyHelp()
 # On_Ready runs the bot when the code is ran. Add's the cogs (commands)
 @bot.event
 async def on_ready():
-<<<<<<< HEAD
-    logger.info(f"Logged in as {bot.user}")
-    await bot.add_cog(Dev(bot))
-    await bot.add_cog(Start(bot))
-    await bot.add_cog(User(bot))
-    await bot.add_cog(Currency(bot))
-    await bot.add_cog(Help(bot))
-    await bot.add_cog(Card(bot))
-=======
 	logger.info(f"Logged in as {bot.user}")
 	await bot.add_cog(Debug(bot))
-	await bot.add_cog((sync(bot)))
+	await bot.add_cog((Sync(bot)))
 	await bot.add_cog(ProfileStart(bot))
 	await bot.add_cog(User(bot))
-	await bot.add_cog(currency(bot))
+	await bot.add_cog(Currency(bot))
 	await bot.add_cog(Card(bot))
 	await bot.add_cog(Game(bot))
-
->>>>>>> 539558863f4a871da3ca7a7d8b5f463d2c2dd1e9
 
 # Load Env file and load it then set the token var
 load_dotenv()
