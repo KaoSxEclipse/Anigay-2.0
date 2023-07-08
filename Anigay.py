@@ -18,7 +18,7 @@ logger = logging.getLogger()
 
 # Privileged Intents
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix="a!", intents=intents, case_insensitive=True, status="Self Creating")
+bot = commands.Bot(command_prefix=".", intents=intents, case_insensitive=True, status="Self Creating")
 bot.help_command = MyHelp()
 
 
@@ -28,7 +28,7 @@ bot.help_command = MyHelp()
 async def on_ready():
 	logger.info(f"Logged in as {bot.user}")
 	await bot.add_cog(Debug(bot))
-	await bot.add_cog((Sync(bot)))
+	await bot.add_cog(Dev(bot))
 	await bot.add_cog(ProfileStart(bot))
 	await bot.add_cog(User(bot))
 	await bot.add_cog(Currency(bot))

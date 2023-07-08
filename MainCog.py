@@ -7,8 +7,10 @@ from discord.ext.commands.cooldowns import BucketType
 from datetime import timedelta
 from discord.utils import get
 import Database
-from CardClass import CardClass
+from CardClass import *
 import random
+
+path_to_db = ""
 
 # Set up Logging
 logging.basicConfig(
@@ -121,7 +123,7 @@ class Debug(commands.Cog):
 
 
 # Profile Start commands, prints User's ID and name, returns an embed for now
-class Start(commands.Cog):
+class ProfileStart(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -177,33 +179,6 @@ class Start(commands.Cog):
 class Currency(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.hybrid_command(name="devgive", aliases=['grant'])
-    async def devgive(self, ctx, user: discord.User, amount: int):
-        async with asqlite.connect(path_to_db+"player_data.db") as connection:
-            async with connection.cursor() as cursor:
-
-                user_id = int(ctx.author.id)
-                user_id = str(user.id)
-                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
-                user_data = await cursor.fetchall()
-
-                if len(user_data) != 0:  ## User is found
-                    user_data = user_data[0]
-                    new_balance = user_data["wuns"] + amount
-                    amount_readable = "{:,}".format(amount)
-                    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
-                    embed = discord.Embed(title=f"a Dev has blessed you",
-                                          description=f"{ctx.author} has given {user} {Wuns}{amount_readable} wuns",
-                                          color=0x04980f)
-                    embed.set_thumbnail(url=ctx.author.avatar)
-                    await ctx.send(embed=embed)
-                else:  ## User not found
-                    embed = discord.Embed(title=f"{user} not found",
-                                          description=f"Have {user} type a!start!",
-                                          color=0xA80108)
-                    embed.set_thumbnail(url=user.avatar)
-                    await ctx.send(embed=embed)
 
     # Gives a user money from own balance
     @commands.hybrid_command(name="give", aliases=['g'])
@@ -319,33 +294,6 @@ class Currency(commands.Cog):
             else:
                 raise error
 
-    @commands.hybrid_command()
-    async def reset(self, ctx, user: discord.User):
-        async with asqlite.connect(path_to_db+"player_data.db") as connection:
-            async with connection.cursor() as cursor:
-
-                user_id = int(ctx.author.id)
-                if user_id == 533672241448091660 or user_id == 301494278901989378 or user_id == 755186746966147082:
-
-                    user_id = str(user.id)
-                    await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
-                    user_data = await cursor.fetchall()
-
-                    if len(user_data) != 0:  ## User is found
-                        user_data = user_data[0]
-                        balance = user_data["wuns"]
-                        new_balance = user_data["wuns"] * 0
-                        balance_readable = "{:,}".format(balance)
-                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (new_balance, user_id))
-                        embed = discord.Embed(title=f"a Dev has cursed you",
-                                              description=f"{ctx.author} has taken away {Wuns}{balance_readable} wuns from your account",
-                                              color=0xA80108)
-                        await ctx.send(embed=embed)
-                    else:  ## User not found
-                        embed = discord.Embed(title=f"{user.name} not found",
-                                              description=f"Have {user.name} type a!start!",
-                                              color=0xA80108)
-                        await ctx.send(embed=embed)
 
 class User(commands.Cog):
     def __init__(self, bot):
@@ -506,20 +454,30 @@ class Game(commands.Cog):
 
     # Manage Locations
     @commands.hybrid_command(aliases=["loc"])
-    async def location(self, ctx, message=None):
-        async with asqlite.connect("player_data.db") as connection:
+    async def location(self, ctx, loc=None, floor=None):
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
+                user_id = str(ctx.author.id)
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user = await cursor.fetchall()
+                user = user[0]
 
-                if message == None:
-                    with open("cards.json", "r") as file:
-                        series = json.load(file)
-
+                with open(path_to_db+"cards.json", "r") as file:
+                    series = json.load(file)
                     realms = []
 
                     for i in series:
                         realms.append(i)
+
+                max_loc = int(str(user["maxloc"]).split(".")[0])
+                max_floor = int(str(user["maxloc"]).split(".")[1])
+                
+                if loc != None:
+                    loc = int(loc) - 1
+
+                if loc == None:
                     embed = discord.Embed(title=f"Realms",
-                                          description=f"List of Realms listed below",
+                                          description=f"You are at realm {user['location']}",
                                           color=0xF76103)
 
                     index = 1
@@ -529,12 +487,177 @@ class Game(commands.Cog):
 
                     await ctx.send(embed=embed)
 
+                elif 0 <= int(loc) < len(realms): ## Existing Realms
+                    if int(loc) > max_loc: # Player has not cleared the previous location yet
+                        embed = discord.Embed(title=f"You have not unlocked this Realm!!",
+                                          description=f"Please clear the previous Realms and floors before ascending to this realm.",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+                    else:
+                        if int(floor) > max_floor: # Player has not cleared the previous floor yet
+                            embed = discord.Embed(title=f"You have not unlocked this area!!",
+                                          description=f"Please clear the previous areas before progressing your journey.",
+                                          color=0xF76103)
+                            await ctx.send(embed=embed)
+                        else:
+                            location = float(str(loc)+".00"+str(floor))
+                            #print(location)
+                            await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
+
+                            card = series[realms[int(loc)]][int(floor)]
+
+                            #print(card)
+
+                            embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
+                                          description=f"{card[1]} stands before you.",
+                                          color=0xF76103)
+                            await ctx.send(embed=embed)
+
+
+
                 else:
                     embed = discord.Embed(title=f"Realm not found!!",
                                           description=f"Please specify a legitamate realm number!!",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
 
+    # Battle function TESTING!!
+    @commands.hybrid_command(aliases=["bt"])
+    async def battle(self, ctx, amount=1):
+        def displayHP(player_hp, enemy_hp, battle_round):
+            player_hp_percentage = player_hp / (user_card.hp*10) * 100
+            player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
+            player_hp_empty = hp_bar_length - player_hp_filled
+
+            enemy_hp_percentage = enemy_hp / (oppo.hp*10) * 100
+            enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
+            enemy_hp_empty = hp_bar_length - enemy_hp_filled
+
+            if player_hp <= 0:
+                player_hp = 0
+                player_filled = 0
+                player_hp_empty = 20
+
+            if enemy_hp <= 0:
+                enemy_hp = 0
+                enemy_filled = 0
+                enemy_hp_empty = 20
+
+            player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
+            enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
+
+            embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0x00FF00)
+            embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
+            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{oppo.name}**", value="", inline=False)
+            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+
+            if battle_round >= 1:
+                embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
+                embed.add_field(name=f"{user_card.name} deals {player_dmg} to {oppo.name}", value="", inline=False)
+                embed.add_field(name=f"{oppo.name} deals {enemy_dmg} to {user_card.name}", value="", inline=False)
+
+            return embed
+
+        user_id = ctx.author.id
+        user = await Database.verifyUser(user_id)
+
+        if user == []:
+            embed = discord.Embed(
+                title="Unregistered User",
+                description="Looks like you haven't started yet! Type a!start!",
+                color=0xA80108
+            )
+            await ctx.send(embed=embed)
+        else:
+            user = user[0]
+
+            if user["card"] != 0:
+                card = CardClass(user["card"])
+
+                with open(path_to_db+"cards.json", "r") as file:
+                    series = json.load(file)
+                    realms = [i for i in series]
+
+                async with asqlite.connect(path_to_db+"player_data.db") as connection: # Get Player data
+                    async with connection.cursor() as cursor:
+                        user_id = str(ctx.author.id)
+                        await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                        user = await cursor.fetchall()
+                        user = user[0]
+
+                        loc = int(str(user["location"]).split(".")[0])
+                        floor = int(str(user["location"]).split(".")[1])
+
+                        await connection.commit()
+
+                async with asqlite.connect(path_to_db+"card_data.db") as connection: # Get User card data
+                    async with connection.cursor() as cursor:
+                        user_id = ctx.author.id
+                        await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user_id,) )
+                        player_inventory = await cursor.fetchall()
+
+                        for c in player_inventory:
+                            if c["uid"] == user["card"]:
+                                card_dex = c["dex"]
+
+                        await cursor.execute( "SELECT * FROM Dex WHERE dex=?", (card_dex,) )
+                        user_card = await cursor.fetchall()
+                        user_card = user_card[0]
+
+                        await connection.commit()
+
+
+                #print(user_card["name"]) ## Raw Dex card. Will calculate the stats later.
+
+
+                # user card = dictionary
+                # Enemy Floor card is a Class
+
+                card = series[realms[loc]][floor]
+
+                user_card = UserCard(c, user_card)
+
+                #print(user_card.name)
+
+                oppo = FloorCard(loc, floor)
+
+                player_hp = user_card.hp*10
+                enemy_hp = oppo.hp*10
+
+                hp_bar_length = 20
+
+                battle_round = 0
+
+                embed = displayHP(player_hp, enemy_hp, battle_round)
+                bt = await ctx.send(embed=embed)
+                await asyncio.sleep(1.5)
+
+                ELEMENT_MULTIPLIER = 1
+                CRITICAL_MULTIPLIER = 1
+
+                while player_hp > 0 and enemy_hp > 0:
+                    player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
+                    enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
+
+                    player_hp -= enemy_dmg
+                    enemy_hp -= player_dmg
+
+                    battle_round += 1
+                    embed = displayHP(player_hp, enemy_hp, battle_round)
+
+                    await bt.edit(embed=embed)
+                    await asyncio.sleep(2.5)
+
+            else:
+                embed = discord.Embed(
+                    title="No Card Equipped",
+                    description="Please equip a card before battling!",
+                    color=0xA80108
+                )
+                await ctx.send(embed=embed)
 
 
 
@@ -589,62 +712,6 @@ class Card(commands.Cog):
                                           color=0xF76103)
                         await ctx.send(embed=embed)
 
-    @commands.hybrid_command(name="summon", description="Summon a card. Param: target, card name, rarity")
-    async def summon(self, ctx, name=None, rarity="sr" ):
-        async with asqlite.connect(path_to_db+"player_data.db") as connection:
-            async with connection.cursor() as cursor:
-                user_id = ctx.author.id
-
-                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
-                user = await cursor.fetchall()
-
-                await connection.commit()
-
-                if user == []: # User not found in database
-                    embed = discord.Embed(title=f"Unregistered User",
-                                          description=f"Looks like you haven't started yet!! Type a!start!",
-                                          color=0xA80108)
-                    await ctx.send(embed=embed)
-                    return
-
-                rarity = rarity.lower()
-
-
-                if name == None or rarity == None: #Verify arguments
-                    embed = discord.Embed(title=f"Error!",
-                                          description=f"One or more arguments invalid",
-                                          color=0xF76103)
-                    await ctx.send(embed=embed)
-                elif not rarity in ("ur", "sr"):
-                    embed = discord.Embed(title=f"Error!",
-                                          description=f"Invalid Rarity!!",
-                                          color=0xF76103)
-                    await ctx.send(embed=embed)
-                else:
-                    card_list = await Database.generateCardList()
-
-                    for i in card_list:
-                        if name.lower() in i.lower():
-                            name = i
-
-                    
-                    async with asqlite.connect(path_to_db+"card_data.db") as connection:
-                        async with connection.cursor() as cursor:
-                            await cursor.execute( "SELECT * FROM Dex WHERE name=?", (name,))
-
-                            card_index = await cursor.fetchall()
-
-                    if len(card_index) != 0:  # card is found
-                        card_data = card_index[0]
-
-                    card_index = card_data["dex"]
-
-
-                    await Database.generateCard( card_index, user_id, rarity, 1 )
-
-                    embed = discord.Embed(title=f"Card Summoned!", description=f"A {rarity.upper()} {name} was summoned", color=0x03F76A)
-
-                    await ctx.send(embed=embed)
 
 
 
@@ -814,3 +881,4 @@ async def setup(bot):
     await bot.add_cog(Currency(bot))
     await bot.add_cog(Card(bot))
     await bot.add_cog(Game(bot))
+    await bot.add_cog(Dev(bot))
