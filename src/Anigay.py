@@ -7,11 +7,18 @@ import asyncio, asqlite
 from datetime import datetime, timedelta
 import re
 
+from User import User
+from Card import Card
+from Currency import Currency
+from Dev import Dev
+from Game import Game
+from Start import ProfileStart
+
 # Set up Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[logging.FileHandler("bot.log"), logging.StreamHandler()]
+    handlers=[logging.FileHandler("../logs/bot.log"), logging.StreamHandler()]
 )
 logger = logging.getLogger()
 

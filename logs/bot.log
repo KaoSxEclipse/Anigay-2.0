@@ -16884,3 +16884,18 @@ discord.ext.commands.errors.CommandNotFound: Command "in" is not found
 2023-07-09 17:18:52,473 - discord.client - INFO - logging in using static token
 2023-07-09 17:18:53,133 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c8c3f4ba40c652100a6c52597f012d14).
 2023-07-09 17:18:55,192 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 19:16:11,135 - discord.client - INFO - logging in using static token
+2023-07-09 19:16:11,932 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3777576772615ace6de3980a1abf5bb0).
+2023-07-09 19:16:13,994 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 19:16:13,997 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 39, in on_ready
+    await bot.add_cog(ProfileStart(bot))
+NameError: name 'ProfileStart' is not defined
+2023-07-09 19:16:36,123 - discord.client - INFO - logging in using static token
+2023-07-09 19:16:36,878 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 49ab0017b55798e5a7fccd5dd9ccb964).
+2023-07-09 19:16:38,942 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 19:19:09,844 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "floor" is not found

@@ -1,10 +1,11 @@
 import asyncio, asqlite
 import json
 
+path_to_db = "../db/"
 
 async def cardDB():
 	# Create the Card databases from scratch
-	async with asqlite.connect("card_data.db") as connection:
+	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute('''DROP TABLE Dex''')
 
@@ -19,7 +20,7 @@ async def cardDB():
 
 async def playerDB():
 	# Create the User Database if it doesn't exist
-	async with asqlite.connect("player_data.db") as connection:
+	async with asqlite.connect(path_to_db+"player_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Users (id bigint, exp int, wuns int, stamina int, card int, location FLOAT, maxloc FLOAT )''' )
 
@@ -34,7 +35,7 @@ async def playerDB():
 
 
 async def verifyUser( user_id ):
-	async with asqlite.connect("player_data.db") as connection:
+	async with asqlite.connect(path_to_db+"player_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute( "SELECT * FROM Users WHERE id=?", (user_id,) )
 			user_data = await cursor.fetchall()
@@ -45,7 +46,7 @@ async def verifyUser( user_id ):
 
 
 async def generateCard( index, owner, rarity, evo ):
-	async with asqlite.connect("card_data.db") as connection:
+	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute("SELECT max(uid) FROM Upper")
 
@@ -62,7 +63,7 @@ async def generateCard( index, owner, rarity, evo ):
 
 
 async def generateCardList():
-	async with asqlite.connect("card_data.db") as connection:
+	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute("SELECT * FROM Dex")
 
@@ -116,10 +117,10 @@ d = {
 async def dumpCard():
 	## id, name, hp ,atk, def, spd, talent
 
-	with open("cards.json", "w") as file:
+	with open(path_to_db+"cards.json", "w") as file:
 		json.dump( d, file, indent=4 )
 
-	async with asqlite.connect("card_data.db") as connection:
+	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
 			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 0, 'Zenith', 80, 80, 80, 80, 'Self Destruct' )" )
 			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 1, 'DPython', 100, 100, 100, 100, 'White Justice' )" )
