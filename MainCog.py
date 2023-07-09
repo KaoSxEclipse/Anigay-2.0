@@ -141,8 +141,8 @@ class ProfileStart(commands.Cog):
 
                 if len(user_data) == 0:
                     ## User doesn't exist
-                    ## Insert id, exp, stamina, card
-                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+                    ## Insert id, exp, stamina, card, realm and location
+                    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0, 1.001, 1.001)", (user_id))
 
                     ## Change code later on so it selects randomly from db
 
@@ -150,13 +150,20 @@ class ProfileStart(commands.Cog):
                         async with connection.cursor() as cursor:
                             await cursor.execute("SELECT * FROM Dex")
 
-                            cards = await cursor.fetchall()
-                            cards = len(cards)
+                            card_list = await cursor.fetchall()
+                            cards = len(card_list)
 
-                    await Database.generateCard( random.randint(0, cards-1), user_id, 'sr', 1 )
+                    rand_card = random.randint(0, cards-1)
+                    card_name = card_list[rand_card]["name"]
+
+                    if rand_card in range(2, 5):
+                        rand_card = random.randint(0, cards-1)
+
+                    await Database.generateCard( rand_card, user_id, 'sr', 1 )
+
 
                     embed = discord.Embed(title=f"Welcome to Anigame 2.0 {ctx.author}",
-                                          description="You've been given *Super Rare* __card__ to start your Journey!",
+                                          description=f"You've been given a *Super Rare* **{card_name}** to start your Journey!",
                                           color=0x4DC5BC)
                     embed.add_field(name="**__Rules__**",
                                     value="No botting, cheating, exploiting bugs and/or spamming commands.")
@@ -171,7 +178,7 @@ class ProfileStart(commands.Cog):
                     embed.add_field(name="What's Next?", value="put something here")
                     await ctx.send(embed=embed)
 
-                await connection.commit()
+               #await connection.commit()
 
 
 # Currency Based Commands go in this Cog
@@ -369,6 +376,7 @@ class User(commands.Cog):
 
                     await card.Query()
 
+                    print("card id: ", card.uid)
                     print("card stats: ", card.stats)
                     print("card data: ", card.data)
 

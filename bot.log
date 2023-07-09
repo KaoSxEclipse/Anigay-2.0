@@ -16220,3 +16220,657 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Nam
 2023-07-08 11:22:16,367 - discord.client - INFO - logging in using static token
 2023-07-08 11:22:17,469 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f1c72dd7e848836fec7556d1278f54f2).
 2023-07-08 11:22:19,529 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-08 11:24:23,331 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-08 11:24:23,334 - discord.client - INFO - logging in using static token
+2023-07-08 11:24:24,240 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e4eebb65cf8493b4f7e40aa1bc0a4cee).
+2023-07-08 11:24:26,310 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-08 12:19:54,825 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-08 12:20:00,199 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2659e976b0da3adbaf45e2e4eb375bff).
+2023-07-08 12:20:02,279 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-08 12:20:02,281 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 30, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-08 13:38:38,877 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2659e976b0da3adbaf45e2e4eb375bff.
+2023-07-08 15:36:43,877 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-08 15:36:49,347 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 78dee4b092ef00aa4cf1eacbde436781).
+2023-07-08 15:36:51,426 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-08 15:36:51,427 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 30, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-08 16:16:33,982 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "stam" is not found
+2023-07-08 16:16:35,518 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-08 16:16:37,266 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 375, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-08 16:16:40,856 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 608, in battle
+    user_card = user_card[0]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-08 16:16:44,223 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1231, in _actual_conversion
+    return converter(argument)
+ValueError: invalid literal for int() with base 10: 'q'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1240, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "message".
+2023-07-08 16:16:48,842 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 401, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-08 16:29:15,847 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 78dee4b092ef00aa4cf1eacbde436781.
+2023-07-09 00:40:16,381 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-09 00:40:21,792 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 99fb99bc15f2e348ce9c9cab9d01150c).
+2023-07-09 00:40:23,858 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 00:40:23,859 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 30, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-09 00:54:59,642 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:55:05,376 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:55:08,038 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:55:09,676 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:55:20,359 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:55:37,824 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:55:59,649 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:56:01,766 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:56:14,150 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:57:17,987 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:57:37,755 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:57:40,814 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:57:54,340 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:57:56,294 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:57:56,798 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:57:58,846 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:58:01,611 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:58:02,020 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:58:08,950 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:58:13,694 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:58:16,809 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:58:21,961 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 00:58:25,163 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 00:59:24,557 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 01:03:54,497 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 09:35:03,808 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:35:03,812 - discord.client - INFO - logging in using static token
+2023-07-09 09:35:04,713 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2964e0aea64b9f77701d52c48b4365ff).
+2023-07-09 09:35:06,774 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:35:50,612 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 375, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:35:53,278 - discord.ext.commands.bot - ERROR - Ignoring exception in command profile
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 347, in profile
+    embed.add_field(name="**Card Selected:**", value=f"{card.stats['name']}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:35:54,396 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 691, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-09 09:37:43,453 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 145, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users has 7 columns but 5 values were supplied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: table Users has 7 columns but 5 values were supplied
+2023-07-09 09:37:51,642 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 145, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: table Users has 7 columns but 5 values were supplied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: table Users has 7 columns but 5 values were supplied
+2023-07-09 09:38:27,523 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:38:27,526 - discord.client - INFO - logging in using static token
+2023-07-09 09:38:28,301 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e92b502854999b08ca3c23ba794b6741).
+2023-07-09 09:38:30,346 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:39:05,375 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-09 09:39:05,376 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-09 09:39:05,380 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 375, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:42:21,782 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:42:21,785 - discord.client - INFO - logging in using static token
+2023-07-09 09:42:23,003 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aa59178cca80c06ea286358d62a1c616).
+2023-07-09 09:42:25,062 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:48:16,670 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:48:16,673 - discord.client - INFO - logging in using static token
+2023-07-09 09:48:17,395 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 039395ba0a6884973006f64d68590834).
+2023-07-09 09:48:19,456 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:49:15,510 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:49:15,513 - discord.client - INFO - logging in using static token
+2023-07-09 09:49:16,314 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8163b81a075c27d7f7b960a9d812e369).
+2023-07-09 09:49:18,374 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:49:20,718 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 157, in start
+    card_name = cards[rand_card]["name"]
+TypeError: 'int' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'int' object is not subscriptable
+2023-07-09 09:49:59,296 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:49:59,299 - discord.client - INFO - logging in using static token
+2023-07-09 09:49:59,926 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 78d75bf18b15041275ef90ce6b1a4238).
+2023-07-09 09:50:01,972 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:50:18,314 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:50:18,318 - discord.client - INFO - logging in using static token
+2023-07-09 09:50:19,067 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ac576affe42a274629bc75f68cf7ec63).
+2023-07-09 09:50:21,138 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:50:22,627 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 160, in start
+    card_name = cards[rand_card]["name"]
+TypeError: 'int' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'int' object is not subscriptable
+2023-07-09 09:50:53,122 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:50:53,125 - discord.client - INFO - logging in using static token
+2023-07-09 09:50:53,786 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f36b8b4bccb98df1114ef81c8939a3f9).
+2023-07-09 09:50:55,835 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:51:55,597 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:51:55,600 - discord.client - INFO - logging in using static token
+2023-07-09 09:51:56,302 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a85a7a52c4066372071a1db050611684).
+2023-07-09 09:51:58,358 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:52:15,015 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 163, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0, 1.001, 1.001)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-09 09:52:41,234 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:52:41,237 - discord.client - INFO - logging in using static token
+2023-07-09 09:52:42,122 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4e3adb48a9473c8d176fe596e9915c17).
+2023-07-09 09:52:44,189 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:52:47,153 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 163, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0, 1.001, 1.001)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-09 09:52:56,325 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 163, in start
+    await cursor.execute("INSERT OR IGNORE INTO Users VALUES (?, 0, 500, 10, 0, 1.001, 1.001)", (user_id))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-09 09:53:29,844 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:53:29,847 - discord.client - INFO - logging in using static token
+2023-07-09 09:53:30,558 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0281dabf2202f37d3f0ad53e4e784d8e).
+2023-07-09 09:53:32,610 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:53:37,612 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 181, in start
+    await connection.commit()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-07-09 09:53:54,410 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:53:54,413 - discord.client - INFO - logging in using static token
+2023-07-09 09:53:55,339 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 70d130c22418378c0089409467954f72).
+2023-07-09 09:53:57,383 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:55:12,862 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 181, in start
+    #await connection.commit()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-07-09 09:55:45,666 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 09:55:45,669 - discord.client - INFO - logging in using static token
+2023-07-09 09:55:46,546 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 72a864408b9e6b821769202f00df0c52).
+2023-07-09 09:55:48,615 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 09:57:07,961 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 383, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:57:13,082 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 383, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:57:19,141 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 383, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 09:57:22,705 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/MainCog.py", line 383, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-09 10:29:12,683 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:29:25,382 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:29:25,824 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:29:25,898 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:29:44,053 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 10:29:52,424 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:29:57,385 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:30:37,778 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:30:47,097 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 10:35:23,140 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:35:44,879 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 10:40:24,331 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 10:40:26,380 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 10:40:51,415 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-09 10:41:01,402 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 11:38:30,782 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:409> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-09 11:38:30,784 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-09 11:49:54,203 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 72a864408b9e6b821769202f00df0c52.
+2023-07-09 12:18:45,391 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-09 12:18:50,976 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 64ddc523b377bcac2fd01160764a4dd0).
+2023-07-09 12:18:53,056 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 12:18:53,057 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/Anigay.py", line 30, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-09 13:52:46,306 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 64ddc523b377bcac2fd01160764a4dd0.
+2023-07-09 13:52:57,741 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found

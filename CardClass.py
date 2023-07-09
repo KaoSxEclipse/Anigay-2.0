@@ -23,10 +23,12 @@ class CardClass():
 				self.data = await cursor.fetchall()
 				#print(self.uid)
 				self.data = self.data[0]
+
 				index = self.data["dex"]
+
 				self.rarity = self.data["rarity"]
 
-				#print("index:", index)
+				print("index:", index)
 
 				# Get Card stats using corresponding index from table
 				await cursor.execute("SELECT * FROM Dex WHERE dex=?", (index,))
@@ -35,6 +37,7 @@ class CardClass():
 				#print("Card Stats:", self.stats)
 
 				if self.stats == []:
+					print("ERROR Card has no stats")
 					return
 				else:
 					self.stats = self.stats[0]
