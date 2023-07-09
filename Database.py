@@ -55,6 +55,7 @@ async def generateCard( index, owner, rarity, evo ):
 			except TypeError:
 				new_id = 1
 
+			print("Database: ", index)
 			await cursor.execute( "INSERT OR IGNORE INTO Upper VALUES ( ?, ?, ?, ?, ?, 0, 0 )", (new_id, owner, index, rarity, evo) )
 
 			await connection.commit()

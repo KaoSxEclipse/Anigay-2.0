@@ -16874,3 +16874,13 @@ discord.errors.ClientException: Cog named 'Debug' already loaded
 2023-07-09 13:52:46,306 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 64ddc523b377bcac2fd01160764a4dd0.
 2023-07-09 13:52:57,741 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-09 15:56:51,210 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 15:56:51,213 - discord.client - INFO - logging in using static token
+2023-07-09 15:56:52,088 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3681487638797c1ce13e5f771652b376).
+2023-07-09 15:56:54,142 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 17:16:01,349 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "in" is not found
+2023-07-09 17:18:52,470 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2023-07-09 17:18:52,473 - discord.client - INFO - logging in using static token
+2023-07-09 17:18:53,133 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c8c3f4ba40c652100a6c52597f012d14).
+2023-07-09 17:18:55,192 - root - INFO - Logged in as Anigay 2.0#7825

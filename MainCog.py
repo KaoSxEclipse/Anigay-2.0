@@ -154,10 +154,13 @@ class ProfileStart(commands.Cog):
                             cards = len(card_list)
 
                     rand_card = random.randint(0, cards-1)
-                    card_name = card_list[rand_card]["name"]
 
                     if rand_card in range(2, 5):
                         rand_card = random.randint(0, cards-1)
+                    
+                    for card in card_list:
+                        if card["dex"] == rand_card:
+                            card_name = card["name"]
 
                     await Database.generateCard( rand_card, user_id, 'sr', 1 )
 
