@@ -16899,3 +16899,6 @@ NameError: name 'ProfileStart' is not defined
 2023-07-09 19:16:38,942 - root - INFO - Logged in as Anigay 2.0#7825
 2023-07-09 19:19:09,844 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
+2023-07-09 20:12:08,584 - discord.client - INFO - logging in using static token
+2023-07-09 20:12:09,523 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a6e7f80d9c12a98f3e10044b560d7e61).
+2023-07-09 20:12:11,587 - root - INFO - Logged in as Anigay 2.0#7825

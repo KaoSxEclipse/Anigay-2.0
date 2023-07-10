@@ -10,7 +10,7 @@ import Database
 from CardClass import *
 import random
 
-path_to_db = "/../db/"
+path_to_db = "../db/"
 
 
 # Profile Start commands, prints User's ID and name, returns an embed for now
