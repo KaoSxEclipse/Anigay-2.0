@@ -319,10 +319,10 @@ class Game(commands.Cog):
 
                     # New damage formula
                     player_current_atk = user_card.atk*10
-                    player_dmg = int(round((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+                    player_dmg = int((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)
 
                     enemy_current_atk = oppo.atk*10
-                    enemy_dmg = int(round((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+                    enemy_dmg = int((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)
 
                     player_hp -= enemy_dmg
                     enemy_hp -= player_dmg
