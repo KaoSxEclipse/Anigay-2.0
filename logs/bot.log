@@ -17955,3 +17955,71 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: DiscordServerError: 503 Service Unavailable (error code: 0): 503: Service Unavailable
+2023-07-11 19:27:14,502 - discord.client - INFO - logging in using static token
+2023-07-11 19:27:15,700 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b9a2b1b410874d00d4548ba9b3753abc).
+2023-07-11 19:27:17,818 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:28:38,048 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 67, in location
+    elif 0 < int(loc) <= len(realms): ## Existing Realms
+ValueError: invalid literal for int() with base 10: 'n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'n'
+2023-07-11 19:36:11,560 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "./db/player_data.db-shm" is not found
+2023-07-11 19:36:19,947 - discord.client - INFO - logging in using static token
+2023-07-11 19:36:21,288 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7577de7fff9323b03b51f4f73770c708).
+2023-07-11 19:36:23,440 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:36:27,628 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 84, in location
+    new_loc = float(str(loc)+".001")
+ValueError: could not convert string to float: 'n.001'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: could not convert string to float: 'n.001'
+2023-07-11 19:38:19,657 - discord.client - INFO - logging in using static token
+2023-07-11 19:38:20,850 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 12c277a556e19ef76f94bf845efdd849).
+2023-07-11 19:38:22,963 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:39:01,268 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 93, in location
+    embed = discord.Embed(title=f"Realm {current_loc}, Floor 1 | {realms[int(loc)-1]}",
+ValueError: invalid literal for int() with base 10: 'n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'n'
+2023-07-11 19:39:12,991 - discord.client - INFO - logging in using static token
+2023-07-11 19:39:14,548 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 53b92bedac66f231e0cf4c553c1fa711).
+2023-07-11 19:39:16,664 - root - INFO - Logged in as Anigay 2.0#7825

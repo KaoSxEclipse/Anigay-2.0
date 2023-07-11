@@ -45,6 +45,9 @@ class Game(commands.Cog):
                     for i in series:
                         realms.append(i)
 
+                current_loc = int(str(user["location"]).split(".")[0])
+                current_floor = int(str(user["location"]).split(".")[1])
+
                 max_loc = int(str(user["maxloc"]).split(".")[0])
                 max_floor = int(str(user["maxloc"]).split(".")[1])
 
@@ -63,6 +66,36 @@ class Game(commands.Cog):
                         index += 1
 
                     await ctx.send(embed=embed)
+
+                elif loc in "n next nxt".split(" "):
+                    if current_loc == len(realms):
+                        embed = discord.Embed(title=f"End of the Universe!!",
+                                          description=f"There are no more Realms after this!!",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    elif current_loc == max_loc:
+                        embed = discord.Embed(title=f"You have not unlocked this Realm!!",
+                                          description=f"Please clear the previous Realms and floors before ascending to this realm.",
+                                          color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    else:
+                        current_loc += 1
+                        new_loc = float(str(current_loc)+".001")
+                        #print(location)
+                        await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( new_loc, user_id ) )
+
+                        card = series[realms[int(current_loc)-1]][0]
+
+                        #print(card)
+
+                        embed = discord.Embed(title=f"Realm {current_loc}, Floor 1 | {realms[int(current_loc)-1]}",
+                                      description=f"{card[1]} stands before you.",
+                                      color=0xF76103)
+                        await ctx.send(embed=embed)
+
+
 
                 elif 0 < int(loc) <= len(realms): ## Existing Realms
                     if int(loc) > max_loc: # Player has not cleared the previous location yet
@@ -159,7 +192,7 @@ class Game(commands.Cog):
 
                         embed = discord.Embed(title=f"Realm {current_loc}, Floor {current_floor} | {realms[int(current_loc)-1]}",
                                                   description=f"You travel to the next floor where {card[1]} stands before you.",
-                                                  color=0xF76103)
+                                                  color=0x072A6C)
                         await ctx.send(embed=embed)
 
                 elif isinstance(int(floor), int):
@@ -188,7 +221,7 @@ class Game(commands.Cog):
 
                         embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
                                               description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
-                                              color=0xF76103)
+                                              color=0x072A6C)
                         await ctx.send(embed=embed)
 
 
@@ -218,7 +251,7 @@ class Game(commands.Cog):
             player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
             enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
 
-            embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0x00FF00)
+            embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
             embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
             embed.add_field(name="", value="Element: ", inline=False)
             embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
