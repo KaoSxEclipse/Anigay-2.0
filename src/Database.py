@@ -87,9 +87,9 @@ d = {
 		( 9, 'Satoru Gojo', 86, 83, 78, 78, 'Berserker' ),
 		( 10, 'Toge Inumaki', 86, 89, 73, 81, 'Paralysis' ),
 		( 11, 'Yuji Itadori', 80, 90, 75, 85, 'Unlucky Coin' ),
+		( 12, 'Yuta Okkotsu', 85, 93, 73, 76, 'Paralysis' ) ,
 	),
 	"demon slayer": (
-		( 12, 'Yuta Okkotsu', 85, 93, 73, 76, 'Paralysis' ) ,
 		( 13, 'Giyu Tomioka', 76, 80, 81, 93, 'Double-edged Strike' ),
 		( 14, 'Inosuke Hashibira', 90, 88, 81, 62, 'Amplifier' ),
 		( 15, 'Kanao Tsuyuri', 69, 81, 96, 77, 'Berserker' ),
@@ -113,6 +113,8 @@ d = {
 	)
 }
 
+with open(path_to_db+"cards.json", "w") as file:
+		json.dump( d, file, indent=4 )
 
 async def dumpCard():
 	## id, name, hp ,atk, def, spd, talent

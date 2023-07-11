@@ -30,7 +30,7 @@ class Game(commands.Cog):
 
     # Manage Locations
     @commands.hybrid_command(aliases=["loc"])
-    async def location(self, ctx, loc=None, floor=None):
+    async def location(self, ctx, loc=None):
         async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
                 user_id = str(ctx.author.id)
@@ -47,9 +47,10 @@ class Game(commands.Cog):
 
                 max_loc = int(str(user["maxloc"]).split(".")[0])
                 max_floor = int(str(user["maxloc"]).split(".")[1])
-                
-                if loc != None:
-                    loc = int(loc) - 1
+
+                #print("Max Loc: ", max_loc)
+                #print("Max Floor: ", max_floor)
+                #print("Realms: ", len(realms))
 
                 if loc == None:
                     embed = discord.Embed(title=f"Realms",
@@ -63,31 +64,25 @@ class Game(commands.Cog):
 
                     await ctx.send(embed=embed)
 
-                elif 0 <= int(loc) < len(realms): ## Existing Realms
+                elif 0 < int(loc) <= len(realms): ## Existing Realms
                     if int(loc) > max_loc: # Player has not cleared the previous location yet
                         embed = discord.Embed(title=f"You have not unlocked this Realm!!",
                                           description=f"Please clear the previous Realms and floors before ascending to this realm.",
                                           color=0xF76103)
                         await ctx.send(embed=embed)
                     else:
-                        if int(floor) > max_floor: # Player has not cleared the previous floor yet
-                            embed = discord.Embed(title=f"You have not unlocked this area!!",
-                                          description=f"Please clear the previous areas before progressing your journey.",
-                                          color=0xF76103)
-                            await ctx.send(embed=embed)
-                        else:
-                            location = float(str(loc)+".00"+str(floor))
-                            #print(location)
-                            await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
+                        new_loc = float(str(loc)+".001")
+                        #print(location)
+                        await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( new_loc, user_id ) )
 
-                            card = series[realms[int(loc)]][int(floor)]
+                        card = series[realms[int(loc)-1]][0]
 
-                            #print(card)
+                        #print(card)
 
-                            embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
-                                          description=f"{card[1]} stands before you.",
-                                          color=0xF76103)
-                            await ctx.send(embed=embed)
+                        embed = discord.Embed(title=f"Realm {loc}, Floor 1 | {realms[int(loc)-1]}",
+                                      description=f"{card[1]} stands before you.",
+                                      color=0xF76103)
+                        await ctx.send(embed=embed)
 
 
 
@@ -96,6 +91,74 @@ class Game(commands.Cog):
                                           description=f"Please specify a legitamate realm number!!",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=["fl"])
+    async def floor(self, ctx, floor=None):
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user_id = str(ctx.author.id)
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user = await cursor.fetchall()
+                user = user[0]
+
+                with open(path_to_db+"cards.json", "r") as file:
+                    series = json.load(file)
+                    realms = []
+
+                    for i in series:
+                        realms.append(i)
+
+                #max_loc = int(str(user["maxloc"]).split(".")[0])
+                max_floor = int(str(user["maxloc"]).split(".")[1])
+                current_loc = int(str(user["location"]).split(".")[0])
+                current_floor = int(str(user["location"]).split(".")[1])
+
+                num_of_floors = len(series[realms[current_loc-1]])
+
+                #print("Max Loc: ", max_loc)
+                #print("Max Floor: ", max_floor)
+                #print("Realms: ", realms)
+                #print("Num of Floors", num_of_floors)
+
+
+                if floor == None:
+                    embed = discord.Embed(title=f"Floors",
+                                          description=f"You are at realm **{realms[current_loc-1]}**",
+                                          color=0xF76103)
+
+                    index = 1
+                    for i in range(num_of_floors):
+                        ## print(series[realms[index-1]][i][1]) --> Prints name of each card
+                        embed.add_field(name="", value=f"**Floor {index} |** {series[realms[current_loc-1]][i][1]}", inline=False)
+                        index += 1
+
+                    await ctx.send(embed=embed)
+
+                elif floor in "next n nxt".split(" "):
+
+                    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+                        embed = discord.Embed(title=f"You have not unlocked this floor!!",
+                                      description=f"Please clear the current floor before progressing your journey.",
+                                      color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    elif int(floor) <= 0 or int(floor) > num_of_floors:
+                        embed = discord.Embed(title=f"Invalid Floor!!",
+                                              description=f"Please specify a legitamate Floor number!!",
+                                              color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    else:
+                        location = float(str(current_loc)+".00"+str(floor))
+                        #print(location)
+                        await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
+
+                        card = series[realms[int(loc)]][int(floor)]
+
+                        #print(card)
+
+
 
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
@@ -192,7 +255,10 @@ class Game(commands.Cog):
                 # user card = dictionary
                 # Enemy Floor card is a Class
 
-                card = series[realms[loc]][floor]
+                print("Location: ", loc)
+                print("Floor: ", floor)
+
+                card = series[realms[loc-1]][floor-1]
 
                 user_card = UserCard(c, user_card)
 
@@ -215,8 +281,15 @@ class Game(commands.Cog):
                 CRITICAL_MULTIPLIER = 1
 
                 while player_hp > 0 and enemy_hp > 0:
-                    player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
-                    enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
+                    #player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
+                    #enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
+
+                    # New damage formula
+                    player_current_atk = user_card.atk
+                    player_dmg = int(round((((player_current_atk)+638000)/(8.7 * oppo.df)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+
+                    enemy_current_atk = oppo.atk
+                    enemy_dmg = int(round((((enemy_current_atk)+638000)/(8.7 * user_card.df)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
 
                     player_hp -= enemy_dmg
                     enemy_hp -= player_dmg

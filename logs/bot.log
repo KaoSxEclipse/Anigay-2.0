@@ -16902,3 +16902,717 @@ discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
 2023-07-09 20:12:08,584 - discord.client - INFO - logging in using static token
 2023-07-09 20:12:09,523 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a6e7f80d9c12a98f3e10044b560d7e61).
 2023-07-09 20:12:11,587 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 20:21:32,188 - discord.client - INFO - logging in using static token
+2023-07-09 20:21:33,037 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b1ee093a514864775962e4277c1b1a9c).
+2023-07-09 20:21:35,098 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 20:23:01,777 - discord.client - INFO - logging in using static token
+2023-07-09 20:23:02,463 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a968bd92385ce841568a5eeb68669957).
+2023-07-09 20:23:04,373 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-09 20:23:04,528 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 20:29:59,832 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-09 20:29:59,834 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-09 20:30:18,558 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "fl" is not found
+2023-07-09 20:30:35,356 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-09 20:30:39,054 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 52, in location
+    loc = int(loc) - 1
+ValueError: invalid literal for int() with base 10: 'n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'n'
+2023-07-09 20:30:44,163 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 52, in location
+    loc = int(loc) - 1
+ValueError: invalid literal for int() with base 10: 'realm'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'realm'
+2023-07-09 20:31:42,224 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 52, in location
+    loc = int(loc) - 1
+ValueError: invalid literal for int() with base 10: 'jujutsu'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'jujutsu'
+2023-07-09 20:31:47,241 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 52, in location
+    loc = int(loc) - 1
+ValueError: invalid literal for int() with base 10: 'jujutsu'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'jujutsu'
+2023-07-09 20:31:49,085 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-09 20:31:51,177 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-09 20:32:00,037 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
+2023-07-09 20:32:02,290 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "floor" is not found
+2023-07-09 21:36:25,090 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-09 21:36:30,529 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b1915b22986beedbdcc0a514c24bb11).
+2023-07-09 21:36:32,599 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-09 21:36:32,601 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-09 22:25:41,617 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 7b1915b22986beedbdcc0a514c24bb11.
+2023-07-10 16:32:02,950 - discord.client - INFO - logging in using static token
+2023-07-10 16:32:04,223 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 18b51194f714974be57f75cf2675cd55).
+2023-07-10 16:32:06,346 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 16:32:13,916 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 16:33:29,348 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 16:35:40,228 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 16:36:34,827 - discord.client - INFO - logging in using static token
+2023-07-10 16:36:35,995 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d0523e68c32f5480b47efff6467fe5a7).
+2023-07-10 16:36:38,115 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 16:36:44,087 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 76, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 18:07:27,552 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d0523e68c32f5480b47efff6467fe5a7.
+2023-07-10 18:07:46,542 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-10 18:07:46,543 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-10 18:10:00,733 - discord.gateway - INFO - Shard ID None has successfully RESUMED session d0523e68c32f5480b47efff6467fe5a7.
+2023-07-10 18:11:15,475 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "cl" is not found
+2023-07-10 18:36:19,866 - discord.client - INFO - logging in using static token
+2023-07-10 18:36:20,513 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: df4547ddda5b692c65b19b7bfdf6df5a).
+2023-07-10 18:36:22,587 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 18:36:39,407 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 73, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 18:37:49,659 - discord.client - INFO - logging in using static token
+2023-07-10 18:37:50,575 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 980347a6d0a91a3db3c1613cc9eeb855).
+2023-07-10 18:37:52,628 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 18:37:57,571 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 74, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2023-07-10 18:39:09,080 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 88, in location
+    embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
+TypeError: can only concatenate str (not "int") to str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can only concatenate str (not "int") to str
+2023-07-10 18:39:17,002 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 88, in location
+    embed = discord.Embed(title=f"Realm {loc+1}, Floor {floor}",
+TypeError: can only concatenate str (not "int") to str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can only concatenate str (not "int") to str
+2023-07-10 18:53:49,112 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 980347a6d0a91a3db3c1613cc9eeb855.
+2023-07-10 18:57:21,991 - discord.client - INFO - logging in using static token
+2023-07-10 18:57:22,738 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a3c2197b9c837997924fa023865b5395).
+2023-07-10 18:57:24,812 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 18:58:43,149 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 125, in floor
+    print("Max Loc: ", max_loc)
+NameError: name 'max_loc' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'max_loc' is not defined
+2023-07-10 18:59:00,510 - discord.client - INFO - logging in using static token
+2023-07-10 18:59:01,748 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 57778e2910cbfea794e4dc7adfba2fac).
+2023-07-10 18:59:03,807 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 18:59:07,449 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 137, in floor
+    embed.add_field(name=f"Floor {index} | {realm[current_loc][index-1][i]}", value=f"{i}", inline=False)
+NameError: name 'realm' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'realm' is not defined
+2023-07-10 19:00:21,490 - discord.client - INFO - logging in using static token
+2023-07-10 19:00:22,341 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 019b95ef90bc73aee53ac24af2942870).
+2023-07-10 19:00:24,412 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:00:25,549 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 138, in floor
+    embed.add_field(name=f"Floor {index} | {series[realm[index-1]][i]}", value=f"{i}", inline=False)
+NameError: name 'realm' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'realm' is not defined
+2023-07-10 19:01:17,875 - discord.client - INFO - logging in using static token
+2023-07-10 19:01:18,690 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5b9678f0b99fe9ef9235951dfc5a3b47).
+2023-07-10 19:01:20,755 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:01:22,280 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 123, in floor
+    num_of_floors = len(series[realm[current_loc-1]])
+NameError: name 'realm' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'realm' is not defined
+2023-07-10 19:01:30,495 - discord.client - INFO - logging in using static token
+2023-07-10 19:01:31,250 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 086b24663c3098a17b0ac5675d90174f).
+2023-07-10 19:01:33,344 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:01:34,773 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 138, in floor
+    embed.add_field(name=f"Floor {index} | {series[realm[index-1]][i]}", value=f"{i}", inline=False)
+NameError: name 'realm' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'realm' is not defined
+2023-07-10 19:02:06,980 - discord.client - INFO - logging in using static token
+2023-07-10 19:02:07,848 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6d154950b25910285aa643f5c4deb08d).
+2023-07-10 19:02:09,923 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:02:11,659 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 138, in floor
+    embed.add_field(name=f"Floor {index} | {series[realms[index-1]][i]['name']}", value=f"{i}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-10 19:02:32,889 - discord.client - INFO - logging in using static token
+2023-07-10 19:02:33,858 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6be8893375f1f1b1442ae21eaf507555).
+2023-07-10 19:02:35,932 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:02:36,730 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 139, in floor
+    embed.add_field(name=f"Floor {index} | {series[realms[index-1]][i]['name']}", value=f"{i}", inline=False)
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-10 19:03:00,003 - discord.client - INFO - logging in using static token
+2023-07-10 19:03:00,993 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5190d38b4e3eba381e2922abddd56e13).
+2023-07-10 19:03:03,040 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:03:04,935 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 139, in floor
+    embed.add_field(name=f"Floor {index} | {series[realms[index-1]][i][1]}", value=f"{i}", inline=False)
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-10 19:03:31,129 - discord.client - INFO - logging in using static token
+2023-07-10 19:03:31,820 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4bf0884ae54c0e8922c2de7ee27314c2).
+2023-07-10 19:03:33,782 - discord.client - INFO - logging in using static token
+2023-07-10 19:03:34,786 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bb095487ec391dec2d9a7910789ad21a).
+2023-07-10 19:03:36,856 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:03:54,310 - discord.client - INFO - logging in using static token
+2023-07-10 19:03:55,060 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bc24c09a1d680a9c30d553b13299fd59).
+2023-07-10 19:03:57,114 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:04:43,984 - discord.client - INFO - logging in using static token
+2023-07-10 19:04:44,774 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c39519dc92357e3ced58b7e5405f665f).
+2023-07-10 19:04:46,854 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:04:59,839 - discord.client - INFO - logging in using static token
+2023-07-10 19:05:01,009 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 89cce3890f832727fed943dc1417f25f).
+2023-07-10 19:05:03,079 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:05:39,888 - discord.client - INFO - logging in using static token
+2023-07-10 19:05:40,503 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e18b8ddd8243f53f8ae8d5bc1286bf4).
+2023-07-10 19:05:42,604 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:05:55,070 - discord.client - INFO - logging in using static token
+2023-07-10 19:05:55,796 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 80cfafa8472880ec28ec681c9a728df8).
+2023-07-10 19:05:57,852 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:06:20,482 - discord.client - INFO - logging in using static token
+2023-07-10 19:06:21,236 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 424fbc9e30483a5d3ad68858d0f629dc).
+2023-07-10 19:06:23,296 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:32:47,555 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 424fbc9e30483a5d3ad68858d0f629dc.
+2023-07-10 19:47:30,620 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 16.8s behind.
+2023-07-10 19:51:43,377 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 74, in location
+    if int(floor) > max_floor: # Player has not cleared the previous floor yet
+NameError: name 'floor' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'floor' is not defined
+2023-07-10 19:52:27,091 - discord.client - INFO - logging in using static token
+2023-07-10 19:52:27,747 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6d94a2fe9ac7656a3d03bf90655ac6ac).
+2023-07-10 19:52:29,806 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:53:42,378 - discord.client - INFO - logging in using static token
+2023-07-10 19:53:43,226 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: dfadc659416b458aae5eca7a77d21067).
+2023-07-10 19:53:45,292 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:53:47,018 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 42, in location
+    series = json.load(file)
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 75 column 5 (char 1261)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: JSONDecodeError: Expecting value: line 75 column 5 (char 1261)
+2023-07-10 19:53:54,278 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 42, in location
+    series = json.load(file)
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/home/christopherchay/anaconda3/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 75 column 5 (char 1261)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: JSONDecodeError: Expecting value: line 75 column 5 (char 1261)
+2023-07-10 19:55:16,082 - discord.client - INFO - logging in using static token
+2023-07-10 19:55:16,997 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 35ed89094e5eab7e6f1131a6e996f07a).
+2023-07-10 19:55:19,068 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:56:09,638 - discord.client - INFO - logging in using static token
+2023-07-10 19:56:10,362 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ed00797c21a7fa7820fefce1e66fd156).
+2023-07-10 19:56:12,412 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:56:14,252 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 82, in location
+    embed = discord.Embed(title=f"Realm {loc}, Floor 1 | {realms[loc-1]}",
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: unsupported operand type(s) for -: 'str' and 'int'
+2023-07-10 19:56:25,036 - discord.client - INFO - logging in using static token
+2023-07-10 19:56:25,881 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 94dd3e3e07ba8ddd85294283a96a0acb).
+2023-07-10 19:56:27,936 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:56:53,453 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 258, in battle
+    card = series[realms[loc]][floor]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-10 19:57:59,504 - discord.client - INFO - logging in using static token
+2023-07-10 19:58:00,275 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 74b92d90ebb3c2181d12eb218ae87ba7).
+2023-07-10 19:58:02,333 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:58:05,792 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 261, in battle
+    card = series[realms[loc]][floor]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-10 19:58:25,331 - discord.client - INFO - logging in using static token
+2023-07-10 19:58:26,159 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fc4fe2988b01400aab1dfd930d47bdab).
+2023-07-10 19:58:28,208 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 19:58:31,863 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 267, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 132, in __init__
+    card = series[realms[location]][floor]
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-10 19:59:21,129 - discord.client - INFO - logging in using static token
+2023-07-10 19:59:22,339 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b2fe7ed9112e5460b1c37cd12c3b8e1b).
+2023-07-10 19:59:24,430 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-10 20:00:55,505 - discord.client - INFO - logging in using static token
+2023-07-10 20:00:56,195 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1adaf9852981c150c685160477c3339d).
+2023-07-10 20:00:58,254 - root - INFO - Logged in as Anigay 2.0#7825

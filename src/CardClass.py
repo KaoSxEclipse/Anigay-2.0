@@ -129,7 +129,7 @@ class FloorCard(UserCard):
 		for i in series:
 			realms.append(i)
 
-		card = series[realms[location]][floor]
+		card = series[realms[location-1]][floor-1]
 		self.name = card[1]
 		self.rarity = "c"
 		self.evo = 1
