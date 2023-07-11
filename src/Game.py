@@ -288,8 +288,8 @@ class Game(commands.Cog):
                 # user card = dictionary
                 # Enemy Floor card is a Class
 
-                print("Location: ", loc)
-                print("Floor: ", floor)
+                #print("Location: ", loc)
+                #print("Floor: ", floor)
 
                 card = series[realms[loc-1]][floor-1]
 
@@ -318,11 +318,11 @@ class Game(commands.Cog):
                     #enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
 
                     # New damage formula
-                    player_current_atk = user_card.atk
-                    player_dmg = int(round((((player_current_atk)+638000)/(8.7 * oppo.df)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+                    player_current_atk = user_card.atk*10
+                    player_dmg = int(round((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
 
-                    enemy_current_atk = oppo.atk
-                    enemy_dmg = int(round((((enemy_current_atk)+638000)/(8.7 * user_card.df)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+                    enemy_current_atk = oppo.atk*10
+                    enemy_dmg = int(round((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
 
                     player_hp -= enemy_dmg
                     enemy_hp -= player_dmg
@@ -332,6 +332,15 @@ class Game(commands.Cog):
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
+
+                if player_hp > 0:
+                    #if 
+                    async with asqlite.connect(path_to_db+"player_data.db") as connection:
+                        async with connection.cursor() as cursor:
+                            user_id = str(ctx.author.id)
+                            new_loc = str(loc) + ".00" + str(floor+1)
+                            await cursor.execute( """UPDATE Users set maxloc=? WHERE id=?""", ( new_loc, user_id ) )
+
 
             else:
                 embed = discord.Embed(

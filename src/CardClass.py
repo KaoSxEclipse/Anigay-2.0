@@ -120,6 +120,15 @@ class UserCard:
 		self.spd = int(round(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
 
 
+	def __str__(self):
+		return """
+HP:  {}
+ATK: {}
+DEF: {}
+SPD: {}
+		""" .format(self.hp, self.atk, self.df, self.spd)
+
+
 class FloorCard(UserCard):
 	def __init__(self, location, floor):
 		with open(path_to_db+"cards.json", "r") as file:

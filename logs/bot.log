@@ -17822,3 +17822,74 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Val
 2023-07-11 15:19:40,843 - discord.client - INFO - logging in using static token
 2023-07-11 15:19:42,105 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4a6b1a8d6e7ed2f3a012f76bbc2415f6).
 2023-07-11 15:19:44,397 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 15:25:38,474 - discord.client - INFO - logging in using static token
+2023-07-11 15:25:39,549 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c9480c4b6fed4d871bf31b0ddf03a1a3).
+2023-07-11 15:25:41,687 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 15:26:58,937 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-11 15:26:58,938 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-11 15:35:22,814 - discord.client - INFO - logging in using static token
+2023-07-11 15:35:23,951 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d0158db69963b0f499e9ffb85e7869a4).
+2023-07-11 15:35:26,120 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 15:35:37,314 - discord.client - INFO - logging in using static token
+2023-07-11 15:35:38,372 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b5fb2b4f453dfc404440eda46f7c737).
+2023-07-11 15:35:40,499 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 15:37:12,185 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "view" is not found
+2023-07-11 15:47:11,659 - discord.client - INFO - logging in using static token
+2023-07-11 15:47:13,107 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7d549e8847ee36ca7f37c4c4c1a4f14a).
+2023-07-11 15:47:15,304 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:06:57,668 - discord.client - INFO - logging in using static token
+2023-07-11 16:06:59,007 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 40f3f9c75c1db28ee3e0fdeda5fd70ac).
+2023-07-11 16:07:01,171 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:07:47,312 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 323, in battle
+    player_dmg = int(round((((player_current_atk*player.atk)+638000)/(8.7 * oppo.df)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER))
+AttributeError: module 'discord.player' has no attribute 'atk'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.player' has no attribute 'atk'
+2023-07-11 16:08:28,214 - discord.client - INFO - logging in using static token
+2023-07-11 16:08:29,734 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8684c43703981e458c3960b949b33647).
+2023-07-11 16:08:32,000 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:33:08,820 - discord.client - INFO - logging in using static token
+2023-07-11 16:33:10,036 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b231ff40463fec92f7bd77e05f97165e).
+2023-07-11 16:33:12,565 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:35:36,362 - discord.client - INFO - logging in using static token
+2023-07-11 16:35:38,009 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f8075341eed0f424e4f8c2e61e44662e).
+2023-07-11 16:35:40,223 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:37:31,901 - discord.client - INFO - logging in using static token
+2023-07-11 16:37:33,409 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f840f128a43be8cb42abe8bd497adc23).
+2023-07-11 16:37:35,896 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:37:42,051 - discord.client - INFO - logging in using static token
+2023-07-11 16:37:43,640 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: abdc7d7150203ff55ff88fc9002f4928).
+2023-07-11 16:37:46,244 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 16:37:54,932 - discord.client - INFO - logging in using static token
+2023-07-11 16:37:56,552 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a7c0cc7ba1076ac8f54a0d03114c5204).
+2023-07-11 16:37:59,072 - root - INFO - Logged in as Anigay 2.0#7825
