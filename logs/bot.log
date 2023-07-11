@@ -17906,3 +17906,52 @@ Traceback (most recent call last):
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
 2023-07-11 18:23:17,602 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 01ff16928e5d7cd2898b14e00334c025.
+2023-07-11 19:05:25,238 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 01ff16928e5d7cd2898b14e00334c025.
+2023-07-11 19:12:06,447 - discord.client - INFO - logging in using static token
+2023-07-11 19:12:07,965 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d6ec9ed2d1e50331263aec3f655cb896).
+2023-07-11 19:12:10,081 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:12:42,593 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 338, in battle
+    highest_floor = len(series[realms[current_loc-1]])
+NameError: name 'current_loc' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'current_loc' is not defined
+2023-07-11 19:18:47,882 - discord.client - INFO - logging in using static token
+2023-07-11 19:18:49,532 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d0c6d536607c4ed61ffec10c1d3fc40b).
+2023-07-11 19:18:51,745 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:20:03,770 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 192, in floor
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 842, in send
+    return await super().send(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/abc.py", line 1538, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 742, in request
+    raise DiscordServerError(response, data)
+discord.errors.DiscordServerError: 503 Service Unavailable (error code: 0): 503: Service Unavailable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: DiscordServerError: 503 Service Unavailable (error code: 0): 503: Service Unavailable

@@ -334,12 +334,35 @@ class Game(commands.Cog):
                     await asyncio.sleep(2.5)
 
                 if player_hp > 0:
-                    #if 
-                    async with asqlite.connect(path_to_db+"player_data.db") as connection:
-                        async with connection.cursor() as cursor:
-                            user_id = str(ctx.author.id)
+                    max_floor = int(str(user["maxloc"]).split(".")[1])
+                    highest_floor = len(series[realms[loc-1]])
+                    if floor == max_floor: ## Player clears a new floor
+                        if max_floor == highest_floor: ## Player completes a realm/location
+                            new_loc = str(loc+1) + ".001" 
+
+                            embed = discord.Embed(
+                                title="Realm Cleared!!",
+                                description="Please proceed to the next Realm with `.loc n`!",
+                                color=0x00FF00
+                            )
+                        else:
                             new_loc = str(loc) + ".00" + str(floor+1)
-                            await cursor.execute( """UPDATE Users set maxloc=? WHERE id=?""", ( new_loc, user_id ) )
+
+                            embed = discord.Embed(
+                                title="Floor Cleared!!",
+                                description="Please proceed to the next Floor with `.fl n`!",
+                                color=0x00FF00
+                            )
+
+
+                        async with asqlite.connect(path_to_db+"player_data.db") as connection:
+                            async with connection.cursor() as cursor:
+                                user_id = str(ctx.author.id)
+                                await cursor.execute( """UPDATE Users set maxloc=? WHERE id=?""", ( new_loc, user_id ) )
+
+                                await connection.commit()
+
+                        await ctx.send(embed=embed)
 
 
             else:
