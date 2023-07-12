@@ -18222,3 +18222,192 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Ope
 2023-07-11 20:38:57,338 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-11 20:38:57,384 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 21:57:43,845 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-11 21:57:49,498 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6ac7e795fdfb470b1616fbab1cb30bf1).
+2023-07-11 21:57:51,608 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 21:57:51,609 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-11 22:04:09,467 - discord.client - INFO - logging in using static token
+2023-07-11 22:04:11,068 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a3d8dc4eb9b112b45d7adfbc3f883629).
+2023-07-11 22:04:13,178 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:04:20,068 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 162, in floor
+    current_floor = parseFloor(user["maxloc"])
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 28, in parseFloor
+    floor = str(user["location"]).split(".")[1]
+TypeError: 'module' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'module' object is not subscriptable
+2023-07-11 22:04:21,214 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 322, in battle
+    current_floor = parseFloor(user["location"])
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 28, in parseFloor
+    floor = str(user["location"]).split(".")[1]
+TypeError: 'module' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'module' object is not subscriptable
+2023-07-11 22:04:55,444 - discord.client - INFO - logging in using static token
+2023-07-11 22:04:56,668 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c79f63941486c9f1b1baa785148e4ad1).
+2023-07-11 22:04:58,786 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:05:01,154 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 322, in battle
+    current_floor = parseFloor(user["location"])
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 28, in parseFloor
+    floor = location.split(".")[1]
+AttributeError: 'float' object has no attribute 'split'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'float' object has no attribute 'split'
+2023-07-11 22:05:34,832 - discord.client - INFO - logging in using static token
+2023-07-11 22:05:36,265 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f08c4bfdfda469cc68705a63e00c0259).
+2023-07-11 22:05:38,383 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:05:39,554 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 352, in battle
+    card = series[realms[loc-1]][floor-1]
+NameError: name 'floor' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'floor' is not defined
+2023-07-11 22:06:10,988 - discord.client - INFO - logging in using static token
+2023-07-11 22:06:12,306 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c0cc355d6713c99e9422b6aad7b621e7).
+2023-07-11 22:06:14,431 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:06:29,171 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 397, in battle
+    if floor == max_floor: ## Player clears a new floor
+NameError: name 'max_floor' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'max_floor' is not defined
+2023-07-11 22:06:45,081 - discord.client - INFO - logging in using static token
+2023-07-11 22:06:46,409 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 92faf9ad4899716c882a5c7b6e4450cc).
+2023-07-11 22:06:48,529 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:07:19,183 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 192, in floor
+    if current_floor+1 > max_floor: # Player has not cleared the previous floor yet
+NameError: name 'max_floor' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'max_floor' is not defined
+2023-07-11 22:07:27,758 - discord.client - INFO - logging in using static token
+2023-07-11 22:07:29,314 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 75a572a0daee0d1f948e0bc2a9390d26).
+2023-07-11 22:07:31,431 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:08:03,146 - discord.client - INFO - logging in using static token
+2023-07-11 22:08:04,284 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a7864e2d83c4be7a7bec6d26b7be5994).
+2023-07-11 22:08:06,407 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:08:24,099 - discord.ext.commands.bot - ERROR - Ignoring exception in command location
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 65, in location
+    max_floor = parseFloor(user["max_loc"])
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-11 22:08:45,173 - discord.client - INFO - logging in using static token
+2023-07-11 22:08:46,650 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c6868d38d18c6a80d3d72d06a19ebffc).
+2023-07-11 22:08:48,780 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 22:09:24,621 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 223, in floor
+    if floor > max_floor:
+NameError: name 'max_floor' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'max_floor' is not defined
+2023-07-11 22:09:46,781 - discord.client - INFO - logging in using static token
+2023-07-11 22:09:47,661 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 048d8e0995a9136cf3b7fdc181222403).
+2023-07-11 22:09:49,763 - root - INFO - Logged in as Anigay 2.0#7825

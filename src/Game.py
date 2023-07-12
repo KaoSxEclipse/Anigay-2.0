@@ -24,6 +24,19 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 
+def parseFloor( location ):
+    floor = str(location).split(".")[1]
+
+    mult = 2
+    for digit in floor:
+        if int(digit) == 0:
+            mult -= 1
+
+    floor = int(floor)*(10**mult)
+
+    return floor
+
+
 class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -46,10 +59,10 @@ class Game(commands.Cog):
                         realms.append(i)
 
                 current_loc = int(str(user["location"]).split(".")[0])
-                current_floor = int(str(user["location"]).split(".")[1])
+                current_floor = parseFloor(user["location"])
 
                 max_loc = int(str(user["maxloc"]).split(".")[0])
-                max_floor = int(str(user["maxloc"]).split(".")[1])
+                max_floor = parseFloor(user["maxloc"])
 
                 #print("Max Loc: ", max_loc)
                 #print("Max Floor: ", max_floor)
@@ -146,9 +159,9 @@ class Game(commands.Cog):
                         realms.append(i)
 
                 #max_loc = int(str(user["maxloc"]).split(".")[0])
-                max_floor = int(str(user["maxloc"]).split(".")[1])
+                max_floor = parseFloor(user["maxloc"])
                 current_loc = int(str(user["location"]).split(".")[0])
-                current_floor = int(str(user["location"]).split(".")[1])
+                current_floor = parseFloor(user["location"])
 
                 highest_floor = len(series[realms[current_loc-1]])
 
@@ -264,10 +277,10 @@ class Game(commands.Cog):
             enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
-            embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [{user_card.evo}]**", inline=False)
+            embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [Evo {user_card.evo}]**", inline=False)
             embed.add_field(name="", value="Element: ", inline=False)
             embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-            embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [{oppo.evo}]**", inline=False)
+            embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [Evo {oppo.evo}]**", inline=False)
             embed.add_field(name="", value="Element: ", inline=False)
             embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
 
@@ -306,7 +319,7 @@ class Game(commands.Cog):
                         user = user[0]
 
                         loc = int(str(user["location"]).split(".")[0])
-                        floor = int(str(user["location"]).split(".")[1])
+                        floor = parseFloor(user["location"])
 
                         await connection.commit()
 
@@ -379,7 +392,7 @@ class Game(commands.Cog):
                     await asyncio.sleep(2.5)
 
                 if player_hp > 0:
-                    max_floor = int(str(user["maxloc"]).split(".")[1])
+                    max_floor = parseFloor(user["maxloc"])
                     highest_floor = len(series[realms[loc-1]])
                     if floor == max_floor: ## Player clears a new floor
                         if max_floor == highest_floor: ## Player completes a realm/location
