@@ -57,6 +57,7 @@ class UserCard:
 		self.id = card["uid"]
 		self.dexid = card["dex"]
 		self.rarity = card["rarity"]
+		self.rarity_s = ""
 		self.rarity_mult = 1
 		self.level_cap = 1
 		self.evo = card["evo"]
@@ -79,22 +80,27 @@ class UserCard:
 			self.rarity_mult = 1.2
 			self.level_cap = 20
 			self.rarity = "Common"
+			self.rarity_s = "C"
 		elif self.rarity == 'uc':
 			self.rarity_mult = 1.4
 			self.level_cap = 30
 			self.rarity = "Uncommon"
+			self.rarity_s = "UC"
 		elif self.rarity == 'r':
 			self.rarity_mult = 1.4
 			self.level_cap = 40
 			self.rarity = "Rare"
+			self.rarity_s = "R"
 		elif self.rarity == 'sr':
 			self.rarity_mult = 1.8
 			self.level_cap = 50
 			self.rarity = "Super Rare"
+			self.rarity_s = "SR"
 		elif self.rarity == 'ur':
 			self.rarity_mult = 2.0
 			self.level_cap = 60
 			self.rarity = "Ultra Rare"
+			self.rarity_s = "UR"
 		else:
 			self.rarity = -1
 			print("Error! Rarity should be c,uc,r,sr,ur")
@@ -140,11 +146,11 @@ class FloorCard(UserCard):
 
 		card = series[realms[location-1]][floor-1]
 		self.name = card[1]
-		self.rarity = "c"
+		self.rarity = "r"
 		self.evo = 1
 		self.location = location
 		self.floor = floor
-		self.level = self.location*2+self.floor
+		self.level = self.location*2+(self.floor*2)
 		self.hp = card[2]
 		self.atk = card[3]
 		self.df = card[4]

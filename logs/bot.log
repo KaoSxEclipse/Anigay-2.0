@@ -18023,3 +18023,202 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Val
 2023-07-11 19:39:12,991 - discord.client - INFO - logging in using static token
 2023-07-11 19:39:14,548 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 53b92bedac66f231e0cf4c553c1fa711).
 2023-07-11 19:39:16,664 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:42:34,725 - discord.client - INFO - logging in using static token
+2023-07-11 19:42:35,871 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c92e7ee5a97f3649edc98a8c5a5d2f86).
+2023-07-11 19:42:38,007 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:44:30,882 - discord.client - INFO - logging in using static token
+2023-07-11 19:44:32,180 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 833b61b13b3972f0629ea92ef8774c9e).
+2023-07-11 19:44:34,292 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:50:05,736 - discord.client - INFO - logging in using static token
+2023-07-11 19:50:07,015 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: be0b9f501bf2d304e2302e63eb9d4314).
+2023-07-11 19:50:09,132 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:50:11,043 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 348, in battle
+    embed = displayHP(player_hp, enemy_hp, battle_round)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 261, in displayHP
+    embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity.Upper()}__ Lvl {user_card.level} [{user_card.evo}]", inline=False)
+AttributeError: 'str' object has no attribute 'Upper'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'str' object has no attribute 'Upper'
+2023-07-11 19:50:35,318 - discord.client - INFO - logging in using static token
+2023-07-11 19:50:36,433 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a8770b6b98d2802ee09e38f1f3cd1a39).
+2023-07-11 19:50:38,127 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-11 19:50:38,536 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:50:41,051 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 348, in battle
+    embed = displayHP(player_hp, enemy_hp, battle_round)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 261, in displayHP
+    embed.add_field(name=f"", value=f"**{user_card.name}** __{Upper(user_card.rarity)}__ Lvl {user_card.level} [{user_card.evo}]", inline=False)
+NameError: name 'Upper' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Upper' is not defined
+2023-07-11 19:51:19,250 - discord.client - INFO - logging in using static token
+2023-07-11 19:51:20,522 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1373b532dafc7255580df490ad2302e0).
+2023-07-11 19:51:22,665 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:53:23,089 - discord.client - INFO - logging in using static token
+2023-07-11 19:53:24,267 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e66d9775a4cb3024efef71a985515bd).
+2023-07-11 19:53:26,375 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:53:52,285 - discord.client - INFO - logging in using static token
+2023-07-11 19:53:53,257 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fa5d3371f17f117843c3d6cb9cbc2bef).
+2023-07-11 19:53:55,371 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:55:52,820 - discord.client - INFO - logging in using static token
+2023-07-11 19:55:53,977 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1d9e1376894f8dc90a10f1e2ac743d39).
+2023-07-11 19:55:56,090 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:57:14,005 - discord.client - INFO - logging in using static token
+2023-07-11 19:57:15,078 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b6662f01c88e2740f30ffcc88cbfeec5).
+2023-07-11 19:57:17,190 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:57:37,086 - discord.client - INFO - logging in using static token
+2023-07-11 19:57:38,835 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6849edd88cdffa58a8178560dbe0a829).
+2023-07-11 19:57:40,371 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-11 19:57:40,952 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:58:00,030 - discord.client - INFO - logging in using static token
+2023-07-11 19:58:01,353 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: feca05e7c2315bef945db616b5937a6c).
+2023-07-11 19:58:02,899 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-11 19:58:03,469 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:58:42,599 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-11 19:58:42,600 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-11 19:59:09,275 - discord.client - INFO - logging in using static token
+2023-07-11 19:59:10,353 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e6e23ff23fe9d0f8fdef184148e47ffb).
+2023-07-11 19:59:12,470 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 19:59:31,499 - discord.client - INFO - logging in using static token
+2023-07-11 19:59:32,909 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 511718f458a49384735a196ee5c015ee).
+2023-07-11 19:59:35,018 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 20:00:20,219 - discord.client - INFO - logging in using static token
+2023-07-11 20:00:21,856 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b2e0ade9e018f37fb7138e883aef5978).
+2023-07-11 20:00:24,017 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 20:07:56,309 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command ".fl" is not found
+2023-07-11 20:12:14,835 - discord.client - INFO - logging in using static token
+2023-07-11 20:12:16,180 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ee6c29e12b4b71fa84520d425f77afab).
+2023-07-11 20:12:18,388 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 20:35:07,445 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 229, in floor
+    await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: database is locked
+2023-07-11 20:37:51,208 - discord.client - INFO - logging in using static token
+2023-07-11 20:37:52,825 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2c5306bf98102c9755566809ba5462d6).
+2023-07-11 20:37:54,976 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-11 20:37:55,035 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-11 20:38:08,123 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 282, in battle
+    user = await Database.verifyUser(user_id)
+  File "/home/christopherchay/___/Anigay-2.0/src/Database.py", line 38, in verifyUser
+    async with asqlite.connect(path_to_db+"player_data.db") as connection:
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 142, in __aenter__
+    ret = await self._runner()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 134, in _runner
+    ret = await future
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 495, in _connect_pragmas
+    connection.execute('pragma journal_mode=wal')
+sqlite3.OperationalError: locking protocol
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: locking protocol
+2023-07-11 20:38:14,307 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 282, in battle
+    user = await Database.verifyUser(user_id)
+  File "/home/christopherchay/___/Anigay-2.0/src/Database.py", line 38, in verifyUser
+    async with asqlite.connect(path_to_db+"player_data.db") as connection:
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 142, in __aenter__
+    ret = await self._runner()
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 134, in _runner
+    ret = await future
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 495, in _connect_pragmas
+    connection.execute('pragma journal_mode=wal')
+sqlite3.OperationalError: locking protocol
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: locking protocol
+2023-07-11 20:38:53,487 - discord.client - INFO - logging in using static token
+2023-07-11 20:38:55,187 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 209d7a3d2937ef2c9fc590d5ad772335).
+2023-07-11 20:38:57,338 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-11 20:38:57,384 - root - INFO - Logged in as Anigay 2.0#7825

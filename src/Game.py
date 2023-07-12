@@ -62,7 +62,10 @@ class Game(commands.Cog):
 
                     index = 1
                     for i in realms:
-                        embed.add_field(name=f"Realm {index}", value=f"{i}", inline=False)
+                        if current_loc == index:
+                            embed.add_field(name=f"Realm {index}", value=f"**{i}**", inline=False)
+                        else:
+                            embed.add_field(name=f"Realm {index}", value=f"{i}", inline=False)
                         index += 1
 
                     await ctx.send(embed=embed)
@@ -163,7 +166,10 @@ class Game(commands.Cog):
                     index = 1
                     for i in range(highest_floor):
                         ## print(series[realms[index-1]][i][1]) --> Prints name of each card
-                        embed.add_field(name="", value=f"**Floor {index} |** {series[realms[current_loc-1]][i][1]}", inline=False)
+                        if current_floor == index:
+                            embed.add_field(name="", value=f"**Floor {index} |** **{series[realms[current_loc-1]][i][1]}**", inline=False)
+                        else:
+                            embed.add_field(name="", value=f"**Floor {index} |** {series[realms[current_loc-1]][i][1]}", inline=False)
                         index += 1
 
                     await ctx.send(embed=embed)
@@ -184,7 +190,10 @@ class Game(commands.Cog):
 
                     else:
                         current_floor += 1
-                        location = float(str(current_loc)+".00"+str(current_floor))
+                        if current_floor > 9:
+                            location = float(str(current_loc)+".0"+str(current_floor))
+                        else:
+                            location = float(str(current_loc)+".00"+str(current_floor))
                         #print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
 
@@ -211,7 +220,10 @@ class Game(commands.Cog):
                         await ctx.send(embed=embed)
 
                     else:
-                        location = float(str(current_loc)+".00"+str(floor))
+                        if floor > 9:
+                            location = float(str(current_loc)+".0"+str(floor))
+                        else:
+                            location = float(str(current_loc)+".00"+str(floor))
 
                         #print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
@@ -252,17 +264,17 @@ class Game(commands.Cog):
             enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
-            embed.add_field(name=f"**{user_card.name}**", value="", inline=False)
+            embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [{user_card.evo}]**", inline=False)
             embed.add_field(name="", value="Element: ", inline=False)
             embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-            embed.add_field(name=f"**{oppo.name}**", value="", inline=False)
+            embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [{oppo.evo}]**", inline=False)
             embed.add_field(name="", value="Element: ", inline=False)
             embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
-                embed.add_field(name=f"{user_card.name} deals {player_dmg} to {oppo.name}", value="", inline=False)
-                embed.add_field(name=f"{oppo.name} deals {enemy_dmg} to {user_card.name}", value="", inline=False)
+                embed.add_field(name="", value=f"**{user_card.name}** deals **{player_dmg}** to **{oppo.name}**", inline=False)
+                embed.add_field(name="", value=f"**{oppo.name}** deals **{enemy_dmg}** to **{user_card.name}**", inline=False)
 
             return embed
 
@@ -371,7 +383,7 @@ class Game(commands.Cog):
                     highest_floor = len(series[realms[loc-1]])
                     if floor == max_floor: ## Player clears a new floor
                         if max_floor == highest_floor: ## Player completes a realm/location
-                            new_loc = str(loc+1) + ".001" 
+                            new_loc = str(loc+1) + ".001"
 
                             embed = discord.Embed(
                                 title="Realm Cleared!!",
@@ -379,7 +391,10 @@ class Game(commands.Cog):
                                 color=0x00FF00
                             )
                         else:
-                            new_loc = str(loc) + ".00" + str(floor+1)
+                            if floor+1 > 9:
+                                new_loc = str(loc) + ".0" + str(floor+1)
+                            else:
+                                new_loc = str(loc) + ".00" + str(floor+1)
 
                             embed = discord.Embed(
                                 title="Floor Cleared!!",

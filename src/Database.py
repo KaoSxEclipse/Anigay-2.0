@@ -22,9 +22,9 @@ async def playerDB():
 	# Create the User Database if it doesn't exist
 	async with asqlite.connect(path_to_db+"player_data.db") as connection:
 		async with connection.cursor() as cursor:
-			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Users (id bigint, exp int, wuns int, stamina int, card int, location FLOAT, maxloc FLOAT )''' )
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Users (id bigint, exp int, wuns int, stamina int, card int, location DECIMAL(6,3), maxloc DECIMAL(6,3) )''' )
 
-			#await cursor.execute("ALTER TABLE Users ADD maxloc REAL DEFAULT 1.001 NOT NULL")
+			#\\await cursor.execute("ALTER TABLE Users ADD maxloc REAL DEFAULT 1.001 NOT NULL")
 
 			#await cursor.execute("ALTER TABLE Users ADD location REAL DEFAULT 1.001 NOT NULL")
 
