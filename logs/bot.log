@@ -18434,3 +18434,141 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-12 13:46:28,063 - discord.client - INFO - logging in using static token
+2023-07-12 13:46:28,686 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 26342909b0abc82cfe21d9449d9c9376).
+2023-07-12 13:46:30,724 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:47:32,872 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 382, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 161, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 123, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-12 13:49:43,632 - discord.client - INFO - logging in using static token
+2023-07-12 13:49:44,143 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fb5048c93cc8d27f43fe13ec2149449f).
+2023-07-12 13:49:46,185 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:50:49,677 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 398, in battle
+    calcEleAdvantage()
+TypeError: Game.battle.<locals>.calcEleAdvantage() missing 2 required positional arguments: 'element1' and 'element2'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Game.battle.<locals>.calcEleAdvantage() missing 2 required positional arguments: 'element1' and 'element2'
+2023-07-12 13:51:25,286 - discord.client - INFO - logging in using static token
+2023-07-12 13:51:25,908 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ed5cdf9eabc334ba75278a476e0ba503).
+2023-07-12 13:51:27,949 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:55:16,621 - discord.client - INFO - logging in using static token
+2023-07-12 13:55:17,096 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b500e267c452d3fd3b0d0ce4bae1f126).
+2023-07-12 13:55:19,131 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:55:21,816 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 391, in battle
+    embed = displayHP(player_hp, enemy_hp, battle_round)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 281, in displayHP
+    embed.add_field(name="", value=f"Element: {user_card.element} [{player_ele_mult}]", inline=False)
+NameError: free variable 'player_ele_mult' referenced before assignment in enclosing scope
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: free variable 'player_ele_mult' referenced before assignment in enclosing scope
+2023-07-12 13:58:17,424 - discord.client - INFO - logging in using static token
+2023-07-12 13:58:18,154 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: eb6556870dccf4b8a0e3d010ec306374).
+2023-07-12 13:58:20,194 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:58:23,902 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 391, in battle
+    embed = displayHP(player_hp, enemy_hp, battle_round)
+TypeError: Game.battle.<locals>.displayHP() missing 2 required positional arguments: 'enemy_ele_mult' and 'battle_round'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Game.battle.<locals>.displayHP() missing 2 required positional arguments: 'enemy_ele_mult' and 'battle_round'
+2023-07-12 13:58:47,773 - discord.client - INFO - logging in using static token
+2023-07-12 13:58:48,647 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d3c9aa501c9b6df2210e05b40cf8e8db).
+2023-07-12 13:58:50,682 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:59:30,227 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 391, in battle
+    embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
+UnboundLocalError: local variable 'player_ele_mult' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'player_ele_mult' referenced before assignment
+2023-07-12 13:59:45,178 - discord.client - INFO - logging in using static token
+2023-07-12 13:59:45,780 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5142dea21eb1a1e88a41cbbebbe5d67e).
+2023-07-12 13:59:47,809 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 13:59:48,706 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 392, in battle
+    enemy_ele_mult = calcEleAdvantage(oppo.element, user_cards.element)
+NameError: name 'user_cards' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'user_cards' is not defined
+2023-07-12 14:00:01,705 - discord.client - INFO - logging in using static token
+2023-07-12 14:00:02,386 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 795c4fb1547d4f40f5a21baf7e49aaa0).
+2023-07-12 14:00:04,421 - root - INFO - Logged in as Anigay 2.0#7825

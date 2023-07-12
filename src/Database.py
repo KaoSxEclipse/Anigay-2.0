@@ -141,7 +141,7 @@ async def dumpCard():
 #asyncio.run(cardDB()) ##--> DO NOT RUN THIS COMMAND!!
 
 #asyncio.run(playerDB())
-asyncio.run(cardDB())
+#asyncio.run(cardDB())
 
 #asyncio.run( generateCardList() )
 

@@ -254,7 +254,7 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
-        def displayHP(player_hp, enemy_hp, battle_round):
+        def displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round):
             player_hp_percentage = player_hp / (user_card.hp*10) * 100
             player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
             player_hp_empty = hp_bar_length - player_hp_filled
@@ -278,10 +278,10 @@ class Game(commands.Cog):
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
             embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [Evo {user_card.evo}]**", inline=False)
-            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name="", value=f"Element: {user_card.element} [{player_ele_mult}]", inline=False)
             embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
             embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [Evo {oppo.evo}]**", inline=False)
-            embed.add_field(name="", value="Element: ", inline=False)
+            embed.add_field(name="", value=f"Element: {oppo.element} [{enemy_ele_mult}]", inline=False)
             embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
 
             if battle_round >= 1:
@@ -290,6 +290,30 @@ class Game(commands.Cog):
                 embed.add_field(name="", value=f"**{oppo.name}** deals **{enemy_dmg}** to **{user_card.name}**", inline=False)
 
             return embed
+
+
+        def calcEleAdvantage( element1, element2 ):
+            '''Returns the first element advantage compared to the second'''
+
+            elements = {"Light": {"Light": .75, "Dark": 1.5, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                        "Dark": {"Light": 1.5, "Dark": .75, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                        "Neutral": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                        "Water": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .75, "Ground": 1, "Electric": .5, "Fire": 1.5, "Grass": 1},
+
+                        "Ground": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": .75, "Electric": 1.5, "Fire": 1, "Grass": .5},
+
+                        "Electric": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1.5, "Ground": .5, "Electric": .75, "Fire": 1, "Grass": 1},
+
+                        "Fire":  {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .5, "Ground": 1, "Electric": 1, "Fire": .75, "Grass": 1.5},
+
+                        "Grass": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1.5, "Electric": 1, "Fire": .5, "Grass": .75}}
+
+            return elements[element1][element2]
+
+
 
         user_id = ctx.author.id
         user = await Database.verifyUser(user_id)
@@ -364,12 +388,15 @@ class Game(commands.Cog):
 
                 battle_round = 0
 
-                embed = displayHP(player_hp, enemy_hp, battle_round)
+                player_ele_mult = calcEleAdvantage(user_card.element, oppo.element)
+                enemy_ele_mult = calcEleAdvantage(oppo.element, user_card.element)
+
+                CRITICAL_MULTIPLIER = 1
+
+
+                embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
                 bt = await ctx.send(embed=embed)
                 await asyncio.sleep(1.5)
-
-                ELEMENT_MULTIPLIER = 1
-                CRITICAL_MULTIPLIER = 1
 
                 while player_hp > 0 and enemy_hp > 0:
                     #player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
@@ -377,16 +404,16 @@ class Game(commands.Cog):
 
                     # New damage formula
                     player_current_atk = user_card.atk*10
-                    player_dmg = int((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)
+                    player_dmg = int((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * player_ele_mult * CRITICAL_MULTIPLIER)
 
                     enemy_current_atk = oppo.atk*10
-                    enemy_dmg = int((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)
+                    enemy_dmg = int((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * enemy_ele_mult * CRITICAL_MULTIPLIER)
 
                     player_hp -= enemy_dmg
                     enemy_hp -= player_dmg
 
                     battle_round += 1
-                    embed = displayHP(player_hp, enemy_hp, battle_round)
+                    embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)

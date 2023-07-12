@@ -64,6 +64,7 @@ class UserCard:
 		self.exp = card["exp"]
 		self.level = 1
 		self.name = data["name"]
+		self.element = data["element"]
 		self.hp = data["hp"]
 		self.atk = data["atk"]
 		self.df = data["def"]
@@ -151,11 +152,12 @@ class FloorCard(UserCard):
 		self.location = location
 		self.floor = floor
 		self.level = self.location*2+(self.floor*2)
-		self.hp = card[2]
-		self.atk = card[3]
-		self.df = card[4]
-		self.spd = card[5]
-		self.talent = card[6]
+		self.element = card[2]
+		self.hp = card[3]
+		self.atk = card[4]
+		self.df = card[5]
+		self.spd = card[6]
+		self.talent = card[7]
 
 		self.calcRarity()
 		self.calcStats()
