@@ -30,7 +30,7 @@ class CardClass():
 
 				self.rarity = self.data["rarity"]
 
-				print("index:", index)
+				#print("index:", index)
 
 				# Get Card stats using corresponding index from table
 				await cursor.execute("SELECT * FROM Dex WHERE dex=?", (index,))
