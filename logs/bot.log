@@ -18572,3 +18572,134 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Nam
 2023-07-12 14:00:01,705 - discord.client - INFO - logging in using static token
 2023-07-12 14:00:02,386 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 795c4fb1547d4f40f5a21baf7e49aaa0).
 2023-07-12 14:00:04,421 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 15:33:51,837 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-12 15:33:57,398 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 36512a6817213e3cd9711d257b2a9dab).
+2023-07-12 15:33:59,459 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 15:33:59,460 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-12 16:32:33,484 - discord.client - INFO - logging in using static token
+2023-07-12 16:32:34,006 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ce4e65ff262b59463dd9864edefa05b1).
+2023-07-12 16:32:36,052 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 16:32:45,671 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 269, in floor
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 842, in send
+    return await super().send(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/abc.py", line 1538, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+2023-07-12 16:34:12,190 - discord.client - INFO - logging in using static token
+2023-07-12 16:34:13,420 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ae7dacda07dc15cc4219018cb2f31360).
+2023-07-12 16:34:15,526 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 16:34:16,451 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 269, in floor
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 842, in send
+    return await super().send(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/abc.py", line 1538, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+2023-07-12 16:36:36,862 - discord.client - INFO - logging in using static token
+2023-07-12 16:36:37,367 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a1e9cfcb02da40963de8dae385b4f458).
+2023-07-12 16:36:39,411 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 16:36:54,151 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 270, in floor
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 842, in send
+    return await super().send(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/abc.py", line 1538, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+2023-07-12 16:38:02,794 - discord.client - INFO - logging in using static token
+2023-07-12 16:38:03,256 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8b36e58768cfd72c3093937d4527e3ab).
+2023-07-12 16:38:05,315 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-12 16:38:06,439 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 273, in floor
+    await ctx.send(embed=embed)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/context.py", line 842, in send
+    return await super().send(
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/abc.py", line 1538, in send
+    data = await state.http.send_message(channel.id, params=params)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.title: Must be 256 or fewer in length.
+2023-07-12 16:38:30,040 - discord.client - INFO - logging in using static token
+2023-07-12 16:38:30,475 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e44eeb90e00637a67aad857911cc224f).
+2023-07-12 16:38:32,512 - root - INFO - Logged in as Anigay 2.0#7825

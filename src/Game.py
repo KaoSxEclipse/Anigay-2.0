@@ -37,6 +37,23 @@ def parseFloor( location ):
     return floor
 
 
+def displayFloor( loc, floor ):
+    card = FloorCard(loc, floor)
+
+    embed = discord.Embed(title=f"Traveled to Area [{loc}-{floor}]", description="", color=0x03F76A)
+    embed.add_field(name="", value=f"**:crossed_swords: FLOOR GUARDIAN:**", inline=False)
+    embed.add_field(name="", value=f"**__{card.rarity}__ Level {card.level} {card.name} [{card.evo}]**", inline=False)
+    embed.add_field(name="", value=f"**Element:** {card.element}", inline=False)
+    embed.add_field(name="", value=f"**HP:** {card.hp}", inline=False)
+    embed.add_field(name="", value=f"**ATK:** {card.atk}", inline=False)
+    embed.add_field(name="", value=f"**DEF:** {card.df}", inline=False)
+    embed.add_field(name="", value=f"**SPD:** {card.spd}", inline=False)
+    embed.add_field(name="Talent:", value=f"{card.talent}", inline=False)
+    #embed.set_footer(text=str(card.quote))
+
+    return embed
+
+
 class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -212,9 +229,10 @@ class Game(commands.Cog):
 
                         card = series[realms[int(current_loc)-1]][int(current_floor)-1]
 
-                        embed = discord.Embed(title=f"Realm {current_loc}, Floor {current_floor} | {realms[int(current_loc)-1]}",
-                                                  description=f"You travel to the next floor where {card[1]} stands before you.",
-                                                  color=0x072A6C)
+                        #embed = discord.Embed(title=f"Realm {current_loc}, Floor {current_floor} | {realms[int(current_loc)-1]}",
+                        #                          description=f"You travel to the next floor where {card[1]} stands before you.",
+                        #                          color=0x072A6C)
+                        embed = displayFloor(current_loc, current_floor)
                         await ctx.send(embed=embed)
 
                 elif isinstance(int(floor), int):
@@ -244,9 +262,11 @@ class Game(commands.Cog):
                         card = series[realms[int(current_loc)-1]][int(floor)-1]
 
 
-                        embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
-                                              description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
-                                              color=0x072A6C)
+                        #embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
+                        #                      description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
+                        #                      color=0x072A6C)
+                        embed = displayFloor(current_loc, current_floor)
+
                         await ctx.send(embed=embed)
 
 

@@ -168,7 +168,7 @@ class User(commands.Cog):
         embed = discord.Embed(title=f"{user_card.name} | Level {user_card.level}", color=0x03F76A)
         embed.add_field(name="", value=f"**Evo:** {user_card.evo}", inline=False)
         embed.add_field(name="", value=f"**Rarity:** {user_card.rarity}", inline=False)
-        embed.add_field(name="", value=f"**Hp:** {user_card.hp}", inline=False)
+        embed.add_field(name="", value=f"**HP:** {user_card.hp}", inline=False)
         embed.add_field(name="", value=f"**ATK:** {user_card.atk}", inline=False)
         embed.add_field(name="", value=f"**DEF:** {user_card.df}", inline=False)
         embed.add_field(name="", value=f"**SPD:** {user_card.spd}", inline=False)
