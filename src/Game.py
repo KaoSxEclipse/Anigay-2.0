@@ -439,6 +439,42 @@ class Game(commands.Cog):
                     await asyncio.sleep(2.5)
 
                 if player_hp > 0:
+                    # Player Wins
+                    wun_reward = int(loc*1.5*(floor*.8) + 100)
+                    exp_reward = random.randint(1, 5)
+
+                    user_exp = user["exp"] + exp_reward
+                    user_card.exp += exp_reward
+                    user_wuns = user["wuns"] + wun_reward + random.randint(-10, 10)
+
+                    async with asqlite.connect(path_to_db+"player_data.db") as connection: # Get Player data
+                        async with connection.cursor() as cursor:
+                            await cursor.execute("UPDATE Users set exp=? WHERE id=?", (user_exp, user_id))
+                            await cursor.execute("UPDATE Users set wuns=? WHERE id=?", (user_wuns, user_id))
+                            await connection.commit()
+
+                    async with asqlite.connect(path_to_db+"card_data.db") as connection: # Get Player data
+                        async with connection.cursor() as cursor:
+                            await cursor.execute("UPDATE Upper set exp=? WHERE uid=?", (user_card.exp, user_card.id))
+                            await connection.commit()
+
+
+                    dex = await oppo.getDex()
+                    await Database.generateFodder(user_id, dex)
+
+                    embed = discord.Embed(
+                                title="Victory!",
+                                description=f"Your **{user_card.name}** has defeated **{oppo.name}** in battle",
+                                color=0x00FF00
+                            )
+                    embed.add_field(name="Rewards :moneybag:", value="", inline=False)
+                    embed.add_field(name="", value=f"+ 1 *rare* **{oppo.name}** copy", inline=False)
+                    embed.add_field(name="", value=f"+ {wun_reward} **Wuns** {Wuns} ", inline=False)
+                    embed.set_footer(text=f"{user_card.name} +{exp_reward} EXP | Player +{exp_reward} EXP")
+                    await ctx.send(embed=embed)
+
+
+
                     max_floor = parseFloor(user["maxloc"])
                     highest_floor = len(series[realms[loc-1]])
                     if floor == max_floor: ## Player clears a new floor
@@ -450,6 +486,8 @@ class Game(commands.Cog):
                                 description="Please proceed to the next Realm with `.loc n`!",
                                 color=0x00FF00
                             )
+                            await ctx.send(embed=embed)
+
                         else:
                             if floor+1 > 9:
                                 new_loc = str(loc) + ".0" + str(floor+1)
@@ -461,6 +499,7 @@ class Game(commands.Cog):
                                 description="Please proceed to the next Floor with `.fl n`!",
                                 color=0x00FF00
                             )
+                            await ctx.send(embed=embed)
 
 
                         async with asqlite.connect(path_to_db+"player_data.db") as connection:
@@ -470,7 +509,10 @@ class Game(commands.Cog):
 
                                 await connection.commit()
 
-                        await ctx.send(embed=embed)
+
+                else:
+                    # Player Loses
+                    pass
 
 
             else:

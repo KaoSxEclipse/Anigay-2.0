@@ -13,6 +13,8 @@ async def cardDB():
 
 			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Upper (uid bigint, owner bigint, dex int, rarity text, evo int, exp int, cd int) ''' )
 
+			await cursor.execute( '''CREATE TABLE IF NOT EXISTS Lower (uid bigint, owner bigint, dex int, rarity text DEFAULT r, cd int) ''' )
+
 			await dumpCard()
 
 			await connection.commit()
@@ -62,6 +64,28 @@ async def generateCard( index, owner, rarity, evo ):
 			await connection.commit()
 
 
+async def generateFodder( owner, index  ):
+	async with asqlite.connect(path_to_db+"card_data.db") as connection:
+		async with connection.cursor() as cursor:
+			await cursor.execute("SELECT max(uid) FROM Upper")
+
+			max_id = await cursor.fetchall()
+
+			await cursor.execute("SELECT max(uid) FROM Lower")
+			max_id_2 = await cursor.fetchall()
+
+			try:
+				if max_id[0][0] < max_id_2[0][0]:
+					new_id = int(max_id_2[0][0]) + 1
+				else:
+					new_id = int(max_id[0][0]) + 1
+			except TypeError:
+				new_id = int([max_id][0][0][0]) + 1
+
+			await cursor.execute( "INSERT OR IGNORE INTO Lower VALUES ( ?, ?, ?, 'r', 0 )", (new_id, owner, index) )			
+
+
+
 async def generateCardList():
 	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
@@ -79,7 +103,7 @@ async def generateCardList():
 
 
 d = {
-	"jujutsu kaisen": (
+	"Jujutsu Kaisen": (
 		( 5, 'Kento Nanami', 'Ground', 69, 92, 84, 80, 'Pain for Power' ),
 		( 6, 'Megumi Fushiguro', 'Light', 'Dark', 86, 71, 92, 78, 'Endurance' ),
 		( 7, 'Nobara Kugisaki', 'Ground', 95, 73, 78, 85, 'Evasion' ),
@@ -89,7 +113,7 @@ d = {
 		( 11, 'Yuji Itadori', 'Ground', 80, 90, 75, 85, 'Unlucky Coin' ),
 		( 12, 'Yuta Okkotsu', 'Dark', 85, 93, 73, 76, 'Paralysis' ) ,
 	),
-	"demon slayer": (
+	"Demon Slayer": (
 		( 13, 'Giyu Tomioka', 'Water', 76, 80, 81, 93, 'Double-edged Strike' ),
 		( 14, 'Inosuke Hashibira', 'Dark', 90, 88, 81, 62, 'Amplifier' ),
 		( 15, 'Kanao Tsuyuri', 'Neutral', 69, 81, 96, 77, 'Berserker' ),
@@ -101,7 +125,7 @@ d = {
 		( 21, 'Tanjiro Kamado', 'Water', 80, 82, 77, 89, 'Berserker' ),
 		( 22, 'Zenitsu Agatsuma', 'Electric', 80, 73, 87, 88, 'Paralysis' ), 
 	),
-	"chainsaw man": (
+	"Chainsaw Man": (
 		( 23, 'Aki Hayakawa', 'Dark', 79, 94, 76, 80, 'Temporal Rewind' ),
 		( 24, 'Angel Devil', 'Neutral', 88, 91, 73, 76, 'Life Sap' ),
 		( 25, 'Chainsaw man', 'Dark', 69, 102, 86, 69, 'Bloodthirster' ),
@@ -142,6 +166,7 @@ async def dumpCard():
 
 #asyncio.run(playerDB())
 #asyncio.run(cardDB())
+#asyncio.run(generateFodder(1, 1))
 
 #asyncio.run( generateCardList() )
 

@@ -165,5 +165,15 @@ class FloorCard(UserCard):
 		self.calcStats()
 
 
+	async def getDex(self):
+		async with asqlite.connect(path_to_db+"card_data.db") as connection:
+			async with connection.cursor() as cursor:
+				# Get unique card id from Global Upper Card Table
+				await cursor.execute("SELECT * FROM Dex WHERE name = ?", (self.name,))
+				card = await cursor.fetchall()
+				card = card[0]
+				
+				return card["dex"]
+
 	def Query():
 		pass
