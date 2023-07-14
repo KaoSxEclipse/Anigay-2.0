@@ -113,7 +113,7 @@ class User(commands.Cog):
                 cards = await cursor.fetchall()
 
                 for ii in range( i, i+len(player_inventory) ):
-                    print("SQL", player_inventory[ii-i])
+                    #print("SQL", player_inventory[ii-i])
                     card_dex = player_inventory[ii-i]["dex"]
                     card_uid = player_inventory[ii-i]["uid"]
 

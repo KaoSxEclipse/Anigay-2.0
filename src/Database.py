@@ -105,7 +105,7 @@ async def generateCardList():
 d = {
 	"Jujutsu Kaisen": (
 		( 5, 'Kento Nanami', 'Ground', 69, 92, 84, 80, 'Pain for Power' ),
-		( 6, 'Megumi Fushiguro', 'Light', 'Dark', 86, 71, 92, 78, 'Endurance' ),
+		( 6, 'Megumi Fushiguro', 'Light', 86, 71, 92, 78, 'Endurance' ),
 		( 7, 'Nobara Kugisaki', 'Ground', 95, 73, 78, 85, 'Evasion' ),
 		( 8, 'Ryomen Sukuna', 'Fire', 85, 78, 85, 78, 'Life Sap' ),
 		( 9, 'Satoru Gojo', 'Electric', 86, 83, 78, 78, 'Berserker' ),

@@ -19310,3 +19310,405 @@ Traceback (most recent call last):
   File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-13 09:39:50,454 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-13 09:39:50,454 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-13 09:40:49,760 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py:401> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-13 09:40:49,762 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+RuntimeError: coroutine ignored GeneratorExit
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: RuntimeError: coroutine ignored GeneratorExit
+2023-07-13 09:41:16,476 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 373, in battle
+    await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user_id,) )
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.OperationalError: disk I/O error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: OperationalError: disk I/O error
+2023-07-13 09:41:26,554 - discord.client - INFO - logging in using static token
+2023-07-13 09:41:27,555 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a33e840ad4fcb16ab8ec7fe3fd560903).
+2023-07-13 09:41:28,041 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-13 09:41:29,624 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 09:42:32,219 - discord.client - INFO - logging in using static token
+2023-07-13 09:42:32,958 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 84fdf3b0b090ace98e31309476342bdc).
+2023-07-13 09:42:35,047 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:18:34,126 - discord.client - INFO - logging in using static token
+2023-07-13 11:18:38,128 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9a3c0bf5d6659f459a12a2b9a7e924f5).
+2023-07-13 11:18:38,768 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-13 11:18:40,198 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:22:18,357 - discord.client - INFO - logging in using static token
+2023-07-13 11:22:21,696 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6db00be5c26f52907c46edabf9e13e89).
+2023-07-13 11:22:23,764 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:22:46,861 - discord.client - INFO - logging in using static token
+2023-07-13 11:22:49,958 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 51a16244c6c29668b09b9e6b11cafdf7).
+2023-07-13 11:22:52,022 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:23:55,967 - discord.client - INFO - logging in using static token
+2023-07-13 11:23:58,815 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aa3ad1052f112f774d297a8d48519458).
+2023-07-13 11:24:00,890 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:25:28,467 - discord.client - INFO - logging in using static token
+2023-07-13 11:25:31,736 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 72dc81a6cd85cb1ed10e66b2780d37f9).
+2023-07-13 11:25:33,798 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:26:23,416 - discord.client - INFO - logging in using static token
+2023-07-13 11:26:26,652 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 64dbb91fda47bf0e2ff8a7f26a4141c5).
+2023-07-13 11:26:28,742 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:29:42,122 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "tb" is not found
+2023-07-13 11:30:13,521 - discord.client - INFO - logging in using static token
+2023-07-13 11:30:16,014 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6ad89266f91988805e2ea74aeaa0b15b).
+2023-07-13 11:30:18,090 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:31:58,519 - discord.client - INFO - logging in using static token
+2023-07-13 11:32:00,817 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0d1712626df21324d2bf250152659204).
+2023-07-13 11:32:02,925 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:33:04,827 - discord.client - INFO - logging in using static token
+2023-07-13 11:33:07,959 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aafc3e1cea05a735cc8370ce11915226).
+2023-07-13 11:33:10,025 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:34:02,985 - discord.client - INFO - logging in using static token
+2023-07-13 11:34:06,808 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6c00481fd98746b4b170abcfe80c6ebf).
+2023-07-13 11:34:08,892 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:34:50,988 - discord.client - INFO - logging in using static token
+2023-07-13 11:34:53,889 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 971bb9fb2f734f8620fa98243affbf87).
+2023-07-13 11:34:54,215 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-13 11:34:55,959 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 11:52:13,006 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 971bb9fb2f734f8620fa98243affbf87.
+2023-07-13 12:02:21,290 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "market" is not found
+2023-07-13 12:02:45,957 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 235, in floor
+    embed = displayFloor(current_loc, current_floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 41, in displayFloor
+    card = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:04:17,592 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 268, in floor
+    embed = displayFloor(current_loc, current_floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 41, in displayFloor
+    card = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:04:26,096 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 403, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:04:49,202 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 403, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:05:00,063 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 238, in floor
+    elif isinstance(int(floor), int):
+ValueError: invalid literal for int() with base 10: 'p'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: invalid literal for int() with base 10: 'p'
+2023-07-13 12:05:04,313 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 268, in floor
+    embed = displayFloor(current_loc, current_floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 41, in displayFloor
+    card = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:05:18,734 - discord.ext.commands.bot - ERROR - Ignoring exception in command floor
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 235, in floor
+    embed = displayFloor(current_loc, current_floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 41, in displayFloor
+    card = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:05:23,753 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 403, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 12:06:21,841 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1231, in _actual_conversion
+    return converter(argument)
+ValueError: invalid literal for int() with base 10: 'all'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 839, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 709, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1340, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1240, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "amount".
+2023-07-13 12:10:56,748 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "locs" is not found
+2023-07-13 12:16:54,784 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-13 12:17:12,182 - discord.client - INFO - logging in using static token
+2023-07-13 12:17:14,097 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a1fb5ad91d9da32c6859936746165cab).
+2023-07-13 12:17:16,143 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 12:58:42,656 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1fb5ad91d9da32c6859936746165cab.
+2023-07-13 13:17:50,633 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1fb5ad91d9da32c6859936746165cab.
+2023-07-13 13:28:42,552 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1fb5ad91d9da32c6859936746165cab.
+2023-07-13 13:51:51,189 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1fb5ad91d9da32c6859936746165cab.
+2023-07-13 15:55:19,736 - discord.gateway - INFO - Shard ID None has successfully RESUMED session a1fb5ad91d9da32c6859936746165cab.
+2023-07-13 17:24:24,417 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-13 17:24:29,805 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 703f28b580eadc13d5e5ce03a4d0de9c).
+2023-07-13 17:24:31,865 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 17:24:31,866 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-13 17:42:07,383 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 703f28b580eadc13d5e5ce03a4d0de9c.
+2023-07-13 17:58:24,128 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 703f28b580eadc13d5e5ce03a4d0de9c.
+2023-07-13 19:24:44,799 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 703f28b580eadc13d5e5ce03a4d0de9c.
+2023-07-13 20:37:04,836 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-13 20:37:10,256 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 30b2fc138894128315e73781a605b703).
+2023-07-13 20:37:12,317 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 20:37:12,318 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-13 20:55:46,508 - discord.client - INFO - logging in using static token
+2023-07-13 20:55:47,321 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 17f85cd22ef78437dac3375c39054364).
+2023-07-13 20:55:49,389 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-13 20:55:51,728 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 403, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 21:29:22,096 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Game.py", line 403, in battle
+    oppo = FloorCard(loc, floor)
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 165, in __init__
+    self.calcStats()
+  File "/home/christopherchay/___/Anigay-2.0/src/CardClass.py", line 124, in calcStats
+    self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+TypeError: can't multiply sequence by non-int of type 'float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't multiply sequence by non-int of type 'float'
+2023-07-13 21:31:43,009 - discord.client - INFO - logging in using static token
+2023-07-13 21:31:43,839 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1bd82a831ad873c42f63306ab5a41d91).
+2023-07-13 21:31:45,909 - root - INFO - Logged in as Anigay 2.0#7825

@@ -376,6 +376,7 @@ class Game(commands.Cog):
                         for c in player_inventory:
                             if c["uid"] == user["card"]:
                                 card_dex = c["dex"]
+                                break
 
                         await cursor.execute( "SELECT * FROM Dex WHERE dex=?", (card_dex,) )
                         user_card = await cursor.fetchall()
@@ -395,9 +396,9 @@ class Game(commands.Cog):
 
                 card = series[realms[loc-1]][floor-1]
 
+                #print("User Card ID:", c["uid"])
                 user_card = UserCard(c, user_card)
 
-                #print(user_card.name)
 
                 oppo = FloorCard(loc, floor)
 
@@ -455,6 +456,7 @@ class Game(commands.Cog):
 
                     async with asqlite.connect(path_to_db+"card_data.db") as connection: # Get Player data
                         async with connection.cursor() as cursor:
+                            #print("card ID:", user_card.id)
                             await cursor.execute("UPDATE Upper set exp=? WHERE uid=?", (user_card.exp, user_card.id))
                             await connection.commit()
 
