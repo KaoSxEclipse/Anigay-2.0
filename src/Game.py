@@ -87,7 +87,7 @@ class Game(commands.Cog):
 
                 if loc == None:
                     embed = discord.Embed(title=f"Realms",
-                                          description=f"You are at realm {user['location']}",
+                                          description=f"You are at Realm {current_loc} Floor {current_floor}",
                                           color=0xF76103)
 
                     index = 1
