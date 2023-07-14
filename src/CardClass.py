@@ -30,7 +30,7 @@ class CardClass():
 
 				self.rarity = self.data["rarity"]
 
-				print("index:", index)
+				#print("index:", index)
 
 				# Get Card stats using corresponding index from table
 				await cursor.execute("SELECT * FROM Dex WHERE dex=?", (index,))
@@ -57,12 +57,14 @@ class UserCard:
 		self.id = card["uid"]
 		self.dexid = card["dex"]
 		self.rarity = card["rarity"]
+		self.rarity_s = ""
 		self.rarity_mult = 1
 		self.level_cap = 1
 		self.evo = card["evo"]
 		self.exp = card["exp"]
 		self.level = 1
 		self.name = data["name"]
+		self.element = data["element"]
 		self.hp = data["hp"]
 		self.atk = data["atk"]
 		self.df = data["def"]
@@ -79,22 +81,27 @@ class UserCard:
 			self.rarity_mult = 1.2
 			self.level_cap = 20
 			self.rarity = "Common"
+			self.rarity_s = "C"
 		elif self.rarity == 'uc':
 			self.rarity_mult = 1.4
 			self.level_cap = 30
 			self.rarity = "Uncommon"
+			self.rarity_s = "UC"
 		elif self.rarity == 'r':
 			self.rarity_mult = 1.4
 			self.level_cap = 40
 			self.rarity = "Rare"
+			self.rarity_s = "R"
 		elif self.rarity == 'sr':
 			self.rarity_mult = 1.8
 			self.level_cap = 50
 			self.rarity = "Super Rare"
+			self.rarity_s = "SR"
 		elif self.rarity == 'ur':
 			self.rarity_mult = 2.0
 			self.level_cap = 60
 			self.rarity = "Ultra Rare"
+			self.rarity_s = "UR"
 		else:
 			self.rarity = -1
 			print("Error! Rarity should be c,uc,r,sr,ur")
@@ -120,6 +127,15 @@ class UserCard:
 		self.spd = int(round(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
 
 
+	def __str__(self):
+		return """
+HP:  {}
+ATK: {}
+DEF: {}
+SPD: {}
+		""" .format(self.hp, self.atk, self.df, self.spd)
+
+
 class FloorCard(UserCard):
 	def __init__(self, location, floor):
 		with open(path_to_db+"cards.json", "r") as file:
@@ -129,22 +145,35 @@ class FloorCard(UserCard):
 		for i in series:
 			realms.append(i)
 
-		card = series[realms[location]][floor]
+		card = series[realms[location-1]][floor-1]
+
+		self.realm_name = series[realms[location-1]]
 		self.name = card[1]
-		self.rarity = "c"
+		self.rarity = "r"
 		self.evo = 1
 		self.location = location
 		self.floor = floor
-		self.level = self.location*2+self.floor
-		self.hp = card[2]
-		self.atk = card[3]
-		self.df = card[4]
-		self.spd = card[5]
-		self.talent = card[6]
+		self.level = self.location*2+(self.floor*2)
+		self.element = card[2]
+		self.hp = card[3]
+		self.atk = card[4]
+		self.df = card[5]
+		self.spd = card[6]
+		self.talent = card[7]
 
 		self.calcRarity()
 		self.calcStats()
 
+
+	async def getDex(self):
+		async with asqlite.connect(path_to_db+"card_data.db") as connection:
+			async with connection.cursor() as cursor:
+				# Get unique card id from Global Upper Card Table
+				await cursor.execute("SELECT * FROM Dex WHERE name = ?", (self.name,))
+				card = await cursor.fetchall()
+				card = card[0]
+				
+				return card["dex"]
 
 	def Query():
 		pass

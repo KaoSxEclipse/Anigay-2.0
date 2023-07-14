@@ -1,8 +1,9 @@
 {
-    "jujutsu kaisen": [
+    "Jujutsu Kaisen": [
         [
             5,
             "Kento Nanami",
+            "Ground",
             69,
             92,
             84,
@@ -12,6 +13,7 @@
         [
             6,
             "Megumi Fushiguro",
+            "Light",
             86,
             71,
             92,
@@ -21,6 +23,7 @@
         [
             7,
             "Nobara Kugisaki",
+            "Ground",
             95,
             73,
             78,
@@ -30,6 +33,7 @@
         [
             8,
             "Ryomen Sukuna",
+            "Fire",
             85,
             78,
             85,
@@ -39,6 +43,7 @@
         [
             9,
             "Satoru Gojo",
+            "Electric",
             86,
             83,
             78,
@@ -48,6 +53,7 @@
         [
             10,
             "Toge Inumaki",
+            "Neutral",
             86,
             89,
             73,
@@ -57,26 +63,29 @@
         [
             11,
             "Yuji Itadori",
+            "Ground",
             80,
             90,
             75,
             85,
             "Unlucky Coin"
-        ]
-    ],
-    "demon slayer": [
+        ],
         [
             12,
             "Yuta Okkotsu",
+            "Dark",
             85,
             93,
             73,
             76,
             "Paralysis"
-        ],
+        ]
+    ],
+    "Demon Slayer": [
         [
             13,
             "Giyu Tomioka",
+            "Water",
             76,
             80,
             81,
@@ -86,6 +95,7 @@
         [
             14,
             "Inosuke Hashibira",
+            "Dark",
             90,
             88,
             81,
@@ -95,6 +105,7 @@
         [
             15,
             "Kanao Tsuyuri",
+            "Neutral",
             69,
             81,
             96,
@@ -104,6 +115,7 @@
         [
             16,
             "Kyojuro Rengoku",
+            "Fire",
             81,
             93,
             74,
@@ -113,6 +125,7 @@
         [
             17,
             "Muzan Kibutsuji",
+            "Dark",
             95,
             75,
             80,
@@ -122,6 +135,7 @@
         [
             18,
             "Nezuko Kamado",
+            "Dark",
             84,
             82,
             80,
@@ -131,6 +145,7 @@
         [
             19,
             "Obanai Iguro",
+            "Light",
             77,
             90,
             85,
@@ -140,6 +155,7 @@
         [
             20,
             "Shinobu Kocho",
+            "Grass",
             93,
             83,
             80,
@@ -149,6 +165,7 @@
         [
             21,
             "Tanjiro Kamado",
+            "Water",
             80,
             82,
             77,
@@ -158,6 +175,7 @@
         [
             22,
             "Zenitsu Agatsuma",
+            "Electric",
             80,
             73,
             87,
@@ -165,10 +183,11 @@
             "Paralysis"
         ]
     ],
-    "chainsaw man": [
+    "Chainsaw Man": [
         [
             23,
             "Aki Hayakawa",
+            "Dark",
             79,
             94,
             76,
@@ -178,6 +197,7 @@
         [
             24,
             "Angel Devil",
+            "Neutral",
             88,
             91,
             73,
@@ -187,6 +207,7 @@
         [
             25,
             "Chainsaw man",
+            "Dark",
             69,
             102,
             86,
@@ -196,6 +217,7 @@
         [
             26,
             "Denji",
+            "Neutral",
             84,
             88,
             91,
@@ -205,6 +227,7 @@
         [
             27,
             "Himeno",
+            "Grass",
             78,
             93,
             82,
@@ -214,6 +237,7 @@
         [
             28,
             "Makima",
+            "Dark",
             84,
             92,
             80,
@@ -223,6 +247,7 @@
         [
             29,
             "Power",
+            "Dark",
             73,
             92,
             86,
@@ -232,6 +257,7 @@
         [
             30,
             "Reze",
+            "Dark",
             73,
             101,
             83,

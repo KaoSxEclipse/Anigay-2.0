@@ -99,11 +99,30 @@ class User(commands.Cog):
 
                     await card.Query()
 
-                    print("card id: ", card.uid)
-                    print("card stats: ", card.stats)
-                    print("card data: ", card.data)
+                    #print("card id: ", card.uid)
+                    #print("card stats: ", card.stats)
+                    #print("card data: ", card.data)
 
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+
+
+                await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
+                player_inventory = await cursor.fetchall()
+
+                await cursor.execute("SELECT * FROM Dex")
+                cards = await cursor.fetchall()
+
+                for ii in range( i, i+len(player_inventory) ):
+                    #print("SQL", player_inventory[ii-i])
+                    card_dex = player_inventory[ii-i]["dex"]
+                    card_uid = player_inventory[ii-i]["uid"]
+
+                    for card in cards:
+                        if card_dex == card["dex"]:
+                            card_name = card["name"]
+                            break
+
+                    embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)               
 
                 await ctx.send(embed=embed)
 
@@ -168,7 +187,7 @@ class User(commands.Cog):
         embed = discord.Embed(title=f"{user_card.name} | Level {user_card.level}", color=0x03F76A)
         embed.add_field(name="", value=f"**Evo:** {user_card.evo}", inline=False)
         embed.add_field(name="", value=f"**Rarity:** {user_card.rarity}", inline=False)
-        embed.add_field(name="", value=f"**Hp:** {user_card.hp}", inline=False)
+        embed.add_field(name="", value=f"**HP:** {user_card.hp}", inline=False)
         embed.add_field(name="", value=f"**ATK:** {user_card.atk}", inline=False)
         embed.add_field(name="", value=f"**DEF:** {user_card.df}", inline=False)
         embed.add_field(name="", value=f"**SPD:** {user_card.spd}", inline=False)
