@@ -19718,3 +19718,18 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Typ
 2023-07-14 16:58:46,895 - discord.client - INFO - logging in using static token
 2023-07-14 16:58:47,916 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cbd9af4e6f6c996bc6bcaceca6ffd8f2).
 2023-07-14 16:58:49,985 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-14 17:07:47,760 - discord.client - INFO - logging in using static token
+2023-07-14 17:07:48,576 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0a1fecb6929cc10729e312ad094f157c).
+2023-07-14 17:07:50,637 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-14 18:27:04,487 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-14 18:27:10,033 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4e313fe4de8a2b7bfdacfb23c7c8a292).
+2023-07-14 18:27:12,146 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-14 18:27:12,147 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/christopherchay/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/christopherchay/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 776, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
