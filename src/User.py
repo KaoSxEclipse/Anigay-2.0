@@ -1,5 +1,8 @@
 import discord, json, random, asyncio, asqlite, datetime, logging
 from discord import *
+from discord import components
+from discord.components import  Button, ButtonStyle
+from discord.ui import Button, View
 from discord.ext import commands
 from discord.ext.commands import *
 from typing import Optional, Literal
@@ -91,6 +94,23 @@ class User(commands.Cog):
                 user = ctx.author.id
                 await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
                 player_inventory = await cursor.fetchall()
+                # Constants
+                total_cards = len(player_inventory)
+                cards_per_page = 10
+                total_pages = (total_cards + cards_per_page - 1) // cards_per_page
+
+                # Get current page or default to 1
+                page = 1
+                if len(ctx.message.content.split()) > 1:
+                    try:
+                        page = int(ctx.message.content.split()[1])
+                        if page < 1 or page > total_pages:
+                            raise ValueError
+                    except ValueError:
+                        await ctx.send("That page does not exist")
+                        return
+                start_index = (page - 1) * cards_per_page
+                end_index = min(start_index + cards_per_page, total_cards)
 
                 embed = discord.Embed(title=f"{ctx.author}'s Inventory:", color=0x03F76A)
 
@@ -105,24 +125,55 @@ class User(commands.Cog):
 
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
 
+                    view = View()
+                    if page < 1:
+                        previous_button = Button(style=ButtonStyle.primary, label="Previous", emoji="⬅",
+                                                 custom_id="previous")
+                        view.add_item(previous_button)
 
-                await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
-                player_inventory = await cursor.fetchall()
+                    if page < total_pages:
+                        next_button = Button(style=ButtonStyle.primary, label="Next", emoji="➡️", custom_id="next")
+                        view.add_item(next_button)
 
-                await cursor.execute("SELECT * FROM Dex")
-                cards = await cursor.fetchall()
+                    if View.children:
+                        embed.set_footer(text=f"Use the buttons below to navigate.            {page}/{total_pages}")
 
-                for ii in range( i, i+len(player_inventory) ):
-                    #print("SQL", player_inventory[ii-i])
-                    card_dex = player_inventory[ii-i]["dex"]
-                    card_uid = player_inventory[ii-i]["uid"]
+                    await ctx.send(embed=embed, view=view)
+                    await connection.commit()
 
-                    for card in cards:
-                        if card_dex == card["dex"]:
-                            card_name = card["name"]
-                            break
+    @commands.Cog.listener()
+    async def on_button_click(self, interaction):
+        if interaction.component.custom_id == "next":
+            page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
+            await interaction.respond(type=6)
+            ctx = await self.bot.get_context(interaction.message)
+            ctx.message.content += f" {page + 1}"
+            await self.bot.invoke(ctx)
 
-                    embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)               
+        elif interaction.component.custom_id == "previous":
+            page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
+            await interaction.respond(type=6)
+            ctx = await self.bot.get_context(interaction.message)
+            ctx.message.content += f" {page - 1}"
+            await self.bot.invoke(ctx)
+
+        await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
+        player_inventory = await cursor.fetchall()
+
+        await cursor.execute("SELECT * FROM Dex")
+        cards = await cursor.fetchall()
+
+        for ii in range( i, i+len(player_inventory) ):
+        #print("SQL", player_inventory[ii-i])
+            card_dex = player_inventory[ii-i]["dex"]
+            card_uid = player_inventory[ii-i]["uid"]
+
+            for card in cards:
+                if card_dex == card["dex"]:
+                    card_name = card["name"]
+                    break
+
+                    embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)
 
                 await ctx.send(embed=embed)
 
