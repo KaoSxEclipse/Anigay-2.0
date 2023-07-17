@@ -274,22 +274,22 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
-        def displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round):
-            player_hp_percentage = player_hp / (user_card.hp*10) * 100
+        def displayHP(player, player_hp, enemy, enemy_hp, battle_round):
+            player_hp_percentage = player.hp / (player_hp) * 100
             player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
             player_hp_empty = hp_bar_length - player_hp_filled
 
-            enemy_hp_percentage = enemy_hp / (oppo.hp*10) * 100
+            enemy_hp_percentage = enemy.hp / (enemy_hp) * 100
             enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
             enemy_hp_empty = hp_bar_length - enemy_hp_filled
 
-            if player_hp <= 0:
-                player_hp = 0
+            if player.hp <= 0:
+                player.hp = 0
                 player_filled = 0
                 player_hp_empty = 20
 
-            if enemy_hp <= 0:
-                enemy_hp = 0
+            if enemy.hp <= 0:
+                enemy.hp = 0
                 enemy_filled = 0
                 enemy_hp_empty = 20
 
@@ -297,17 +297,15 @@ class Game(commands.Cog):
             enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
-            embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [Evo {user_card.evo}]**", inline=False)
-            embed.add_field(name="", value=f"Element: {user_card.element} [{player_ele_mult}]", inline=False)
-            embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-            embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [Evo {oppo.evo}]**", inline=False)
-            embed.add_field(name="", value=f"Element: {oppo.element} [{enemy_ele_mult}]", inline=False)
-            embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.add_field(name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
+            embed.add_field(name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
+            embed.add_field(name=f"**{player.hp} / {player_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.add_field(name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
+            embed.add_field(name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
+            embed.add_field(name=f"**{enemy.hp} / {enemy_hp} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
-                embed.add_field(name="", value=f"**{user_card.name}** deals **{player_dmg}** to **{oppo.name}**", inline=False)
-                embed.add_field(name="", value=f"**{oppo.name}** deals **{enemy_dmg}** to **{user_card.name}**", inline=False)
 
             return embed
 
@@ -391,56 +389,74 @@ class Game(commands.Cog):
                 # user card = dictionary
                 # Enemy Floor card is a Class
 
-                #print("Location: ", loc)
-                #print("Floor: ", floor)
-
                 card = series[realms[loc-1]][floor-1]
 
                 #print("User Card ID:", c["uid"])
                 user_card = UserCard(c, user_card)
-
-
+                user_card.hp *= 10
+                player_hp = user_card.hp
+                
                 oppo = FloorCard(loc, floor)
+                oppo.hp *= 10
+                enemy_hp = oppo.hp
 
-                player_hp = user_card.hp*10
-                enemy_hp = oppo.hp*10
+                user_card.ele_mult = calcEleAdvantage(user_card.element, oppo.element)
+                enemy_ele_mult = calcEleAdvantage(oppo.element, user_card.element)
 
                 hp_bar_length = 20
-
                 battle_round = 0
 
-                player_ele_mult = calcEleAdvantage(user_card.element, oppo.element)
-                enemy_ele_mult = calcEleAdvantage(oppo.element, user_card.element)
 
                 CRITICAL_MULTIPLIER = 1
 
 
-                embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
+                embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
+
                 bt = await ctx.send(embed=embed)
                 await asyncio.sleep(1.5)
 
-                while player_hp > 0 and enemy_hp > 0:
-                    #player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
-                    #enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
 
+                async def battleRound( fighter1, fighter2 ):
                     # New damage formula
-                    player_current_atk = user_card.atk*10
-                    player_dmg = int((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * player_ele_mult * CRITICAL_MULTIPLIER)
+                    dmg = int((((fighter1.current_atk*fighter1.atk*10)+638000)/(8.7 * fighter2.df*10)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
 
-                    enemy_current_atk = oppo.atk*10
-                    enemy_dmg = int((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * enemy_ele_mult * CRITICAL_MULTIPLIER)
+                    fighter2.hp -= dmg
 
-                    player_hp -= enemy_dmg
-                    enemy_hp -= player_dmg
+                    embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
 
-                    battle_round += 1
-                    embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
+                    embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**", inline=False)
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
 
-                if player_hp > 0:
+
+                while user_card.hp > 0 and oppo.hp > 0:
+                    ## Determine who goes first 
+
+                    if user_card.spd > oppo.spd:
+                        #Player is faster
+                        await battleRound( user_card, oppo )
+                        if user_card.hp > 0 and enemy_hp > 0:
+                            await battleRound( oppo, user_card )
+                        else:
+                            break
+
+                    elif user_card.spd < oppo.spd:
+                        await battleRound(oppo, user_card)
+                        if user_card.hp > 0 and enemy_hp > 0:
+                            await battleRound( user_card, oppo )
+                        else:
+                            break
+
+                    else:
+                        await battleRound(user_card, oppo) ## Handle same speed later
+
+                    
+                    battle_round += 1
+
+                if user_card.hp > 0:
                     # Player Wins
+                    print("player wins")
                     wun_reward = int(loc*1.5*(floor*.8) + 100)
                     exp_reward = random.randint(1, 5)
 
