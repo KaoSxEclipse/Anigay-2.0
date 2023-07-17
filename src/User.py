@@ -126,6 +126,7 @@ class User(commands.Cog):
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
 
                     view = View()
+                    # Adds buttons based on current page
                     if page < 1:
                         previous_button = Button(style=ButtonStyle.primary, label="Previous", emoji="⬅",
                                                  custom_id="previous")
@@ -138,26 +139,27 @@ class User(commands.Cog):
                     if View.children:
                         embed.set_footer(text=f"Use the buttons below to navigate.            {page}/{total_pages}")
 
-                    await ctx.send(embed=embed, view=view)
-                    await connection.commit()
+                await ctx.send(embed=embed, view=view)
+                await connection.commit()
+        # Listener is not working
+        @commands.Cog.listener()
+        async def on_button_click(self, interaction):
+            print("button clicked")
+            if interaction.component.custom_id == "next":
+                page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
+                await interaction.respond(type=6)
+                ctx = await self.bot.get_context(interaction.message)
+                ctx.message.content += f" {page + 1}"
+                await self.bot.invoke(ctx)
 
-    @commands.Cog.listener()
-    async def on_button_click(self, interaction):
-        if interaction.component.custom_id == "next":
-            page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
-            await interaction.respond(type=6)
-            ctx = await self.bot.get_context(interaction.message)
-            ctx.message.content += f" {page + 1}"
-            await self.bot.invoke(ctx)
+            elif interaction.component.custom_id == "previous":
+                page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
+                await interaction.respond(type=6)
+                ctx = await self.bot.get_context(interaction.message)
+                ctx.message.content += f" {page - 1}"
+                await self.bot.invoke(ctx)
 
-        elif interaction.component.custom_id == "previous":
-            page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
-            await interaction.respond(type=6)
-            ctx = await self.bot.get_context(interaction.message)
-            ctx.message.content += f" {page - 1}"
-            await self.bot.invoke(ctx)
-
-        await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
+                await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
         player_inventory = await cursor.fetchall()
 
         await cursor.execute("SELECT * FROM Dex")
@@ -173,11 +175,11 @@ class User(commands.Cog):
                     card_name = card["name"]
                     break
 
-                    embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)
+            embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)
 
-                await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
 
-                await connection.commit()
+            await connection.commit()
 
     # Select a card and assign it to the user for battling
     @commands.hybrid_command()
