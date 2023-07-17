@@ -160,7 +160,7 @@ class User(commands.Cog):
                 await self.bot.invoke(ctx)
 
                 await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
-        player_inventory = await cursor.fetchall()
+                player_inventory = await cursor.fetchall()
 
         await cursor.execute("SELECT * FROM Dex")
         cards = await cursor.fetchall()
