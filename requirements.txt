@@ -1,3 +1,3 @@
 discord==2.3.1
 rapptz-asqlite==1.0.1
-py-dotenv==0.1
+python-dotenv==1.0.0

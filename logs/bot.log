@@ -19718,3 +19718,6 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Typ
 2023-07-14 16:58:46,895 - discord.client - INFO - logging in using static token
 2023-07-14 16:58:47,916 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cbd9af4e6f6c996bc6bcaceca6ffd8f2).
 2023-07-14 16:58:49,985 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-17 11:37:54,925 - discord.client - INFO - logging in using static token
+2023-07-17 11:37:56,672 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 60ab14550cd5e8d954a4baf947ac026e).
+2023-07-17 11:37:58,786 - root - INFO - Logged in as Anigay 2.0#7825
