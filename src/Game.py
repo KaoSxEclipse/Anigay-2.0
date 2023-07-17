@@ -265,7 +265,7 @@ class Game(commands.Cog):
                         #embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
                         #                      description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
                         #                      color=0x072A6C)
-                        embed = displayFloor(current_loc, current_floor)
+                        embed = displayFloor(current_loc, floor)
 
                         await ctx.send(embed=embed)
 
@@ -401,7 +401,7 @@ class Game(commands.Cog):
                 enemy_hp = oppo.hp
 
                 user_card.ele_mult = calcEleAdvantage(user_card.element, oppo.element)
-                enemy_ele_mult = calcEleAdvantage(oppo.element, user_card.element)
+                oppo.ele_mult = calcEleAdvantage(oppo.element, user_card.element)
 
                 hp_bar_length = 20
                 battle_round = 0
@@ -417,6 +417,16 @@ class Game(commands.Cog):
 
 
                 async def battleRound( fighter1, fighter2 ):
+                    def calcEffect( markiplier ):
+                        if markiplier == 1:
+                            return ""
+                        elif markiplier == 1.5:
+                            return "It was **Super Strong**!!"
+                        elif markiplier == .5:
+                            return "It was **Very Weak**..."
+                        elif markiplier == .75:
+                            return "It was **Not Very Effective**."
+
                     # New damage formula
                     dmg = int((((fighter1.current_atk*fighter1.atk*10)+638000)/(8.7 * fighter2.df*10)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
 
@@ -424,7 +434,7 @@ class Game(commands.Cog):
 
                     embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
 
-                    embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**", inline=False)
+                    embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
@@ -436,14 +446,14 @@ class Game(commands.Cog):
                     if user_card.spd > oppo.spd:
                         #Player is faster
                         await battleRound( user_card, oppo )
-                        if user_card.hp > 0 and enemy_hp > 0:
+                        if user_card.hp > 0 and oppo.hp > 0:
                             await battleRound( oppo, user_card )
                         else:
                             break
 
                     elif user_card.spd < oppo.spd:
                         await battleRound(oppo, user_card)
-                        if user_card.hp > 0 and enemy_hp > 0:
+                        if user_card.hp > 0 and oppo.hp > 0:
                             await battleRound( user_card, oppo )
                         else:
                             break
