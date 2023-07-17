@@ -75,6 +75,10 @@ class UserCard:
 		self.calcLevel()
 		self.calcStats()
 
+		self.current_atk = self.atk*10
+		self.ele_mult = 1
+
+
 	def calcRarity(self):
 		'''Rarity is defined by: 1.2 (C) | 1.4 (UC) | 1.6 (R) | 1.8 (SR) | 2 (UR)'''
 		if self.rarity == 'c':
@@ -163,6 +167,9 @@ class FloorCard(UserCard):
 
 		self.calcRarity()
 		self.calcStats()
+
+		self.current_atk = self.atk*10
+		self.ele_mult = 1
 
 
 	async def getDex(self):
