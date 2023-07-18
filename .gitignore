@@ -5,4 +5,5 @@ env
 __pycache__/
 *.db-shm
 *.db-wal
-*.logs
+logs/
+player_data.db
