@@ -892,3 +892,254 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Unb
 2023-07-18 17:06:10,787 - discord.client - INFO - logging in using static token
 2023-07-18 17:06:11,741 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f824deddec8548398b64f2c638864ea8).
 2023-07-18 17:06:13,888 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:16:59,723 - discord.client - INFO - logging in using static token
+2023-07-18 17:17:00,919 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 462eb0ed3c65deb86d537c10b36d7e4e).
+2023-07-18 17:17:03,037 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:18:08,142 - discord.client - INFO - logging in using static token
+2023-07-18 17:18:09,327 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cd25c97cb1e1b65ad28dad1313162264).
+2023-07-18 17:18:11,376 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 17:18:11,542 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:48:51,366 - discord.gateway - INFO - Shard ID None has successfully RESUMED session cd25c97cb1e1b65ad28dad1313162264.
+2023-07-18 17:50:47,252 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-18 17:50:51,439 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 208, in select
+    await connection.commit()
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-07-18 17:57:11,124 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 18:03:14,313 - discord.client - INFO - logging in using static token
+2023-07-18 18:03:15,464 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cc6f05779e4be3c2ac9909aa0d3326dd).
+2023-07-18 18:03:17,581 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:03:23,164 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 638, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 573, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 67, in applyTalent
+    if figher1.mana == 100:
+NameError: name 'figher1' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'figher1' is not defined
+2023-07-18 18:03:33,340 - discord.client - INFO - logging in using static token
+2023-07-18 18:03:34,510 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e3cecf4e3d9f97edf95e21eb9f56dfff).
+2023-07-18 18:03:36,559 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:03:36,608 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:03:50,359 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 638, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 573, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 75, in applyTalent
+    if figher.name == "Giyu Tomioka":
+NameError: name 'figher' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'figher' is not defined
+2023-07-18 18:04:30,161 - discord.client - INFO - logging in using static token
+2023-07-18 18:04:31,262 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f13e212bac94f4a9df791bd2166fa887).
+2023-07-18 18:04:33,400 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:04:43,805 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 638, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 573, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 75, in applyTalent
+    if fighter.name == "Giyu Tomioka":
+NameError: name 'fighter' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'fighter' is not defined
+2023-07-18 18:05:13,974 - discord.client - INFO - logging in using static token
+2023-07-18 18:05:15,581 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5670f18c70f8a958da526ef3c639031a).
+2023-07-18 18:05:17,672 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:05:17,757 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:05:31,528 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 638, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 573, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 78, in applyTalent
+    ele_mult = calcEleAdvantage(fighter1, fighter2)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 60, in calcEleAdvantage
+    return elements[element1][element2]
+KeyError: <CardClass.UserCard object at 0x7f4fc030b6d0>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: <CardClass.UserCard object at 0x7f4fc030b6d0>
+2023-07-18 18:05:49,783 - discord.client - INFO - logging in using static token
+2023-07-18 18:05:50,717 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 178a3928bed48d0438cfbf8ae7b461b5).
+2023-07-18 18:05:52,856 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:07:51,492 - discord.client - INFO - logging in using static token
+2023-07-18 18:07:52,629 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 909cc8cd604cb222de9a0c6a457a7321).
+2023-07-18 18:07:53,363 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:07:54,732 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:08:57,870 - discord.client - INFO - logging in using static token
+2023-07-18 18:08:58,675 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8f4927a997217ebde32283f58181c3ca).
+2023-07-18 18:09:00,785 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:09:45,798 - discord.client - INFO - logging in using static token
+2023-07-18 18:09:46,966 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cafe1ea3ddc3b50dafbd9c83e5d882f5).
+2023-07-18 18:09:49,071 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:10:41,943 - discord.client - INFO - logging in using static token
+2023-07-18 18:10:43,652 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 527e6ff651e7f74bf1d0e51f4c40180b).
+2023-07-18 18:10:45,719 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:10:45,780 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:11:51,716 - discord.client - INFO - logging in using static token
+2023-07-18 18:11:53,507 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a1b332c23452e39f719748abb429fd0f).
+2023-07-18 18:11:55,760 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:12:32,027 - discord.client - INFO - logging in using static token
+2023-07-18 18:12:33,182 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3b693b23de4bba7872efd720cbb01226).
+2023-07-18 18:12:35,396 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:13:08,172 - discord.client - INFO - logging in using static token
+2023-07-18 18:13:09,591 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 18fa4b380977df55295257e83af0af72).
+2023-07-18 18:13:11,828 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:14:03,183 - discord.client - INFO - logging in using static token
+2023-07-18 18:14:04,381 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d7bb509d3a9238887ab552befabf9396).
+2023-07-18 18:14:06,550 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:14:41,710 - discord.client - INFO - logging in using static token
+2023-07-18 18:14:43,066 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: db56aad3885d8783a1e9478bbb0ba9c6).
+2023-07-18 18:14:45,310 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:15:29,891 - discord.client - INFO - logging in using static token
+2023-07-18 18:15:31,307 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 86a4245b9fa3f6556945410398dd69c8).
+2023-07-18 18:15:33,465 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:17:02,245 - discord.client - INFO - logging in using static token
+2023-07-18 18:17:03,622 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b7368050103267239f9f1e0401bb8f6f).
+2023-07-18 18:17:05,830 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:19:43,984 - discord.client - INFO - logging in using static token
+2023-07-18 18:19:45,413 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f19312670188eeb6321ad21c5cac6240).
+2023-07-18 18:19:45,881 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:19:47,558 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:21:39,968 - discord.client - INFO - logging in using static token
+2023-07-18 18:21:41,389 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 716fda8342ce34dcaac6473adf761652).
+2023-07-18 18:21:42,737 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:21:43,584 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:23:17,920 - discord.client - INFO - logging in using static token
+2023-07-18 18:23:19,141 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4b16f6fdad2353a735f40f34ed7c544b).
+2023-07-18 18:23:21,292 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:24:56,688 - discord.client - INFO - logging in using static token
+2023-07-18 18:24:57,996 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: de8c91cabed1a3218915a80d45ea75ae).
+2023-07-18 18:24:59,226 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:25:00,193 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:25:25,268 - asyncio - ERROR - Exception in callback Future.set_result(<sqlite3.Curs...x7fa712426bc0>)
+handle: <Handle Future.set_result(<sqlite3.Curs...x7fa712426bc0>)>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1860, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+asyncio.exceptions.InvalidStateError: invalid state
+2023-07-18 18:25:25,840 - discord.client - INFO - logging in using static token
+2023-07-18 18:25:27,101 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 65cbe5fbb8db1a8bf945baa2ab44d4fa).
+2023-07-18 18:25:28,410 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 18:25:29,278 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:31:07,133 - discord.client - INFO - logging in using static token
+2023-07-18 18:31:08,481 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1ae81934efb1664687e924e08d5d080f).
+2023-07-18 18:31:10,684 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 18:32:38,461 - discord.client - INFO - logging in using static token
+2023-07-18 18:32:39,720 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0d46c8a8888dcaf9d21d80fa5588ec49).
+2023-07-18 18:32:41,944 - root - INFO - Logged in as Anigay 2.0#7825

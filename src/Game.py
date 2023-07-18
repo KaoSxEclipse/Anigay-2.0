@@ -24,14 +24,73 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 
-talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
+talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Temporal Rewind"]}
+
+def calcEffect( markiplier ):
+    if markiplier == 1:
+        return ""
+    elif markiplier == 1.5:
+        return "It was **Super Strong**!!"
+    elif markiplier == .5:
+        return "It was **Very Weak**..."
+    elif markiplier == .75:
+        return "It was **Not Very Effective**."
+
+
+def calcEleAdvantage( element1, element2 ):
+    '''Returns the first element advantage compared to the second'''
+
+    elements = {"Light": {"Light": .75, "Dark": 1.5, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                "Dark": {"Light": 1.5, "Dark": .75, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                "Neutral": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
+
+                "Water": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .75, "Ground": 1, "Electric": .5, "Fire": 1.5, "Grass": 1},
+
+                "Ground": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": .75, "Electric": 1.5, "Fire": 1, "Grass": .5},
+
+                "Electric": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1.5, "Ground": .5, "Electric": .75, "Fire": 1, "Grass": 1},
+
+                "Fire":  {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .5, "Ground": 1, "Electric": 1, "Fire": .75, "Grass": 1.5},
+
+                "Grass": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1.5, "Electric": 1, "Fire": .5, "Grass": .75}}
+
+    return elements[element1][element2]
 
 
 def applyTalent(fighter1, fighter2, battle_round):
     if fighter1.talent in talents["Active"]:
         ## Apply Active Talent
-        pass
+        if fighter1.talent == "Double-edged Strike":
+            if fighter1.mana == 100:
+                if fighter1.rarity_s == "SR":
+                    damage = 0.27
+                elif fighter1.rarity_s == "UR":
+                    damage = 0.30
+                else:
+                    damage = 0.24
+
+                if fighter1.name == "Giyu Tomioka":
+                    damage = damage * fighter1.spd
+
+                ele_mult = calcEleAdvantage(fighter1.element, fighter2.element)
+
+                damage = round(damage*ele_mult)
+                backlash = round(damage*0.25)
+                effect = calcEffect(ele_mult)
+
+                fighter1.hp -= backlash
+                fighter2.hp -= damage
+
+                fighter1.mana = 0
+
+                message = f"{fighter1.name} uses Double-edged Strike inflicting __{damage}__ damage to {fighter2.name},\n and receives __{backlash}__ damage from the backlash. " + effect
+                return message
+
+
+
     elif fighter1.talent in talents["PSV"]:
         if fighter1.talent == "Miracle Injection":
             if battle_round == 1:
@@ -50,6 +109,9 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter1.atk += bonus*2
                 fighter1.df += bonus*2
                 fighter1.spd += bonus*2
+
+                message = f"**{fighter1.name}** uses Miracle Injection, sacrificing HP to imbue themself with power and increasing all stats by {bonus*6}!!"
+                return message
 
         if fighter1.talent == "Life Sap":
             if fighter1.rarity_s == "SR":
@@ -70,6 +132,9 @@ def applyTalent(fighter1, fighter2, battle_round):
 
             fighter2.hp -= damage_dealt
 
+            message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ damage to **{fighter2.name}** and heals for __{healing}__ HP"
+            return message
+
         if fighter1.talent == "Executioner":
             if fighter1.rarity_s == "SR":
                 if fighter2.hp < fighter2.max_hp*0.48:
@@ -79,6 +144,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                     else:
                         fighter1.talent_proc = True
                         fighter1.atk *= 1.9
+                        increase = 90
 
             elif fighter1.rarity_s == "UR":
                 if fighter2.hp < fighter2.max_hp*0.54:
@@ -88,6 +154,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                     else:
                         fighter1.talent_proc = True
                         fighter1.atk *= 2.0
+                        increase = 100
 
             else:
                 if fighter2.hp < fighter2.max_hp*0.43:
@@ -97,6 +164,10 @@ def applyTalent(fighter1, fighter2, battle_round):
                     else:
                         fighter1.talent_proc = True
                         fighter1.atk *= 1.8
+                        increase = 80
+
+            message = f"**{fighter1.name}** uses Executioner, increasing their attack for {increase}%!!"
+            return message
 
 
 
@@ -376,23 +447,23 @@ class Game(commands.Cog):
             if player.max_mana == 0:
                 player_mp_percentage = 0
             else:
-                player_mp_percentage = player.mana / player.max_mana
+                player_mp_percentage = player.mana / player.max_mana*100
             player_mp_filled = round(player_mp_percentage / 100 * mp_bar_length)
             player_mp_empty = mp_bar_length - player_mp_filled
 
             if enemy.max_mana == 0:
                 enemy_mp_percentage = 0
             else:
-                enemy_mp_percentage = enemy.mana / enemy.max_mana
+                enemy_mp_percentage = enemy.mana / enemy.max_mana*100
             enemy_mp_filled = round(enemy_mp_percentage / 100 * mp_bar_length)
             enemy_mp_empty = mp_bar_length - enemy_mp_filled
 
-            if player.mana > 100 or player_mp_filled > 20:
+            if player.mana >= 100 or player_mp_filled > 20:
                 player.mana = 100
                 player_mp_filled = 20
                 player_mp_empty = 0
 
-            if enemy.mana > 100 or enemy_mp_filled > 20:
+            if enemy.mana >= 100 or enemy_mp_filled > 20:
                 enemy.mana = 100
                 enemy_mp_filled = 20
                 enemy_mp_empty = 0
@@ -414,30 +485,6 @@ class Game(commands.Cog):
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
 
             return embed
-
-
-        def calcEleAdvantage( element1, element2 ):
-            '''Returns the first element advantage compared to the second'''
-
-            elements = {"Light": {"Light": .75, "Dark": 1.5, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Dark": {"Light": 1.5, "Dark": .75, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Neutral": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Water": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .75, "Ground": 1, "Electric": .5, "Fire": 1.5, "Grass": 1},
-
-                        "Ground": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": .75, "Electric": 1.5, "Fire": 1, "Grass": .5},
-
-                        "Electric": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1.5, "Ground": .5, "Electric": .75, "Fire": 1, "Grass": 1},
-
-                        "Fire":  {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .5, "Ground": 1, "Electric": 1, "Fire": .75, "Grass": 1.5},
-
-                        "Grass": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1.5, "Electric": 1, "Fire": .5, "Grass": .75}}
-
-            return elements[element1][element2]
-
-
 
         user_id = ctx.author.id
         user = await Database.verifyUser(user_id)
@@ -523,17 +570,8 @@ class Game(commands.Cog):
 
 
                 async def battleRound( fighter1, fighter2 ):
-                    def calcEffect( markiplier ):
-                        if markiplier == 1:
-                            return ""
-                        elif markiplier == 1.5:
-                            return "It was **Super Strong**!!"
-                        elif markiplier == .5:
-                            return "It was **Very Weak**..."
-                        elif markiplier == .75:
-                            return "It was **Not Very Effective**."
-
-                    applyTalent( fighter1, fighter2, battle_round )
+                    talent_message = applyTalent( fighter1, fighter2, battle_round )
+                    fighter1.critical_mult = 1
 
                     miss = False
                     # Evasion / Critical rates
@@ -544,13 +582,11 @@ class Game(commands.Cog):
 
                     crit = random.randint(1, 100)
                     if crit in range(1, fighter1.critical_rate+1):
-                        print("Crit Roll: ", evasion, "Range: ", range(1, fighter1.critical_rate+1))
+                        print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
+                        print(crit in range(1, fighter1.critical_rate+1))
                         fighter1.critical_mult = 1.75
 
 
-                    if not miss:
-                        dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
-                        fighter2.hp -= dmg
 
                     if fighter1.max_mana > 0:
                         speed_multiplier = fighter1.spd/fighter2.spd
@@ -576,6 +612,20 @@ class Game(commands.Cog):
 
                     embed = displayHP(user_card, oppo, battle_round)
 
+                    if talent_message != None:
+                        embed.add_field(name="", value=talent_message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+
+                    if not miss:
+                        dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
+                        fighter2.hp -= dmg
+
+                        embed = displayHP(user_card, oppo, battle_round)
+                        if talent_message != None:
+                            embed.add_field(name="", value=talent_message, inline=False)
+
+
                     if miss:
                         embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
                     elif fighter1.critical_mult > 1:
@@ -583,9 +633,9 @@ class Game(commands.Cog):
                     else:
                         embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
 
-
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
+
 
 
                 while user_card.hp > 0 and oppo.hp > 0:
