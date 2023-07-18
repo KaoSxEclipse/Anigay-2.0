@@ -24,6 +24,63 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 
+talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
+           "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog"],
+           "Proc": ["Executioner", "Protector", "Reversion", "Temporal Rewind"]}
+
+
+def applyTalent(fighter1, fighter2, battle_round):
+    if fighter1.talent in talents["Active"]:
+        ## Apply Active Talent
+        pass
+    elif fighter1.talent in talents["PSV"]:
+        if fighter1.talent == "Miracle Injection":
+            if fighter1.rarity_s == "SR":
+                if battle_round == 0:
+                    print("Injecting")
+                    bonus = round(fighter1.max_hp *.18)
+
+                    fighter1.max_hp -= bonus
+                    fighter1.hp -= bonus
+
+                    fighter1.current_atk += bonus*2
+                    fighter1.df += bonus*2
+                    fighter1.spd += bonus*2
+
+
+            elif fighter1.rarity_s == "UR":
+                if battle_round == 0:
+                    bonus = round(fighter1.max_hp *.2)
+
+                    fighter1.max_hp -= bonus
+                    fighter1.hp -= bonus
+
+                    fighter1.atk += bonus*2
+                    fighter1.df += bonus*2
+                    fighter1.spd += bonus*2
+
+    else:
+        if fighter1.talent == "Executioner":
+            if fighter1.rarity_s == "SR":
+                if fighter2.hp < fighter2.max_hp*0.48:
+                    if fighter1.talent_proc:
+                        # Talent Already proc'd
+                        pass
+                    else:
+                        fighter1.talent_proc = True
+                        fighter1.atk *= 1.9
+
+            elif fighter1.rarity_s == "UR":
+                if fighter2.hp < fighter2.max_hp*0.54:
+                    if fighter1.talent_proc:
+                        # Talent Already proc'd
+                        pass
+                    else:
+                        fighter1.talent_proc = True
+                        fighter1.atk *= 2.0
+
+
+
 def parseFloor( location ):
     floor = str(location).split(".")[1]
 
@@ -274,12 +331,12 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
-        def displayHP(player, player_hp, enemy, enemy_hp, battle_round):
-            player_hp_percentage = player.hp / (player_hp) * 100
+        def displayHP(player, enemy, battle_round):
+            player_hp_percentage = player.hp / (player.max_hp) * 100
             player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
             player_hp_empty = hp_bar_length - player_hp_filled
 
-            enemy_hp_percentage = enemy.hp / (enemy_hp) * 100
+            enemy_hp_percentage = enemy.hp / (enemy.max_hp) * 100
             enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
             enemy_hp_empty = hp_bar_length - enemy_hp_filled
 
@@ -299,10 +356,10 @@ class Game(commands.Cog):
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
             embed.add_field(name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
             embed.add_field(name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
-            embed.add_field(name=f"**{player.hp} / {player_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{player.hp} / {player.max_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
             embed.add_field(name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
             embed.add_field(name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
-            embed.add_field(name=f"**{enemy.hp} / {enemy_hp} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{enemy.hp} / {enemy.max_hp} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
@@ -393,12 +450,10 @@ class Game(commands.Cog):
 
                 #print("User Card ID:", c["uid"])
                 user_card = UserCard(c, user_card)
-                user_card.hp *= 10
-                player_hp = user_card.hp
+                user_card.battlePrep()
                 
                 oppo = FloorCard(loc, floor)
-                oppo.hp *= 10
-                enemy_hp = oppo.hp
+                oppo.battlePrep()
 
                 user_card.ele_mult = calcEleAdvantage(user_card.element, oppo.element)
                 oppo.ele_mult = calcEleAdvantage(oppo.element, user_card.element)
@@ -410,7 +465,7 @@ class Game(commands.Cog):
                 #CRITICAL_MULTIPLIER = 1
 
 
-                embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
+                embed = displayHP(user_card, oppo, battle_round)
 
                 bt = await ctx.send(embed=embed)
                 await asyncio.sleep(1.5)
@@ -427,20 +482,23 @@ class Game(commands.Cog):
                         elif markiplier == .75:
                             return "It was **Not Very Effective**."
 
+                    applyTalent( fighter1, fighter2, battle_round )
+                    print(fighter1)
+
                     CRITICAL_MULTIPLIER = 1
                     miss = False
                     # New damage formula
-                    if random.randint(1, 100) in range(1, 16):
-                        CRITICAL_MULTIPLIER = 1.5
+                    if random.randint(1, 100) in range(1, 6):
+                        CRITICAL_MULTIPLIER = 1.75
 
                     elif random.randint(1, 100) == 1:
                         miss = True
 
                     if not miss:
-                        dmg = int((((fighter1.current_atk*fighter1.atk*10)+638000)/(8.7 * fighter2.df*10)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
+                        dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
                         fighter2.hp -= dmg
 
-                    embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
+                    embed = displayHP(user_card, oppo, battle_round)
 
                     if miss:
                         embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
@@ -474,13 +532,17 @@ class Game(commands.Cog):
 
                     else:
                         await battleRound(user_card, oppo) ## Handle same speed later
+                        if user_card.hp > 0 and oppo.hp > 0:
+                            await battleRound( oppo, user_card )
+                        else:
+                            break
 
                     
                     battle_round += 1
 
                 if user_card.hp > 0:
                     # Player Wins
-                    print("player wins")
+                    #rint("player wins")
                     wun_reward = int(loc*1.5*(floor*.8) + 100)
                     exp_reward = random.randint(1, 5)
 

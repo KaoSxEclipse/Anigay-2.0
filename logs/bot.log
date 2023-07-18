@@ -527,3 +527,142 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-18 10:40:12,414 - discord.client - INFO - logging in using static token
 2023-07-18 10:40:13,212 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4ba3aeaf833b9fae6635f338169a1542).
 2023-07-18 10:40:15,279 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 12:23:07,316 - discord.client - INFO - logging in using static token
+2023-07-18 12:23:08,104 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b930805bcfaa85d3ad51ff4e22a27b7).
+2023-07-18 12:23:10,172 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:15:20,395 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-18 13:15:25,847 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 06b68b152a6fa33950de4fd78df8698e).
+2023-07-18 13:15:27,940 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:15:27,941 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-18 13:35:56,625 - discord.client - INFO - logging in using static token
+2023-07-18 13:35:57,796 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c1a725c447ec818de5a37cb27892eb49).
+2023-07-18 13:35:59,868 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:36:01,731 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 468, in battle
+    embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
+NameError: name 'player_hp' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'player_hp' is not defined
+2023-07-18 13:36:34,467 - discord.client - INFO - logging in using static token
+2023-07-18 13:36:35,582 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 923361ce3e9c0cf69360e9750239717a).
+2023-07-18 13:36:37,641 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:37:13,893 - discord.client - INFO - logging in using static token
+2023-07-18 13:37:15,007 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f943c25d1d7b1e2d29fbbff1811e4276).
+2023-07-18 13:37:17,076 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:37:50,311 - discord.client - INFO - logging in using static token
+2023-07-18 13:37:51,306 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 869c44eb76fc2c284208636904d27fff).
+2023-07-18 13:37:53,393 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:38:27,664 - discord.client - INFO - logging in using static token
+2023-07-18 13:38:28,624 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d823d2666ccfefe0d6ed5a8075a85038).
+2023-07-18 13:38:30,695 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:39:15,875 - discord.client - INFO - logging in using static token
+2023-07-18 13:39:16,785 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c9ddd8ca2445b114559c1e74194a8542).
+2023-07-18 13:39:18,863 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:40:05,353 - discord.client - INFO - logging in using static token
+2023-07-18 13:40:06,544 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3e492a96017d2f55e99929120f478b5d).
+2023-07-18 13:40:08,616 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:40:42,361 - discord.client - INFO - logging in using static token
+2023-07-18 13:40:43,186 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b31b3d939b1d386e72fab77ce89757b2).
+2023-07-18 13:40:45,260 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:40:57,087 - discord.client - INFO - logging in using static token
+2023-07-18 13:40:58,037 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 684ae45574ab4603ee15002f230d1428).
+2023-07-18 13:41:00,129 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:41:57,722 - discord.client - INFO - logging in using static token
+2023-07-18 13:41:58,496 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8e53deefc8cc2591f4207ddd853094dc).
+2023-07-18 13:42:00,572 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:42:03,341 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 518, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 484, in battleRound
+    applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 38, in applyTalent
+    if fighter.rarity_s == "SR":
+NameError: name 'fighter' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'fighter' is not defined
+2023-07-18 13:42:27,364 - discord.client - INFO - logging in using static token
+2023-07-18 13:42:28,354 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e53ef35ed228a6211762feaf537fc212).
+2023-07-18 13:42:30,416 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:42:46,311 - discord.client - INFO - logging in using static token
+2023-07-18 13:42:47,243 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a9ef37dd427e2e44a2a1292753f01e6b).
+2023-07-18 13:42:49,328 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:43:54,276 - discord.client - INFO - logging in using static token
+2023-07-18 13:43:55,227 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4f98c5a178ed5f2375409bc181647bc2).
+2023-07-18 13:43:57,315 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:47:12,607 - discord.client - INFO - logging in using static token
+2023-07-18 13:47:13,514 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b17ed331514dea6b4d4c1ad32c3fd6d2).
+2023-07-18 13:47:15,588 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:49:59,244 - discord.client - INFO - logging in using static token
+2023-07-18 13:50:00,250 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8019e777229b6407dc727c43c6887f62).
+2023-07-18 13:50:02,336 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:50:08,120 - asyncio - ERROR - Exception in callback Future.set_result(None)
+handle: <Handle Future.set_result(None)>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1860, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+asyncio.exceptions.InvalidStateError: invalid state
+2023-07-18 13:50:10,456 - discord.client - INFO - logging in using static token
+2023-07-18 13:50:11,618 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cebac769f87515dbcebb7b6757bac640).
+2023-07-18 13:50:13,676 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:56:06,010 - discord.client - INFO - logging in using static token
+2023-07-18 13:56:07,052 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fbb75ca5d5f5ade0037b6ad844805ca4).
+2023-07-18 13:56:09,111 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:57:07,517 - discord.client - INFO - logging in using static token
+2023-07-18 13:57:09,618 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a60c81d939125cb7ed4fed69ebe43e8f).
+2023-07-18 13:57:12,242 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:57:48,360 - discord.client - INFO - logging in using static token
+2023-07-18 13:57:52,104 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c6664004424776af240671beee35ab14).
+2023-07-18 13:57:54,185 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 13:59:28,560 - discord.client - INFO - logging in using static token
+2023-07-18 13:59:31,025 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 09dfe190584571d1ef27f34d7c5f8bbe).
+2023-07-18 13:59:33,104 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 14:04:41,534 - discord.client - INFO - logging in using static token
+2023-07-18 14:04:42,846 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c33f9c40d845b4d3ac0d9ea1cb54cfd9).
+2023-07-18 14:04:44,923 - root - INFO - Logged in as Anigay 2.0#7825

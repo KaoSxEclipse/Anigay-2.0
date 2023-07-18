@@ -70,12 +70,15 @@ class UserCard:
 		self.df = data["def"]
 		self.spd = data["spd"]
 		self.talent = data["talent"]
+		self.talent_proc = False
 
 		self.calcRarity()
 		self.calcLevel()
 		self.calcStats()
 
+		self.max_hp = self.hp*10
 		self.current_atk = self.atk*10
+		self.base_df = self.df*10
 		self.ele_mult = 1
 
 
@@ -125,19 +128,27 @@ class UserCard:
 
 	def calcStats(self):
 		'''Formula: BaseStat*(Rarity*(1+0.005*Level)*(1+0.15*(Evo-1)))'''
-		self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.atk = int(round(self.atk*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.df = int(round(self.df*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.spd = int(round(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+		self.hp = int(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.atk = int(self.atk*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.df = int(self.df*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.spd = int(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+
+
+	def battlePrep(self):
+		self.hp *= 10
+		self.atk *= 10
+		self.df *= 10
+		self.spd *= 10
 
 
 	def __str__(self):
 		return """
-HP:  {}
-ATK: {}
+{}:
+HP:  {}/{}
+ATK: {}[{}]
 DEF: {}
 SPD: {}
-		""" .format(self.hp, self.atk, self.df, self.spd)
+		""" .format(self.name, self.hp, self.max_hp, self.atk, self.current_atk, self.df, self.spd)
 
 
 class FloorCard(UserCard):
@@ -157,17 +168,19 @@ class FloorCard(UserCard):
 		self.evo = 1
 		self.location = location
 		self.floor = floor
-		self.level = self.location*2+(self.floor*2)
+		self.level = self.location+(self.floor*2)
 		self.element = card[2]
 		self.hp = card[3]
 		self.atk = card[4]
 		self.df = card[5]
 		self.spd = card[6]
 		self.talent = card[7]
+		self.talent_proc = False
 
 		self.calcRarity()
 		self.calcStats()
 
+		self.max_hp = self.hp*10
 		self.current_atk = self.atk*10
 		self.ele_mult = 1
 
