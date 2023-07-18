@@ -407,7 +407,7 @@ class Game(commands.Cog):
                 battle_round = 0
 
 
-                CRITICAL_MULTIPLIER = 1
+                #CRITICAL_MULTIPLIER = 1
 
 
                 embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
@@ -427,14 +427,28 @@ class Game(commands.Cog):
                         elif markiplier == .75:
                             return "It was **Not Very Effective**."
 
+                    CRITICAL_MULTIPLIER = 1
+                    miss = False
                     # New damage formula
-                    dmg = int((((fighter1.current_atk*fighter1.atk*10)+638000)/(8.7 * fighter2.df*10)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
+                    if random.randint(1, 100) in range(1, 16):
+                        CRITICAL_MULTIPLIER = 1.5
 
-                    fighter2.hp -= dmg
+                    elif random.randint(1, 100) == 1:
+                        miss = True
+
+                    if not miss:
+                        dmg = int((((fighter1.current_atk*fighter1.atk*10)+638000)/(8.7 * fighter2.df*10)) * fighter1.ele_mult * CRITICAL_MULTIPLIER)
+                        fighter2.hp -= dmg
 
                     embed = displayHP(user_card, player_hp, oppo, enemy_hp, battle_round)
 
-                    embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
+                    if miss:
+                        embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
+                    elif CRITICAL_MULTIPLIER > 1:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!** {calcEffect( fighter1.ele_mult )}", inline=False)
+                    else:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
+
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
