@@ -1,6 +1,7 @@
 import asyncio, asqlite, json
 
 path_to_db = "../db/"
+ACTIVE_TALENTS = ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ]
 
 class CardClass():
 	def __init__( self, uid, rarity="sr" ):
@@ -66,6 +67,7 @@ class UserCard:
 		self.name = data["name"]
 		self.element = data["element"]
 		self.hp = data["hp"]
+		self.mana = 0
 		self.atk = data["atk"]
 		self.df = data["def"]
 		self.spd = data["spd"]
@@ -76,10 +78,18 @@ class UserCard:
 		self.calcLevel()
 		self.calcStats()
 
+		if self.talent in ACTIVE_TALENTS:
+			self.max_mana = 100
+		else:
+			self.max_mana = 0
+
 		self.max_hp = self.hp*10
 		self.current_atk = self.atk*10
 		self.base_df = self.df*10
 		self.ele_mult = 1
+		self.evasion = 1
+		self.critical_mult = 1
+		self.critical_rate = 5
 
 
 	def calcRarity(self):
@@ -145,10 +155,11 @@ class UserCard:
 		return """
 {}:
 HP:  {}/{}
+MP:  {}
 ATK: {}[{}]
 DEF: {}
 SPD: {}
-		""" .format(self.name, self.hp, self.max_hp, self.atk, self.current_atk, self.df, self.spd)
+		""" .format(self.name, self.hp, self.max_hp, self.mana, self.atk, self.current_atk, self.df, self.spd)
 
 
 class FloorCard(UserCard):
@@ -171,6 +182,7 @@ class FloorCard(UserCard):
 		self.level = self.location+(self.floor*2)
 		self.element = card[2]
 		self.hp = card[3]
+		self.mana = 0
 		self.atk = card[4]
 		self.df = card[5]
 		self.spd = card[6]
@@ -180,9 +192,17 @@ class FloorCard(UserCard):
 		self.calcRarity()
 		self.calcStats()
 
+		if self.talent in ACTIVE_TALENTS:
+			self.max_mana = 100
+		else:
+			self.max_mana = 0
+
 		self.max_hp = self.hp*10
 		self.current_atk = self.atk*10
 		self.ele_mult = 1
+		self.evasion = 1
+		self.critical_rate = 5
+		self.critical_mult = 1
 
 
 	async def getDex(self):

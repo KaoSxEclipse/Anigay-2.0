@@ -666,3 +666,229 @@ asyncio.exceptions.InvalidStateError: invalid state
 2023-07-18 14:04:41,534 - discord.client - INFO - logging in using static token
 2023-07-18 14:04:42,846 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c33f9c40d845b4d3ac0d9ea1cb54cfd9).
 2023-07-18 14:04:44,923 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 14:58:43,975 - discord.gateway - WARNING - Can't keep up, shard ID None websocket is 23.9s behind.
+2023-07-18 15:35:12,248 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c33f9c40d845b4d3ac0d9ea1cb54cfd9.
+2023-07-18 15:44:17,388 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c33f9c40d845b4d3ac0d9ea1cb54cfd9.
+2023-07-18 16:22:23,514 - discord.client - INFO - logging in using static token
+2023-07-18 16:22:24,928 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 607d8b629ea1e00f728e52a864defa27).
+2023-07-18 16:22:27,031 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:22:32,828 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 539, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 506, in battleRound
+    mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
+ZeroDivisionError: division by zero
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ZeroDivisionError: division by zero
+2023-07-18 16:23:47,890 - discord.client - INFO - logging in using static token
+2023-07-18 16:23:49,408 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e80f5593ad6ffc21fa9b8b241dd8dc56).
+2023-07-18 16:23:51,610 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:24:02,121 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 542, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 490, in battleRound
+    if random.randint(1, 100) in range(1, fighter1.evasion+1):
+AttributeError: 'FloorCard' object has no attribute 'evasion'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'evasion'
+2023-07-18 16:25:06,516 - discord.client - INFO - logging in using static token
+2023-07-18 16:25:07,642 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d8a1db602a81f561f8a9708ab3cb592a).
+2023-07-18 16:25:09,744 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:29:46,226 - discord.client - INFO - logging in using static token
+2023-07-18 16:29:47,723 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d913fb0af29742dfd459ae548759bc7e).
+2023-07-18 16:29:49,835 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:29:50,478 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 491, in battle
+    embed = displayHP(user_card, oppo, battle_round)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 358, in displayHP
+    player_mp_filled = round(player_mp_percentage / 100 * mp_bar_length)
+NameError: name 'mp_bar_length' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'mp_bar_length' is not defined
+2023-07-18 16:30:06,655 - discord.client - INFO - logging in using static token
+2023-07-18 16:30:07,676 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4746d49bdeae8906ddf7abc5eccdd513).
+2023-07-18 16:30:09,784 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:30:10,957 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 492, in battle
+    embed = displayHP(user_card, oppo, battle_round)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 365, in displayHP
+    if player.mp > 100:
+AttributeError: 'UserCard' object has no attribute 'mp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'UserCard' object has no attribute 'mp'
+2023-07-18 16:30:28,436 - discord.client - INFO - logging in using static token
+2023-07-18 16:30:29,439 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d4b0a528ab0ce72db8adf0c814195df3).
+2023-07-18 16:30:31,544 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:31:36,051 - discord.client - INFO - logging in using static token
+2023-07-18 16:31:37,276 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fe6c7b38b56c11d06dac5399adb1f82).
+2023-07-18 16:31:39,404 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:33:23,787 - discord.client - INFO - logging in using static token
+2023-07-18 16:33:24,855 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 224d329a2eb7065a9e7c21c6afabb376).
+2023-07-18 16:33:26,983 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:33:39,556 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 493, in battle
+    embed = displayHP(user_card, oppo, battle_round)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 365, in displayHP
+    if player.mana > 100 or player_filled > 20:
+UnboundLocalError: local variable 'player_filled' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'player_filled' referenced before assignment
+2023-07-18 16:33:59,010 - discord.client - INFO - logging in using static token
+2023-07-18 16:34:00,249 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1d2e9238c90df9a5e12fabf212667022).
+2023-07-18 16:34:02,345 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:34:41,177 - discord.client - INFO - logging in using static token
+2023-07-18 16:34:42,250 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 473729474dfd5c1da60da1bcd5902da3).
+2023-07-18 16:34:44,367 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:36:21,950 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "cl" is not found
+2023-07-18 16:37:42,558 - discord.client - INFO - logging in using static token
+2023-07-18 16:37:43,660 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e79a9840d95fa45446677a051cc1e393).
+2023-07-18 16:37:45,796 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:37:49,920 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 493, in battle
+    embed = displayHP(user_card, oppo, battle_round)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 357, in displayHP
+    player_mp_percentage = player.mana / player.max_mana
+ZeroDivisionError: division by zero
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ZeroDivisionError: division by zero
+2023-07-18 16:38:56,229 - discord.client - INFO - logging in using static token
+2023-07-18 16:38:57,325 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5b1d082567120943ef91202eca963556).
+2023-07-18 16:38:59,433 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:41:44,220 - discord.client - INFO - logging in using static token
+2023-07-18 16:41:45,137 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c871f6ce0cee8ffe70b11fadfa19358d).
+2023-07-18 16:41:47,290 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:43:46,742 - discord.client - INFO - logging in using static token
+2023-07-18 16:43:47,800 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2029ca86cb95002e2e0456b463d9ad97).
+2023-07-18 16:43:49,897 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:45:40,415 - discord.client - INFO - logging in using static token
+2023-07-18 16:45:41,465 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 82de27ddf68173a3ef94eb539d8e60cd).
+2023-07-18 16:45:42,797 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 16:45:43,564 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:46:54,520 - discord.client - INFO - logging in using static token
+2023-07-18 16:46:55,808 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bb51dc2f2b64e44c4db2c2e190c5ecd1).
+2023-07-18 16:46:56,833 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-18 16:46:57,936 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:55:53,003 - discord.client - INFO - logging in using static token
+2023-07-18 16:55:54,147 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6e803403edc9e7a0dd29e15c65199afc).
+2023-07-18 16:55:56,321 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:57:44,120 - discord.client - INFO - logging in using static token
+2023-07-18 16:57:45,130 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b2f92b841d8a398b8b6d83cf16244fd3).
+2023-07-18 16:57:47,284 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:58:07,298 - discord.client - INFO - logging in using static token
+2023-07-18 16:58:08,478 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 102645621fad059351be015c57968cee).
+2023-07-18 16:58:10,623 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 16:59:06,135 - discord.client - INFO - logging in using static token
+2023-07-18 16:59:07,055 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 98c1656ca2af6bcafc4dec4440f8bcea).
+2023-07-18 16:59:09,191 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:00:22,319 - discord.client - INFO - logging in using static token
+2023-07-18 17:00:23,667 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1c9fe3ffbb989ba69b8968f71554bfd1).
+2023-07-18 17:00:25,772 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:00:49,482 - discord.client - INFO - logging in using static token
+2023-07-18 17:00:50,680 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 89831d5a71882198935ff001cda3762b).
+2023-07-18 17:00:52,796 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:01:18,112 - discord.client - INFO - logging in using static token
+2023-07-18 17:01:19,091 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 06bcb7bc4420836d5fed06de46d3f3b9).
+2023-07-18 17:01:21,211 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:05:03,564 - discord.client - INFO - logging in using static token
+2023-07-18 17:05:04,538 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cf23220b0be3d596b80b81af4fb09f24).
+2023-07-18 17:05:06,644 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 17:05:17,085 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 600, in battle
+    await battleRound( user_card, oppo )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 540, in battleRound
+    applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 50, in applyTalent
+    fighter1.max_hp -= bonus
+UnboundLocalError: local variable 'bonus' referenced before assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: local variable 'bonus' referenced before assignment
+2023-07-18 17:06:10,787 - discord.client - INFO - logging in using static token
+2023-07-18 17:06:11,741 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f824deddec8548398b64f2c638864ea8).
+2023-07-18 17:06:13,888 - root - INFO - Logged in as Anigay 2.0#7825
