@@ -63,8 +63,8 @@ def calcEleAdvantage( element1, element2 ):
 def applyTalent(fighter1, fighter2, battle_round):
     if fighter1.talent in talents["Active"]:
         ## Apply Active Talent
-        if fighter1.talent == "Double-edged Strike":
-            if fighter1.mana == 100:
+        if fighter1.mana == 100:
+            if fighter1.talent == "Double-edged Strike":
                 if fighter1.rarity_s == "SR":
                     damage = 0.27
                 elif fighter1.rarity_s == "UR":
@@ -86,9 +86,34 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.mana = 0
 
-                message = f"{fighter1.name} uses Double-edged Strike inflicting __{damage}__ damage to {fighter2.name},\n and receives __{backlash}__ damage from the backlash. " + effect
+                message = f"**{fighter1.name}** uses Double-edged Strike inflicting __{damage}__ damage to **{fighter2.name}**,\n and receives __{backlash}__ damage from the backlash. " + effect
                 return message
 
+            if fighter1.talent == "Paralysis":
+                if fighter1.rarity_s == "SR":
+                    defense_drop = 0.18
+                    if random.randint(1, 100) in range(1, 73):
+                        # Paralysis succeeded
+                        fighter2.stunned = True
+                elif fighter1.rarity_s == "UR":
+                    defense_drop = 0.20
+                    if random.randint(1, 100) in range(1, 81):
+                        # Paralysis succeeded
+                        fighter2.stunned = True
+                else:
+                    defense_drop = 0.16
+                    if random.randint(1, 100) in range(1, 64):
+                        # Paralysis succeeded
+                        fighter2.stunned = True
+
+                fighter2.df = fighter2.df - int(fighter2.df*defense_drop)
+                fighter1.mana = 0
+
+                if fighter2.stunned:
+                    message = f"**{fighter1.name}** uses Paralysis, stunning {fighter2.name} for 1 turn and lowering their DEFENSE by {int(defense_drop*100)}%"
+                else:
+                    message = f"**{fighter1.name}** uses Paralysis but fails to stun!! **{fighter2.name}**'s defense is lowered by {int(defense_drop*100)}%"
+                return message
 
 
     elif fighter1.talent in talents["PSV"]:
@@ -587,72 +612,82 @@ class Game(commands.Cog):
 
 
                 async def battleRound( fighter1, fighter2 ):
-                    talent_message = applyTalent( fighter1, fighter2, battle_round )
-                    fighter1.critical_mult = 1
+                    if fighter1.stunned:
+                        embed = displayHP(user_card, oppo, battle_round)
 
-                    miss = False
-                    # Evasion / Critical rates
-                    evasion = random.randint(1, 100)
-                    if evasion in range(1, fighter1.evasion+1):
-                        print("Evasion Roll: ", evasion)
-                        miss = True
+                        embed.add_field(name="", value=f"**{fighter1.name}** is stunned and is unable to attack!!", inline=False)
+                        fighter1.stunned = False
 
-                    crit = random.randint(1, 100)
-                    if crit in range(1, fighter1.critical_rate+1):
-                        print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
-                        print(crit in range(1, fighter1.critical_rate+1))
-                        fighter1.critical_mult = 1.75
-
-
-
-                    if fighter1.max_mana > 0:
-                        speed_multiplier = fighter1.spd/fighter2.spd
-                        if speed_multiplier >= 1.4:
-                            speed_multiplier = 1.4
-                        else:
-                            speed_multiplier = 1
-
-                        mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
-                        fighter1.mana += mana_gained
-
-                    if fighter2.max_mana > 0:
-                        speed_multiplier = fighter2.spd/fighter1.spd
-                        if speed_multiplier >= 1.4:
-                            speed_multiplier = 1.4
-                        else:
-                            speed_multiplier = 1
-
-                        mana_gained = int((15*(2-(fighter2.hp/fighter2.max_hp)))+(2*15/battle_round)*speed_multiplier)
-                        fighter2.mana += mana_gained
-
-                    #print(fighter1.talent)
-
-                    embed = displayHP(user_card, oppo, battle_round)
-
-                    if talent_message != None:
-                        embed.add_field(name="", value=talent_message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
+                    else:
 
-                    if not miss:
-                        dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
-                        fighter2.hp -= dmg
-                        fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
+                        talent_message = applyTalent( fighter1, fighter2, battle_round )
+                        fighter1.critical_mult = 1
+
+                        miss = False
+                        # Evasion / Critical rates
+                        evasion = random.randint(1, 100)
+                        if evasion in range(1, fighter1.evasion+1):
+                            print("Evasion Roll: ", evasion)
+                            miss = True
+
+                        crit = random.randint(1, 100)
+                        if crit in range(1, fighter1.critical_rate+1):
+                            print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
+                            print(crit in range(1, fighter1.critical_rate+1))
+                            fighter1.critical_mult = 1.75
+
+
+
+                        if fighter1.max_mana > 0:
+                            speed_multiplier = fighter1.spd/fighter2.spd
+                            if speed_multiplier >= 1.4:
+                                speed_multiplier = 1.4
+                            else:
+                                speed_multiplier = 1
+
+                            mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                            fighter1.mana += mana_gained
+
+                        if fighter2.max_mana > 0:
+                            speed_multiplier = fighter2.spd/fighter1.spd
+                            if speed_multiplier >= 1.4:
+                                speed_multiplier = 1.4
+                            else:
+                                speed_multiplier = 1
+
+                            mana_gained = int((15*(2-(fighter2.hp/fighter2.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                            fighter2.mana += mana_gained
+
+                        #print(fighter1.talent)
 
                         embed = displayHP(user_card, oppo, battle_round)
+
                         if talent_message != None:
                             embed.add_field(name="", value=talent_message, inline=False)
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+
+                        if not miss:
+                            dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
+                            fighter2.hp -= dmg
+                            fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
+
+                            embed = displayHP(user_card, oppo, battle_round)
+                            if talent_message != None:
+                                embed.add_field(name="", value=talent_message, inline=False)
 
 
-                    if miss:
-                        embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
-                    elif fighter1.critical_mult > 1:
-                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!** {calcEffect( fighter1.ele_mult )}", inline=False)
-                    else:
-                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
+                        if miss:
+                            embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
+                        elif fighter1.critical_mult > 1:
+                            embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!** {calcEffect( fighter1.ele_mult )}", inline=False)
+                        else:
+                            embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
 
-                    await bt.edit(embed=embed)
-                    await asyncio.sleep(2.5)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
 
 
 

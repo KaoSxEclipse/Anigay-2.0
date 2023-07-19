@@ -1164,3 +1164,43 @@ discord.errors.ClientException: Cog named 'Debug' already loaded
 2023-07-18 21:16:09,608 - discord.client - INFO - logging in using static token
 2023-07-18 21:16:10,486 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ce93abcf91a6af8c8da2ac0138f9307f).
 2023-07-18 21:16:12,595 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:23:09,104 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:23:24,471 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:23:34,122 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-18 21:23:44,943 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "team" is not found
+2023-07-18 21:23:57,130 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:24:50,582 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rh" is not found
+2023-07-18 21:25:05,080 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rh" is not found
+2023-07-18 21:29:28,702 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:29:32,947 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rh" is not found
+2023-07-18 21:29:38,737 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rh" is not found
+2023-07-18 21:31:32,606 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:37:11,551 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:38:12,374 - discord.client - INFO - logging in using static token
+2023-07-18 21:38:13,810 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 760a982e95d2c3f23552df7aa5336e94).
+2023-07-18 21:38:15,926 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:38:45,968 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-18 21:38:48,674 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rh" is not found
+2023-07-18 21:41:16,889 - discord.client - INFO - logging in using static token
+2023-07-18 21:41:18,336 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4cc113a45eae3742e496b3e818f8d5f6).
+2023-07-18 21:41:20,470 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:42:42,026 - discord.client - INFO - logging in using static token
+2023-07-18 21:42:43,112 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7dde6a13585c27599211842e272ef70b).
+2023-07-18 21:42:45,261 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:43:14,510 - discord.client - INFO - logging in using static token
+2023-07-18 21:43:15,653 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fc24fc26783268b1525382ff3bee6ae0).
+2023-07-18 21:43:17,781 - root - INFO - Logged in as Anigay 2.0#7825
