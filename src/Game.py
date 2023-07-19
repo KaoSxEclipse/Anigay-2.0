@@ -135,6 +135,23 @@ def applyTalent(fighter1, fighter2, battle_round):
             message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ damage to **{fighter2.name}** and heals for __{healing}__ HP"
             return message
 
+        if fighter1.talent == "Bloodthirster":
+            if fighter1.rarity_s == "SR":
+                fighter1.lifesteal = 0.32
+                fighter1.healing_bonus += 0.41
+            if fighter1.rarity_s == "UR":
+                fighter1.lifesteal = 0.36
+                fighter1.healing_bonus += 0.46
+            else:
+                fighter1.lifesteal = 0.28
+                fighter1.healing_bonus += 0.36
+
+            if fighter1.healing_bonus > 0.5:
+                fighter1.healing_bonus = 0.5
+
+            message = f"**{fighter1.name}** uses Bloodthirster, Granting __{int(fighter1.lifesteal*100)}__% LIFESTEAL and __{int(fighter1.healing_bonus*100)}__% bonus healing"
+            return message
+
         if fighter1.talent == "Executioner":
             if fighter1.rarity_s == "SR":
                 if fighter2.hp < fighter2.max_hp*0.48:
@@ -620,6 +637,7 @@ class Game(commands.Cog):
                     if not miss:
                         dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
                         fighter2.hp -= dmg
+                        fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
 
                         embed = displayHP(user_card, oppo, battle_round)
                         if talent_message != None:

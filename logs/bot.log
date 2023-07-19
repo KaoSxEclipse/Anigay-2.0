@@ -1143,3 +1143,24 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-18 18:32:38,461 - discord.client - INFO - logging in using static token
 2023-07-18 18:32:39,720 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0d46c8a8888dcaf9d21d80fa5588ec49).
 2023-07-18 18:32:41,944 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 20:11:21,158 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-18 20:11:26,851 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 94fd8b367feb9414093f5ac591d2537a).
+2023-07-18 20:11:29,018 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 20:11:29,019 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-18 21:14:42,027 - discord.client - INFO - logging in using static token
+2023-07-18 21:14:43,089 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 778460769e6236757aa9d1bfecd6e0d5).
+2023-07-18 21:14:45,201 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:15:31,496 - discord.client - INFO - logging in using static token
+2023-07-18 21:15:32,910 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 79e0a7f44ad37b8623acc209c695617b).
+2023-07-18 21:15:35,042 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-18 21:16:09,608 - discord.client - INFO - logging in using static token
+2023-07-18 21:16:10,486 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ce93abcf91a6af8c8da2ac0138f9307f).
+2023-07-18 21:16:12,595 - root - INFO - Logged in as Anigay 2.0#7825

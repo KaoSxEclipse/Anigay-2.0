@@ -90,6 +90,8 @@ class UserCard:
 		self.evasion = 1
 		self.critical_mult = 1
 		self.critical_rate = 5
+		self.healing_bonus = 0
+		self.lifesteal = 0
 
 
 	def calcRarity(self):
@@ -203,6 +205,8 @@ class FloorCard(UserCard):
 		self.evasion = 1
 		self.critical_rate = 5
 		self.critical_mult = 1
+		self.healing_bonus = 0
+		self.lifesteal = 0
 
 
 	async def getDex(self):
