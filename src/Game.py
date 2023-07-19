@@ -673,6 +673,8 @@ class Game(commands.Cog):
                             dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
                             fighter2.hp -= dmg
                             fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
+                            if fighter1.hp > fighter1.max_hp:
+                                fighter1.hp = fighter1.max_hp
 
                             embed = displayHP(user_card, oppo, battle_round)
                             if talent_message != None:
