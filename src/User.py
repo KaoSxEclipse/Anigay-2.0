@@ -190,22 +190,24 @@ class User(commands.Cog):
                 await cursor.execute( "SELECT * FROM Upper WHERE owner=?", (user,) )
                 player_inventory = await cursor.fetchall()
 
-                if 0 < int(message) <= len(player_inventory):
-                    # Proper card is in inventory
-                    card_index = int(message)-1
-                    card_id = player_inventory[card_index]["uid"]
-                    async with asqlite.connect(path_to_db+"player_data.db") as connection:
-                        async with connection.cursor() as cursor:
-                            await cursor.execute( """UPDATE Users set card=? WHERE id=?""", ( card_id, user ) )
-
-                    card = CardClass( player_inventory[card_index]['uid'], player_inventory[card_index]['rarity'] )
-                    await card.Query()
-
-                    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
-
-                    await ctx.send(embed=embed)
+        if 0 < int(message) <= len(player_inventory):
+            # Proper card is in inventory
+            card_index = int(message)-1
+            card_id = player_inventory[card_index]["uid"]
+            async with asqlite.connect(path_to_db+"player_data.db") as connection:
+                async with connection.cursor() as cursor:
+                    await cursor.execute( """UPDATE Users set card=? WHERE id=?""", ( card_id, user ) )
 
                     await connection.commit()
+
+            card = CardClass( player_inventory[card_index]['uid'], player_inventory[card_index]['rarity'] )
+            await card.Query()
+
+            embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+
+            await ctx.send(embed=embed)
+
+            await connection.commit()
 
     # Shows the full stats of a card
     @commands.hybrid_command()
