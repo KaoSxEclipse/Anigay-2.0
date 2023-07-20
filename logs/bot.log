@@ -1429,3 +1429,12 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-20 16:55:31,728 - discord.client - INFO - logging in using static token
 2023-07-20 16:55:35,204 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1e0920f285f0403c04790597db297e73).
 2023-07-20 16:55:37,340 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:07:55,993 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 1e0920f285f0403c04790597db297e73.
+2023-07-20 17:09:38,994 - discord.client - INFO - logging in using static token
+2023-07-20 17:09:40,625 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2a2405a6fcf3f8e8f2275769b255b0eb).
+2023-07-20 17:09:42,824 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:12:22,735 - discord.client - INFO - logging in using static token
+2023-07-20 17:12:24,665 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 95625897f71519c94d5040f5ae4142e8).
+2023-07-20 17:12:26,474 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-20 17:12:26,801 - root - INFO - Logged in as Anigay 2.0#7825

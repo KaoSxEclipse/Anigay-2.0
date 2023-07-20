@@ -130,7 +130,7 @@ d = {
 		( 24, 'Angel Devil', 'Neutral', 88, 91, 73, 76, 'Life Sap' ),
 		( 25, 'Chainsaw man', 'Dark', 69, 102, 86, 69, 'Bloodthirster' ),
 		( 26, 'Denji', 'Neutral', 84, 88, 91, 70, 'Paralysis' ),
-		( 27, 'Himeno', 'Grass', 78, 93, 82, 72, 'Pain for Power' ),
+		( 27, 'Himeno', 'Grass', 78, 93, 82, 72, 'Pain For Power' ),
 		( 28, 'Makima', 'Dark', 84, 92, 80, 76, 'Miracle Injection' ),
 		( 29, 'Power', 'Dark', 73, 92, 86, 82, 'Regeneration' ),
 		( 30, 'Reze', 'Dark', 73, 101, 83, 70, 'Time Bomb' )
@@ -160,7 +160,7 @@ async def dumpCard():
 
 
 
-
+asyncio.run(dumpCard())
 
 #asyncio.run(cardDB()) ##--> DO NOT RUN THIS COMMAND!!
 

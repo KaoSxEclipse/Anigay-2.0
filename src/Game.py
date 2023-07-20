@@ -107,6 +107,26 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Double-edged Strike inflicting __{damage}__ damage to **{fighter2.name}**,\n and receives __{backlash}__ damage from the backlash. " + effect
                 return message
 
+            if fighter1.talent == "Pain For Power":
+                if fighter1.rarity_s == "SR":
+                    sacrifice = 0.12
+                    increase = 0.54
+                elif fighter1.rarity == "UR":
+                    sacrifice = 0.14
+                    increase = 0.60
+                else:
+                    sacrifice = 0.10
+                    increase = 0.48
+
+                fighter1.hp -= round(fighter1.hp*sacrifice)
+                fighter1.current_atk += round(fighter1.current_atk*increase)
+                fighter1.spd += fighter1.spd*increase
+
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** uses Pain For Power, sacrifince __{round(fighter1.hp*sacrifice)}__ HP\n to increase ATK by __{round(fighter1.current_atk*increase)} [{round(increase*100)}%]__ \nand SPD by __{round(fighter1.spd*increase)} [{round(increase*100)}%]__"
+                return message
+
             if fighter1.talent == "Paralysis":
                 if fighter1.rarity_s == "SR":
                     defense_drop = 0.18
@@ -746,7 +766,7 @@ class Game(commands.Cog):
                         else:
                             break
 
-                    elif user_card.spd < oppo.spd:
+                    elif oppo.spd > user_card.spd:
                         await battleRound(oppo, user_card)
                         if user_card.hp > 0 and oppo.hp > 0:
                             await battleRound( user_card, oppo )
