@@ -526,18 +526,18 @@ class Game(commands.Cog):
                 enemy_mp_filled = 20
                 enemy_mp_empty = 0
 
-            player_mp_bar = "█" * player_mp_filled + "░" * player_mp_empty
-            enemy_mp_bar = "█" * enemy_mp_filled + "░" * enemy_mp_empty
+            player_mp_bar = "●" * player_mp_filled + "◌" * player_mp_empty
+            enemy_mp_bar = "●" * enemy_mp_filled + "◌" * enemy_mp_empty
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
             embed.add_field(name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
             embed.add_field(name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
             embed.add_field(name=f"**{player.hp} / {player.max_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-            embed.add_field(name=f"**{player.mana} / {player.max_mana}** Ψ", value=f"`[{player_mp_bar}]`", inline=False)
+            embed.add_field(name=f"**{player.mana} / {player.max_mana}** Ψ", value=f"`<{player_mp_bar}>`", inline=False)
             embed.add_field(name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
             embed.add_field(name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
             embed.add_field(name=f"**{enemy.hp} / {enemy.max_hp}** ♥", value=f"`[{enemy_hp_bar}]`", inline=False)
-            embed.add_field(name=f"**{enemy.mana} / {enemy.max_mana} Ψ**", value=f"`[{enemy_mp_bar}]`", inline=False)
+            embed.add_field(name=f"**{enemy.mana} / {enemy.max_mana} Ψ**", value=f"`<{enemy_mp_bar}>`", inline=False)
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)

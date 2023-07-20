@@ -1400,3 +1400,14 @@ client_session: <aiohttp.client.ClientSession object at 0x7ff0a431cd00>
 task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
 2023-07-18 22:00:54,934 - asyncio - ERROR - Task was destroyed but it is pending!
 task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-20 16:40:47,483 - discord.client - INFO - logging in using static token
+2023-07-20 16:40:48,775 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 17fc7ee685db34b80b9480c3610675d3).
+2023-07-20 16:40:50,992 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:42:19,886 - discord.client - INFO - logging in using static token
+2023-07-20 16:42:21,077 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9d5147c9db653677be9b18f3b16653a0).
+2023-07-20 16:42:22,825 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-20 16:42:23,233 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:43:10,810 - discord.client - INFO - logging in using static token
+2023-07-20 16:43:12,396 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d5e9775c66b7682337f0f3c5b91073f).
+2023-07-20 16:43:14,558 - root - INFO - Logged in as Anigay 2.0#7825
