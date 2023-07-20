@@ -62,7 +62,6 @@ def calcEleAdvantage( element1, element2 ):
 
 def applyTalent(fighter1, fighter2, battle_round):
     if fighter1.talent in talents["Active"]:
-        ## Apply Active Talent
         if fighter1.mana == 100:
             if fighter1.talent == "Amplifier":
                 if fighter1.rarity_s == "SR":
@@ -151,6 +150,14 @@ def applyTalent(fighter1, fighter2, battle_round):
                     message = f"**{fighter1.name}** uses Paralysis, stunning {fighter2.name} for 1 turn and \nlowering their DEFENSE by __{int(defense_drop*100)}__%"
                 else:
                     message = f"**{fighter1.name}** uses Paralysis but fails to stun!! **{fighter2.name}**'s \ndefense is lowered by __{int(defense_drop*100)}__%"
+                return message
+
+            if fighter1.talent == "Regeneration":
+                fighter1.regen_stacks += 1
+                fighter1.regen_lose.append(battle_round+4) ## When hero will lose next stack
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** uses Regeneration, granting themselves a stack of Regneration!!"
                 return message
 
 
@@ -262,7 +269,6 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** reverts back in time and restores __{healing}__ HP due to Temporal Rewind\n and simultaneously deals __{damage}__ true damage to **{fighter2.name}**!!"
                 return message
-
 
 
 
@@ -685,6 +691,13 @@ class Game(commands.Cog):
                             return
 
                     talent_message = applyTalent( fighter1, fighter2, battle_round )
+                    embed = displayHP(user_card, oppo, battle_round)
+
+                    if talent_message != None:
+                        embed.add_field(name="", value=talent_message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+
                     fighter1.critical_mult = 1
 
                     miss = False
@@ -724,12 +737,23 @@ class Game(commands.Cog):
 
                     #print(fighter1.talent)
 
-                    embed = displayHP(user_card, oppo, battle_round)
 
-                    if talent_message != None:
-                        embed.add_field(name="", value=talent_message, inline=False)
+                    if fighter1.regen_stacks > 0:
+                        print(fighter1.regen_stacks, ", ", fighter1.regen_lose)
+                        if battle_round in fighter1.regen_lose:
+                            fighter1.regen_lose.remove(battle_round)
+                            fighter1.regen_stacks -= 1
+
+                        healing = int(fighter1.max_hp * (0.075 * fighter1.regen_stacks)) # Healing * stacks
+                        fighter1.hp += healing
+                        if fighter1.hp > fighter1.max_hp:
+                            fighter1.hp = fighter1.max_hp
+
+                        message = f"**{fighter1.name}** restores __{healing}__ HP due to Regneration!!"
+                        embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
+
 
                     if not miss:
                         dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)

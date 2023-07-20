@@ -1438,3 +1438,47 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-20 17:12:26,474 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-20 17:12:26,801 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:29:40,982 - discord.client - INFO - logging in using static token
+2023-07-20 17:29:42,587 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5da8340ec9d434e85807f3f598148544).
+2023-07-20 17:29:44,772 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:29:54,974 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 786, in battle
+    await battleRound(oppo, user_card)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 743, in battleRound
+    healing = fighter.max_hp * (0.075 * fighter1.regen_stacks) # Healing * stacks
+NameError: name 'fighter' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'fighter' is not defined
+2023-07-20 17:30:17,194 - discord.client - INFO - logging in using static token
+2023-07-20 17:30:18,347 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9f9531502b3f5dfb6ba4d3394dba3324).
+2023-07-20 17:30:19,766 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-20 17:30:20,557 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:34:06,267 - discord.client - INFO - logging in using static token
+2023-07-20 17:34:07,982 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 589b943cfea2eed628ac8ff61dfa0224).
+2023-07-20 17:34:10,276 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:35:50,342 - discord.client - INFO - logging in using static token
+2023-07-20 17:35:51,850 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0c08afccf31660a8254f066382e54441).
+2023-07-20 17:35:54,072 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:36:33,566 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 0c08afccf31660a8254f066382e54441.
+2023-07-20 17:40:06,777 - discord.client - INFO - logging in using static token
+2023-07-20 17:40:07,976 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0ee970cbdfdf52fca4c92e2cd0290c75).
+2023-07-20 17:40:10,101 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:42:51,125 - discord.client - INFO - logging in using static token
+2023-07-20 17:42:52,557 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3f7b3b0974c9f9c1cf18e725a9fa660d).
+2023-07-20 17:42:54,764 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 17:44:34,007 - discord.client - INFO - logging in using static token
+2023-07-20 17:44:35,279 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe7c7e812735f0d4d283f7d82b94701f).
+2023-07-20 17:44:37,439 - root - INFO - Logged in as Anigay 2.0#7825
