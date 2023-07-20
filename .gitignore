@@ -6,5 +6,5 @@ __pycache__/
 *.db-shm
 *.db-wal
 *.log
-player_data.db
 db/player_data.db
+logs/bot.log
