@@ -64,6 +64,24 @@ def applyTalent(fighter1, fighter2, battle_round):
     if fighter1.talent in talents["Active"]:
         ## Apply Active Talent
         if fighter1.mana == 100:
+            if fighter1.talent == "Amplifier":
+                if fighter1.rarity_s == "SR":
+                    boost = 0.46
+                elif fighter1.rarity_s == "UR":
+                    boost = 0.52
+                else:
+                    boost = 0.40
+
+                if fighter1.name in "Inosuke Hashibira,".split(","):
+                    def_increase = fighter1.df * boost
+                    #print("Defense Stat:", fighter1.df)
+                    fighter1.df += def_increase
+
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** uses Amplifier increasing DEF by __{round(def_increase)} [{round(boost*100)}%]__"
+                return message
+
             if fighter1.talent == "Double-edged Strike":
                 if fighter1.rarity_s == "SR":
                     damage = 0.27
@@ -72,7 +90,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 else:
                     damage = 0.24
 
-                if fighter1.name == "Giyu Tomioka":
+                if fighter1.name in "Giyu Tomioka,".split(","):
                     damage = damage * fighter1.spd
 
                 ele_mult = calcEleAdvantage(fighter1.element, fighter2.element)

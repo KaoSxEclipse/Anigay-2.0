@@ -1411,3 +1411,21 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-20 16:43:10,810 - discord.client - INFO - logging in using static token
 2023-07-20 16:43:12,396 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d5e9775c66b7682337f0f3c5b91073f).
 2023-07-20 16:43:14,558 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:50:01,395 - discord.client - INFO - logging in using static token
+2023-07-20 16:50:02,914 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: eb06e3177657a4b1182d8b7b141c6721).
+2023-07-20 16:50:05,069 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:51:45,590 - discord.client - INFO - logging in using static token
+2023-07-20 16:51:46,952 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5c23696cf81fa0c2d4616be0151ba067).
+2023-07-20 16:51:49,123 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:53:25,621 - discord.client - INFO - logging in using static token
+2023-07-20 16:53:26,767 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 343aaa94e868bfc7a894d1c85167dd6c).
+2023-07-20 16:53:28,937 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:53:55,861 - discord.client - INFO - logging in using static token
+2023-07-20 16:53:56,946 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4ab6787c432ce23f6258171d2d5c42b5).
+2023-07-20 16:53:59,225 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:54:49,923 - discord.client - INFO - logging in using static token
+2023-07-20 16:54:50,888 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3363474b6d9bfaa7f36fc052f4bc939f).
+2023-07-20 16:54:53,082 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 16:55:31,728 - discord.client - INFO - logging in using static token
+2023-07-20 16:55:35,204 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1e0920f285f0403c04790597db297e73).
+2023-07-20 16:55:37,340 - root - INFO - Logged in as Anigay 2.0#7825
