@@ -110,56 +110,13 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter1.mana = 0
 
                 if fighter2.stunned:
-                    message = f"**{fighter1.name}** uses Paralysis, stunning {fighter2.name} for 1 turn and lowering their DEFENSE by {int(defense_drop*100)}%"
+                    message = f"**{fighter1.name}** uses Paralysis, stunning {fighter2.name} for 1 turn and \nlowering their DEFENSE by __{int(defense_drop*100)}__%"
                 else:
-                    message = f"**{fighter1.name}** uses Paralysis but fails to stun!! **{fighter2.name}**'s defense is lowered by {int(defense_drop*100)}%"
+                    message = f"**{fighter1.name}** uses Paralysis but fails to stun!! **{fighter2.name}**'s \ndefense is lowered by __{int(defense_drop*100)}__%"
                 return message
 
 
     elif fighter1.talent in talents["PSV"]:
-        if fighter1.talent == "Miracle Injection":
-            if battle_round == 1:
-                if fighter1.rarity_s == "SR":
-                    bonus = round(fighter1.max_hp *.18)
-
-                elif fighter1.rarity_s == "UR":
-                    bonus = round(fighter1.max_hp *.2)
-
-                else:
-                    bonus = round(fighter1.max_hp *.16)
-
-                fighter1.max_hp -= bonus
-                fighter1.hp -= bonus
-
-                fighter1.atk += bonus*2
-                fighter1.df += bonus*2
-                fighter1.spd += bonus*2
-
-                message = f"**{fighter1.name}** uses Miracle Injection, sacrificing HP to imbue themself with power and increasing all stats by {bonus*6}!!"
-                return message
-
-        if fighter1.talent == "Life Sap":
-            if fighter1.rarity_s == "SR":
-                damage_dealt = round(fighter2.max_hp*0.03)
-                healing = round(damage_dealt*1.75)
-
-            elif fighter1.rarity_s == "UR":
-                damage_dealt = round(fighter2.max_hp*0.04)
-                healing = round(damage_dealt*1.75)
-
-            else:
-                damage_dealt = round(fighter2.max_hp*0.03)
-                healing = round(damage_dealt*1.75)              
-
-            fighter1.hp += healing
-            if fighter1.hp > fighter1.max_hp:
-                fighter1.hp = fighter1.max_hp
-
-            fighter2.hp -= damage_dealt
-
-            message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ damage to **{fighter2.name}** and heals for __{healing}__ HP"
-            return message
-
         if fighter1.talent == "Bloodthirster":
             if fighter1.rarity_s == "SR":
                 fighter1.lifesteal = 0.32
@@ -174,7 +131,7 @@ def applyTalent(fighter1, fighter2, battle_round):
             if fighter1.healing_bonus > 0.5:
                 fighter1.healing_bonus = 0.5
 
-            message = f"**{fighter1.name}** uses Bloodthirster, Granting __{int(fighter1.lifesteal*100)}__% LIFESTEAL and __{int(fighter1.healing_bonus*100)}__% bonus healing"
+            message = f"**{fighter1.name}** uses Bloodthirster, Granting __{int(fighter1.lifesteal*100)}__% LIFESTEAL\n and __{int(fighter1.healing_bonus*100)}__% bonus healing"
             return message
 
         if fighter1.talent == "Executioner":
@@ -208,8 +165,67 @@ def applyTalent(fighter1, fighter2, battle_round):
                         fighter1.atk *= 1.8
                         increase = 80
 
-            message = f"**{fighter1.name}** uses Executioner, increasing their attack for {increase}%!!"
+            message = f"**{fighter1.name}** uses Executioner, increasing their attack for __{increase}__%!!"
             return message
+
+        if fighter1.talent == "Life Sap":
+            if fighter1.rarity_s == "SR":
+                damage_dealt = round(fighter2.max_hp*0.03)
+                healing = round(damage_dealt*1.75)
+
+            elif fighter1.rarity_s == "UR":
+                damage_dealt = round(fighter2.max_hp*0.04)
+                healing = round(damage_dealt*1.75)
+
+            else:
+                damage_dealt = round(fighter2.max_hp*0.03)
+                healing = round(damage_dealt*1.75)              
+
+            fighter1.hp += healing
+            if fighter1.hp > fighter1.max_hp:
+                fighter1.hp = fighter1.max_hp
+
+            fighter2.hp -= damage_dealt
+
+            message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ damage to \n**{fighter2.name}** and heals for __{healing}__ HP"
+            return message
+
+        if fighter1.talent == "Miracle Injection":
+            if battle_round == 1:
+                if fighter1.rarity_s == "SR":
+                    bonus = round(fighter1.max_hp *.18)
+
+                elif fighter1.rarity_s == "UR":
+                    bonus = round(fighter1.max_hp *.2)
+
+                else:
+                    bonus = round(fighter1.max_hp *.16)
+
+                fighter1.max_hp -= bonus
+                fighter1.hp -= bonus
+
+                fighter1.atk += bonus*2
+                fighter1.df += bonus*2
+                fighter1.spd += bonus*2
+
+                message = f"**{fighter1.name}** uses Miracle Injection, sacrificing HP to imbue themself with power\n and increasing all stats by __{bonus*6}__!!"
+                return message
+
+        if fighter1.talent == "Temporal Rewind":
+            if battle_round == 4:
+                damage = round((fighter1.max_hp - fighter1.hp)/2)
+                healing = round(damage * (1 + fighter1.healing_bonus))
+
+                fighter1.hp += healing
+                if fighter1.hp > fighter1.max_hp:
+                    fighter1.hp = fighter1.max_hp
+
+                fighter2.hp -= damage
+
+                message = f"**{fighter1.name}** reverts back in time and restores __{healing}__ HP due to Temporal Rewind\n and simultaneously deals __{damage}__ true damage to **{fighter2.name}**!!"
+                return message
+
+
 
 
 
@@ -613,83 +629,91 @@ class Game(commands.Cog):
 
                 async def battleRound( fighter1, fighter2 ):
                     if fighter1.stunned:
-                        embed = displayHP(user_card, oppo, battle_round)
+                        if fighter1.talent == "Recoil":
+                            pass
+                        elif random.randint(1, 20) == 1:
+                            embed.add_field(name="", value=f"**{fighter1.name}** is stunned but resists and continues to fight!!", inline=False)
 
-                        embed.add_field(name="", value=f"**{fighter1.name}** is stunned and is unable to attack!!", inline=False)
-                        fighter1.stunned = False
-
-                        await bt.edit(embed=embed)
-                        await asyncio.sleep(2.5)
-                    else:
-
-                        talent_message = applyTalent( fighter1, fighter2, battle_round )
-                        fighter1.critical_mult = 1
-
-                        miss = False
-                        # Evasion / Critical rates
-                        evasion = random.randint(1, 100)
-                        if evasion in range(1, fighter1.evasion+1):
-                            print("Evasion Roll: ", evasion)
-                            miss = True
-
-                        crit = random.randint(1, 100)
-                        if crit in range(1, fighter1.critical_rate+1):
-                            print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
-                            print(crit in range(1, fighter1.critical_rate+1))
-                            fighter1.critical_mult = 1.75
-
-
-
-                        if fighter1.max_mana > 0:
-                            speed_multiplier = fighter1.spd/fighter2.spd
-                            if speed_multiplier >= 1.4:
-                                speed_multiplier = 1.4
-                            else:
-                                speed_multiplier = 1
-
-                            mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
-                            fighter1.mana += mana_gained
-
-                        if fighter2.max_mana > 0:
-                            speed_multiplier = fighter2.spd/fighter1.spd
-                            if speed_multiplier >= 1.4:
-                                speed_multiplier = 1.4
-                            else:
-                                speed_multiplier = 1
-
-                            mana_gained = int((15*(2-(fighter2.hp/fighter2.max_hp)))+(2*15/battle_round)*speed_multiplier)
-                            fighter2.mana += mana_gained
-
-                        #print(fighter1.talent)
-
-                        embed = displayHP(user_card, oppo, battle_round)
-
-                        if talent_message != None:
-                            embed.add_field(name="", value=talent_message, inline=False)
                             await bt.edit(embed=embed)
                             await asyncio.sleep(2.5)
-
-                        if not miss:
-                            dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
-                            fighter2.hp -= dmg
-                            fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
-                            if fighter1.hp > fighter1.max_hp:
-                                fighter1.hp = fighter1.max_hp
-
-                            embed = displayHP(user_card, oppo, battle_round)
-                            if talent_message != None:
-                                embed.add_field(name="", value=talent_message, inline=False)
-
-
-                        if miss:
-                            embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
-                        elif fighter1.critical_mult > 1:
-                            embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!** {calcEffect( fighter1.ele_mult )}", inline=False)
                         else:
-                            embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.** {calcEffect( fighter1.ele_mult )}", inline=False)
+                            embed = displayHP(user_card, oppo, battle_round)
 
+                            embed.add_field(name="", value=f"**{fighter1.name}** is stunned and is unable to attack!!", inline=False)
+                            fighter1.stunned = False
+
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+                            return
+
+                    talent_message = applyTalent( fighter1, fighter2, battle_round )
+                    fighter1.critical_mult = 1
+
+                    miss = False
+                    # Evasion / Critical rates
+                    evasion = random.randint(1, 100)
+                    if evasion in range(1, fighter1.evasion+1):
+                        #print("Evasion Roll: ", evasion)
+                        miss = True
+
+                    crit = random.randint(1, 100)
+                    if crit in range(1, fighter1.critical_rate+1):
+                        #print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
+                        #print(crit in range(1, fighter1.critical_rate+1))
+                        fighter1.critical_mult = 1.75
+
+
+
+                    if fighter1.max_mana > 0:
+                        speed_multiplier = fighter1.spd/fighter2.spd
+                        if speed_multiplier >= 1.4:
+                            speed_multiplier = 1.4
+                        else:
+                            speed_multiplier = 1
+
+                        mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                        fighter1.mana += mana_gained
+
+                    if fighter2.max_mana > 0:
+                        speed_multiplier = fighter2.spd/fighter1.spd
+                        if speed_multiplier >= 1.4:
+                            speed_multiplier = 1.4
+                        else:
+                            speed_multiplier = 1
+
+                        mana_gained = int((15*(2-(fighter2.hp/fighter2.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                        fighter2.mana += mana_gained
+
+                    #print(fighter1.talent)
+
+                    embed = displayHP(user_card, oppo, battle_round)
+
+                    if talent_message != None:
+                        embed.add_field(name="", value=talent_message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
+
+                    if not miss:
+                        dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
+                        fighter2.hp -= dmg
+                        fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
+                        if fighter1.hp > fighter1.max_hp:
+                            fighter1.hp = fighter1.max_hp
+
+                        embed = displayHP(user_card, oppo, battle_round)
+                        if talent_message != None:
+                            embed.add_field(name="", value=talent_message, inline=False)
+
+
+                    if miss:
+                        embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
+                    elif fighter1.critical_mult > 1:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!**\n {calcEffect( fighter1.ele_mult )}", inline=False)
+                    else:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.**\n {calcEffect( fighter1.ele_mult )}", inline=False)
+
+                    await bt.edit(embed=embed)
+                    await asyncio.sleep(2.5)
 
 
 
