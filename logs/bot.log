@@ -1482,3 +1482,16 @@ discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
 2023-07-20 17:44:34,007 - discord.client - INFO - logging in using static token
 2023-07-20 17:44:35,279 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe7c7e812735f0d4d283f7d82b94701f).
 2023-07-20 17:44:37,439 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 18:39:08,687 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fa820719510>
+2023-07-20 18:39:09,921 - discord.client - INFO - logging in using static token
+2023-07-20 18:39:11,105 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b363796626c61a101db1a3cef79710b).
+2023-07-20 18:39:12,843 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "cinfo" is not found
+2023-07-20 18:39:13,266 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 18:39:19,550 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "zinfo" is not found
+2023-07-20 18:46:03,759 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9b363796626c61a101db1a3cef79710b.
+2023-07-20 18:52:54,771 - discord.client - INFO - logging in using static token
+2023-07-20 18:52:55,660 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: efd670d2cf6821561a04b60e7b35788f).
+2023-07-20 18:52:57,737 - root - INFO - Logged in as Anigay 2.0#7825

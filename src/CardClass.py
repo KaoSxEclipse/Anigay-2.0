@@ -95,6 +95,7 @@ class UserCard:
 		self.stunned = False
 		self.regen_stacks = 0
 		self.regen_lose = []
+		self.tbomb = 0
 
 
 	def calcRarity(self):
@@ -213,6 +214,7 @@ class FloorCard(UserCard):
 		self.stunned = False
 		self.regen_stacks = 0
 		self.regen_lose = []
+		self.tbomb = 0
 
 
 	async def getDex(self):

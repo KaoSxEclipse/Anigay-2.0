@@ -160,6 +160,13 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Regeneration, granting themselves a stack of Regneration!!"
                 return message
 
+            if fighter1.talent == "Time Bomb":
+                fighter2.tbomb = battle_round+1
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** snaps, inflicting a stack of Time Bomb on **{fighter2.name}**!!"
+                return message
+
 
     elif fighter1.talent in talents["PSV"]:
         if fighter1.talent == "Bloodthirster":
@@ -739,7 +746,6 @@ class Game(commands.Cog):
 
 
                     if fighter1.regen_stacks > 0:
-                        print(fighter1.regen_stacks, ", ", fighter1.regen_lose)
                         if battle_round in fighter1.regen_lose:
                             fighter1.regen_lose.remove(battle_round)
                             fighter1.regen_stacks -= 1
@@ -773,6 +779,23 @@ class Game(commands.Cog):
                         embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!**\n {calcEffect( fighter1.ele_mult )}", inline=False)
                     else:
                         embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.**\n {calcEffect( fighter1.ele_mult )}", inline=False)
+
+                    ## TIME BOMB
+                    if fighter2.tbomb > 0 and battle_round == fighter2.tbomb:
+                        fighter2.tbomb = False
+
+                        if random.randint(1, 10) == 1:
+                            message = f"**{fighter1.name}**'s Time Bomb misfired causing 0 damage to **{fighter2.name}** D:"
+                        else:
+                            damage = round(fighter1.current_atk*0.3)
+                            fighter2.hp -= damage
+
+                            message = f"**{fighter1.name}**'s Time Bomb exploded, dealing __{damage}__ true damage\n to **{fighter2.name}**!!"
+
+
+                        embed.add_field(name="", value=message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
 
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
