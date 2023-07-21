@@ -562,9 +562,9 @@ class Game(commands.Cog):
                             fighter2.poison = 0 ## RESISTS
                             message = f"**{fighter2.name}** was affected by Poison, but they **resisted**!! D:"
                         else:
-                            fighter2.poison += 1
                             fighter2.hp -= round(fighter2.max_hp * fighter2.poison * 0.05)
                             message = f"**{fighter2.name}** was affected by Poison, and suffers __{round(fighter2.poison*0.05*100)}%__ of their MAX HP D:"
+                            fighter2.poison += 1
 
                         embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
