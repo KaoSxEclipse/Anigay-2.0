@@ -2333,3 +2333,170 @@ task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done
 2023-07-21 14:00:17,345 - discord.client - INFO - logging in using static token
 2023-07-21 14:00:18,527 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7083cd0eaf95f00ec5ed2891afa7c373).
 2023-07-21 14:00:20,682 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:09:50,045 - discord.client - INFO - logging in using static token
+2023-07-21 14:09:51,573 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 64b7ac51272d55a879a40d8b9ca40983).
+2023-07-21 14:09:53,741 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:10:39,525 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:11:34,816 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:11:34,816 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:11:34,817 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:21:33,375 - discord.client - INFO - logging in using static token
+2023-07-21 14:21:34,976 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8802af896c4f629600291851fd15fdb6).
+2023-07-21 14:21:36,819 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-21 14:21:37,164 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:22:06,679 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 14:22:11,027 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:23:14,407 - discord.client - INFO - logging in using static token
+2023-07-21 14:23:15,842 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b7137eece7b1959fdbca404c739c623).
+2023-07-21 14:23:18,033 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:25:39,580 - discord.client - INFO - logging in using static token
+2023-07-21 14:25:40,814 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 46cf8caf21372a5b998bc42e32478409).
+2023-07-21 14:25:42,974 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:27:16,193 - discord.client - INFO - logging in using static token
+2023-07-21 14:27:17,710 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 980fa5d0ccaa8881222b06d4f14e9b92).
+2023-07-21 14:27:19,930 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:31:44,434 - discord.client - INFO - logging in using static token
+2023-07-21 14:31:46,238 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d9e32000a2f70a6bfae16ee9def2695a).
+2023-07-21 14:31:48,320 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-21 14:31:48,420 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:31:51,339 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 480, in battle
+    embed = displayHP(user_card, oppo, battle_round)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 393, in displayHP
+    embed.set_field_at(1, name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
+NameError: free variable 'embed' referenced before assignment in enclosing scope
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: free variable 'embed' referenced before assignment in enclosing scope
+2023-07-21 14:32:25,249 - discord.client - INFO - logging in using static token
+2023-07-21 14:32:26,858 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 99494498de204bc3beb4f10339fd9a60).
+2023-07-21 14:32:29,080 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:32:46,732 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 639, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 626, in battleRound
+    embed = updateEmbed(embed)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 344, in updateEmbed
+    player_hp_percentage = player.hp / (player.max_hp) * 100
+AttributeError: module 'discord.player' has no attribute 'hp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'discord.player' has no attribute 'hp'
+2023-07-21 14:33:46,258 - discord.client - INFO - logging in using static token
+2023-07-21 14:33:47,652 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 18ebfa43a1b3eebc6ae51af7a8b56f50).
+2023-07-21 14:33:49,842 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:39:17,040 - discord.client - INFO - logging in using static token
+2023-07-21 14:39:18,615 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: addfa671524db86cf08c5e4228c9c782).
+2023-07-21 14:39:20,765 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:39:39,891 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 581, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 565, in battleRound
+    for i in embed:
+TypeError: 'Embed' object is not iterable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'Embed' object is not iterable
+2023-07-21 14:40:05,888 - discord.client - INFO - logging in using static token
+2023-07-21 14:40:07,352 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 224fee434cb0f9f621066f4a85851c9a).
+2023-07-21 14:40:09,579 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:41:14,045 - discord.client - INFO - logging in using static token
+2023-07-21 14:41:15,334 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: db2ca6aca31b55befed0d4ae72c618ed).
+2023-07-21 14:41:17,270 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-21 14:41:17,513 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:42:24,374 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:42:24,374 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:42:24,375 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 14:42:38,840 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 14:44:27,571 - discord.client - INFO - logging in using static token
+2023-07-21 14:44:29,189 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 48f8cc6687db3d7243fac6e0313aaf8c).
+2023-07-21 14:44:31,355 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 14:46:32,596 - discord.client - INFO - logging in using static token
+2023-07-21 14:46:33,600 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7965ff32076ba7603a14512a91ce84c2).
+2023-07-21 14:46:36,024 - root - INFO - Logged in as Anigay 2.0#7825

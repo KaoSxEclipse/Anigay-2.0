@@ -275,55 +275,40 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
-        def displayHP(player, enemy, battle_round):
-            player_hp_percentage = player.hp / (player.max_hp) * 100
-            player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
-            player_hp_empty = hp_bar_length - player_hp_filled
+        def displayBar( fighter ):
+            hp_percentage = fighter.hp / (fighter.max_hp) * 100
+            hp_filled = round(hp_percentage / 100 * hp_bar_length)
+            hp_empty = hp_bar_length - hp_filled
 
-            enemy_hp_percentage = enemy.hp / (enemy.max_hp) * 100
-            enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
-            enemy_hp_empty = hp_bar_length - enemy_hp_filled
+            if fighter.hp <= 0:
+                fighter.hp = 0
+                filled = 0
+                hp_empty = 20
 
-            if player.hp <= 0:
-                player.hp = 0
-                player_filled = 0
-                player_hp_empty = 20
-
-            if enemy.hp <= 0:
-                enemy.hp = 0
-                enemy_filled = 0
-                enemy_hp_empty = 20
-
-            player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
-            enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
+            hp_bar = "█" * hp_filled + "░" * hp_empty
 
             ## Display Mana
-            if player.max_mana == 0:
-                player_mp_percentage = 0
+            if fighter.max_mana == 0:
+                mp_percentage = 0
             else:
-                player_mp_percentage = player.mana / player.max_mana*100
-            player_mp_filled = round(player_mp_percentage / 100 * mp_bar_length)
-            player_mp_empty = mp_bar_length - player_mp_filled
+                mp_percentage = fighter.mana / fighter.max_mana*100
 
-            if enemy.max_mana == 0:
-                enemy_mp_percentage = 0
-            else:
-                enemy_mp_percentage = enemy.mana / enemy.max_mana*100
-            enemy_mp_filled = round(enemy_mp_percentage / 100 * mp_bar_length)
-            enemy_mp_empty = mp_bar_length - enemy_mp_filled
+            mp_filled = round(mp_percentage / 100 * mp_bar_length)
+            mp_empty = mp_bar_length - mp_filled
 
-            if player.mana >= 100 or player_mp_filled > 20:
-                player.mana = 100
-                player_mp_filled = 20
-                player_mp_empty = 0
 
-            if enemy.mana >= 100 or enemy_mp_filled > 20:
-                enemy.mana = 100
-                enemy_mp_filled = 20
-                enemy_mp_empty = 0
+            if fighter.mana >= 100 or mp_filled > 20:
+                fighter.mana = 100
+                mp_filled = 20
+                mp_empty = 0
 
-            player_mp_bar = "■" * player_mp_filled + "□" * player_mp_empty
-            enemy_mp_bar = "■" * enemy_mp_filled + "□" * enemy_mp_empty
+            mp_bar = "■" * mp_filled + "□" * mp_empty
+
+            return hp_bar, mp_bar
+
+        def displayHP(player, enemy, battle_round):
+            player_hp_bar, player_mp_bar = displayBar(player)
+            enemy_hp_bar, enemy_mp_bar = displayBar(enemy)
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
             embed.add_field(name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
@@ -337,6 +322,21 @@ class Game(commands.Cog):
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
+
+            return embed
+
+        def updateEmbed(player, enemy, embed):
+            player_hp_bar, player_mp_bar = displayBar(player)
+            enemy_hp_bar, enemy_mp_bar = displayBar(enemy)
+
+            embed.set_field_at(0, name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
+            embed.set_field_at(1, name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
+            embed.set_field_at(2, name=f"**{player.hp} / {player.max_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.set_field_at(3, name=f"**{player.mana} / {player.max_mana}** Ψ", value=f"`[{player_mp_bar}]`", inline=False)
+            embed.set_field_at(4, name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
+            embed.set_field_at(5, name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
+            embed.set_field_at(6, name=f"**{enemy.hp} / {enemy.max_hp}** ♥", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.set_field_at(7, name=f"**{enemy.mana} / {enemy.max_mana} Ψ**", value=f"`[{enemy_mp_bar}]`", inline=False)
 
             return embed
 
@@ -449,6 +449,7 @@ class Game(commands.Cog):
                     embed = displayHP(user_card, oppo, battle_round)
 
                     if talent_message != None:
+                        embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=talent_message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
@@ -504,6 +505,7 @@ class Game(commands.Cog):
                         if fighter1.hp > fighter1.max_hp:
                             fighter1.hp = fighter1.max_hp
 
+                        embed = updateEmbed(user_card, oppo, embed)
                         message = f"**{fighter1.name}** restores __{healing}__ HP due to Regneration!!"
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
@@ -533,6 +535,10 @@ class Game(commands.Cog):
                     else:
                         embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.**\n {calcEffect( fighter1.ele_mult )}", inline=False)
 
+                    embed = updateEmbed(user_card, oppo, embed)
+                    await bt.edit(embed=embed)
+                    await asyncio.sleep(2.5)
+
                     ## TIME BOMB
                     if fighter2.tbomb > 0 and battle_round == fighter2.tbomb:
                         fighter2.tbomb = False
@@ -546,13 +552,24 @@ class Game(commands.Cog):
                             message = f"**{fighter1.name}**'s Time Bomb exploded, dealing __{damage}__ true damage\n to **{fighter2.name}**!!"
 
 
+                        embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
 
-                    await bt.edit(embed=embed)
-                    await asyncio.sleep(2.5)
+                    if fighter2.poison > 0: ## Fighter 2 is poisoned
+                        if random.randint(1, 10) == 1:
+                            fighter2.poison = 0 ## RESISTS
+                            message = f"**{fighter2.name}** was affected by Poison, but they **resisted**!! D:"
+                        else:
+                            fighter2.poison += 1
+                            fighter2.hp -= round(fighter2.max_hp * fighter2.poison * 0.05)
+                            message = f"**{fighter2.name}** was affected by Poison, and suffers __{round(fighter2.poison*0.05*100)}%__ of their MAX HP D:"
 
+                        embed = updateEmbed(user_card, oppo, embed)
+                        embed.add_field(name="", value=message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
 
 
                 while user_card.hp > 0 and oppo.hp > 0:

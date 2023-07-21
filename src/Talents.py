@@ -80,7 +80,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter2.hp -= devour
                 fighter1.mana = 0
 
-                message = f"**{fighter1.name}** devours **{fighter2.name}**'s HP for __{devour}__ damage\n and increasing MAX HP by __[{hp_increase}]{round(increase*100)}%__"
+                message = f"**{fighter1.name}** devours **{fighter2.name}**'s HP for __{devour}__ true damage\n and increasing MAX HP by __[{hp_increase}]{round(increase*100)}%__"
                 return message
 
 
@@ -179,6 +179,13 @@ def applyTalent(fighter1, fighter2, battle_round):
                     message = f"**{fighter1.name}** uses Paralysis but fails to stun!! **{fighter2.name}**'s \ndefense is lowered by __{int(defense_drop*100)}__%"
                 return message
 
+            if fighter1.talent == "Poison":
+                fighter1.mana = 0
+                fighter2.poison += 1
+
+                message = f"**{fighter1.name}** uses Poison, inflicting a stack of Poison on **{fighter2.name}**!!"
+                return message
+
             if fighter1.talent == "Regeneration":
                 fighter1.regen_stacks += 1
                 fighter1.regen_lose.append(battle_round+4) ## When hero will lose next stack
@@ -228,6 +235,30 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter1.mana = 0
 
                 message = f"**{fighter1.name}** flips the Unlucky Coin and rolls a **{roll}**!\n **{fighter2.name}** has its {stat} decreased by __{decrease}%__"
+                return message
+
+            if fighter1.talent == "Vengeance":
+                if fighter1.rarity_s == "SR":
+                    percent = 0.19
+                elif fighter1.rarity_s == "UR":
+                    percent = 0.22
+                else:
+                    percent = 0.16
+
+                if fighter1.name in "Nezuko Kamado,".split(","):
+                    damage = fighter2.current_atk*percent
+                    t = "ATK"
+                elif fighter1.name in "Sakura Haruno,".split(","):
+                    damage = fighter2.spd*percent
+                    t = "SPD"
+                else:
+                    damage = fighter2.df*percent
+                    t = "DEF"
+
+                fighter1.mana = 0
+                fighter2.hp -= round(damage)
+
+                message = f"**{fighter1.name}** uses {t} Vengenace, inflicting __{round(damage)}__ \ntrue damage to **{fighter2.name}**"
                 return message
 
 
@@ -329,7 +360,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
             fighter2.hp -= damage_dealt
 
-            message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ damage to \n**{fighter2.name}** and heals for __{healing}__ HP"
+            message = f"**{fighter1.name}** uses Life Sap, inflicting __{damage_dealt}__ true damage to \n**{fighter2.name}** and heals for __{healing}__ HP"
             return message
 
         if fighter1.talent == "Miracle Injection":

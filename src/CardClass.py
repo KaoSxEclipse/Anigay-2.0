@@ -98,6 +98,7 @@ class UserCard:
 		self.tbomb = 0
 		self.endurance = 0
 		self.berserker = 1
+		self.poison = 0
 
 
 	def calcRarity(self):
@@ -219,6 +220,7 @@ class FloorCard(UserCard):
 		self.tbomb = 0
 		self.endurance = 0
 		self.berserker = 1
+		self.poison = 0
 
 	async def getDex(self):
 		async with asqlite.connect(path_to_db+"card_data.db") as connection:
