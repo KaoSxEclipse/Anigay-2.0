@@ -57,6 +57,33 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Amplifier increasing DEF by __{round(def_increase)} [{round(boost*100)}%]__"
                 return message
 
+            if fighter1.talent == "Devour":
+                if fighter1.rarity_s == "SR":
+                    dmg = 0.09
+                    increase = 0.14
+                elif fighter1.rarity_s == "UR":
+                    dmg = 0.10
+                    increase = 0.16
+                else:
+                    dmg = 0.08
+                    increase = 0.12
+
+                if fighter1.hp > fighter2.hp:
+                    bonus = 0.60
+                else:
+                    bonus = 0.15
+
+                devour = round(fighter1.max_hp * 0.09)
+                devour += round(bonus*abs(fighter1.max_hp - fighter2.max_hp))
+                hp_increase = round(fighter1.max_hp * increase)
+                fighter1.max_hp += hp_increase
+                fighter2.hp -= devour
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** devours **{fighter2.name}**'s HP for __{devour}__ damage\n and increasing MAX HP by __[{hp_increase}]{round(increase*100)}%__"
+                return message
+
+
             if fighter1.talent == "Double-edged Strike":
                 if fighter1.rarity_s == "SR":
                     damage = 0.27
