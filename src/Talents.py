@@ -191,7 +191,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.mana = 0
 
-                message = f"**{fighter1.name}** flips the Unlucky Coin and rolls a **{roll}**!\n **{fighter2.name}** has its {stat} decreased \nby __{decrease}%__"
+                message = f"**{fighter1.name}** flips the Unlucky Coin and rolls a **{roll}**!\n **{fighter2.name}** has its {stat} decreased by __{decrease}%__"
                 return message
 
 

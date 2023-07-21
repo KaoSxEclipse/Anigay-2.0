@@ -218,16 +218,16 @@ class Game(commands.Cog):
 
                 elif floor in "next n nxt".split(" "):
 
-                    if current_floor+1 > highest_floor:
-                        embed = discord.Embed(title=f"Invalid Floor!!",
-                                              description=f"You have cleared this Realm. Please travel to the next Realm to proceed",
-                                              color=0xF76103)
-                        await ctx.send(embed=embed)
-
-                    elif current_floor+1 > max_floor: # Player has not cleared the previous floor yet
+                    if current_floor+1 > max_floor: # Player has not cleared the previous floor yet
                         embed = discord.Embed(title=f"You have not unlocked this floor!!",
                                       description=f"Please clear the current floor before progressing your journey.",
                                       color=0xF76103)
+                        await ctx.send(embed=embed)
+                        
+                    elif current_floor+1 > highest_floor:
+                        embed = discord.Embed(title=f"Invalid Floor!!",
+                                              description=f"You have cleared this Realm. Please travel to the next Realm to proceed",
+                                              color=0xF76103)
                         await ctx.send(embed=embed)
 
                     else:

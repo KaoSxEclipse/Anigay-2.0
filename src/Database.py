@@ -176,13 +176,13 @@ async def dumpCard():
 
 	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
-			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 0, 'Zenith', 'Dark', 80, 80, 80, 80, 'Self Destruct' )" )
-			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 1, 'DPython', 'Light', 100, 100, 100, 100, 'White Justice' )" )
+			await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( 0, 'Zenith', 'Dark', 80, 80, 80, 80, 'Self Destruct' )" )
+			await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( 1, 'DPython', 'Light', 100, 100, 100, 100, 'White Justice' )" )
 
 			for series in d:
 				for card in d[series]:
 					print(card)
-					await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )", (card[0], card[1], card[2], card[3], card[4], card[5], card[6], card[7]) )
+					await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )", (card[0], card[1], card[2], card[3], card[4], card[5], card[6], card[7]) )
 
 			await connection.commit()
 
