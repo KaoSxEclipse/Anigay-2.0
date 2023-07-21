@@ -157,6 +157,32 @@ def applyTalent(fighter1, fighter2, battle_round):
 
 
     elif fighter1.talent in talents["PSV"]:
+        if fighter1.talent == "Berserker":
+            if fighter1.rarity_s == "SR":
+                boost = 54
+            elif fighter1.rarity_s == "UR":
+                boost = 60
+            else:
+                boost = 48
+
+            if fighter1.hp < round(fighter1.max_hp*0.4): # At 40%
+                if fighter1.berserker == 1:
+                    fighter1.berserker += boost/100
+                else:
+                    fighter1.berserker = ((boost)/(fighter1.berserker) + fighter1.berserker*100)
+                    fighter1.berserker = fighter1.berserker/100
+                    print(boost, ":", fighter1.berserker, ":", fighter1.berserker)
+
+                if fighter1.name in "Satoru Gojo,".split(","):
+                    fighter1.current_atk = (fighter1.atk*fighter1.berserker)
+                    message = f"**{fighter1.name}** uses Berserker, standing their ground and \nincreasing ATK by __{round(fighter1.current_atk*boost/100)}[{int(boost)}]%__"
+
+                else:
+                    message = f"**{fighter1.name}** uses Berserker, standing their ground and \nincreasing DEF by __{round(fighter1.current_atk*boost/100)}[{int(boost)}]%__"
+
+                return message
+
+
         if fighter1.talent == "Bloodthirster":
             if fighter1.rarity_s == "SR":
                 fighter1.lifesteal = 0.32
