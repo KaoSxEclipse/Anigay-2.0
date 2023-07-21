@@ -25,17 +25,6 @@ with open("CustomEmojis", "r") as f:
     for key, value in emojis.items():
         exec(f"{key} = '{value}'")
 
-
-def calcEffect( markiplier ):
-    if markiplier == 1:
-        return ""
-    elif markiplier == 1.5:
-        return "It was **Super Strong**!!"
-    elif markiplier == .5:
-        return "It was **Very Weak**..."
-    elif markiplier == .75:
-        return "It was **Not Very Effective**."
-
 def parseFloor( location ):
     floor = str(location).split(".")[1]
 
@@ -223,7 +212,7 @@ class Game(commands.Cog):
                                       description=f"Please clear the current floor before progressing your journey.",
                                       color=0xF76103)
                         await ctx.send(embed=embed)
-                        
+
                     elif current_floor+1 > highest_floor:
                         embed = discord.Embed(title=f"Invalid Floor!!",
                                               description=f"You have cleared this Realm. Please travel to the next Realm to proceed",

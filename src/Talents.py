@@ -4,6 +4,15 @@ talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Cele
 
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Self Destruct", "Temporal Rewind"]}
 
+def calcEffect( markiplier ):
+    if markiplier == 1:
+        return ""
+    elif markiplier == 1.5:
+        return "It was **Super Strong**!!"
+    elif markiplier == .5:
+        return "It was **Very Weak**..."
+    elif markiplier == .75:
+        return "It was **Not Very Effective**."
 
 def calcEleAdvantage( element1, element2 ):
     '''Returns the first element advantage compared to the second'''
@@ -212,11 +221,12 @@ def applyTalent(fighter1, fighter2, battle_round):
                     fighter1.berserker = fighter1.berserker/100
                     print(boost, ":", fighter1.berserker, ":", fighter1.berserker)
 
-                if fighter1.name in "Satoru Gojo,".split(","):
+                if fighter1.name in "Satoru Gojo,Kanao Tsuyuri,Kyojiro Rengoku,".split(","):
                     fighter1.current_atk = (fighter1.atk*fighter1.berserker)
                     message = f"**{fighter1.name}** uses Berserker, standing their ground and \nincreasing ATK by __{round(fighter1.current_atk*boost/100)}[{int(boost)}]%__"
 
                 else:
+                    fighter1.df = (fighter1.df*fighter1.berserker)
                     message = f"**{fighter1.name}** uses Berserker, standing their ground and \nincreasing DEF by __{round(fighter1.current_atk*boost/100)}[{int(boost)}]%__"
 
                 return message
