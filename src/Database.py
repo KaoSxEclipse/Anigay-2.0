@@ -168,9 +168,6 @@ d = {
 	),
 }
 
-with open(path_to_db+"cards.json", "w") as file:
-		json.dump( d, file, indent=4 )
-
 async def dumpCard():
 	## id, name, hp ,atk, def, spd, talent
 

@@ -1,3 +1,5 @@
+import random
+
 talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Temporal Rewind"]}
 
@@ -153,6 +155,42 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter1.mana = 0
 
                 message = f"**{fighter1.name}** snaps, inflicting a stack of Time Bomb on **{fighter2.name}**!!"
+                return message
+
+            if fighter1.talent == "Unlucky Coin":
+                if fighter1.rarity_s == "SR":
+                    max_range = 36
+                elif fighter1.rarity_s == "UR":
+                    max_range = 40
+                else:
+                    max_range = 32
+
+                # Lower amount
+                roll = random.randint(1, max_range)
+                decrease = roll*2
+
+                # Which stat to lower
+                stat = random.randint(1, 4)
+                if stat == 1:
+                    amount = round(fighter2.hp*(decrease/100))
+                    stat = "HP"
+                    fighter2.hp -= amount
+                elif stat == 2:
+                    amount = round(fighter2.current_atk*(decrease/100))
+                    stat = "ATK"
+                    fighter2.current_atk -= amount
+                elif stat == 3:
+                    amount = round(fighter2.df*(decrease/100))
+                    stat = "DEF"
+                    fighter2.df -= amount
+                else:
+                    amount = round(fighter2.spd*(decrease/100))
+                    stat = "SPD"
+                    fighter2.spd -= amount
+
+                fighter1.mana = 0
+
+                message = f"**{fighter1.name}** flips the Unlucky Coin and rolls a **{roll}**!\n **{fighter2.name}** has its {stat} decreased \nby __{decrease}%__"
                 return message
 
 

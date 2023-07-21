@@ -439,7 +439,10 @@ class Game(commands.Cog):
                         if fighter1.talent == "Recoil":
                             pass
                         elif random.randint(1, 20) == 1:
+                            embed = displayHP(user_card, oppo, battle_round)
+
                             embed.add_field(name="", value=f"**{fighter1.name}** is stunned but resists and continues to fight!!", inline=False)
+                            fighter1.stunned = False
 
                             await bt.edit(embed=embed)
                             await asyncio.sleep(2.5)
