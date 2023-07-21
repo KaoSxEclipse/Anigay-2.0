@@ -1525,3 +1525,88 @@ discord.errors.ClientException: Cog named 'Debug' already loaded
 2023-07-20 20:27:39,973 - discord.client - INFO - logging in using static token
 2023-07-20 20:27:40,895 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cb93fe972fe94d65417a79d5769c3cbe).
 2023-07-20 20:27:42,957 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 20:29:26,694 - discord.client - INFO - logging in using static token
+2023-07-20 20:29:27,651 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6e44db1d0237b16d20d7032d92052c46).
+2023-07-20 20:29:29,734 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 20:30:43,661 - discord.client - INFO - logging in using static token
+2023-07-20 20:30:44,560 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ad41f221f8a8065221432f05475a7df3).
+2023-07-20 20:30:46,602 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 20:33:42,185 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-20 20:33:50,062 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-20 20:42:12,459 - discord.client - INFO - logging in using static token
+2023-07-20 20:42:13,560 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 70a03b8f25996d21a30379c9ee4132e5).
+2023-07-20 20:42:15,504 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-20 20:42:15,622 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 20:42:49,145 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-20 20:42:51,663 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 210, in select
+    await connection.commit()
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 381, in commit
+    return await self._post(self._conn.commit)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed database.
+2023-07-20 20:56:53,215 - discord.client - INFO - logging in using static token
+2023-07-20 20:56:53,992 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3062ab214b7cfd7d539df0fe6e86f7c1).
+2023-07-20 20:56:56,075 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-20 20:59:43,721 - discord.client - INFO - logging in using static token
+2023-07-20 20:59:44,731 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 00676708e699adff673ce08b9f84d4c2).
+2023-07-20 20:59:46,814 - root - INFO - Logged in as Anigay 2.0#7825
