@@ -1,7 +1,8 @@
 import random
 
 talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
-           "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Temporal Rewind"]}
+
+           "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Self Destruct", "Temporal Rewind"]}
 
 
 def calcEleAdvantage( element1, element2 ):
@@ -314,6 +315,18 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** uses Miracle Injection, sacrificing HP to imbue themself with power\n and increasing all stats by __{bonus*6}__!!"
                 return message
+
+        if fighter1.talent == "Self Destruct":
+            if battle_round == 1:
+                fighter1.hp -= round(fighter1.hp*0.8)
+                fighter1.current_atk -= fighter1.current_atk*0.8
+                fighter1.df -= fighter1.df*0.8
+                fighter1.spd -= fighter1.spd*0.8
+
+                message = f"**{fighter1.name}** decreases all stats by __80%__, causing himself to **SELF DESTRUCT**!!"
+                return message
+
+
 
         if fighter1.talent == "Temporal Rewind":
             if battle_round == 4:

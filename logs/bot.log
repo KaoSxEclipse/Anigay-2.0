@@ -2012,3 +2012,132 @@ Traceback (most recent call last):
   File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 12:07:14,793 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 12:07:21,453 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 12:12:44,769 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1246, in _actual_conversion
+    return converter(argument)
+ValueError: invalid literal for int() with base 10: 'skip'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 715, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1355, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1255, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "amount".
+2023-07-21 12:13:12,418 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1246, in _actual_conversion
+    return converter(argument)
+ValueError: invalid literal for int() with base 10: 'all'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 715, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1355, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/converter.py", line 1255, in _actual_conversion
+    raise BadArgument(f'Converting to "{name}" failed for parameter "{param.name}".') from exc
+discord.ext.commands.errors.BadArgument: Converting to "int" failed for parameter "amount".
+2023-07-21 12:14:09,967 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "nick" is not found
+2023-07-21 12:14:28,047 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "massenh" is not found
+2023-07-21 12:14:32,597 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "enh" is not found
+2023-07-21 12:15:49,154 - discord.client - INFO - logging in using static token
+2023-07-21 12:15:50,625 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cb1e0e47bb4f0a16b3894f4e35ebfa02).
+2023-07-21 12:15:52,844 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 12:15:57,999 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "/home/iceman/.local/lib/python3.10/site-packages/asqlite/__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-21 12:16:01,492 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
