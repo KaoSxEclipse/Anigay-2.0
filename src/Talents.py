@@ -9,7 +9,7 @@ import random
                 else:
 '''
 
-talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Celestial Influence", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
+talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
 
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Self Destruct", "Temporal Rewind"]}
 
@@ -116,20 +116,25 @@ def applyTalent(fighter1, fighter2, battle_round):
                 elif fighter1.rarity_s == "UR":
                     percent = 0.10
                 else:
-                    percent - 0.08
+                    percent = 0.08
 
                 ## Dex drive deals 80% of the difference
 
                 damage_base = round(fighter1.spd*percent)
                 damage = round((fighter1.spd-fighter2.spd)*0.8) + damage_base
                 fighter1.mana = 0
+                fighter2.hp -= damage
 
                 if fighter1.name in "Hyoma Chigiri,".split(","):
                     element = "Ground"
                 else:
                     element = fighter1.element
 
+                mult = calcEleAdvantage(element, fighter2.element)
+                effect = calcEffect(mult)
+
                 message = f"**{fighter1.name}** uses Dexterity Drive, inflicting __{damage}__ {element} damage\n to **{fighter2.name}**!!" + effect
+                return message
 
             if fighter1.talent == "Double-edged Strike":
                 if fighter1.rarity_s == "SR":

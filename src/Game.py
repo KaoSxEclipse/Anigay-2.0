@@ -479,9 +479,9 @@ class Game(commands.Cog):
 
                     if fighter1.max_mana > 0:
                         speed_multiplier = fighter1.spd/fighter2.spd
-                        if speed_multiplier >= 1.4:
+                        if speed_multiplier > 1.4:
                             speed_multiplier = 1.4
-                        else:
+                        elif speed_multiplier < 1:
                             speed_multiplier = 1
 
                         mana_gained = int((fighter1.mana_regen*(fighter1.mana_regen_bonus)*(2-(fighter1.hp/fighter1.max_hp)))+(2*fighter1.mana_regen*(fighter1.mana_regen_bonus)/battle_round)*speed_multiplier)
@@ -491,7 +491,7 @@ class Game(commands.Cog):
                         speed_multiplier = fighter2.spd/fighter1.spd
                         if speed_multiplier >= 1.4:
                             speed_multiplier = 1.4
-                        else:
+                        elif speed_multiplier < 1:
                             speed_multiplier = 1
 
                         mana_gained = int((fighter2.mana_regen*(fighter2.mana_regen_bonus)*(2-(fighter2.hp/fighter2.max_hp)))+(2*(fighter2.mana_regen*(fighter2.mana_regen_bonus)/battle_round)*speed_multiplier))
