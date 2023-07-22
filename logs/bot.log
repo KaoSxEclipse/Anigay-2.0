@@ -2515,3 +2515,40 @@ Traceback (most recent call last):
   File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-21 16:29:55,784 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 16:30:01,029 - discord.client - INFO - logging in using static token
+2023-07-21 16:30:02,647 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d5e23a84c0c52d4b0e7520bbc7464392).
+2023-07-21 16:30:04,797 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 16:30:09,724 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 16:32:29,309 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 19:07:08,215 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-21 19:07:13,869 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 03160678f9ea7941df5af1fc9eab59d6).
+2023-07-21 19:07:13,905 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:441> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 19:07:13,906 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:441> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-21 19:07:15,954 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 19:07:15,955 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-21 22:31:27,124 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-21 22:31:32,740 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d2d6587d769b3cba328d4cc8d9934c6e).
+2023-07-21 22:31:34,819 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-21 22:31:34,821 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded

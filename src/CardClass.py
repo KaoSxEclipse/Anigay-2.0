@@ -1,7 +1,7 @@
 import asyncio, asqlite, json
 
 path_to_db = "../db/"
-ACTIVE_TALENTS = ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ]
+ACTIVE_TALENTS = ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Celestial Influence", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ]
 
 class CardClass():
 	def __init__( self, uid, rarity="sr" ):
@@ -68,6 +68,8 @@ class UserCard:
 		self.element = data["element"]
 		self.hp = data["hp"]
 		self.mana = 0
+		self.mana_regen = 15
+		self.mana_regen_bonus = 1
 		self.atk = data["atk"]
 		self.df = data["def"]
 		self.spd = data["spd"]
@@ -90,6 +92,7 @@ class UserCard:
 		self.evasion = 1
 		self.critical_mult = 1
 		self.critical_rate = 5
+		self.critical_bonus_dmg = 0
 		self.healing_bonus = 0
 		self.lifesteal = 0
 		self.stunned = False
@@ -99,6 +102,8 @@ class UserCard:
 		self.endurance = 0
 		self.berserker = 1
 		self.poison = 0
+		self.talent_proc = False
+		self.ultimate_combo = 0
 
 
 	def calcRarity(self):
@@ -192,6 +197,8 @@ class FloorCard(UserCard):
 		self.element = card[2]
 		self.hp = card[3]
 		self.mana = 0
+		self.mana_regen = 15
+		self.mana_regen_bonus = 1
 		self.atk = card[4]
 		self.df = card[5]
 		self.spd = card[6]
@@ -212,6 +219,7 @@ class FloorCard(UserCard):
 		self.evasion = 1
 		self.critical_rate = 5
 		self.critical_mult = 1
+		self.critical_bonus_dmg = 0
 		self.healing_bonus = 0
 		self.lifesteal = 0
 		self.stunned = False
@@ -221,6 +229,8 @@ class FloorCard(UserCard):
 		self.endurance = 0
 		self.berserker = 1
 		self.poison = 0
+		self.talent_proc = False
+		self.ultimate_combo = 0
 
 	async def getDex(self):
 		async with asqlite.connect(path_to_db+"card_data.db") as connection:

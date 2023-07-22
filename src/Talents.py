@@ -1,6 +1,15 @@
 import random
 
-talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
+
+'''
+                if fighter1.rarity_s == "SR":
+
+                elif fighter1.rarity_s == "UR":
+
+                else:
+'''
+
+talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Celestial Influence", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ],
 
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Self Destruct", "Temporal Rewind"]}
 
@@ -57,6 +66,8 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Amplifier increasing DEF by __{round(def_increase)} [{round(boost*100)}%]__"
                 return message
 
+            if fighter1.talent == "Breaker":
+
             if fighter1.talent == "Devour":
                 if fighter1.rarity_s == "SR":
                     dmg = 0.09
@@ -109,6 +120,47 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Double-edged Strike inflicting __{damage}__ damage to **{fighter2.name}**,\n and receives __{backlash}__ damage from the backlash. " + effect
                 return message
 
+            if fighter1.talent == "Elemental Strike":
+                if fighter1.rarity_s == "SR":
+                    percent = 0.18
+                elif fighter1.rarity_s == "UR":
+                    percent = 0.20
+                else:
+                    percent = 0.16
+
+                if name in "Rensuke Kunigami,".split(","):
+                    element = "Light"
+                else:
+                    element = fighter1.element
+
+                if element = "Water":
+                    effect = "conjures a foaming whirlpool"
+                if element = "Fire":
+                    effect = "sparks a fire tornado"
+                if element = "Ground":
+                    effect = "Summons a meteor"
+                if element = "Electric":
+                    effect = "channels great lightning"
+                if element = "Grass":
+                    effect = "shoots leave blades"
+                if element = "Dark":
+                    effect = "twists the darkness"
+                if element = "Light":
+                    effect = "redirects a light ray"
+                if element = "Neutral":
+                    effect = "bends space"
+
+                talent_effect = calcEleAdvantage(element, fighter2.element)
+
+                talent_damage = round(fighter1.current_atk * (1+percent) * talent_effect)
+                fighter2.hp -= talent_damage
+                fighter1.mana = 0
+                result = calcEffect(talent_effect)
+
+                message = f"**{fighter1.name}** uses Elemental Strike, {effect}, inflicting\n __{talent_damage}__ damage to **{fighter2.name}**,!!\n" + result
+                return message
+
+
             if fighter1.talent == "Endurance":
                 fighter1.endurance = battle_round + 3
                 fighter1.mana = 0
@@ -130,7 +182,25 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.mana = 0
 
-                message = f"**{fighter1.name}** uses evasive maneuvers, increasing\n Evasion by __{bonus}__% to __{fighter1.evasion}__%!!"
+                message = f"**{fighter1.name}** uses evasive maneuvers, increasing\n EVASION by __{bonus}%__ to __{fighter1.evasion}%__!!"
+                return message
+
+            if fighter1.talent == "Offensive Stance":
+                if fighter1.rarity_s == "SR":
+                    increase_atk = 0.72
+                    decrease_def = 0.18
+                elif fighter1.rarity_s == "UR":
+                    increase_atk = 0.80
+                    decrease_def = 0.20
+                else:
+                    increase_atk = 0.64
+                    decrease_def = 0.16
+
+                fighter1.mana = 0
+                fighter1.current_atk += round(fighter1.current_atk*increase_atk)
+                fighter1.df -= round(fighter1.df*decrease_def)
+
+                message = f"**{fighter1.name}** uses Offensive Stance sacrificing __{round(decrease_def*100)}%__ of DEF, to increase ATK by __{round(increase_atk*100)}%__!! You're insane!!"
                 return message
 
             if fighter1.talent == "Pain For Power":
@@ -186,6 +256,26 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Poison, inflicting a stack of Poison on **{fighter2.name}**!!"
                 return message
 
+            if fighter1.talent == "Precision":
+                if fighter1.rarity_s == "SR":
+                    increase_crit_rate = 28
+                    increase_crit_dmg = 0.39
+                elif fighter1.rarity_s == "UR":
+                    increase_crit_rate = 32
+                    increase_crit_dmg = 0.44
+                else:
+                    increase_crit_rate = 24
+                    increase_crit_dmg = 0.34
+
+                fighter1.mana = 0
+                if fighter1.critical_rate > 100:
+                    figher1.critical_rate = 100
+                fighter1.critical_rate += increase_crit_rate
+                fighter1.critical_bonus_dmg += increase_crit_dmg
+
+                message = f"**{fighter1.name}** uses Precison, increasing CRIT CHANCE by __{increase_crit_rate}%__ \n and increasing CRIT DMG to __{round(1.75+fighter.critical_bonus_dmg, 2)}__!!"
+                return message
+
             if fighter1.talent == "Regeneration":
                 fighter1.regen_stacks += 1
                 fighter1.regen_lose.append(battle_round+4) ## When hero will lose next stack
@@ -194,11 +284,90 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Regeneration, granting themselves a stack of Regneration!!"
                 return message
 
+            if fighter1.talent == "Rejuvenation":
+                if fighter1.rarity_s == "SR":
+                    healing = 0.21
+                    effect = 0.18
+                elif fighter1.rarity_s == "UR":
+                    healing = 0.24
+                    effect = 0.20
+                else:
+                    healing = 0.18
+                    effect = 0.16
+
+                fighter1.mana = 0
+                healed_amount = round(fighter1.max_hp * (healing*(1+fighter1.healing_bonus)))
+                fighter1.healing_bonus += effect
+                if fighter1.healing_bonus > 0.5:
+                    fighter1.healing_bonus = 0.5
+
+                message = f"**{fighter1.name}** uses Rejuvenation, healing for __{healed_amount}__ HP \n and increasing all healing effects by {round(effect*100)}"
+                return message
+
             if fighter1.talent == "Time Bomb":
                 fighter2.tbomb = battle_round+1
                 fighter1.mana = 0
 
                 message = f"**{fighter1.name}** snaps, inflicting a stack of Time Bomb on **{fighter2.name}**!!"
+                return message
+
+            if fighter1.talent == "Trick Room":
+                if fighter1.rarity_s == "SR":
+                    trick = 1.08
+                elif fighter1.rarity_s == "UR":
+                    trick = 1.20
+                else:
+                    trick = 0.96
+
+                if fighter1.name in "Jinpachi Ego,".split(","):
+                    if fighter1.df >= fighter2.df: ## FAILED
+                        message = f"**{fighter1.name}** uses Trick Room, but fails to steal **{fighter2.name}**'s DEF!!"
+                        return message
+                    else:
+                        fighter1.mana = 0
+                        difference = fighter2.df - fighter1.df
+                        room = round(difference*trick)
+                        fighter1.df += room
+                        fighter2.df -= room
+
+                        message = f"**{fighter1.name}** uses Trick Room, twisting the world around them and \nempowering themselves with **{fighter2.name}**'s DEF!!"
+                        return message
+                else:
+                    if fighter1.current_atk >= fighter2.current_atk: ## FAILED
+                        message = f"**{fighter1.name}** uses Trick Room, but fails to steal **{fighter2.name}**'s ATK!!"
+                        return message
+                    else:
+                        fighter1.mana = 0
+                        difference = fighter2.atk - fighter1.atk
+                        room = round(difference*trick)
+                        fighter1.atk += room
+                        fighter2.atk -= room
+
+                        message = f"**{fighter1.name}** uses Trick Room, warping reality around them and \nempowering themselves with **{fighter2.name}**'s ATK!!"
+                        return message
+
+            if fighter1.talent == "Ultimate Combo":
+                if fighter1.rarity_s == "SR":
+                    speed_damage = 0.05
+                    combo = 0.54
+                elif fighter1.rarity_s == "UR":
+                    speed_damage = 0.06
+                    combo = 0.60
+                else:
+                    speed_damage = 0.04
+                    combo = 0.48
+
+                fighter1.ultimate_combo += 1
+                fighter1.mana = 0
+                if figher1.ultimate_combo == 3:
+                    fighter1.ultimate_combo = 0
+                    damage = round(fighter2.max_hp*combo)
+                    fighter2.hp -= damage
+                else:
+                    damage = round(fighter1.spd * fighter1.fighting_combo * speed_damage)
+                    fighter2.hp -= damage
+
+                message = f"**{fighter1.name}** uses Ultimate Combo and increased the fighting stack to {fighter1.ultimate_combo}\n, inflicting __{damage}__ true damage to **{fighter2.name}**!!"
                 return message
 
             if fighter1.talent == "Unlucky Coin":
@@ -289,6 +458,19 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 return message
 
+        if fighter1.talent == "Blood Surge":
+            if fighter1.lifesteal < 0.5:
+                if fighter1.hp < round(fighter1.max_hp*0.4):
+                    if fighter1.rarity_s == "SR":
+                        fighter1.lifesteal = 0.81
+                    elif fighter1.rarity_s == "UR":
+                        fighter1.lifesteal = 0.90
+                    else:
+                        fighter1.lifesteal = 0.72
+
+                    message = f"**{fighter1.name}** uses Blood Surge, becoming thirsty for blood and \nincreases LIFESTEAL by __{round(fighter1.lifesteal*100)}%__!"
+                    return message
+
 
         if fighter1.talent == "Bloodthirster":
             if fighter1.rarity_s == "SR":
@@ -306,6 +488,24 @@ def applyTalent(fighter1, fighter2, battle_round):
 
             message = f"**{fighter1.name}** uses Bloodthirster, Granting __{int(fighter1.lifesteal*100)}__% LIFESTEAL\n and __{int(fighter1.healing_bonus*100)}__% bonus healing"
             return message
+
+        if fighter1.talent == "Celestial Influence":
+            if battle_round == 1:
+                if fighter1.rarity_s == "SR":
+                    increase_mana = 0.72
+                    decrease_mana = 0.18
+                elif fighter1.rarity_s == "UR":
+                    increase_mana = 0.80
+                    decrease_mana = 0.20
+                else:
+                    increase_mana = 0.64
+                    decrease_mana = 0.16
+
+                fighter1.mana_regen *= 1+increase_mana
+                fighter2.mana_regen *= 1+decrease_mana
+
+                message = f"**{fighter1.name}** uses Celestial Influence, increasing the MANA REGEN by __{round(increase_mana*100)}%__\n as well as reducing **{fighter2.name}** MANA REGEN by __{round(decrease_mana*100)}%__ "
+                return message
 
         if fighter1.talent == "Executioner":
             if fighter1.rarity_s == "SR":
@@ -384,6 +584,29 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** uses Miracle Injection, sacrificing HP to imbue themself with power\n and increasing all stats by __{bonus*6}__!!"
                 return message
 
+        if fighter1.talent == "Protector":
+            if not fighter1.talent_proc:
+                if fighter1.hp < fighter1.max_hp*0.25:
+                    fighter1.talent_proc = True:
+
+                    if fighter1.rarity_s == "SR":
+                        healing = 0.36
+                        increase_def = 0.63
+                    elif fighter1.rarity_s == "UR":
+                        healing = 0.40
+                        increase_def = 0.70
+                    else:
+                        healing = 0.32
+                        increase_def = 0.56
+
+                    healed_amount = round(fighter1.max_hp*healing)
+                    fighter1.hp += healed_amount
+                    fighter1.df += fighter1.df*increase_def
+
+                    message = f"**{fighter1.name}** uses Protector, restoring __{healed_amount}__ HP and raisint DEF by __{round(increase_def*100)}%__!!"
+                    return message
+
+
         if fighter1.talent == "Self Destruct":
             if battle_round == 1:
                 fighter1.hp -= round(fighter1.hp*0.8)
@@ -393,7 +616,6 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** decreases all stats by __80%__, causing himself to **SELF DESTRUCT**!!"
                 return message
-
 
 
         if fighter1.talent == "Temporal Rewind":
@@ -408,4 +630,23 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter2.hp -= damage
 
                 message = f"**{fighter1.name}** reverts back in time and restores __{healing}__ HP due to Temporal Rewind\n and simultaneously deals __{damage}__ true damage to **{fighter2.name}**!!"
+                return message
+
+        if fighter1.talent == "Transformation":
+            if battle_round == 1:
+                if fighter1.rarity_s == "SR":
+                    decrease_spd = 0.27
+                    increase = 0.54
+                elif fighter1.rarity_s == "UR":
+                    decrease_spd = 0.30
+                    increase = 0.60
+                else:
+                    decrease_spd = 0.24
+                    increase = 0.51
+
+                fighter1.current_atk += round(fighter1.atk*increase)
+                fighter1.max_hp += round(fighter1.max_hp*increase)
+                fighter1.spd -= round(figher1.spd*decrease_spd)
+
+                message = f"**{fighter1.name}** uses Transformation, increasing ATK and MAX HP by __{round(increase*100)}%__ \n at the cost of __{round(decrease_spd*100)}%__ of their SPD!!"
                 return message

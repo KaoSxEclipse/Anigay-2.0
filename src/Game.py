@@ -207,16 +207,16 @@ class Game(commands.Cog):
 
                 elif floor in "next n nxt".split(" "):
 
-                    if current_floor+1 > max_floor: # Player has not cleared the previous floor yet
-                        embed = discord.Embed(title=f"You have not unlocked this floor!!",
-                                      description=f"Please clear the current floor before progressing your journey.",
-                                      color=0xF76103)
-                        await ctx.send(embed=embed)
-
-                    elif current_floor+1 > highest_floor:
+                    if current_floor+1 > highest_floor:
                         embed = discord.Embed(title=f"Invalid Floor!!",
                                               description=f"You have cleared this Realm. Please travel to the next Realm to proceed",
                                               color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    elif current_floor+1 > max_floor: # Player has not cleared the previous floor yet
+                        embed = discord.Embed(title=f"You have not unlocked this floor!!",
+                                      description=f"Please clear the current floor before progressing your journey.",
+                                      color=0xF76103)
                         await ctx.send(embed=embed)
 
                     else:
@@ -468,7 +468,7 @@ class Game(commands.Cog):
                     if crit in range(1, fighter1.critical_rate+1):
                         #print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
                         #print(crit in range(1, fighter1.critical_rate+1))
-                        fighter1.critical_mult = 1.75
+                        fighter1.critical_mult = 1.75+fighter1.crit_bonus_dmg
 
 
 
@@ -479,7 +479,7 @@ class Game(commands.Cog):
                         else:
                             speed_multiplier = 1
 
-                        mana_gained = int((15*(2-(fighter1.hp/fighter1.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                        mana_gained = int((fighter1.mana_regen*(fighter1.mana_regen_bonus)*(2-(fighter1.hp/fighter1.max_hp)))+(2*fighter1.mana_regen*(fighter1.mana_regen_bonus)/battle_round)*speed_multiplier)
                         fighter1.mana += mana_gained
 
                     if fighter2.max_mana > 0:
@@ -489,7 +489,7 @@ class Game(commands.Cog):
                         else:
                             speed_multiplier = 1
 
-                        mana_gained = int((15*(2-(fighter2.hp/fighter2.max_hp)))+(2*15/battle_round)*speed_multiplier)
+                        mana_gained = int((fighter2.mana_regen*(fighter2.mana_regen_bonus)*(2-(fighter2.hp/fighter2.max_hp)))+(2*(fighter2.mana_regen*(fighter2.mana_regen_bonus)/battle_round)*speed_multiplier)
                         fighter2.mana += mana_gained
 
                     #print(fighter1.talent)
