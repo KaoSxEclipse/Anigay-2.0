@@ -16,7 +16,7 @@ from CardClass import *
 import random
 
 path_to_db = "../db/"
-
+devids = [533672241448091660, 301494278901989378, 318306707493093376, 552151385127256064, 384535679918669834, 471249775862218752]
 
 with open("CustomEmojis", "r") as f:
     emojis = json.load(f)
@@ -30,7 +30,7 @@ class Dev(commands.Cog):
 
     @commands.hybrid_command(name="summon", description="Summon a card. Param: target, card name, rarity")
     async def summon(self, ctx, name=None, rarity="sr"):
-        async with asqlite.connect("player_data.db") as connection:
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
                 user_id = ctx.author.id
 
@@ -66,7 +66,7 @@ class Dev(commands.Cog):
                         if name.lower() in i.lower():
                             name = i
 
-                    async with asqlite.connect("card_data.db") as connection:
+                    async with asqlite.connect(path_to_db+"card_data.db") as connection:
                         async with connection.cursor() as cursor:
                             await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
 
@@ -127,7 +127,7 @@ class Dev(commands.Cog):
     @commands.hybrid_command()
     async def reset(self, ctx, user: discord.User):
 
-        async with asqlite.connect("player_data.db") as connection:
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
                 if ctx.author.id not in devids:
                     return
@@ -154,7 +154,7 @@ class Dev(commands.Cog):
 
     @commands.hybrid_command(name="devgive", aliases=['grant'])
     async def devgive(self, ctx, user: discord.User, amount: int):
-        async with asqlite.connect("player_data.db") as connection:
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
                 if ctx.author.id not in devids:
                     await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")

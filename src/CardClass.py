@@ -1,6 +1,7 @@
 import asyncio, asqlite, json
 
 path_to_db = "../db/"
+ACTIVE_TALENTS = ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Celestial Blessing", "Devour", "Dexterity Drive", "Double-edged Strike", "Elemental Strike", "Endurance", "Evasion", "Freeze", "Lucky Coin", "Mana Reaver", "Offensive Stance", "Pain For Power", "Paralysis", "Poison", "Precision", "Regeneration", "Rejuvenation", "Restricted Instinct", "Smokescreen", "Time Attack", "Time Bomb", "Trick Room", "Ultimate Combo", "Unlucky Coin", "Vengeance" ]
 
 class CardClass():
 	def __init__( self, uid, rarity="sr" ):
@@ -66,14 +67,45 @@ class UserCard:
 		self.name = data["name"]
 		self.element = data["element"]
 		self.hp = data["hp"]
+		self.mana = 0
+		self.mana_regen = 15
+		self.mana_regen_bonus = 1
 		self.atk = data["atk"]
 		self.df = data["def"]
 		self.spd = data["spd"]
 		self.talent = data["talent"]
+		self.talent_proc = False
 
 		self.calcRarity()
 		self.calcLevel()
 		self.calcStats()
+
+		if self.talent in ACTIVE_TALENTS:
+			self.max_mana = 100
+		else:
+			self.max_mana = 0
+
+		self.max_hp = self.hp*10
+		self.current_atk = self.atk*10
+		self.base_df = self.df*10
+		self.ele_mult = 1
+		self.evasion = 1
+		self.critical_mult = 1
+		self.critical_rate = 5
+		self.critical_bonus_dmg = 0
+		self.healing_bonus = 0
+		self.lifesteal = 0
+		self.stunned = False
+		self.regen_stacks = 0
+		self.regen_lose = []
+		self.tbomb = 0
+		self.endurance = 0
+		self.berserker = 1
+		self.poison = 0
+		self.talent_proc = False
+		self.ultimate_combo = 0
+		self.recoil = False
+
 
 	def calcRarity(self):
 		'''Rarity is defined by: 1.2 (C) | 1.4 (UC) | 1.6 (R) | 1.8 (SR) | 2 (UR)'''
@@ -121,19 +153,28 @@ class UserCard:
 
 	def calcStats(self):
 		'''Formula: BaseStat*(Rarity*(1+0.005*Level)*(1+0.15*(Evo-1)))'''
-		self.hp = int(round(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.atk = int(round(self.atk*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.df = int(round(self.df*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
-		self.spd = int(round(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1)))))
+		self.hp = int(self.hp*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.atk = int(self.atk*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.df = int(self.df*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+		self.spd = int(self.spd*(self.rarity_mult*(1+0.005*self.level)*(1+0.15*(self.evo-1))))
+
+
+	def battlePrep(self):
+		self.hp *= 10
+		self.atk *= 10
+		self.df *= 10
+		self.spd *= 10
 
 
 	def __str__(self):
 		return """
-HP:  {}
-ATK: {}
+{}:
+HP:  {}/{}
+MP:  {}
+ATK: {}[{}]
 DEF: {}
 SPD: {}
-		""" .format(self.hp, self.atk, self.df, self.spd)
+		""" .format(self.name, self.hp, self.max_hp, self.mana, self.atk, self.current_atk, self.df, self.spd)
 
 
 class FloorCard(UserCard):
@@ -156,14 +197,42 @@ class FloorCard(UserCard):
 		self.level = self.location*2+(self.floor*2)
 		self.element = card[2]
 		self.hp = card[3]
+		self.mana = 0
+		self.mana_regen = 15
+		self.mana_regen_bonus = 1
 		self.atk = card[4]
 		self.df = card[5]
 		self.spd = card[6]
 		self.talent = card[7]
+		self.talent_proc = False
 
 		self.calcRarity()
 		self.calcStats()
 
+		if self.talent in ACTIVE_TALENTS:
+			self.max_mana = 100
+		else:
+			self.max_mana = 0
+
+		self.max_hp = self.hp*10
+		self.current_atk = self.atk*10
+		self.ele_mult = 1
+		self.evasion = 1
+		self.critical_rate = 5
+		self.critical_mult = 1
+		self.critical_bonus_dmg = 0
+		self.healing_bonus = 0
+		self.lifesteal = 0
+		self.stunned = False
+		self.regen_stacks = 0
+		self.regen_lose = []
+		self.tbomb = 0
+		self.endurance = 0
+		self.berserker = 1
+		self.poison = 0
+		self.talent_proc = False
+		self.ultimate_combo = 0
+		self.recoil = False
 
 	async def getDex(self):
 		async with asqlite.connect(path_to_db+"card_data.db") as connection:

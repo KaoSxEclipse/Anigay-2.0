@@ -15,6 +15,8 @@ import Database
 from CardClass import *
 import random
 
+from Talents import *
+
 path_to_db = "../db/"
 
 
@@ -22,7 +24,6 @@ with open("CustomEmojis", "r") as f:
     emojis = json.load(f)
     for key, value in emojis.items():
         exec(f"{key} = '{value}'")
-
 
 def parseFloor( location ):
     floor = str(location).split(".")[1]
@@ -206,16 +207,16 @@ class Game(commands.Cog):
 
                 elif floor in "next n nxt".split(" "):
 
-                    if current_floor+1 > max_floor: # Player has not cleared the previous floor yet
-                        embed = discord.Embed(title=f"You have not unlocked this floor!!",
-                                      description=f"Please clear the current floor before progressing your journey.",
-                                      color=0xF76103)
-                        await ctx.send(embed=embed)
-
-                    elif current_floor+1 > highest_floor:
+                    if current_floor+1 > highest_floor:
                         embed = discord.Embed(title=f"Invalid Floor!!",
                                               description=f"You have cleared this Realm. Please travel to the next Realm to proceed",
                                               color=0xF76103)
+                        await ctx.send(embed=embed)
+
+                    elif current_floor+1 > max_floor: # Player has not cleared the previous floor yet
+                        embed = discord.Embed(title=f"You have not unlocked this floor!!",
+                                      description=f"Please clear the current floor before progressing your journey.",
+                                      color=0xF76103)
                         await ctx.send(embed=embed)
 
                     else:
@@ -265,7 +266,7 @@ class Game(commands.Cog):
                         #embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
                         #                      description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
                         #                      color=0x072A6C)
-                        embed = displayFloor(current_loc, current_floor)
+                        embed = displayFloor(current_loc, floor)
 
                         await ctx.send(embed=embed)
 
@@ -274,66 +275,70 @@ class Game(commands.Cog):
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
     async def battle(self, ctx, amount=1):
-        def displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round):
-            player_hp_percentage = player_hp / (user_card.hp*10) * 100
-            player_hp_filled = round(player_hp_percentage / 100 * hp_bar_length)
-            player_hp_empty = hp_bar_length - player_hp_filled
+        def displayBar( fighter ):
+            hp_percentage = fighter.hp / (fighter.max_hp) * 100
+            hp_filled = round(hp_percentage / 100 * hp_bar_length)
+            hp_empty = hp_bar_length - hp_filled
 
-            enemy_hp_percentage = enemy_hp / (oppo.hp*10) * 100
-            enemy_hp_filled = round(enemy_hp_percentage / 100 * hp_bar_length)
-            enemy_hp_empty = hp_bar_length - enemy_hp_filled
+            if fighter.hp <= 0:
+                fighter.hp = 0
+                filled = 0
+                hp_empty = 20
 
-            if player_hp <= 0:
-                player_hp = 0
-                player_filled = 0
-                player_hp_empty = 20
+            hp_bar = "█" * hp_filled + "░" * hp_empty
 
-            if enemy_hp <= 0:
-                enemy_hp = 0
-                enemy_filled = 0
-                enemy_hp_empty = 20
+            ## Display Mana
+            if fighter.max_mana == 0:
+                mp_percentage = 0
+            else:
+                mp_percentage = fighter.mana / fighter.max_mana*100
 
-            player_hp_bar = "█" * player_hp_filled + "░" * player_hp_empty
-            enemy_hp_bar = "█" * enemy_hp_filled + "░" * enemy_hp_empty
+            mp_filled = round(mp_percentage / 100 * mp_bar_length)
+            mp_empty = mp_bar_length - mp_filled
+
+
+            if fighter.mana >= 100 or mp_filled > 20:
+                fighter.mana = 100
+                mp_filled = 20
+                mp_empty = 0
+
+            mp_bar = "■" * mp_filled + "□" * mp_empty
+
+            return hp_bar, mp_bar
+
+        def displayHP(player, enemy, battle_round):
+            player_hp_bar, player_mp_bar = displayBar(player)
+            enemy_hp_bar, enemy_mp_bar = displayBar(enemy)
 
             embed = discord.Embed(title=f"{ctx.author} is challenging Floor {loc}-{floor}", color=0xF76103)
-            embed.add_field(name=f"", value=f"**{user_card.name}** __{user_card.rarity}__ **Lvl {user_card.level} [Evo {user_card.evo}]**", inline=False)
-            embed.add_field(name="", value=f"Element: {user_card.element} [{player_ele_mult}]", inline=False)
-            embed.add_field(name=f"**{player_hp} / {user_card.hp*10}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
-            embed.add_field(name=f"", value=f"**{oppo.name}** __{oppo.rarity}__ **Lvl {oppo.level} [Evo {oppo.evo}]**", inline=False)
-            embed.add_field(name="", value=f"Element: {oppo.element} [{enemy_ele_mult}]", inline=False)
-            embed.add_field(name=f"**{enemy_hp} / {oppo.hp*10} ♥**", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.add_field(name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
+            embed.add_field(name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
+            embed.add_field(name=f"**{player.hp} / {player.max_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{player.mana} / {player.max_mana}** Ψ", value=f"`[{player_mp_bar}]`", inline=False)
+            embed.add_field(name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
+            embed.add_field(name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
+            embed.add_field(name=f"**{enemy.hp} / {enemy.max_hp}** ♥", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.add_field(name=f"**{enemy.mana} / {enemy.max_mana} Ψ**", value=f"`[{enemy_mp_bar}]`", inline=False)
 
             if battle_round >= 1:
                 embed.add_field(name=f"**[Round {battle_round}]**", value="", inline=False)
-                embed.add_field(name="", value=f"**{user_card.name}** deals **{player_dmg}** to **{oppo.name}**", inline=False)
-                embed.add_field(name="", value=f"**{oppo.name}** deals **{enemy_dmg}** to **{user_card.name}**", inline=False)
 
             return embed
 
+        def updateEmbed(player, enemy, embed):
+            player_hp_bar, player_mp_bar = displayBar(player)
+            enemy_hp_bar, enemy_mp_bar = displayBar(enemy)
 
-        def calcEleAdvantage( element1, element2 ):
-            '''Returns the first element advantage compared to the second'''
+            embed.set_field_at(0, name=f"", value=f"**{player.name}** __{player.rarity}__ **Lvl {player.level} [Evo {player.evo}]**", inline=False)
+            embed.set_field_at(1, name="", value=f"Element: {player.element} [{player.ele_mult}]", inline=False)
+            embed.set_field_at(2, name=f"**{player.hp} / {player.max_hp}** ♥", value=f"`[{player_hp_bar}]`", inline=False)
+            embed.set_field_at(3, name=f"**{player.mana} / {player.max_mana}** Ψ", value=f"`[{player_mp_bar}]`", inline=False)
+            embed.set_field_at(4, name=f"", value=f"**{enemy.name}** __{enemy.rarity}__ **Lvl {enemy.level} [Evo {enemy.evo}]**", inline=False)
+            embed.set_field_at(5, name="", value=f"Element: {enemy.element} [{enemy.ele_mult}]", inline=False)
+            embed.set_field_at(6, name=f"**{enemy.hp} / {enemy.max_hp}** ♥", value=f"`[{enemy_hp_bar}]`", inline=False)
+            embed.set_field_at(7, name=f"**{enemy.mana} / {enemy.max_mana} Ψ**", value=f"`[{enemy_mp_bar}]`", inline=False)
 
-            elements = {"Light": {"Light": .75, "Dark": 1.5, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Dark": {"Light": 1.5, "Dark": .75, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Neutral": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
-
-                        "Water": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .75, "Ground": 1, "Electric": .5, "Fire": 1.5, "Grass": 1},
-
-                        "Ground": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": .75, "Electric": 1.5, "Fire": 1, "Grass": .5},
-
-                        "Electric": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1.5, "Ground": .5, "Electric": .75, "Fire": 1, "Grass": 1},
-
-                        "Fire":  {"Light": 1, "Dark": 1, "Neutral": 1, "Water": .5, "Ground": 1, "Electric": 1, "Fire": .75, "Grass": 1.5},
-
-                        "Grass": {"Light": 1, "Dark": 1, "Neutral": 1, "Water": 1, "Ground": 1.5, "Electric": 1, "Fire": .5, "Grass": .75}}
-
-            return elements[element1][element2]
-
-
+            return embed
 
         user_id = ctx.author.id
         user = await Database.verifyUser(user_id)
@@ -391,56 +396,235 @@ class Game(commands.Cog):
                 # user card = dictionary
                 # Enemy Floor card is a Class
 
-                #print("Location: ", loc)
-                #print("Floor: ", floor)
-
                 card = series[realms[loc-1]][floor-1]
 
                 #print("User Card ID:", c["uid"])
                 user_card = UserCard(c, user_card)
-
-
+                user_card.battlePrep()
+                
                 oppo = FloorCard(loc, floor)
+                oppo.battlePrep()
 
-                player_hp = user_card.hp*10
-                enemy_hp = oppo.hp*10
+                user_card.ele_mult = calcEleAdvantage(user_card.element, oppo.element)
+                oppo.ele_mult = calcEleAdvantage(oppo.element, user_card.element)
 
                 hp_bar_length = 20
-
+                mp_bar_length = 20
                 battle_round = 0
 
-                player_ele_mult = calcEleAdvantage(user_card.element, oppo.element)
-                enemy_ele_mult = calcEleAdvantage(oppo.element, user_card.element)
 
-                CRITICAL_MULTIPLIER = 1
+                #CRITICAL_MULTIPLIER = 1
 
 
-                embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
+                embed = displayHP(user_card, oppo, battle_round)
+
                 bt = await ctx.send(embed=embed)
                 await asyncio.sleep(1.5)
+                battle_round += 1
 
-                while player_hp > 0 and enemy_hp > 0:
-                    #player_dmg = int(round((((user_card.atk / oppo.df) * (user_card.atk / 2.9) + 220000 / oppo.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
-                    #enemy_dmg = int(round((((oppo.atk / user_card.df) * (oppo.atk / 2.9) + 220000 / user_card.df) / 3 * ELEMENT_MULTIPLIER * CRITICAL_MULTIPLIER)))
 
-                    # New damage formula
-                    player_current_atk = user_card.atk*10
-                    player_dmg = int((((player_current_atk*user_card.atk*10)+638000)/(8.7 * oppo.df*10)) * player_ele_mult * CRITICAL_MULTIPLIER)
+                async def battleRound( fighter1, fighter2 ):
+                    if fighter1.stunned:
+                        if fighter1.talent == "Recoil":
+                            embed = displayHP(user_card, oppo, battle_round)
 
-                    enemy_current_atk = oppo.atk*10
-                    enemy_dmg = int((((enemy_current_atk*oppo.atk*10)+638000)/(8.7 * user_card.df*10)) * enemy_ele_mult * CRITICAL_MULTIPLIER)
+                            embed.add_field(name="", value=f"**{fighter1.name}** is immune to status effects due to Recoil", inline=False)
+                            fighter1.stunned = False
+                            fighter2.stunned = False
 
-                    player_hp -= enemy_dmg
-                    enemy_hp -= player_dmg
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+                        elif random.randint(1, 20) == 1:
+                            embed = displayHP(user_card, oppo, battle_round)
 
-                    battle_round += 1
-                    embed = displayHP(player_hp, player_ele_mult, enemy_hp, enemy_ele_mult, battle_round)
+                            embed.add_field(name="", value=f"**{fighter1.name}** is stunned but resists and continues to fight!!", inline=False)
+                            fighter1.stunned = False
 
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+                        else:
+                            embed = displayHP(user_card, oppo, battle_round)
+
+                            embed.add_field(name="", value=f"**{fighter1.name}** is stunned and is unable to attack!!", inline=False)
+                            fighter1.stunned = False
+
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+                            return
+
+                    talent_message = applyTalent( fighter1, fighter2, battle_round )
+                    embed = displayHP(user_card, oppo, battle_round)
+
+                    if talent_message != None:
+                        embed = updateEmbed(user_card, oppo, embed)
+                        embed.add_field(name="", value=talent_message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+
+                    fighter1.critical_mult = 1
+
+                    miss = False
+                    # Evasion / Critical rates
+                    evasion = random.randint(1, 100)
+                    #print("Evasion Roll: ", evasion)
+                    #print(fighter1.evasion)
+                    if evasion in range(1, fighter2.evasion+1):
+                        miss = True
+
+                    crit = random.randint(1, 100)
+                    if crit in range(1, fighter1.critical_rate+1):
+                        #print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
+                        #print(crit in range(1, fighter1.critical_rate+1))
+                        fighter1.critical_mult = 1.75+fighter1.critical_bonus_dmg
+
+                    if fighter1.max_mana > 0:
+                        speed_multiplier = fighter1.spd/fighter2.spd
+                        if speed_multiplier > 1.4:
+                            speed_multiplier = 1.4
+                        elif speed_multiplier < 1:
+                            speed_multiplier = 1
+
+                        mana_gained = int((fighter1.mana_regen*(fighter1.mana_regen_bonus)*(2-(fighter1.hp/fighter1.max_hp)))+(2*fighter1.mana_regen*(fighter1.mana_regen_bonus)/battle_round)*speed_multiplier)
+                        fighter1.mana += mana_gained
+
+                    if fighter2.max_mana > 0:
+                        speed_multiplier = fighter2.spd/fighter1.spd
+                        if speed_multiplier >= 1.4:
+                            speed_multiplier = 1.4
+                        elif speed_multiplier < 1:
+                            speed_multiplier = 1
+
+                        mana_gained = int((fighter2.mana_regen*(fighter2.mana_regen_bonus)*(2-(fighter2.hp/fighter2.max_hp)))+(2*(fighter2.mana_regen*(fighter2.mana_regen_bonus)/battle_round)*speed_multiplier))
+                        fighter2.mana += mana_gained
+
+                    #print(fighter1.talent)
+
+
+                    if fighter1.regen_stacks > 0:
+                        if battle_round in fighter1.regen_lose:
+                            fighter1.regen_lose.remove(battle_round)
+                            fighter1.regen_stacks -= 1
+
+                        healing = int(fighter1.max_hp * (0.075 * fighter1.regen_stacks)) # Healing * stacks
+                        fighter1.hp += healing
+                        if fighter1.hp > fighter1.max_hp:
+                            fighter1.hp = fighter1.max_hp
+
+                        embed = updateEmbed(user_card, oppo, embed)
+                        message = f"**{fighter1.name}** restores __{healing}__ HP due to Regneration!!"
+                        embed.add_field(name="", value=message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+
+
+                    if not miss:
+                        if fighter2.endurance > battle_round:
+                            dmg = int(((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult) *0.35)
+                        else:
+                            dmg = int((((fighter1.current_atk*fighter1.atk)+638000)/(8.7 * fighter2.df)) * fighter1.ele_mult * fighter1.critical_mult)
+                        fighter2.hp -= dmg
+
+                        fighter1.hp += int(dmg*fighter1.lifesteal*(1+fighter1.healing_bonus))
+                        if fighter1.hp > fighter1.max_hp:
+                            fighter1.hp = fighter1.max_hp
+
+                        embed = displayHP(user_card, oppo, battle_round)
+                        if talent_message != None:
+                            embed.add_field(name="", value=talent_message, inline=False)
+
+
+                    if miss:
+                        embed.add_field(name="", value=f"**{fighter2.name}** manages to evade **{fighter1.name}!!**", inline=False)
+                    elif fighter1.critical_mult > 1:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}**. **CRITICAL HIT!!**\n {calcEffect( fighter1.ele_mult )}", inline=False)
+                    else:
+                        embed.add_field(name="", value=f"**{fighter1.name}** deals **{dmg}** to **{fighter2.name}.**\n {calcEffect( fighter1.ele_mult )}", inline=False)
+
+                    embed = updateEmbed(user_card, oppo, embed)
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
 
-                if player_hp > 0:
+                    ## TIME BOMBs
+                    if fighter1.recoil and fighter2.recoil:
+                        damage = round(fighter1.max_hp*0.03)
+                        fighter1.hp -= damage
+                        message = f"**{fighter1.name}** is affected by Recoil, taking __{damage}__ damage!!"
+                        embed = updateEmbed(user_card, oppo, embed)
+                        embed.add_field(name="", value=message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+
+                        damage = round(fighter2.max_hp*0.03)
+                        fighter2.hp -= damage
+                        message = f"**{fighter2.name}** is affected by Recoil, taking __{damage}__ damage!!"
+                        embed = updateEmbed(user_card, oppo, embed)
+                        embed.add_field(name="", value=message, inline=False)
+                        await bt.edit(embed=embed)
+                        await asyncio.sleep(2.5)
+                    else:
+                        if fighter2.tbomb > 0 and battle_round == fighter2.tbomb:
+                            fighter2.tbomb = False
+
+                            if random.randint(1, 10) == 1:
+                                message = f"**{fighter1.name}**'s Time Bomb misfired causing 0 damage to **{fighter2.name}** D:"
+                            else:
+                                damage = round(fighter1.current_atk*0.3)
+                                fighter2.hp -= damage
+
+                                message = f"**{fighter1.name}**'s Time Bomb exploded, dealing __{damage}__ true damage\n to **{fighter2.name}**!!"
+
+
+                            embed = updateEmbed(user_card, oppo, embed)
+                            embed.add_field(name="", value=message, inline=False)
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+
+                        elif fighter2.poison > 0: ## Fighter 2 is poisoned
+                            if random.randint(1, 10) == 1:
+                                fighter2.poison = 0 ## RESISTS
+                                message = f"**{fighter2.name}** was affected by Poison, but they **resisted**!! D:"
+                            else:
+                                fighter2.hp -= round(fighter2.max_hp * fighter2.poison * 0.05)
+                                message = f"**{fighter2.name}** was affected by Poison, and suffers __{round(fighter2.poison*0.05*100)}%__ of their MAX HP D:"
+                                fighter2.poison += 1
+
+                            embed = updateEmbed(user_card, oppo, embed)
+                            embed.add_field(name="", value=message, inline=False)
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+
+
+                while user_card.hp > 0 and oppo.hp > 0:
+                    ## Determine who goes first 
+
+                    if user_card.spd > oppo.spd:
+                        #Player is faster
+                        await battleRound( user_card, oppo )
+                        if user_card.hp > 0 and oppo.hp > 0:
+                            await battleRound( oppo, user_card )
+                        else:
+                            break
+
+                    elif oppo.spd > user_card.spd:
+                        await battleRound(oppo, user_card)
+                        if user_card.hp > 0 and oppo.hp > 0:
+                            await battleRound( user_card, oppo )
+                        else:
+                            break
+
+                    else:
+                        await battleRound(user_card, oppo) ## Handle same speed later
+                        if user_card.hp > 0 and oppo.hp > 0:
+                            await battleRound( oppo, user_card )
+                        else:
+                            break
+
+                    
+                    battle_round += 1
+
+                if user_card.hp > 0:
                     # Player Wins
+                    #rint("player wins")
                     wun_reward = int(loc*1.5*(floor*.8) + 100)
                     exp_reward = random.randint(1, 5)
 
@@ -478,38 +662,40 @@ class Game(commands.Cog):
 
 
                     max_floor = parseFloor(user["maxloc"])
+                    max_loc = int(user["maxloc"])
                     highest_floor = len(series[realms[loc-1]])
-                    if floor == max_floor: ## Player clears a new floor
-                        if max_floor == highest_floor: ## Player completes a realm/location
-                            new_loc = str(loc+1) + ".001"
+                    if loc == max_loc:
+                        if floor == max_floor: ## Player clears a new floor
+                            if max_floor == highest_floor: ## Player completes a realm/location
+                                new_loc = str(loc+1) + ".001"
 
-                            embed = discord.Embed(
-                                title="Realm Cleared!!",
-                                description="Please proceed to the next Realm with `.loc n`!",
-                                color=0x00FF00
-                            )
-                            await ctx.send(embed=embed)
+                                embed = discord.Embed(
+                                    title="Realm Cleared!!",
+                                    description="Please proceed to the next Realm with `.loc n`!",
+                                    color=0x00FF00
+                                )
+                                await ctx.send(embed=embed)
 
-                        else:
-                            if floor+1 > 9:
-                                new_loc = str(loc) + ".0" + str(floor+1)
                             else:
-                                new_loc = str(loc) + ".00" + str(floor+1)
+                                if floor+1 > 9:
+                                    new_loc = str(loc) + ".0" + str(floor+1)
+                                else:
+                                    new_loc = str(loc) + ".00" + str(floor+1)
 
-                            embed = discord.Embed(
-                                title="Floor Cleared!!",
-                                description="Please proceed to the next Floor with `.fl n`!",
-                                color=0x00FF00
-                            )
-                            await ctx.send(embed=embed)
+                                embed = discord.Embed(
+                                    title="Floor Cleared!!",
+                                    description="Please proceed to the next Floor with `.fl n`!",
+                                    color=0x00FF00
+                                )
+                                await ctx.send(embed=embed)
 
 
-                        async with asqlite.connect(path_to_db+"player_data.db") as connection:
-                            async with connection.cursor() as cursor:
-                                user_id = str(ctx.author.id)
-                                await cursor.execute( """UPDATE Users set maxloc=? WHERE id=?""", ( new_loc, user_id ) )
+                            async with asqlite.connect(path_to_db+"player_data.db") as connection:
+                                async with connection.cursor() as cursor:
+                                    user_id = str(ctx.author.id)
+                                    await cursor.execute( """UPDATE Users set maxloc=? WHERE id=?""", ( new_loc, user_id ) )
 
-                                await connection.commit()
+                                    await connection.commit()
 
 
                 else:

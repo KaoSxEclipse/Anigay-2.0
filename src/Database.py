@@ -130,15 +130,43 @@ d = {
 		( 24, 'Angel Devil', 'Neutral', 88, 91, 73, 76, 'Life Sap' ),
 		( 25, 'Chainsaw man', 'Dark', 69, 102, 86, 69, 'Bloodthirster' ),
 		( 26, 'Denji', 'Neutral', 84, 88, 91, 70, 'Paralysis' ),
-		( 27, 'Himeno', 'Grass', 78, 93, 82, 72, 'Pain for Power' ),
+		( 27, 'Himeno', 'Grass', 78, 93, 82, 72, 'Pain For Power' ),
 		( 28, 'Makima', 'Dark', 84, 92, 80, 76, 'Miracle Injection' ),
 		( 29, 'Power', 'Dark', 73, 92, 86, 82, 'Regeneration' ),
 		( 30, 'Reze', 'Dark', 73, 101, 83, 70, 'Time Bomb' )
-	)
+	),
+	"Jojo's Bizzare Adventure": (
+		( 31, 'Dio Brando', 'Electric', 74, 88, 83, 81, 'Blood Surge' ),
+		( 32, 'Giorno Giovanna', 'Grass', 88, 84, 78, 78, 'Temporal Rewind' ),
+		( 33, 'Gyro Zeppli', 'Ground', 84, 89, 75, 80, 'Offensive Stance' ),
+		( 34, 'Jonathan Joestar', 'Water', 84, 90, 74, 77, 'Endurance' ),
+		( 35, 'Joseph Joestar', 'Light', 96, 88, 72, 70, 'Rejuvenation' ),
+		( 36, 'Josuke Higashikata', 'Ground', 92, 68, 88, 75, 'Endurance' ),
+		( 37, 'Jotaro Kujo', 'Neutral', 80, 90, 80, 75, 'Transformation' ),
+		( 38, 'Lisa Lisa', 'Water', 83, 89, 74, 82, 'Evasion' )
+	),
+	"Blue Lock": (
+		( 39, 'Gin Gagamaru', 'Ground', 87, 72, 101, 50, 'Protector' ),
+		( 40, 'Hyoma Chigiri', 'Water', 84, 85, 71, 99, 'Dexterity Drive' ),
+		( 41, 'Jinpachi Ego', 'Ground', 80, 82, 50, 88, 'Trick Room' ),
+		( 42, 'Meguru Bachira', 'Water', 90, 75, 81, 88, 'Celestial Influence' ),
+		( 43, 'Nagi Seishiro', 'Dark', 85, 93, 68, 86, 'Ultimate Combo' ),
+		( 44, 'Rensuke Kunigami', 'Fire', 78, 96, 82, 73, 'Elemental Strike' ),
+		( 45, 'Rin Itoshi', 'Ground', 82, 79, 90, 90, 'Vengeance' ),
+		( 46, 'Sae Itoshi', 'Water', 90, 90, 73, 80, 'Precision' ),
+		( 47, 'Yoichi Isagi', 'Grass', 85, 85, 83, 83, 'Breaker' )
+	),
+	"Attack on Titan": (
+		( 48, 'Annie Leonhart', 'Water', 96, 96, 65, 70, 'Transformation' ),
+		( 49, 'Armin Arlert', 'Ground', 70, 96, 73, 86, 'Evasion' ),
+		( 50, 'Colossal Titan', 'Ground', 95, 95, 95, 50, 'Recoil' ),
+		( 51, 'Eren Yaeger', 'Ground', 73, 68, 87, 95, 'Dexterity Drive' ),
+		( 52, 'Erwin Smith', 'Ground', 86, 87, 73, 77, 'Offensive Stance' ),
+		( 53, 'Historia Reiss', 'Light', 83, 77, 95, 73, 'Temporal Rewind' ),
+		( 54, 'Levi Ackerman', 'Ground', 75, 88, 74, 94, 'Evasion' ),
+		( 55, 'Mikasa Ackerman', 'Ground', 66, 83, 78, 93, 'Dexterity Drive' )
+	),
 }
-
-with open(path_to_db+"cards.json", "w") as file:
-		json.dump( d, file, indent=4 )
 
 async def dumpCard():
 	## id, name, hp ,atk, def, spd, talent
@@ -148,15 +176,20 @@ async def dumpCard():
 
 	async with asqlite.connect(path_to_db+"card_data.db") as connection:
 		async with connection.cursor() as cursor:
-			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 0, 'Zenith', 'Dark', 80, 80, 80, 80, 'Self Destruct' )" )
-			await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( 1, 'DPython', 'Light', 100, 100, 100, 100, 'White Justice' )" )
+			await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( 0, 'Zenith', 'Dark', 80, 80, 80, 80, 'Self Destruct' )" )
+			await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( 1, 'DPython', 'Light', 100, 100, 100, 100, 'White Justice' )" )
 
 			for series in d:
 				for card in d[series]:
 					print(card)
-					await cursor.execute( "INSERT OR IGNORE INTO Dex VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )", (card[0], card[1], card[2], card[3], card[4], card[5], card[6], card[7]) )
+					await cursor.execute( "INSERT OR REPLACE INTO Dex VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )", (card[0], card[1], card[2], card[3], card[4], card[5], card[6], card[7]) )
 
 			await connection.commit()
+
+
+
+#asyncio.run(dumpCard())
+
 
 
 
