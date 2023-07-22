@@ -2915,3 +2915,48 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Nam
 2023-07-22 12:58:33,600 - discord.client - INFO - logging in using static token
 2023-07-22 12:58:35,134 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7c7a836603ed7ebbde45faab21f362ef).
 2023-07-22 12:58:37,273 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 13:00:37,370 - discord.client - INFO - logging in using static token
+2023-07-22 13:00:38,844 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 562946636d4c51d9074f05e6413db2db).
+2023-07-22 13:00:41,077 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 13:01:24,522 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-22 13:01:35,118 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 602, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 455, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Talents.py", line 317, in applyTalent
+    message = f"**{fighter1.name}** uses Precison, increasing CRIT CHANCE by __{increase_crit_rate}%__ \n and increasing CRIT DMG to __{round(1.75+fighter.critical_bonus_dmg, 2)}__!!"
+NameError: name 'fighter' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'fighter' is not defined
+2023-07-22 13:01:58,888 - discord.client - INFO - logging in using static token
+2023-07-22 13:02:00,765 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 215d32f23ef20ae79cf6e47c687527aa).
+2023-07-22 13:02:02,986 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 13:03:50,142 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-22 13:26:15,387 - asyncio - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x7f7723f3a680>, 2206.99163582)]']
+connector: <aiohttp.connector.TCPConnector object at 0x7f7723c25660>
+2023-07-22 13:26:16,612 - discord.client - INFO - logging in using static token
+2023-07-22 13:26:18,125 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7253cf678de36d4ffbd65f36382363f5).
+2023-07-22 13:26:20,275 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 13:30:02,709 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-22 13:33:22,093 - discord.client - INFO - logging in using static token
+2023-07-22 13:33:23,253 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b56b0f9511a75390178cb9638230a52).
+2023-07-22 13:33:25,445 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 13:33:36,085 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command ".fl" is not found

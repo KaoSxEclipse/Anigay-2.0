@@ -314,7 +314,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 fighter1.critical_rate += increase_crit_rate
                 fighter1.critical_bonus_dmg += increase_crit_dmg
 
-                message = f"**{fighter1.name}** uses Precison, increasing CRIT CHANCE by __{increase_crit_rate}%__ \n and increasing CRIT DMG to __{round(1.75+fighter.critical_bonus_dmg, 2)}__!!"
+                message = f"**{fighter1.name}** uses Precison, increasing CRIT CHANCE by __{increase_crit_rate}%__ \n and increasing CRIT DMG to __{round(1.75+fighter1.critical_bonus_dmg, 2)}__!!"
                 return message
 
             if fighter1.talent == "Regeneration":
@@ -455,7 +455,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 else:
                     percent = 0.16
 
-                if fighter1.name in "Nezuko Kamado,".split(","):
+                if fighter1.name in "Nezuko Kamado,Rin Itoshi,".split(","):
                     damage = fighter2.current_atk*percent
                     t = "ATK"
                 elif fighter1.name in "Sakura Haruno,".split(","):

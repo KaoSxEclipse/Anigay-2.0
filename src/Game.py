@@ -547,14 +547,16 @@ class Game(commands.Cog):
                     ## TIME BOMBs
                     if fighter1.recoil and fighter2.recoil:
                         damage = round(fighter1.max_hp*0.03)
-                        message = f"**{fighter1.name}**is affected by Recoil, taking __{damage}__ damage!!"
+                        fighter1.hp -= damage
+                        message = f"**{fighter1.name}** is affected by Recoil, taking __{damage}__ damage!!"
                         embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
 
                         damage = round(fighter2.max_hp*0.03)
-                        message = f"**{fighter2.name}**is affected by Recoil, taking __{damage}__ damage!!"
+                        fighter2.hp -= damage
+                        message = f"**{fighter2.name}** is affected by Recoil, taking __{damage}__ damage!!"
                         embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
