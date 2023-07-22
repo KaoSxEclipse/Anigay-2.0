@@ -194,7 +194,7 @@ class FloorCard(UserCard):
 		self.evo = 1
 		self.location = location
 		self.floor = floor
-		self.level = self.location+(self.floor*2)
+		self.level = self.location*2+(self.floor*2)
 		self.element = card[2]
 		self.hp = card[3]
 		self.mana = 0

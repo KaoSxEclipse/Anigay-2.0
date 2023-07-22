@@ -169,7 +169,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 else:
                     percent = 0.16
 
-                if name in "Rensuke Kunigami,".split(","):
+                if fighter1.name in "Rensuke Kunigami,".split(","):
                     element = "Light"
                 else:
                     element = fighter1.element
@@ -193,7 +193,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 talent_effect = calcEleAdvantage(element, fighter2.element)
 
-                talent_damage = round(fighter1.current_atk * (1+percent) * talent_effect)
+                talent_damage = round(fighter1.current_atk * (percent) * talent_effect)
                 fighter2.hp -= talent_damage
                 fighter1.mana = 0
                 result = calcEffect(talent_effect)
@@ -405,7 +405,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                     damage = round(fighter2.max_hp*combo)
                     fighter2.hp -= damage
                 else:
-                    damage = round(fighter1.spd * fighter1.fighting_combo * speed_damage)
+                    damage = round(fighter1.spd * fighter1.ultimate_combo * speed_damage)
                     fighter2.hp -= damage
 
                 message = f"**{fighter1.name}** uses Ultimate Combo and increased the fighting stack to {fighter1.ultimate_combo}\n, inflicting __{damage}__ true damage to **{fighter2.name}**!!"
