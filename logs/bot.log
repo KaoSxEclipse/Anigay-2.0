@@ -2552,3 +2552,195 @@ Traceback (most recent call last):
   File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
     raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
 discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-21 23:56:52,362 - discord.client - INFO - logging in using static token
+2023-07-21 23:56:53,358 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2ba2a7c0a9e7e1012ef66dc4b7130484).
+2023-07-21 23:56:55,439 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 10:22:05,364 - discord.client - INFO - logging in using static token
+2023-07-22 10:22:06,401 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0c5565024e033c2e06c0132332a3138b).
+2023-07-22 10:22:08,492 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 12:10:45,150 - discord.client - ERROR - Attempting a reconnect in 0.23s
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/http.py", line 537, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Name or service not known]
+2023-07-22 12:10:45,397 - discord.client - ERROR - Attempting a reconnect in 0.32s
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/http.py", line 537, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Name or service not known]
+2023-07-22 12:10:45,721 - discord.client - ERROR - Attempting a reconnect in 5.99s
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1152, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 874, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 860, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 656, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 445, in wait_for
+    return fut.result()
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/gateway.py", line 372, in from_client
+    socket = await client.http.ws_connect(str(url))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/http.py", line 537, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 779, in _ws_connect
+    resp = await self.request(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/client.py", line 536, in _request
+    conn = await self._connector.connect(
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/home/iceman/.local/lib/python3.10/site-packages/aiohttp/connector.py", line 1166, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host gateway-us-east1-b.discord.gg:443 ssl:default [Name or service not known]
+2023-07-22 12:10:52,202 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2023-07-22 12:10:58,319 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f94d848e5c9febb13edaf09803ca04b1).
+2023-07-22 12:11:01,127 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 12:11:01,128 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Anigay.py", line 37, in on_ready
+    await bot.add_cog(Debug(bot))
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 777, in add_cog
+    raise discord.ClientException(f'Cog named {cog_name!r} already loaded')
+discord.errors.ClientException: Cog named 'Debug' already loaded
+2023-07-22 12:14:51,957 - discord.client - INFO - logging in using static token
+2023-07-22 12:14:54,499 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6031769854d9b4ab3e81dfaaf03ac536).
+2023-07-22 12:14:56,794 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 12:19:06,924 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-22 12:19:31,296 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 602, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 478, in battleRound
+    fighter1.critical_mult = 1.75+fighter1.crit_bonus_dmg
+AttributeError: 'FloorCard' object has no attribute 'crit_bonus_dmg'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'FloorCard' object has no attribute 'crit_bonus_dmg'
+2023-07-22 12:20:10,723 - discord.client - INFO - logging in using static token
+2023-07-22 12:20:12,557 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 43100e346ebe71c96bf916ed4f4c5f6b).
+2023-07-22 12:20:14,801 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 12:22:37,868 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at /home/iceman/.local/lib/python3.10/site-packages/discord/client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-22 12:29:04,188 - discord.client - INFO - logging in using static token
+2023-07-22 12:29:06,171 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e0a69abc941bb8d873b349f563ce5909).
+2023-07-22 12:29:08,227 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-22 12:29:08,425 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-22 12:31:13,454 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 616, in battle
+    await battleRound( oppo, user_card )
+  File "/home/iceman/___/Anigay-2.0/src/Game.py", line 455, in battleRound
+    talent_message = applyTalent( fighter1, fighter2, battle_round )
+  File "/home/iceman/___/Anigay-2.0/src/Talents.py", line 692, in applyTalent
+    fighter1.spd -= round(figher1.spd*decrease_spd)
+NameError: name 'figher1' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'figher1' is not defined
+2023-07-22 12:31:35,894 - discord.client - INFO - logging in using static token
+2023-07-22 12:31:37,253 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a6638506a7e8f8fbeb2bd57c5375adb8).
+2023-07-22 12:31:39,473 - root - INFO - Logged in as Anigay 2.0#7825

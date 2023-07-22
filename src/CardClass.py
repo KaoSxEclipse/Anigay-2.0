@@ -104,6 +104,7 @@ class UserCard:
 		self.poison = 0
 		self.talent_proc = False
 		self.ultimate_combo = 0
+		self.recoil = False
 
 
 	def calcRarity(self):
@@ -231,6 +232,7 @@ class FloorCard(UserCard):
 		self.poison = 0
 		self.talent_proc = False
 		self.ultimate_combo = 0
+		self.recoil = False
 
 	async def getDex(self):
 		async with asqlite.connect(path_to_db+"card_data.db") as connection:

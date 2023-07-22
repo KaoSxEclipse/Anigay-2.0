@@ -67,6 +67,22 @@ def applyTalent(fighter1, fighter2, battle_round):
                 return message
 
             if fighter1.talent == "Breaker":
+                if fighter1.rarity_s == "SR":
+                    decrease = 0.36
+                elif fighter1.rarity_s == "UR":
+                    decrease = 0.40
+                else:
+                    decrease = 0.32
+
+                if fighter1.name in "Yoichi Isagi,".split(","):
+                    fighter2.df = round(fighter2.df-fighter2.df*decrease)
+                    message = f"**{fighter1.name}** uses Breaker, smashing **{fighter2.name}**'s defenses, \ndecreasing their DEF by __{round(decrease*100)}%__"
+                else:
+                    fighter2.current_atk = round(fighter2.current_atk-fighter2.current_atk*decrease)
+                    message = f"**{fighter1.name}** uses Breaker, staggering **{fighter2.name}**'s attack, \ndecreasing their ATK by __{round(decrease*100)}%__"
+                fighter1.mana = 0
+
+                return message
 
             if fighter1.talent == "Devour":
                 if fighter1.rarity_s == "SR":
@@ -94,6 +110,26 @@ def applyTalent(fighter1, fighter2, battle_round):
                 message = f"**{fighter1.name}** devours **{fighter2.name}**'s HP for __{devour}__ true damage\n and increasing MAX HP by __[{hp_increase}]{round(increase*100)}%__"
                 return message
 
+            if fighter1.talent == "Dexterity Drive":
+                if fighter1.rarity_s == "SR":
+                    percent = 0.09
+                elif fighter1.rarity_s == "UR":
+                    percent = 0.10
+                else:
+                    percent - 0.08
+
+                ## Dex drive deals 80% of the difference
+
+                damage_base = round(fighter1.spd*percent)
+                damage = round((fighter1.spd-fighter2.spd)*0.8) + damage_base
+                fighter1.mana = 0
+
+                if fighter1.name in "Hyoma Chigiri,".split(","):
+                    element = "Ground"
+                else:
+                    element = fighter1.element
+
+                message = f"**{fighter1.name}** uses Dexterity Drive, inflicting __{damage}__ {element} damage\n to **{fighter2.name}**!!" + effect
 
             if fighter1.talent == "Double-edged Strike":
                 if fighter1.rarity_s == "SR":
@@ -133,21 +169,21 @@ def applyTalent(fighter1, fighter2, battle_round):
                 else:
                     element = fighter1.element
 
-                if element = "Water":
+                if element == "Water":
                     effect = "conjures a foaming whirlpool"
-                if element = "Fire":
+                if element == "Fire":
                     effect = "sparks a fire tornado"
-                if element = "Ground":
+                if element == "Ground":
                     effect = "Summons a meteor"
-                if element = "Electric":
+                if element == "Electric":
                     effect = "channels great lightning"
-                if element = "Grass":
+                if element == "Grass":
                     effect = "shoots leave blades"
-                if element = "Dark":
+                if element == "Dark":
                     effect = "twists the darkness"
-                if element = "Light":
+                if element == "Light":
                     effect = "redirects a light ray"
-                if element = "Neutral":
+                if element == "Neutral":
                     effect = "bends space"
 
                 talent_effect = calcEleAdvantage(element, fighter2.element)
@@ -269,7 +305,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.mana = 0
                 if fighter1.critical_rate > 100:
-                    figher1.critical_rate = 100
+                    fighter1.critical_rate = 100
                 fighter1.critical_rate += increase_crit_rate
                 fighter1.critical_bonus_dmg += increase_crit_dmg
 
@@ -301,7 +337,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 if fighter1.healing_bonus > 0.5:
                     fighter1.healing_bonus = 0.5
 
-                message = f"**{fighter1.name}** uses Rejuvenation, healing for __{healed_amount}__ HP \n and increasing all healing effects by {round(effect*100)}"
+                message = f"**{fighter1.name}** uses Rejuvenation, healing for __{healed_amount}__ HP \n and increasing all healing effects by {round(effect*100)}%"
                 return message
 
             if fighter1.talent == "Time Bomb":
@@ -359,7 +395,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.ultimate_combo += 1
                 fighter1.mana = 0
-                if figher1.ultimate_combo == 3:
+                if fighter1.ultimate_combo == 3:
                     fighter1.ultimate_combo = 0
                     damage = round(fighter2.max_hp*combo)
                     fighter2.hp -= damage
@@ -587,7 +623,7 @@ def applyTalent(fighter1, fighter2, battle_round):
         if fighter1.talent == "Protector":
             if not fighter1.talent_proc:
                 if fighter1.hp < fighter1.max_hp*0.25:
-                    fighter1.talent_proc = True:
+                    fighter1.talent_proc = True
 
                     if fighter1.rarity_s == "SR":
                         healing = 0.36
@@ -603,9 +639,16 @@ def applyTalent(fighter1, fighter2, battle_round):
                     fighter1.hp += healed_amount
                     fighter1.df += fighter1.df*increase_def
 
-                    message = f"**{fighter1.name}** uses Protector, restoring __{healed_amount}__ HP and raisint DEF by __{round(increase_def*100)}%__!!"
+                    message = f"**{fighter1.name}** uses Protector, restoring __{healed_amount}__ HP and raising DEF by __{round(increase_def*100)}%__!!"
                     return message
 
+        if fighter1.talent == "Recoil":
+            if fighter1.recoil == False:
+                fighter1.recoil = True
+                fighter2.recoil = True
+
+                message = f"**{fighter1.name}** uses Recoil, inflicting Recoil on both parties!!"
+                return message
 
         if fighter1.talent == "Self Destruct":
             if battle_round == 1:
@@ -646,7 +689,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 fighter1.current_atk += round(fighter1.atk*increase)
                 fighter1.max_hp += round(fighter1.max_hp*increase)
-                fighter1.spd -= round(figher1.spd*decrease_spd)
+                fighter1.spd -= round(fighter1.spd*decrease_spd)
 
                 message = f"**{fighter1.name}** uses Transformation, increasing ATK and MAX HP by __{round(increase*100)}%__ \n at the cost of __{round(decrease_spd*100)}%__ of their SPD!!"
                 return message

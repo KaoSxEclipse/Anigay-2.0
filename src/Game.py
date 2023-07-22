@@ -426,7 +426,14 @@ class Game(commands.Cog):
                 async def battleRound( fighter1, fighter2 ):
                     if fighter1.stunned:
                         if fighter1.talent == "Recoil":
-                            pass
+                            embed = displayHP(user_card, oppo, battle_round)
+
+                            embed.add_field(name="", value=f"**{fighter1.name}** is immune to status effects due to Recoil", inline=False)
+                            fighter1.stunned = False
+                            fighter2.stunned = False
+
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
                         elif random.randint(1, 20) == 1:
                             embed = displayHP(user_card, oppo, battle_round)
 
@@ -468,9 +475,7 @@ class Game(commands.Cog):
                     if crit in range(1, fighter1.critical_rate+1):
                         #print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
                         #print(crit in range(1, fighter1.critical_rate+1))
-                        fighter1.critical_mult = 1.75+fighter1.crit_bonus_dmg
-
-
+                        fighter1.critical_mult = 1.75+fighter1.critical_bonus_dmg
 
                     if fighter1.max_mana > 0:
                         speed_multiplier = fighter1.spd/fighter2.spd
@@ -489,7 +494,7 @@ class Game(commands.Cog):
                         else:
                             speed_multiplier = 1
 
-                        mana_gained = int((fighter2.mana_regen*(fighter2.mana_regen_bonus)*(2-(fighter2.hp/fighter2.max_hp)))+(2*(fighter2.mana_regen*(fighter2.mana_regen_bonus)/battle_round)*speed_multiplier)
+                        mana_gained = int((fighter2.mana_regen*(fighter2.mana_regen_bonus)*(2-(fighter2.hp/fighter2.max_hp)))+(2*(fighter2.mana_regen*(fighter2.mana_regen_bonus)/battle_round)*speed_multiplier))
                         fighter2.mana += mana_gained
 
                     #print(fighter1.talent)
@@ -539,37 +544,52 @@ class Game(commands.Cog):
                     await bt.edit(embed=embed)
                     await asyncio.sleep(2.5)
 
-                    ## TIME BOMB
-                    if fighter2.tbomb > 0 and battle_round == fighter2.tbomb:
-                        fighter2.tbomb = False
-
-                        if random.randint(1, 10) == 1:
-                            message = f"**{fighter1.name}**'s Time Bomb misfired causing 0 damage to **{fighter2.name}** D:"
-                        else:
-                            damage = round(fighter1.current_atk*0.3)
-                            fighter2.hp -= damage
-
-                            message = f"**{fighter1.name}**'s Time Bomb exploded, dealing __{damage}__ true damage\n to **{fighter2.name}**!!"
-
-
+                    ## TIME BOMBs
+                    if fighter1.recoil and fighter2.recoil:
+                        damage = round(fighter1.max_hp*0.03)
+                        message = f"**{fighter1.name}**is affected by Recoil, taking __{damage}__ damage!!"
                         embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
 
-                    if fighter2.poison > 0: ## Fighter 2 is poisoned
-                        if random.randint(1, 10) == 1:
-                            fighter2.poison = 0 ## RESISTS
-                            message = f"**{fighter2.name}** was affected by Poison, but they **resisted**!! D:"
-                        else:
-                            fighter2.hp -= round(fighter2.max_hp * fighter2.poison * 0.05)
-                            message = f"**{fighter2.name}** was affected by Poison, and suffers __{round(fighter2.poison*0.05*100)}%__ of their MAX HP D:"
-                            fighter2.poison += 1
-
+                        damage = round(fighter2.max_hp*0.03)
+                        message = f"**{fighter2.name}**is affected by Recoil, taking __{damage}__ damage!!"
                         embed = updateEmbed(user_card, oppo, embed)
                         embed.add_field(name="", value=message, inline=False)
                         await bt.edit(embed=embed)
                         await asyncio.sleep(2.5)
+                    else:
+                        if fighter2.tbomb > 0 and battle_round == fighter2.tbomb:
+                            fighter2.tbomb = False
+
+                            if random.randint(1, 10) == 1:
+                                message = f"**{fighter1.name}**'s Time Bomb misfired causing 0 damage to **{fighter2.name}** D:"
+                            else:
+                                damage = round(fighter1.current_atk*0.3)
+                                fighter2.hp -= damage
+
+                                message = f"**{fighter1.name}**'s Time Bomb exploded, dealing __{damage}__ true damage\n to **{fighter2.name}**!!"
+
+
+                            embed = updateEmbed(user_card, oppo, embed)
+                            embed.add_field(name="", value=message, inline=False)
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
+
+                        elif fighter2.poison > 0: ## Fighter 2 is poisoned
+                            if random.randint(1, 10) == 1:
+                                fighter2.poison = 0 ## RESISTS
+                                message = f"**{fighter2.name}** was affected by Poison, but they **resisted**!! D:"
+                            else:
+                                fighter2.hp -= round(fighter2.max_hp * fighter2.poison * 0.05)
+                                message = f"**{fighter2.name}** was affected by Poison, and suffers __{round(fighter2.poison*0.05*100)}%__ of their MAX HP D:"
+                                fighter2.poison += 1
+
+                            embed = updateEmbed(user_card, oppo, embed)
+                            embed.add_field(name="", value=message, inline=False)
+                            await bt.edit(embed=embed)
+                            await asyncio.sleep(2.5)
 
 
                 while user_card.hp > 0 and oppo.hp > 0:
