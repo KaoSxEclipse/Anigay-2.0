@@ -13,6 +13,7 @@ from Currency import Currency
 from Dev import Dev
 from Game import Game
 from Start import ProfileStart
+from Shop import Shop
 
 # Set up Logging
 logging.basicConfig(
@@ -41,8 +42,9 @@ async def on_ready():
 	await bot.add_cog(Currency(bot))
 	await bot.add_cog(Card(bot))
 	await bot.add_cog(Game(bot))
+	await bot.add_cog(Shop(Shop))
 
 # Load Env file and load it then set the token var
-load_dotenv()
+load_dotenv("env")
 TOKEN = os.getenv("Token")
 bot.run(TOKEN, reconnect=True)

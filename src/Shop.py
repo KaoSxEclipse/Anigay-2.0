@@ -123,13 +123,11 @@ class Shop(commands.Cog):
                             await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
 
                             user_data = user[0]
-                            print(user_data["wuns"])
                             left = user_data["wuns"] - price
-                            print(price)
-                            print(left)
 
                             await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
                             await connection.commit()
+                    rng.append(price)
 
                     embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
 

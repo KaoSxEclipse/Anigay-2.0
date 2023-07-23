@@ -24,6 +24,10 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 
+with open("devids", "r") as f:
+    devids = json.load(f)
+
+
 class Dev(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -83,6 +87,100 @@ class Dev(commands.Cog):
 
                     await ctx.send(embed=embed)
 
+    @commands.hybrid_command(name="devbuy", description="Test command for shop items (dev only). Param: item type, item name")
+    async def devbuy(self, ctx, itemtype, itemname):
+        async with asqlite.connect(path_to_db+"player_data.db") as connection:
+            async with connection.cursor() as cursor:
+                user_id = ctx.author.id
+
+                await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
+                user = await cursor.fetchall()
+
+                await connection.commit()
+                if str(ctx.author.id) not in devids.keys():
+                    return
+
+                if user == []: # User not found in database
+                    embed = discord.Embed(title=f"Unregistered User",
+                                          description=f"Looks like you haven't started yet!! Type a!start!",
+                                          color=0xA80108)
+                    await ctx.send(embed=embed)
+                    return
+
+                if itemtype == None or itemname == None:  # Verify arguments
+                    itemtype = itemtype.lower()
+                    itemname = itemname.lower()
+                    embed = discord.Embed(title=f"Error!",
+                                          description=f"One or more arguments invalid",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+                elif not itemtype in ("rare", "epic", "legendary", "rigged"):
+                    embed = discord.Embed(title=f"Error!",
+                                          description=f"Invalid item type!!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+                elif not itemname in "pack":
+                    embed = discord.Embed(title=f"Error!",
+                                          description=f"Invalid item name!!",
+                                          color=0xF76103)
+                    await ctx.send(embed=embed)
+                else:
+                    await ctx.send("Summoner, you have bought a pack and received...")
+                    card_list = await Database.generateCardList()
+
+                    async with ctx.typing():
+                        desc = ""
+                        for x in range(5):
+
+                            name = random.choice(card_list)
+
+                            async with asqlite.connect(path_to_db + "card_data.db") as connection:
+                                async with connection.cursor() as cursor:
+                                    await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
+
+                                    card_index = await cursor.fetchall()
+
+                            if len(card_index) != 0:  # card is found
+                                card_data = card_index[0]
+
+                            card_index = card_data["dex"]
+
+                            card_list.remove(name)
+
+                            if itemtype == "rare":
+                                rarities = ['r', 'sr', 'ur']
+                                rng = [80, 19.5, 0.5]
+                                rarity = random.choices(rarities, rng, k=1)[0]
+                            elif itemtype == "epic":
+                                rarities = ['r', 'sr', 'ur']
+                                rng = [65, 33, 2]
+                                rarity = random.choices(rarities, rng, k=1)[0]
+                            elif itemtype == "legendary":
+                                rarities = ['r', 'sr', 'ur']
+                                rng = [50, 47, 3]
+                                rarity = random.choices(rarities, rng, k=1)[0]
+                            elif itemtype == "rigged":
+                                rarities = ['r', 'sr', 'ur']
+                                rng = [35, 60, 5]
+                                rarity = random.choices(rarities, rng, k=1)[0]
+
+                            await Database.generateCard( card_index, user_id, rarity, 1 )
+
+                            if rarity == "uc":
+                                rarity = "Uncommon"
+                            elif rarity == "r":
+                                rarity = "Rare"
+                            elif rarity == "sr":
+                                rarity = "Super Rare"
+                            elif rarity == "ur":
+                                rarity = "Ultra Rare"
+
+                            desc += f"{rarity} **{name}**\n\n"
+
+                        embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
+
+                        await asyncio.sleep(random.randrange(3, 5))
+                        await ctx.send(embed=embed)
 
     @commands.command(description='Syncs all commands globally. Only accessible to developers.')
     async def sync(self, ctx: Context, guilds: Greedy[discord.Object],
