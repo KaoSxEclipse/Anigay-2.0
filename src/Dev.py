@@ -16,7 +16,6 @@ from CardClass import *
 import random
 
 path_to_db = "../db/"
-devids = [533672241448091660, 301494278901989378, 318306707493093376, 552151385127256064, 384535679918669834, 471249775862218752]
 
 with open("CustomEmojis", "r") as f:
     emojis = json.load(f)
@@ -42,8 +41,8 @@ class Dev(commands.Cog):
                 user = await cursor.fetchall()
 
                 await connection.commit()
-                if ctx.author.id not in devids:
-                    return
+                if str(ctx.author.id) not in devids.keys():
+                    return await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")
 
                 if user == []: # User not found in database
                     embed = discord.Embed(title=f"Unregistered User",
@@ -76,12 +75,13 @@ class Dev(commands.Cog):
 
                             card_index = await cursor.fetchall()
 
-                    if len(card_index) != 0:  # card is found
-                        card_data = card_index[0]
+                            if len(card_index) != 0:  # card is found
+                                card_data = card_index[0]
 
-                    card_index = card_data["dex"]
+                            card_index = card_data["dex"]
 
-                    await Database.generateCard( card_index, user_id, rarity, 1 )
+                            await Database.generateCard( card_index, user_id, rarity, 1 )
+                            await connection.commit()
 
                     embed = discord.Embed(title=f"Card Summoned!", description=f"A {rarity.upper()} {name} was summoned", color=0x03F76A)
 
@@ -98,7 +98,7 @@ class Dev(commands.Cog):
 
                 await connection.commit()
                 if str(ctx.author.id) not in devids.keys():
-                    return
+                    return await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")
 
                 if user == []: # User not found in database
                     embed = discord.Embed(title=f"Unregistered User",
@@ -140,44 +140,45 @@ class Dev(commands.Cog):
 
                                     card_index = await cursor.fetchall()
 
-                            if len(card_index) != 0:  # card is found
-                                card_data = card_index[0]
+                                    card_data = card_index[0]
 
-                            card_index = card_data["dex"]
+                                    card_index = card_data["dex"]
 
-                            card_list.remove(name)
+                                    card_list.remove(name)
 
-                            if itemtype == "rare":
-                                rarities = ['r', 'sr', 'ur']
-                                rng = [80, 19.5, 0.5]
-                                rarity = random.choices(rarities, rng, k=1)[0]
-                            elif itemtype == "epic":
-                                rarities = ['r', 'sr', 'ur']
-                                rng = [65, 33, 2]
-                                rarity = random.choices(rarities, rng, k=1)[0]
-                            elif itemtype == "legendary":
-                                rarities = ['r', 'sr', 'ur']
-                                rng = [50, 47, 3]
-                                rarity = random.choices(rarities, rng, k=1)[0]
-                            elif itemtype == "rigged":
-                                rarities = ['r', 'sr', 'ur']
-                                rng = [35, 60, 5]
-                                rarity = random.choices(rarities, rng, k=1)[0]
+                                    if itemtype == "rare":
+                                        rarities = ['r', 'sr', 'ur']
+                                        rng = [80, 19.5, 0.5]
+                                        rarity = random.choices(rarities, rng, k=1)[0]
+                                    elif itemtype == "epic":
+                                        rarities = ['r', 'sr', 'ur']
+                                        rng = [65, 33, 2]
+                                        rarity = random.choices(rarities, rng, k=1)[0]
+                                    elif itemtype == "legendary":
+                                        rarities = ['r', 'sr', 'ur']
+                                        rng = [50, 47, 3]
+                                        rarity = random.choices(rarities, rng, k=1)[0]
+                                    elif itemtype == "rigged":
+                                        rarities = ['r', 'sr', 'ur']
+                                        rng = [35, 60, 5]
+                                        rarity = random.choices(rarities, rng, k=1)[0]
 
-                            await Database.generateCard( card_index, user_id, rarity, 1 )
+                                    await Database.generateCard( card_index, user_id, rarity, 1 )
+                                    await connection.commit()
 
-                            if rarity == "uc":
-                                rarity = "Uncommon"
-                            elif rarity == "r":
-                                rarity = "Rare"
-                            elif rarity == "sr":
-                                rarity = "Super Rare"
-                            elif rarity == "ur":
-                                rarity = "Ultra Rare"
+                                    if rarity == "uc":
+                                        rarity = "Uncommon"
+                                    elif rarity == "r":
+                                        rarity = "Rare"
+                                    elif rarity == "sr":
+                                        rarity = "Super Rare"
+                                    elif rarity == "ur":
+                                        rarity = "Ultra Rare"
 
-                            desc += f"{rarity} **{name}**\n\n"
+                                    desc += f"{rarity} **{name}**\n\n"
 
                         embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
+                        embed.set_author(name=ctx.author, icon_url=ctx.author.avatar.url)
 
                         await asyncio.sleep(random.randrange(3, 5))
                         await ctx.send(embed=embed)
@@ -222,7 +223,7 @@ class Dev(commands.Cog):
         await ctx.send(embed=discord.Embed(description=f"Synced the tree to {ret}/{len(guilds)}.", color=discord.Color.green()))
         print("Synced.")
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(aliases=["die"])
     async def reset(self, ctx, user: discord.User):
 
         async with asqlite.connect(path_to_db+"player_data.db") as connection:
@@ -254,9 +255,8 @@ class Dev(commands.Cog):
     async def devgive(self, ctx, user: discord.User, amount: int):
         async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
-                if ctx.author.id not in devids:
-                    await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")
-                    return
+                if str(ctx.author.id) not in devids.keys():
+                    return await ctx.send(f"{ctx.author.mention} You've found a Dev command, unfortunately you can't use it.")
 
                 user_id = str(user.id)
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))

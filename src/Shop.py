@@ -20,9 +20,16 @@ with open("CustomEmojis", "r") as f:
         exec(f"{key} = '{value}'")
 
 packs = {
-    "rare": [80, 19.5, 0.5, 50000],
-    "epic": [65, 33, 2, 70000],
-    "legendary": [50, 47, 3, 120000]
+    "rare": [80, 19.5, 0.5],
+    "epic": [65, 33, 2],
+    "legendary": [50, 47, 3]
+}
+
+
+price = {
+    "rare": 35000,
+    "epic": 70000,
+    "legendary": 120000
 }
 
 packtypes = list(packs.keys())
@@ -55,11 +62,11 @@ class Shop(commands.Cog):
         embed = discord.Embed(title=title, description=desc)
 
         for i in range(len(packs)):
-            embed.add_field(name=f"#{i+1} | {packtypes[i].capitalize()} Pack | {packs[packtypes[i]][3]:,} Wuns",
+            embed.add_field(name=f"#{i+1} | {packtypes[i].capitalize()} Pack | {price[packtypes[i]]:,} Wuns",
                             value=f"Contains | 5x Cards\n**["
-                                  f"{packs[packtypes[i]][0]} R / "
-                                  f"{packs[packtypes[i]][1]} SR / "
-                                  f"{packs[packtypes[i]][2]} UR]**",
+                                  f"{packs[packtypes[i]][0]}% R / "
+                                  f"{packs[packtypes[i]][1]}% SR / "
+                                  f"{packs[packtypes[i]][2]}% UR]**",
                             inline=False)
 
         await ctx.send(embed=embed)
@@ -86,8 +93,23 @@ class Shop(commands.Cog):
             if itemtype in packtypes:
                 rarities = ['r', 'sr', 'ur']
                 rng = packs[itemtype]
-                price = rng.pop(-1)
-                await ctx.send(f"Summoner, you have spent {price:,} Wuns and received...")
+                cost = price[itemtype]
+
+                async with asqlite.connect(path_to_db + "player_data.db") as connection:
+                    async with connection.cursor() as cursor:
+                        await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
+
+                        user_data = user[0]
+                        if user_data["wuns"] >= cost:
+                            left = user_data["wuns"] - cost
+                        else:
+                            left = cost - user_data["wuns"]
+                            return await ctx.send(f"Summoner {ctx.author}, you are short of {Wuns}**{left:,}** wuns for this item")
+
+                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
+                        await connection.commit()
+
+                await ctx.send(f"Summoner, you have spent {cost:,} Wuns and received...")
 
                 card_list = await Database.generateCardList()
 
@@ -103,33 +125,21 @@ class Shop(commands.Cog):
                                 await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
                                 card_index = await cursor.fetchall()
 
+                                card_data = card_index[0]
+
+                                card_index = card_data["dex"]
+
+                                card_list.remove(name)
+
+                                rarity = random.choices(rarities, rng, k=1)[0]
+
+                                await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
                                 await connection.commit()
-
-                        if len(card_index) != 0:  # card is found
-                            card_data = card_index[0]
-
-                        card_index = card_data["dex"]
-
-                        card_list.remove(name)
-
-                        rarity = random.choices(rarities, rng, k=1)[0]
-
-                        await Database.generateCard(card_index, user_id, rarity, 1)
 
                         desc += f"{await fullname(rarity)} **{name}**\n\n"
 
-                    async with asqlite.connect(path_to_db + "player_data.db") as connection:
-                        async with connection.cursor() as cursor:
-                            await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
-
-                            user_data = user[0]
-                            left = user_data["wuns"] - price
-
-                            await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
-                            await connection.commit()
-                    rng.append(price)
-
                     embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
+                    embed.set_author(name=ctx.author, icon_url=ctx.author.avatar.url)
 
-                    await asyncio.sleep(random.randrange(3, 5))
+                    await asyncio.sleep(random.randrange(2, 3))
                     await ctx.send(embed=embed)

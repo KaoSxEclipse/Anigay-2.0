@@ -2960,3 +2960,2146 @@ task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done
 2023-07-22 13:33:25,445 - root - INFO - Logged in as Anigay 2.0#7825
 2023-07-22 13:33:36,085 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
 discord.ext.commands.errors.CommandNotFound: Command ".fl" is not found
+2023-07-23 21:14:49,068 - discord.client - INFO - logging in using static token
+2023-07-23 21:17:03,775 - discord.client - INFO - logging in using static token
+2023-07-23 21:17:05,479 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f7a3918c5f72afe3800eeef78374d6ea).
+2023-07-23 21:17:07,709 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:17:09,245 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:24:33,461 - discord.client - INFO - logging in using static token
+2023-07-23 21:24:35,137 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1db12f20b992c5932f1245aa6c83fbe6).
+2023-07-23 21:24:37,435 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:24:41,857 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:24:53,175 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-23 21:25:04,474 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-23 21:25:32,042 - discord.client - INFO - logging in using static token
+2023-07-23 21:25:33,799 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f6044f69e2044b98a721d09a74d2bb5d).
+2023-07-23 21:25:36,079 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:25:37,302 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-23 21:25:37,429 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 162, in inventory
+    await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:26:51,893 - discord.client - INFO - logging in using static token
+2023-07-23 21:26:53,490 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e358c70dc4a082b6617750518bc50252).
+2023-07-23 21:26:55,745 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:28:19,670 - discord.client - INFO - logging in using static token
+2023-07-23 21:28:21,433 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d3f4bb86f5a615ad6e546e33c5fb3c3f).
+2023-07-23 21:28:23,714 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:29:39,846 - discord.client - INFO - logging in using static token
+2023-07-23 21:29:41,614 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 64f1ce9a67e07e9536ce2b7067e34f6a).
+2023-07-23 21:29:43,935 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:29:48,531 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:29:59,616 - discord.client - INFO - logging in using static token
+2023-07-23 21:30:01,262 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9ca68bbf2a880cbb5b32411eb3dea31d).
+2023-07-23 21:30:03,163 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "inv" is not found
+2023-07-23 21:30:03,564 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:30:09,975 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 168, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:32:34,301 - discord.client - INFO - logging in using static token
+2023-07-23 21:32:35,854 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2efc6451619671095e109bf42a836686).
+2023-07-23 21:32:37,815 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "inv" is not found
+2023-07-23 21:32:38,102 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:32:44,964 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:33:41,135 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-23 21:36:28,722 - discord.client - INFO - logging in using static token
+2023-07-23 21:36:30,440 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d0921c29fe1ee4e7556ad23eeb60dcd8).
+2023-07-23 21:36:32,687 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:36:33,604 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-23 21:38:49,533 - discord.client - INFO - logging in using static token
+2023-07-23 21:38:51,327 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e9a18732dd05188ad4dda7d086708323).
+2023-07-23 21:38:53,760 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:51:24,384 - discord.client - INFO - logging in using static token
+2023-07-23 21:51:26,199 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ac53b17000c88f102fa1e5d5674c7b8e).
+2023-07-23 21:51:28,445 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:51:37,801 - discord.ext.commands.bot - ERROR - Ignoring exception in command devbuy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Dev.py", line 96, in devbuy
+    if str(ctx.author.id) not in devids.keys():
+                                 ^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'keys'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'list' object has no attribute 'keys'
+2023-07-23 21:54:38,879 - discord.client - INFO - logging in using static token
+2023-07-23 21:54:40,583 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 02ac8e9364e2fa783002a1dcda4e049b).
+2023-07-23 21:54:43,159 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:54:46,919 - discord.ext.commands.bot - ERROR - Ignoring exception in command devbuy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Dev.py", line 166, in devbuy
+    await Database.generateCard( card_index, user_id, rarity, 1 )
+                                                      ^^^^^^
+UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+2023-07-23 21:55:11,737 - discord.client - INFO - logging in using static token
+2023-07-23 21:55:13,373 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2fc70dd3e361d5ab3128d527e1b88e35).
+2023-07-23 21:55:15,786 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 21:57:10,175 - discord.client - INFO - logging in using static token
+2023-07-23 21:57:11,748 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aa60688a9fce000af8d78bff869bd1bf).
+2023-07-23 21:57:14,002 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 23:39:21,595 - discord.client - INFO - logging in using static token
+2023-07-23 23:39:23,214 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fc7c4fb1818f3548089a18ce4bf1c6a4).
+2023-07-23 23:39:25,490 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 23:41:35,015 - discord.client - INFO - logging in using static token
+2023-07-23 23:41:36,709 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 38fd41eebdb7ffc4bc8ad260ab14946b).
+2023-07-23 23:41:38,974 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 23:42:21,502 - discord.client - INFO - logging in using static token
+2023-07-23 23:42:23,185 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9ead879786a44c81935294e07d7ad46f).
+2023-07-23 23:42:25,549 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 23:42:34,771 - discord.client - INFO - logging in using static token
+2023-07-23 23:42:36,295 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e5afc69fd3254f0ccf54589b4a018764).
+2023-07-23 23:42:38,807 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "shop" is not found
+2023-07-23 23:42:38,851 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-23 23:44:00,449 - discord.client - INFO - logging in using static token
+2023-07-23 23:44:02,030 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b19b8e8cfd232bc8ddb230a49c34c0c5).
+2023-07-23 23:44:04,454 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:11:24,613 - discord.client - INFO - logging in using static token
+2023-07-24 00:11:26,400 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2d92a8fbfd15619e0095f4ce926dc2bc).
+2023-07-24 00:11:28,658 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:11:37,716 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:12:08,622 - discord.client - INFO - logging in using static token
+2023-07-24 00:12:10,204 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e248615a5a29226f577d528365bf955c).
+2023-07-24 00:12:12,496 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:12:15,353 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 120, in buy
+    await Database.generateCard(card_index, user_id, rarity, 1)
+                                                     ^^^^^^
+UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+2023-07-24 00:13:43,403 - discord.client - INFO - logging in using static token
+2023-07-24 00:13:45,179 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 334def82af91b1709f863eead3d7dcaa).
+2023-07-24 00:13:47,505 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:13:51,386 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:17:25,711 - discord.client - INFO - logging in using static token
+2023-07-24 00:17:28,456 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8f239fe42e6b37f546cc4ec9ab5ca3e4).
+2023-07-24 00:17:30,713 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:17:35,292 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:21:02,435 - discord.client - INFO - logging in using static token
+2023-07-24 00:21:04,092 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4548a8f122b06a64863fac14c0bca361).
+2023-07-24 00:21:06,358 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:21:09,420 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:23:17,557 - discord.client - INFO - logging in using static token
+2023-07-24 00:23:19,404 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0ff081ad6001c4aefa05e9d66c87a61c).
+2023-07-24 00:23:21,665 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:23:24,981 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 116, in buy
+    rng = packs[packtypes[i]].pop(3)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'pop'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'tuple' object has no attribute 'pop'
+2023-07-24 00:23:39,417 - discord.client - INFO - logging in using static token
+2023-07-24 00:23:41,004 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2a80913c9811b77e47a80d26999b4a59).
+2023-07-24 00:23:43,292 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:23:46,499 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 500, in choices
+    raise TypeError(
+TypeError: The number of choices must be a keyword argument: k=50000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: The number of choices must be a keyword argument: k=50000
+2023-07-24 00:25:27,981 - discord.client - INFO - logging in using static token
+2023-07-24 00:25:29,631 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2e2f419bbfdd31409ab283dc100f1ced).
+2023-07-24 00:25:32,113 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:25:36,261 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, weights=rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 500, in choices
+    raise TypeError(
+TypeError: The number of choices must be a keyword argument: k=50000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: The number of choices must be a keyword argument: k=50000
+2023-07-24 00:26:39,890 - discord.client - INFO - logging in using static token
+2023-07-24 00:26:41,612 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 53bcb57d2c20067a571528b1c2bd180d).
+2023-07-24 00:26:43,967 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:26:46,362 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=k)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 500, in choices
+    raise TypeError(
+TypeError: The number of choices must be a keyword argument: k=50000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: The number of choices must be a keyword argument: k=50000
+2023-07-24 00:28:23,429 - discord.client - INFO - logging in using static token
+2023-07-24 00:28:25,035 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: dfa096d73556dab290815b8e47f2c4ec).
+2023-07-24 00:28:27,423 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:28:28,501 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 500, in choices
+    raise TypeError(
+TypeError: The number of choices must be a keyword argument: k=50000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: The number of choices must be a keyword argument: k=50000
+2023-07-24 00:30:29,360 - discord.client - INFO - logging in using static token
+2023-07-24 00:30:31,088 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2c384ba668dc4dd25697941388b0ddf3).
+2023-07-24 00:30:33,366 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:30:38,897 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 116, in buy
+    rng = list(packs[packtypes[i]]).remove(-1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: list.remove(x): x not in list
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: list.remove(x): x not in list
+2023-07-24 00:32:06,185 - discord.client - INFO - logging in using static token
+2023-07-24 00:32:07,804 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a89b8146159f82a1fd748ba0c3e9fc53).
+2023-07-24 00:32:10,363 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:32:13,499 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, list(packs[packtypes[i]]), k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:33:14,566 - discord.client - INFO - logging in using static token
+2023-07-24 00:33:16,452 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a583913f587ade0220e23f4db88dcedd).
+2023-07-24 00:33:18,997 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:33:21,333 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:34:12,493 - discord.client - INFO - logging in using static token
+2023-07-24 00:34:14,147 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c2c23267daedd08cdbfc99de193b22ae).
+2023-07-24 00:34:16,695 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:34:18,342 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 121, in buy
+    desc += f"{fullname(rarity)} **{name}**\n\n"
+                        ^^^^^^
+UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: cannot access local variable 'rarity' where it is not associated with a value
+2023-07-24 00:35:26,850 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:37:05,902 - discord.client - INFO - logging in using static token
+2023-07-24 00:37:07,480 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 72eb0dd205c890aa6abe59f0da03295d).
+2023-07-24 00:37:09,738 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:39:47,082 - discord.client - INFO - logging in using static token
+2023-07-24 00:39:49,011 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a4a26efdf1765f71a1145b8495b8035a).
+2023-07-24 00:39:51,480 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:39:56,379 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:40:16,422 - discord.client - INFO - logging in using static token
+2023-07-24 00:40:17,962 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: da737a9a87b4d68ddc12c7f943406ec8).
+2023-07-24 00:40:20,240 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:40:23,460 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rng.pop(3)
+IndexError: pop index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: pop index out of range
+2023-07-24 00:41:43,862 - discord.client - INFO - logging in using static token
+2023-07-24 00:41:45,372 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3ba7825914f20ffa82a0a58aaf72e54f).
+2023-07-24 00:41:47,736 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:41:51,139 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rng.pop(3)
+IndexError: pop index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: pop index out of range
+2023-07-24 00:42:03,426 - discord.client - INFO - logging in using static token
+2023-07-24 00:42:04,915 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 10bbfc215983d042d98c1d018c645917).
+2023-07-24 00:42:07,414 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:42:10,774 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 118, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:42:50,701 - discord.client - INFO - logging in using static token
+2023-07-24 00:42:52,474 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3d533d3945ddf5ad073005b54fa9f388).
+2023-07-24 00:42:54,717 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:43:38,882 - discord.client - INFO - logging in using static token
+2023-07-24 00:43:40,653 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 508a74d3914d1d75202137ffdc8b643e).
+2023-07-24 00:43:43,089 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:45:32,158 - discord.client - INFO - logging in using static token
+2023-07-24 00:45:33,707 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: af5b370e870c9c14d2491ab2026559df).
+2023-07-24 00:45:35,966 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:45:37,704 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 123, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:47:14,819 - discord.client - INFO - logging in using static token
+2023-07-24 00:47:16,323 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fc6cd6cb38e49e0c4264ddb9b86ba47f).
+2023-07-24 00:47:18,953 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:47:24,618 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 123, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:47:55,036 - discord.client - INFO - logging in using static token
+2023-07-24 00:47:56,581 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: eb02e418b72c78576b2cd177515cc88c).
+2023-07-24 00:47:58,833 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:48:01,151 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 122, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:48:20,066 - discord.client - INFO - logging in using static token
+2023-07-24 00:48:21,609 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4980153fc2d8fa2163fe2bb25cdb7478).
+2023-07-24 00:48:23,851 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:48:25,460 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 123, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:49:22,107 - discord.client - INFO - logging in using static token
+2023-07-24 00:49:23,694 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6f1e100a4ba39743ba0d8fe96273da76).
+2023-07-24 00:49:26,057 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:49:28,656 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 119, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:50:53,991 - discord.client - INFO - logging in using static token
+2023-07-24 00:50:55,596 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 753db09e8cbcb3e45ffa284e93a0ed3d).
+2023-07-24 00:50:57,863 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:51:00,796 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 116, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:51:23,178 - discord.client - INFO - logging in using static token
+2023-07-24 00:51:24,748 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ce87128206b6e8753f9e54bfe6f4f0fe).
+2023-07-24 00:51:26,999 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:51:29,355 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 116, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:51:46,824 - discord.client - INFO - logging in using static token
+2023-07-24 00:51:48,428 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cc827629a32687ca35e934b5cd341b12).
+2023-07-24 00:51:50,764 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:51:53,624 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 117, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:54:31,320 - discord.client - INFO - logging in using static token
+2023-07-24 00:54:32,938 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 3b73f3e182360f4158401e557da64f9b).
+2023-07-24 00:54:35,409 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:54:38,296 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 116, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 00:54:57,888 - discord.client - INFO - logging in using static token
+2023-07-24 00:54:59,482 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 48e11850a24d7e28246701dfbf309fcc).
+2023-07-24 00:55:01,807 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:57:33,931 - discord.client - INFO - logging in using static token
+2023-07-24 00:57:35,648 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cdf41356f82384b65cc6354f1b5a6e87).
+2023-07-24 00:57:38,037 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:58:30,258 - discord.client - INFO - logging in using static token
+2023-07-24 00:58:32,034 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 586a373d9bc4c441759915f3d99dc30e).
+2023-07-24 00:58:34,528 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:59:49,265 - discord.client - INFO - logging in using static token
+2023-07-24 00:59:50,954 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 546cfa5cd1a92529eb366780702fe0b4).
+2023-07-24 00:59:53,257 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 00:59:58,367 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 122, in buy
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-24 01:00:50,766 - discord.client - INFO - logging in using static token
+2023-07-24 01:00:52,424 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2e9de94233349706ad08f201af58b68c).
+2023-07-24 01:00:54,886 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:01:00,342 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 120, in buy
+    await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-24 01:03:30,002 - discord.client - INFO - logging in using static token
+2023-07-24 01:03:31,741 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fcded2c8888ac3256c91e8ce963dd134).
+2023-07-24 01:03:34,015 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:04:44,786 - discord.client - INFO - logging in using static token
+2023-07-24 01:04:47,731 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 469b496e703934953ecfa9418515d851).
+2023-07-24 01:04:49,985 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:05:35,320 - discord.client - INFO - logging in using static token
+2023-07-24 01:05:36,899 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 51ad58e5f789caa61fe85c31131543ee).
+2023-07-24 01:05:39,328 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:06:00,492 - discord.client - INFO - logging in using static token
+2023-07-24 01:06:02,248 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8c01d876489d33a11a45db62658b9e98).
+2023-07-24 01:06:04,547 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:06:56,443 - discord.client - INFO - logging in using static token
+2023-07-24 01:06:58,058 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4b901e574cb7f00573580936fdf256e8).
+2023-07-24 01:07:00,328 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:07:02,517 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 127, in buy
+    user_data["wuns"] -= price
+    ~~~~~~~~~^^^^^^^^
+TypeError: 'sqlite3.Row' object does not support item assignment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'sqlite3.Row' object does not support item assignment
+2023-07-24 01:08:32,499 - discord.client - INFO - logging in using static token
+2023-07-24 01:08:34,044 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9882c636d3e45825e122066231eeaf09).
+2023-07-24 01:08:36,303 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:14:43,234 - discord.client - INFO - logging in using static token
+2023-07-24 01:14:44,869 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 21ccde964c3dca48eba6f5ba47b709ca).
+2023-07-24 01:14:47,161 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:15:28,924 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 115, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 01:17:18,998 - discord.client - INFO - logging in using static token
+2023-07-24 01:17:20,619 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d5ae0ada221ba633384b6ba82290a53d).
+2023-07-24 01:17:22,950 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:25:01,937 - discord.client - INFO - logging in using static token
+2023-07-24 01:25:03,546 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 37c1de64cdde4d28602ded88ccdf68b9).
+2023-07-24 01:25:06,048 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 01:40:57,630 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-24 13:03:22,087 - discord.client - INFO - logging in using static token
+2023-07-24 13:03:23,773 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8b169153faeb9bd408bc95a802b9371a).
+2023-07-24 13:03:26,221 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:05:27,267 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:05:30,704 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:06:11,387 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:07:51,739 - discord.client - INFO - logging in using static token
+2023-07-24 13:07:53,218 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 809aa5fbc99fd5d470fb8a41946b45d5).
+2023-07-24 13:07:55,674 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:08:06,147 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:08:24,395 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-24 13:10:46,637 - discord.client - INFO - logging in using static token
+2023-07-24 13:10:48,252 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f2980769456277657fe94411d3260a3c).
+2023-07-24 13:10:50,698 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:10:51,648 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:11:39,023 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-24 13:11:41,340 - discord.ext.commands.bot - ERROR - Ignoring exception in command reset
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-24 13:11:49,187 - discord.ext.commands.bot - ERROR - Ignoring exception in command give
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: user is a required argument that is missing.
+2023-07-24 13:12:01,900 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:12:04,422 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:12:26,415 - discord.client - INFO - logging in using static token
+2023-07-24 13:12:28,078 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a8c734d0668971be6f80fe7a94ef47b7).
+2023-07-24 13:12:30,348 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:13:53,899 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-24 13:15:08,248 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:15:42,914 - discord.client - INFO - logging in using static token
+2023-07-24 13:15:44,647 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 02aa06529a81a9b04ef057e00155a375).
+2023-07-24 13:15:47,180 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:15:52,497 - discord.ext.commands.bot - ERROR - Ignoring exception in command devbuy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: itemtype is a required argument that is missing.
+2023-07-24 13:16:11,584 - discord.ext.commands.bot - ERROR - Ignoring exception in command devbuy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: itemtype is a required argument that is missing.
+2023-07-24 13:17:13,449 - discord.ext.commands.bot - ERROR - Ignoring exception in command devbuy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1021, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 938, in prepare
+    await self._parse_arguments(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\hybrid.py", line 531, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 845, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 697, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: itemname is a required argument that is missing.
+2023-07-24 13:18:24,148 - discord.client - INFO - logging in using static token
+2023-07-24 13:18:25,734 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 664719b361d564830e4bff0034272a41).
+2023-07-24 13:18:28,177 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:19:02,197 - discord.client - INFO - logging in using static token
+2023-07-24 13:19:03,749 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ad6bff6c3c9c99345b39ef4a97df3635).
+2023-07-24 13:19:06,315 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:20:37,544 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:20:50,370 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:21:05,688 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:21:07,972 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 13:25:10,858 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-24 13:30:19,429 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "pack" is not found
+2023-07-24 13:32:24,659 - discord.client - INFO - logging in using static token
+2023-07-24 13:32:26,379 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d3d38da70e598852f3b55933f72cb286).
+2023-07-24 13:32:28,877 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:35:49,384 - discord.client - INFO - logging in using static token
+2023-07-24 13:35:51,234 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 370974458424898419a019a28e322e1a).
+2023-07-24 13:35:53,736 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:36:27,409 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 129, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 13:36:47,962 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 129, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 13:37:04,272 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 129, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 13:37:33,976 - discord.client - INFO - logging in using static token
+2023-07-24 13:37:35,601 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ee88b12ccfc4d1d6af40314f8afdaeb6).
+2023-07-24 13:37:38,020 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:42:25,821 - discord.client - INFO - logging in using static token
+2023-07-24 13:42:27,434 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8968b92f4b237d5d368c29a84490ed0f).
+2023-07-24 13:42:29,744 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:43:36,760 - discord.client - INFO - logging in using static token
+2023-07-24 13:43:38,490 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 68c2ada44cef585c0a32d67968016660).
+2023-07-24 13:43:40,811 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:44:08,875 - discord.client - INFO - logging in using static token
+2023-07-24 13:44:10,497 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cf6ec13653f8df26dbb233d8eb5e8006).
+2023-07-24 13:44:12,396 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "buy" is not found
+2023-07-24 13:44:12,730 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:56:32,976 - discord.client - INFO - logging in using static token
+2023-07-24 13:56:34,599 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 57fa5fb82f423f07298764ee3ab92e38).
+2023-07-24 13:56:36,845 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 13:57:48,110 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-24 14:01:31,521 - discord.client - INFO - logging in using static token
+2023-07-24 14:01:34,206 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e30f59c56d2529264f999baead21e71b).
+2023-07-24 14:01:36,449 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:05:58,571 - discord.client - INFO - logging in using static token
+2023-07-24 14:06:00,301 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0c49ba1c63ef753deabada30aaabbdbd).
+2023-07-24 14:06:02,853 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:10:58,553 - discord.client - INFO - logging in using static token
+2023-07-24 14:11:00,293 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a686b97f2cf182e40c32b80a8be8e703).
+2023-07-24 14:11:02,790 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:11:27,188 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 128, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:11:27,861 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 128, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:11:53,596 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 128, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:13,534 - discord.client - INFO - logging in using static token
+2023-07-24 14:17:15,174 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f53a67a115482b6653fd70dab347f690).
+2023-07-24 14:17:17,554 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:17:24,766 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:25,308 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:30,559 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:31,111 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:32,615 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:49,646 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:51,239 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:17:58,834 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:18:02,880 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:18:28,479 - discord.client - INFO - logging in using static token
+2023-07-24 14:18:29,993 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 954e64f7147a4ebda4a79ef762c9c607).
+2023-07-24 14:18:32,184 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "buy" is not found
+2023-07-24 14:18:32,238 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:18:37,914 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 130, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:19:34,669 - discord.client - INFO - logging in using static token
+2023-07-24 14:19:36,377 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4c7b3f746fe4eb33afa9f785de3589c9).
+2023-07-24 14:19:38,853 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-24 14:20:25,668 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 128, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-24 14:20:26,033 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 128, in buy
+    rarity = random.choices(rarities, rng, k=1)[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\random.py", line 506, in choices
+    raise ValueError('The number of weights does not match the population')
+ValueError: The number of weights does not match the population
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: The number of weights does not match the population
+2023-07-26 07:29:47,425 - discord.client - INFO - logging in using static token
+2023-07-26 07:29:49,103 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9b2929aab78da2bbe823df9d4c8ff485).
+2023-07-26 07:29:51,665 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 07:39:40,523 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                                                     ~~~~~~~~~^^^^^^^
+IndexError: No item with that key
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: No item with that key
+2023-07-26 07:41:11,180 - discord.ext.commands.bot - ERROR - Ignoring exception in command shop
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 65, in shop
+    embed.add_field(name=f"#{i+1} | {packtypes[i].capitalize()} Pack | {packs[packtypes[i]][3]:,} Wuns",
+                                                                        ~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 07:41:43,659 - discord.client - INFO - logging in using static token
+2023-07-26 07:41:45,249 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: d4c643abd3adb8cd411657f56933789f).
+2023-07-26 07:41:47,631 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 07:46:50,466 - discord.client - INFO - logging in using static token
+2023-07-26 07:46:52,068 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c8fd07313694114eabcd624615a5d5ba).
+2023-07-26 07:46:54,450 - root - INFO - Logged in as Anigay 2.0#7825

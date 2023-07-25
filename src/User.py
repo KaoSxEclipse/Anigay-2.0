@@ -1,7 +1,7 @@
 import discord, json, random, asyncio, asqlite, datetime, logging
 from discord import *
 from discord import components
-from discord.components import  Button, ButtonStyle
+from discord.components import Button, ButtonStyle
 from discord.ui import Button, View
 from discord.ext import commands
 from discord.ext.commands import *
