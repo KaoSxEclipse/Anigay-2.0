@@ -5764,3 +5764,6 @@ Traceback (most recent call last):
   File "/home/iceman/.local/lib/python3.10/site-packages/discord/ext/commands/core.py", line 244, in wrapped
     raise CommandInvokeError(exc) from exc
 discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 10:48:27,124 - discord.client - INFO - logging in using static token
+2023-07-26 10:48:27,899 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5002a4c3cc5d98d46dd3d4dd095d28e7).
+2023-07-26 10:48:29,961 - root - INFO - Logged in as Anigay 2.0#7825

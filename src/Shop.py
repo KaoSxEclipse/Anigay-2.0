@@ -135,7 +135,7 @@ class Shop(commands.Cog):
 
                                         rarity = random.choices(rarities, rng, k=1)[0]
 
-                                        if rarity in "sr ur".split(" ")
+                                        if rarity in "sr ur".split(" "):
                                             await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
                                         else:
                                             await Database.generateFodder(owner=user_id, index=card_index)
