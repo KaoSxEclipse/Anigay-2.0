@@ -45,6 +45,9 @@ async def on_ready():
 	await bot.add_cog(Shop(Shop))
 
 # Load Env file and load it then set the token var
-load_dotenv("env")
+try:
+	load_dotenv(".env")
+except:
+	load_dotenv("env")
 TOKEN = os.getenv("Token")
 bot.run(TOKEN, reconnect=True)
