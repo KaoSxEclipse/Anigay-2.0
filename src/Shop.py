@@ -82,64 +82,67 @@ class Shop(commands.Cog):
                 user = await cursor.fetchall()
 
                 await connection.commit()
-
                 if user == []: # User not found in database
                     embed = discord.Embed(title=f"Unregistered User",
                                           description=f"Looks like you haven't started yet!! Type a!start!",
                                           color=0xA80108)
                     return await ctx.send(embed=embed)
 
-        if itemname in "pack":
-            if itemtype in packtypes:
-                rarities = ['r', 'sr', 'ur']
-                rng = packs[itemtype]
-                cost = price[itemtype]
+                if itemname in "pack":
+                    if itemtype in packtypes:
+                        cost = price[itemtype]
 
-                async with asqlite.connect(path_to_db + "player_data.db") as connection:
-                    async with connection.cursor() as cursor:
-                        await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
-
-                        user_data = user[0]
-                        if user_data["wuns"] >= cost:
-                            left = user_data["wuns"] - cost
-                        else:
-                            left = cost - user_data["wuns"]
-                            return await ctx.send(f"Summoner {ctx.author}, you are short of {Wuns}**{left:,}** wuns for this item")
-
-                        await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
-                        await connection.commit()
-
-                await ctx.send(f"Summoner, you have spent {cost:,} Wuns and received...")
-
-                card_list = await Database.generateCardList()
-
-                async with ctx.typing():
-
-                    desc = ""
-                    for x in range(5):  # 5 cards per pack
-                        name = random.choice(card_list)
-
-                        async with asqlite.connect(path_to_db + "card_data.db") as connection:
+                        async with asqlite.connect(path_to_db + "player_data.db") as connection:
                             async with connection.cursor() as cursor:
+                                await cursor.execute("SELECT * FROM Users WHERE id=?", (ctx.author.id,))
 
-                                await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
-                                card_index = await cursor.fetchall()
+                                user_data = user[0]
+                                if user_data["wuns"] >= cost:
+                                    left = user_data["wuns"] - cost
+                                else:
+                                    left = cost - user_data["wuns"]
+                                    return await ctx.send(f"Summoner {ctx.author}, you are short of {Wuns}**{left:,}** wuns for this item")
 
-                                card_data = card_index[0]
-
-                                card_index = card_data["dex"]
-
-                                card_list.remove(name)
-
-                                rarity = random.choices(rarities, rng, k=1)[0]
-
-                                await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
+                                await cursor.execute("""UPDATE Users set wuns=? WHERE id=?""", (left, user_id))
                                 await connection.commit()
 
-                        desc += f"{await fullname(rarity)} **{name}**\n\n"
+                        await ctx.send(f"Summoner, you have spent {cost:,} Wuns and received...")
 
-                    embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
-                    embed.set_author(name=ctx.author, icon_url=ctx.author.avatar.url)
+                        async with ctx.typing():
 
-                    await asyncio.sleep(random.randrange(2, 3))
-                    await ctx.send(embed=embed)
+                            rarities = ['r', 'sr', 'ur']
+                            rng = packs[itemtype].copy()
+
+                            await packrng(rng)
+
+                            card_list = await Database.generateCardList()
+
+                            async with asqlite.connect(path_to_db + "card_data.db") as connection:
+                                async with connection.cursor() as cursor:
+
+                                    desc = ""
+                                    for x in range(5):  # 5 cards per pack
+                                        name = random.choice(card_list)
+
+                                        await cursor.execute("SELECT * FROM Dex WHERE name=?", (name,))
+                                        card_index = await cursor.fetchall()
+
+                                        card_data = card_index[0]
+
+                                        card_index = card_data["dex"]
+
+                                        card_list.remove(name)
+
+                                        rarity = random.choices(rarities, rng, k=1)[0]
+
+                                        await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
+
+                                        desc += f"{await fullname(rarity)} **{name}**\n\n"
+
+                                    await connection.commit()
+
+                            embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
+                            embed.set_author(name=ctx.author, icon_url=ctx.author.avatar.url)
+
+                            await asyncio.sleep(2)
+                            return await ctx.send(embed=embed)

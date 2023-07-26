@@ -13,7 +13,8 @@ talents = {"Active": ["Amplifier", "Balancing Strike", "Blaze", "Breaker", "Cele
 
            "PSV": ["Berserker", "Blood Surge", "Bloodthirster", "Celestial Influence", "Divine Blessing", "Dominance", "Grevious Limiter", "Life Sap", "Miracle Injection", "Overload", "Recoil", "Reflector", "Soul Stealer", "Transformation", "Underdog", "Executioner", "Protector", "Reversion", "Self Destruct", "Temporal Rewind"]}
 
-def calcEffect( markiplier ):
+
+def calcEffect(markiplier):
     if markiplier == 1:
         return ""
     elif markiplier == 1.5:
@@ -23,7 +24,8 @@ def calcEffect( markiplier ):
     elif markiplier == .75:
         return "It was **Not Very Effective**."
 
-def calcEleAdvantage( element1, element2 ):
+
+def calcEleAdvantage(element1, element2):
     '''Returns the first element advantage compared to the second'''
 
     elements = {"Light": {"Light": .75, "Dark": 1.5, "Neutral": 1, "Water": 1, "Ground": 1, "Electric": 1, "Fire": 1, "Grass": 1},
@@ -58,7 +60,9 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 if fighter1.name in "Inosuke Hashibira,".split(","):
                     def_increase = fighter1.df * boost
-                    #print("Defense Stat:", fighter1.df)
+
+                    # print("Defense Stat:", fighter1.df)
+
                     fighter1.df += def_increase
 
                 fighter1.mana = 0
@@ -118,7 +122,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                 else:
                     percent = 0.08
 
-                ## Dex drive deals 80% of the difference
+                # Dex drive deals 80% of the difference
 
                 damage_base = round(fighter1.spd*percent)
                 damage = round((fighter1.spd-fighter2.spd)*0.8) + damage_base
@@ -200,7 +204,6 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** uses Elemental Strike, {effect}, inflicting\n __{talent_damage}__ damage to **{fighter2.name}**,!!\n" + result
                 return message
-
 
             if fighter1.talent == "Endurance":
                 fighter1.endurance = battle_round + 3
@@ -319,7 +322,7 @@ def applyTalent(fighter1, fighter2, battle_round):
 
             if fighter1.talent == "Regeneration":
                 fighter1.regen_stacks += 1
-                fighter1.regen_lose.append(battle_round+4) ## When hero will lose next stack
+                fighter1.regen_lose.append(battle_round+4) # When hero will lose next stack
                 fighter1.mana = 0
 
                 message = f"**{fighter1.name}** uses Regeneration, granting themselves a stack of Regneration!!"
@@ -361,7 +364,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                     trick = 0.96
 
                 if fighter1.name in "Jinpachi Ego,".split(","):
-                    if fighter1.df >= fighter2.df: ## FAILED
+                    if fighter1.df >= fighter2.df:  # FAILED
                         message = f"**{fighter1.name}** uses Trick Room, but fails to steal **{fighter2.name}**'s DEF!!"
                         return message
                     else:
@@ -374,7 +377,7 @@ def applyTalent(fighter1, fighter2, battle_round):
                         message = f"**{fighter1.name}** uses Trick Room, twisting the world around them and \nempowering themselves with **{fighter2.name}**'s DEF!!"
                         return message
                 else:
-                    if fighter1.current_atk >= fighter2.current_atk: ## FAILED
+                    if fighter1.current_atk >= fighter2.current_atk:  # FAILED
                         message = f"**{fighter1.name}** uses Trick Room, but fails to steal **{fighter2.name}**'s ATK!!"
                         return message
                     else:
@@ -470,7 +473,6 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** uses {t} Vengenace, inflicting __{round(damage)}__ \ntrue damage to **{fighter2.name}**"
                 return message
-
 
     elif fighter1.talent in talents["PSV"]:
         if fighter1.talent == "Berserker":
@@ -664,7 +666,6 @@ def applyTalent(fighter1, fighter2, battle_round):
 
                 message = f"**{fighter1.name}** decreases all stats by __80%__, causing himself to **SELF DESTRUCT**!!"
                 return message
-
 
         if fighter1.talent == "Temporal Rewind":
             if battle_round == 4:

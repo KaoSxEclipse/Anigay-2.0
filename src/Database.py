@@ -3,6 +3,7 @@ import json
 
 path_to_db = "../db/"
 
+
 async def cardDB():
 	# Create the Card databases from scratch
 	async with asqlite.connect(path_to_db+"card_data.db") as connection:
@@ -35,7 +36,6 @@ async def playerDB():
 			await connection.commit()
 
 
-
 async def verifyUser( user_id ):
 	async with asqlite.connect(path_to_db+"player_data.db") as connection:
 		async with connection.cursor() as cursor:
@@ -44,7 +44,6 @@ async def verifyUser( user_id ):
 			await connection.commit()
 			
 			return user_data
-
 
 
 async def generateCard( index, owner, rarity, evo ):
@@ -83,7 +82,6 @@ async def generateFodder( owner, index  ):
 				new_id = int([max_id][0][0][0]) + 1
 
 			await cursor.execute( "INSERT OR IGNORE INTO Lower VALUES ( ?, ?, ?, 'r', 0 )", (new_id, owner, index) )			
-
 
 
 async def generateCardList():
@@ -167,6 +165,7 @@ d = {
 		( 55, 'Mikasa Ackerman', 'Ground', 66, 83, 78, 93, 'Dexterity Drive' )
 	),
 }
+
 
 async def dumpCard():
 	## id, name, hp ,atk, def, spd, talent

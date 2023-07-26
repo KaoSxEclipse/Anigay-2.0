@@ -5103,3 +5103,601 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Ind
 2023-07-26 07:46:50,466 - discord.client - INFO - logging in using static token
 2023-07-26 07:46:52,068 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c8fd07313694114eabcd624615a5d5ba).
 2023-07-26 07:46:54,450 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 08:05:41,149 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c8fd07313694114eabcd624615a5d5ba.
+2023-07-26 08:09:21,758 - discord.gateway - INFO - Shard ID None has successfully RESUMED session c8fd07313694114eabcd624615a5d5ba.
+2023-07-26 08:17:03,586 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 08:22:18,657 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 08:27:29,199 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 08:51:30,742 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 08:52:25,311 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 08:53:43,257 - discord.client - INFO - logging in using static token
+2023-07-26 08:53:44,879 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f202789359fddb73dc415e33a5388388).
+2023-07-26 08:53:47,434 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:03:04,795 - discord.client - INFO - logging in using static token
+2023-07-26 09:03:06,489 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6873b3130127aec8416e733178f87245).
+2023-07-26 09:03:08,737 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:03:33,211 - discord.client - INFO - logging in using static token
+2023-07-26 09:03:34,908 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 68cb94070dff72015e0a5dec1c1ae745).
+2023-07-26 09:03:37,495 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:04:55,928 - discord.client - INFO - logging in using static token
+2023-07-26 09:04:57,663 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7a4df427e82ac2444e6f2c3e64911724).
+2023-07-26 09:05:00,147 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:07:24,850 - discord.client - INFO - logging in using static token
+2023-07-26 09:07:26,519 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8a1c82ffbdc3e3e502a6f86a043a0583).
+2023-07-26 09:07:28,768 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:08:01,051 - discord.client - INFO - logging in using static token
+2023-07-26 09:08:02,647 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ecc3758ddfadcd75e304de890bed5588).
+2023-07-26 09:08:04,538 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "buy" is not found
+2023-07-26 09:08:04,996 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:09:39,308 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 09:10:42,775 - discord.client - INFO - logging in using static token
+2023-07-26 09:10:44,361 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 87cc3293c8567f21af92457d1e02bf35).
+2023-07-26 09:10:45,586 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-26 09:10:46,593 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:12:52,055 - discord.client - INFO - logging in using static token
+2023-07-26 09:12:53,642 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c1b72740f42d6a519f66593385d14911).
+2023-07-26 09:12:55,902 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:13:39,312 - discord.client - INFO - logging in using static token
+2023-07-26 09:13:40,995 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1f4555915f174ea1ca6a45fa78adfca4).
+2023-07-26 09:13:43,455 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:14:25,356 - discord.client - INFO - logging in using static token
+2023-07-26 09:14:26,960 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b32328cef998d32ab4ce932bcc9d386c).
+2023-07-26 09:14:29,359 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:20:26,968 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-26 09:24:48,750 - discord.client - INFO - logging in using static token
+2023-07-26 09:24:50,517 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: b1e3167a7c01ec1f9f14ccfdf4056bfb).
+2023-07-26 09:24:53,041 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:26:33,289 - discord.client - INFO - logging in using static token
+2023-07-26 09:26:35,048 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 543a3aab6bf877b715a7dc3e6236c234).
+2023-07-26 09:26:37,311 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:29:12,312 - discord.client - INFO - logging in using static token
+2023-07-26 09:29:13,923 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 48f82f1405434fccd8a4a0a972a85579).
+2023-07-26 09:29:16,513 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:34:38,936 - discord.client - INFO - logging in using static token
+2023-07-26 09:34:40,527 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b856f9f4b616756dfc8e55506c5f9b9).
+2023-07-26 09:34:42,795 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:35:03,526 - discord.client - INFO - logging in using static token
+2023-07-26 09:35:05,126 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 46cafc5994cc995306c7fbc3caac08db).
+2023-07-26 09:35:07,476 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:35:24,859 - discord.client - INFO - logging in using static token
+2023-07-26 09:35:26,378 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 51e7069b4dd523df3a2c9214c991a844).
+2023-07-26 09:35:28,789 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 09:35:46,591 - discord.client - INFO - logging in using static token
+2023-07-26 09:35:48,157 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4146d09e6c49a3b2b89f3cf931b51825).
+2023-07-26 09:35:50,790 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 14:29:04,834 - discord.client - INFO - logging in using static token
+2023-07-26 14:29:06,367 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8f15a0d9003bba8162de5239ab9ec37f).
+2023-07-26 14:29:08,733 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:20:41,528 - discord.client - INFO - logging in using static token
+2023-07-26 15:20:43,258 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 96e7f0e2af8dbab521bfd55be4a7e527).
+2023-07-26 15:20:45,510 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:20:49,648 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 94, in buy
+    cost = price[itemtype].copy()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'copy'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'int' object has no attribute 'copy'
+2023-07-26 15:20:52,085 - discord.ext.commands.bot - ERROR - Ignoring exception in command buy
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Shop.py", line 94, in buy
+    cost = price[itemtype].copy()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'copy'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'int' object has no attribute 'copy'
+2023-07-26 15:21:04,654 - discord.client - INFO - logging in using static token
+2023-07-26 15:21:06,194 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9d6226f96c144c06b821f4a8933a7435).
+2023-07-26 15:21:08,461 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:22:00,026 - discord.client - INFO - logging in using static token
+2023-07-26 15:22:01,600 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a75db44362fcc1a67fea7fc88b66c12d).
+2023-07-26 15:22:04,121 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:23:21,388 - discord.client - INFO - logging in using static token
+2023-07-26 15:23:23,084 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 62082f50d68a5e75ee3bed9d8d85834a).
+2023-07-26 15:23:25,575 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:23:47,246 - discord.client - INFO - logging in using static token
+2023-07-26 15:23:49,081 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6b5cfa2e4bba879a1c1eb208e92828ed).
+2023-07-26 15:23:51,490 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:25:15,415 - discord.client - INFO - logging in using static token
+2023-07-26 15:25:16,874 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6a69b5396996d2db37676d073dd618b4).
+2023-07-26 15:25:19,150 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:25:46,012 - discord.client - INFO - logging in using static token
+2023-07-26 15:25:47,620 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: afb3eda4a4a7d860885d00ce7d3a9a40).
+2023-07-26 15:25:50,153 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:32:41,401 - discord.client - INFO - logging in using static token
+2023-07-26 15:32:43,114 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6e488548e5854869f85637a35bd06d6a).
+2023-07-26 15:32:45,390 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:35:03,225 - discord.client - INFO - logging in using static token
+2023-07-26 15:35:04,799 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 707df7e759ecd72cce2e2d2b1c9c69de).
+2023-07-26 15:35:07,143 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:35:23,636 - discord.client - INFO - logging in using static token
+2023-07-26 15:35:25,204 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 556d95ca0e82a6bc8a35cc985b6821a0).
+2023-07-26 15:35:26,722 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "buy" is not found
+2023-07-26 15:35:27,697 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:35:50,295 - discord.client - INFO - logging in using static token
+2023-07-26 15:35:51,908 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 96120b0368d9f4f4cdeb3691be7f9d5f).
+2023-07-26 15:35:54,210 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:49:27,840 - discord.client - INFO - logging in using static token
+2023-07-26 15:49:29,848 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: c9d3d30e5300bd05c6c118ec692c452d).
+2023-07-26 15:49:32,316 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:50:39,539 - discord.client - INFO - logging in using static token
+2023-07-26 15:50:41,017 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 208a7f1016bdca8964abe71b0f9fec5a).
+2023-07-26 15:50:43,539 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:50:52,184 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 15:52:11,191 - discord.client - INFO - logging in using static token
+2023-07-26 15:52:12,764 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4ed3e477db385c975823e798c6ae3e1f).
+2023-07-26 15:52:15,043 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 15:52:37,522 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:01:19,825 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "statt" is not found
+2023-07-26 16:01:26,650 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:02:00,758 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:09:03,956 - discord.client - INFO - logging in using static token
+2023-07-26 16:09:05,647 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 141f1ed557df8a7f0c951e9ac5210b61).
+2023-07-26 16:09:07,906 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:10:09,734 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Start.py", line 60, in start
+    description=f"You've been given a *Super Rare* **{card_name}** to start your Journey!",
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'card_name' where it is not associated with a value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: cannot access local variable 'card_name' where it is not associated with a value
+2023-07-26 16:10:26,400 - discord.client - INFO - logging in using static token
+2023-07-26 16:10:28,055 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 900fdfc103ea7d3b53febfff2f336afa).
+2023-07-26 16:10:30,612 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:10:34,671 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                          ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-26 16:10:39,999 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                          ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-26 16:11:57,141 - discord.client - INFO - logging in using static token
+2023-07-26 16:11:58,738 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fbf977b60bfdc20142779f847a849926).
+2023-07-26 16:12:01,246 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:12:31,974 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:16:59,038 - discord.client - INFO - logging in using static token
+2023-07-26 16:17:00,760 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 218406858b943fded17d6676f6837996).
+2023-07-26 16:17:03,004 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:20:10,013 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:21:09,813 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:27:16,731 - discord.client - INFO - logging in using static token
+2023-07-26 16:27:18,377 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e1c68b0f7b6c747f9d75f16ed84009d0).
+2023-07-26 16:27:20,962 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:27:44,760 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:28:08,328 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:28:14,411 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:28:28,973 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:29:18,563 - discord.client - INFO - logging in using static token
+2023-07-26 16:29:20,192 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e1eac4d66fedfe6af931feeac3523ea).
+2023-07-26 16:29:22,547 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-26 16:29:44,744 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 165, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-26 16:30:31,107 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-26 16:30:39,151 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 120, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range

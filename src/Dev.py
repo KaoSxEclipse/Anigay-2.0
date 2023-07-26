@@ -186,7 +186,7 @@ class Dev(commands.Cog):
     @commands.command(description='Syncs all commands globally. Only accessible to developers.')
     async def sync(self, ctx: Context, guilds: Greedy[discord.Object],
                    spec: Optional[Literal["~", "*", "^"]] = None) -> None:
-        if ctx.author.id not in devids:
+        if str(ctx.author.id) not in devids:
             return
 
         embed = discord.Embed(description="Syncing...", color=discord.Color.red())
@@ -223,19 +223,19 @@ class Dev(commands.Cog):
         await ctx.send(embed=discord.Embed(description=f"Synced the tree to {ret}/{len(guilds)}.", color=discord.Color.green()))
         print("Synced.")
 
-    @commands.hybrid_command(aliases=["die"])
+    @commands.hybrid_command(aliases=[""])
     async def reset(self, ctx, user: discord.User):
 
         async with asqlite.connect(path_to_db+"player_data.db") as connection:
             async with connection.cursor() as cursor:
-                if ctx.author.id not in devids:
+                if str(ctx.author.id) not in devids:
                     return
+                print("1")
                 user_id = str(user.id)
                 await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
                 user_data = await cursor.fetchall()
 
-
-                if len(user_data) != 0:  ## User is found
+                if len(user_data) != 0:  # User is found
                     user_data = user_data[0]
                     balance = user_data["wuns"]
                     new_balance = user_data["wuns"] * 0
@@ -244,12 +244,12 @@ class Dev(commands.Cog):
                     embed = discord.Embed(title=f"a Dev has cursed you",
                                           description=f"{ctx.author} has taken away {Wuns}{balance_readable} wuns from your account",
                                           color=0xA80108)
-                    await ctx.send(embed=embed)
-                else:  ## User not found
+                else:  # User not found
                     embed = discord.Embed(title=f"{user.display_name} not found",
                                           description=f"Have {user.mention} type a!start!",
                                           color=0xA80108)
-                    await ctx.send(embed=embed)
+
+                await ctx.send(embed=embed)
 
     @commands.hybrid_command(name="devgive", aliases=['grant'])
     async def devgive(self, ctx, user: discord.User, amount: int):

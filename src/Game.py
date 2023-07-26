@@ -25,6 +25,7 @@ with open("CustomEmojis", "r") as f:
     for key, value in emojis.items():
         exec(f"{key} = '{value}'")
 
+
 def parseFloor( location ):
     floor = str(location).split(".")[1]
 
@@ -50,7 +51,7 @@ def displayFloor( loc, floor ):
     embed.add_field(name="", value=f"**DEF:** {card.df}", inline=False)
     embed.add_field(name="", value=f"**SPD:** {card.spd}", inline=False)
     embed.add_field(name="Talent:", value=f"{card.talent}", inline=False)
-    #embed.set_footer(text=str(card.quote))
+    # embed.set_footer(text=str(card.quote))
 
     return embed
 
@@ -82,11 +83,11 @@ class Game(commands.Cog):
                 max_loc = int(str(user["maxloc"]).split(".")[0])
                 max_floor = parseFloor(user["maxloc"])
 
-                #print("Max Loc: ", max_loc)
-                #print("Max Floor: ", max_floor)
-                #print("Realms: ", len(realms))
+                # print("Max Loc: ", max_loc)
+                # print("Max Floor: ", max_floor)
+                # print("Realms: ", len(realms))
 
-                if loc == None:
+                if loc is None:
                     embed = discord.Embed(title=f"Realms",
                                           description=f"You are at Realm {current_loc} Floor {current_floor}",
                                           color=0xF76103)
@@ -117,34 +118,32 @@ class Game(commands.Cog):
                     else:
                         current_loc += 1
                         new_loc = float(str(current_loc)+".001")
-                        #print(location)
+                        # print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( new_loc, user_id ) )
 
                         card = series[realms[int(current_loc)-1]][0]
 
-                        #print(card)
+                        # print(card)
 
                         embed = discord.Embed(title=f"Realm {current_loc}, Floor 1 | {realms[int(current_loc)-1]}",
                                       description=f"{card[1]} stands before you.",
                                       color=0xF76103)
                         await ctx.send(embed=embed)
 
-
-
-                elif 0 < int(loc) <= len(realms): ## Existing Realms
-                    if int(loc) > max_loc: # Player has not cleared the previous location yet
+                elif 0 < int(loc) <= len(realms): # Existing Realms
+                    if int(loc) > max_loc:  # Player has not cleared the previous location yet
                         embed = discord.Embed(title=f"You have not unlocked this Realm!!",
                                           description=f"Please clear the previous Realms and floors before ascending to this realm.",
                                           color=0xF76103)
                         await ctx.send(embed=embed)
                     else:
                         new_loc = float(str(loc)+".001")
-                        #print(location)
+                        # print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( new_loc, user_id ) )
 
                         card = series[realms[int(loc)-1]][0]
 
-                        #print(card)
+                        # print(card)
 
                         embed = discord.Embed(title=f"Realm {loc}, Floor 1 | {realms[int(loc)-1]}",
                                       description=f"{card[1]} stands before you.",
@@ -158,7 +157,6 @@ class Game(commands.Cog):
                                           description=f"Please specify a legitamate realm number!!",
                                           color=0xF76103)
                     await ctx.send(embed=embed)
-
 
     @commands.hybrid_command(aliases=["fl"])
     async def floor(self, ctx, floor=None):
@@ -176,27 +174,26 @@ class Game(commands.Cog):
                     for i in series:
                         realms.append(i)
 
-                #max_loc = int(str(user["maxloc"]).split(".")[0])
+                # max_loc = int(str(user["maxloc"]).split(".")[0])
                 max_floor = parseFloor(user["maxloc"])
                 current_loc = int(str(user["location"]).split(".")[0])
                 current_floor = parseFloor(user["location"])
 
                 highest_floor = len(series[realms[current_loc-1]])
 
-                #print("Max Loc: ", max_loc)
-                #print("Max Floor: ", max_floor)
-                #print("Realms: ", realms)
-                #print("Num of Floors", highest_floor)
+                # print("Max Loc: ", max_loc)
+                # print("Max Floor: ", max_floor)
+                # print("Realms: ", realms)
+                # print("Num of Floors", highest_floor)
 
-
-                if floor == None:
+                if floor is None:
                     embed = discord.Embed(title=f"Realm {current_loc} | {realms[current_loc-1]}",
                                           description=f"You are at Floor **{current_floor}**",
                                           color=0xF76103)
 
                     index = 1
                     for i in range(highest_floor):
-                        ## print(series[realms[index-1]][i][1]) --> Prints name of each card
+                        # print(series[realms[index-1]][i][1]) --> Prints name of each card
                         if current_floor == index:
                             embed.add_field(name="", value=f"**Floor {index} |** **{series[realms[current_loc-1]][i][1]}**", inline=False)
                         else:
@@ -225,12 +222,12 @@ class Game(commands.Cog):
                             location = float(str(current_loc)+".0"+str(current_floor))
                         else:
                             location = float(str(current_loc)+".00"+str(current_floor))
-                        #print(location)
+                        # print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
 
                         card = series[realms[int(current_loc)-1]][int(current_floor)-1]
 
-                        #embed = discord.Embed(title=f"Realm {current_loc}, Floor {current_floor} | {realms[int(current_loc)-1]}",
+                        # embed = discord.Embed(title=f"Realm {current_loc}, Floor {current_floor} | {realms[int(current_loc)-1]}",
                         #                          description=f"You travel to the next floor where {card[1]} stands before you.",
                         #                          color=0x072A6C)
                         embed = displayFloor(current_loc, current_floor)
@@ -245,7 +242,7 @@ class Game(commands.Cog):
                                       color=0xF76103)
                         await ctx.send(embed=embed)
 
-                    elif floor<= 0 or floor > highest_floor:
+                    elif floor <= 0 or floor > highest_floor:
                         embed = discord.Embed(title=f"Invalid Floor!!",
                                               description=f"Please specify a legitamate Floor number!!",
                                               color=0xF76103)
@@ -257,20 +254,17 @@ class Game(commands.Cog):
                         else:
                             location = float(str(current_loc)+".00"+str(floor))
 
-                        #print(location)
+                        # print(location)
                         await cursor.execute( """UPDATE Users set location=? WHERE id=?""", ( location, user_id ) )
 
                         card = series[realms[int(current_loc)-1]][int(floor)-1]
 
-
-                        #embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
+                        # embed = discord.Embed(title=f"Realm {current_loc}, Floor {floor} | {realms[int(current_loc)-1]}",
                         #                      description=f"You travel to Floor {floor}, where {card[1]} stands before you.",
                         #                      color=0x072A6C)
                         embed = displayFloor(current_loc, floor)
 
                         await ctx.send(embed=embed)
-
-
 
     # Battle function TESTING!!
     @commands.hybrid_command(aliases=["bt"])
@@ -287,7 +281,7 @@ class Game(commands.Cog):
 
             hp_bar = "█" * hp_filled + "░" * hp_empty
 
-            ## Display Mana
+            # Display Mana
             if fighter.max_mana == 0:
                 mp_percentage = 0
             else:
@@ -295,7 +289,6 @@ class Game(commands.Cog):
 
             mp_filled = round(mp_percentage / 100 * mp_bar_length)
             mp_empty = mp_bar_length - mp_filled
-
 
             if fighter.mana >= 100 or mp_filled > 20:
                 fighter.mana = 100
@@ -360,7 +353,7 @@ class Game(commands.Cog):
                     series = json.load(file)
                     realms = [i for i in series]
 
-                async with asqlite.connect(path_to_db+"player_data.db") as connection: # Get Player data
+                async with asqlite.connect(path_to_db+"player_data.db") as connection:  # Get Player data
                     async with connection.cursor() as cursor:
                         user_id = str(ctx.author.id)
                         await cursor.execute("SELECT * FROM Users WHERE id=?", (user_id,))
@@ -389,16 +382,14 @@ class Game(commands.Cog):
 
                         await connection.commit()
 
-
-                #print(user_card["name"]) ## Raw Dex card. Will calculate the stats later.
-
+                # print(user_card["name"]) ## Raw Dex card. Will calculate the stats later.
 
                 # user card = dictionary
                 # Enemy Floor card is a Class
 
                 card = series[realms[loc-1]][floor-1]
 
-                #print("User Card ID:", c["uid"])
+                # print("User Card ID:", c["uid"])
                 user_card = UserCard(c, user_card)
                 user_card.battlePrep()
                 
@@ -412,16 +403,13 @@ class Game(commands.Cog):
                 mp_bar_length = 20
                 battle_round = 0
 
-
-                #CRITICAL_MULTIPLIER = 1
-
+                # CRITICAL_MULTIPLIER = 1
 
                 embed = displayHP(user_card, oppo, battle_round)
 
                 bt = await ctx.send(embed=embed)
                 await asyncio.sleep(1.5)
                 battle_round += 1
-
 
                 async def battleRound( fighter1, fighter2 ):
                     if fighter1.stunned:
@@ -466,15 +454,15 @@ class Game(commands.Cog):
                     miss = False
                     # Evasion / Critical rates
                     evasion = random.randint(1, 100)
-                    #print("Evasion Roll: ", evasion)
-                    #print(fighter1.evasion)
+                    # print("Evasion Roll: ", evasion)
+                    # print(fighter1.evasion)
                     if evasion in range(1, fighter2.evasion+1):
                         miss = True
 
                     crit = random.randint(1, 100)
                     if crit in range(1, fighter1.critical_rate+1):
-                        #print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
-                        #print(crit in range(1, fighter1.critical_rate+1))
+                        # print("Crit Roll: ", crit, "Range: ", range(1, fighter1.critical_rate+1))
+                        # print(crit in range(1, fighter1.critical_rate+1))
                         fighter1.critical_mult = 1.75+fighter1.critical_bonus_dmg
 
                     if fighter1.max_mana > 0:
