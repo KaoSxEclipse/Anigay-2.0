@@ -30,7 +30,6 @@ bot = commands.Bot(command_prefix=".", intents=intents, case_insensitive=True, s
 bot.help_command = MyHelp()
 
 
-
 # On_Ready runs the bot when the code is ran. Add's the cogs (commands)
 @bot.event
 async def on_ready():
@@ -45,9 +44,6 @@ async def on_ready():
 	await bot.add_cog(Shop(Shop))
 
 # Load Env file and load it then set the token var
-try:
-	load_dotenv(".env")
-except:
-	load_dotenv("env")
+load_dotenv("env")
 TOKEN = os.getenv("Token")
 bot.run(TOKEN, reconnect=True)

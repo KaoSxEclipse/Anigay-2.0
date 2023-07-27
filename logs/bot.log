@@ -5767,3 +5767,676 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Ind
 2023-07-26 10:48:27,124 - discord.client - INFO - logging in using static token
 2023-07-26 10:48:27,899 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5002a4c3cc5d98d46dd3d4dd095d28e7).
 2023-07-26 10:48:29,961 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 17:52:00,085 - discord.client - INFO - logging in using static token
+2023-07-27 17:53:01,275 - discord.client - INFO - logging in using static token
+2023-07-27 17:53:19,691 - discord.client - INFO - logging in using static token
+2023-07-27 17:53:21,558 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4987ae76f02b7e97f84f0e356655b8cd).
+2023-07-27 17:53:23,839 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 17:53:35,820 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 142, in inventory
+    await ctx.send(embed=embed, view=view)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\context.py", line 1024, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1563, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 744, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds: Embed size exceeds maximum size of 6000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds: Embed size exceeds maximum size of 6000
+2023-07-27 17:54:03,296 - discord.client - INFO - logging in using static token
+2023-07-27 17:54:04,939 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4f0f6f0d3862fe0f6e2cdbfe7d6b055d).
+2023-07-27 17:54:07,481 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 17:54:50,374 - discord.client - INFO - logging in using static token
+2023-07-27 17:54:52,296 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8253a2a45ae2d72d13218ee16a067f56).
+2023-07-27 17:54:54,675 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 17:59:07,857 - discord.client - INFO - logging in using static token
+2023-07-27 17:59:10,658 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4e3a2cf80c0fb6b72b4f9afb7faf21d1).
+2023-07-27 17:59:12,915 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:01:13,305 - discord.ext.commands.bot - ERROR - Ignoring exception in command start
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Start.py", line 60, in start
+    description=f"You've been given a *Super Rare* **{card_name}** to start your Journey!",
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'card_name' where it is not associated with a value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: UnboundLocalError: cannot access local variable 'card_name' where it is not associated with a value
+2023-07-27 18:02:02,105 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 126, in inventory
+    embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
+                                          ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-27 18:02:18,270 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 206, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+                                                                  ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-27 18:02:30,575 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 206, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+                                                                  ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-27 18:02:37,187 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 206, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+                                                                  ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-27 18:02:49,856 - discord.ext.commands.bot - ERROR - Ignoring exception in command select
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 206, in select
+    embed = discord.Embed(title=f"Card Selected!", description=f"{card.stats['name']} was selected for battle!", color=0x03F76A)
+                                                                  ~~~~~~~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: list indices must be integers or slices, not str
+2023-07-27 18:02:53,908 - discord.ext.commands.bot - ERROR - Ignoring exception in command battle
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Game.py", line 381, in battle
+    user_card = user_card[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-27 18:04:58,585 - discord.client - INFO - logging in using static token
+2023-07-27 18:05:00,639 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: afa1e6dbaf15f3e134484c71f81b57fd).
+2023-07-27 18:05:02,853 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:24:59,773 - discord.client - INFO - logging in using static token
+2023-07-27 18:25:04,365 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: f93b85621b9744c2f4e291d9fa03282c).
+2023-07-27 18:25:06,705 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:26:05,180 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 121, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-27 18:27:18,287 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(embed)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 17, in paginate
+    return await ctx.send(embed=self.pages[0])
+                 ^^^^^^^^
+AttributeError: 'Embed' object has no attribute 'send'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'send'
+2023-07-27 18:28:52,300 - discord.client - INFO - logging in using static token
+2023-07-27 18:28:54,367 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1455ad56e71aa46a76f41de311743c23).
+2023-07-27 18:28:56,724 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:29:05,372 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(embed)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 17, in paginate
+    return await ctx.send(embed=self.pages[0])
+                 ^^^^^^^^
+AttributeError: 'Embed' object has no attribute 'send'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'send'
+2023-07-27 18:34:05,217 - discord.client - INFO - logging in using static token
+2023-07-27 18:34:07,031 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 22a8226cb9e50ce52d1e1984f7bd2e20).
+2023-07-27 18:34:09,311 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:34:11,869 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(embed)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 24, in paginate
+    message = await ctx.send(embed=embed, view=self.get_buttons(self.current))
+                    ^^^^^^^^
+AttributeError: 'Embed' object has no attribute 'send'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'send'
+2023-07-27 18:36:45,617 - discord.client - INFO - logging in using static token
+2023-07-27 18:36:47,770 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4384a3968dd9ca87d349651a1f0be63d).
+2023-07-27 18:36:50,119 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:36:51,889 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 28, in paginate
+    interaction = await self.bot.wait_for('interaction', check=self.check, timeout=60)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 1939, in wait_for
+    future = self.loop.create_future()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 140, in __getattr__
+    raise AttributeError(msg)
+AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+2023-07-27 18:37:22,552 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 20, in paginate
+    raise IndexError('Page index out of range')
+IndexError: Page index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: Page index out of range
+2023-07-27 18:37:51,299 - discord.client - INFO - logging in using static token
+2023-07-27 18:37:53,436 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8947948dbcf408d3253f75477b7980ab).
+2023-07-27 18:37:56,034 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:38:02,002 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    async with paginator.paginate(ctx):
+TypeError: 'coroutine' object does not support the asynchronous context manager protocol
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'coroutine' object does not support the asynchronous context manager protocol
+2023-07-27 18:38:15,303 - discord.client - INFO - logging in using static token
+2023-07-27 18:38:16,838 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 020b3be16a3279f9fd1d6502cea0c3d9).
+2023-07-27 18:38:18,537 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "bt" is not found
+2023-07-27 18:38:19,437 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:38:22,457 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 28, in paginate
+    interaction = await self.bot.wait_for('interaction', check=self.check, timeout=60)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 1939, in wait_for
+    future = self.loop.create_future()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 140, in __getattr__
+    raise AttributeError(msg)
+AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+2023-07-27 18:39:00,315 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 171, in inventory
+    await cursor.execute("SELECT * FROM Dex")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 210, in execute
+    await self._post(self._cursor.execute, sql, parameters)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\asqlite\__init__.py", line 85, in _call_entry
+    result = entry.func(*entry.args, **entry.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed cursor.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProgrammingError: Cannot operate on a closed cursor.
+2023-07-27 18:40:15,202 - discord.client - INFO - logging in using static token
+2023-07-27 18:40:17,473 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 41780b82f7aa4b93ea0f68711797a765).
+2023-07-27 18:40:19,807 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:40:22,010 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 28, in paginate
+    interaction = await self.bot.wait_for('interaction', check=self.check, timeout=60)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 1939, in wait_for
+    future = self.loop.create_future()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 140, in __getattr__
+    raise AttributeError(msg)
+AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+2023-07-27 18:40:57,015 - discord.client - INFO - logging in using static token
+2023-07-27 18:41:00,028 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 034d052680807d9b0a3532df2c750e7c).
+2023-07-27 18:41:02,311 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:41:03,405 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 28, in paginate
+    interaction = await self.bot.wait_for('interaction', check=self.check, timeout=60)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 1939, in wait_for
+    future = self.loop.create_future()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 140, in __getattr__
+    raise AttributeError(msg)
+AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+2023-07-27 18:48:10,714 - discord.client - INFO - logging in using static token
+2023-07-27 18:48:12,605 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8d6818be3c15776d2f759d75bc15fb07).
+2023-07-27 18:48:15,144 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:48:17,622 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 28, in paginate
+    async with self.bot.wait_for('interaction', check=self.check, timeout=60) as interaction:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 1939, in wait_for
+    future = self.loop.create_future()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 140, in __getattr__
+    raise AttributeError(msg)
+AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: loop attribute cannot be accessed in non-async contexts. Consider using either an asynchronous main function and passing it to asyncio.run or using asynchronous initialisation hooks such as Client.setup_hook
+2023-07-27 18:50:23,223 - discord.client - INFO - logging in using static token
+2023-07-27 18:50:24,936 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 547584007f372c3c0650127b24d0dd7f).
+2023-07-27 18:50:27,449 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:51:29,605 - discord.client - INFO - logging in using static token
+2023-07-27 18:51:31,135 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8fe01268183a57c9d92848c2b1ef3460).
+2023-07-27 18:51:33,630 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:51:59,193 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() done, defined at C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py:433> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-27 18:58:36,969 - discord.client - INFO - logging in using static token
+2023-07-27 18:58:38,536 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2d4a059263e3db70af2f2afa23e2e8b6).
+2023-07-27 18:58:41,216 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:58:48,301 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 59, in paginate
+    await interaction.response.edit_message(embed=embed, view=self.get_buttons(self.current))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 888, in edit_message
+    raise InteractionResponded(self._parent)
+discord.errors.InteractionResponded: This interaction has already been responded to before
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: InteractionResponded: This interaction has already been responded to before
+2023-07-27 18:59:20,691 - discord.client - INFO - logging in using static token
+2023-07-27 18:59:22,326 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 324d6e6bf4f213b151ff929825a826f9).
+2023-07-27 18:59:24,914 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 18:59:29,996 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "." is not found
+2023-07-27 19:00:29,689 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "." is not found
+2023-07-27 19:07:11,293 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='discord.py: on_message' coro=<Client._run_event() running at C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py:441> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-07-27 19:08:03,436 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 58, in paginate
+    await interaction.response.edit_message(embed=embed, view=self.get_buttons(self.current))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 921, in edit_message
+    await adapter.create_interaction_response(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 219, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2023-07-27 19:08:30,076 - discord.client - INFO - logging in using static token
+2023-07-27 19:08:31,588 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 64a2bcc3ea2840ae72a4365bd574494e).
+2023-07-27 19:08:34,154 - root - INFO - Logged in as Anigay 2.0#7825
+2023-07-27 19:08:41,991 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 127, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-27 19:08:58,238 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 127, in inventory
+    await card.Query()
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\CardClass.py", line 28, in Query
+    self.data = self.data[0]
+                ~~~~~~~~~^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: IndexError: list index out of range
+2023-07-27 19:09:17,042 - discord.ext.commands.bot - ERROR - Ignoring exception in command inventory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\User.py", line 148, in inventory
+    await paginator.paginate(ctx)
+  File "C:\Users\Admin\Documents\GitHub\Anigay-2.0\src\Pagination.py", line 58, in paginate
+    await interaction.response.edit_message(embed=embed, view=self.get_buttons(self.current))
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\interactions.py", line 921, in edit_message
+    await adapter.create_interaction_response(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\webhook\async_.py", line 219, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\bot.py", line 1350, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 1029, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\ext\commands\core.py", line 244, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2023-07-27 20:31:03,315 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 64a2bcc3ea2840ae72a4365bd574494e.
+2023-07-27 22:40:06,360 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "event" is not found
+2023-07-27 22:40:14,764 - discord.ext.commands.bot - ERROR - Ignoring exception in command None
+discord.ext.commands.errors.CommandNotFound: Command "rd" is not found
+2023-07-27 22:56:27,786 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 64a2bcc3ea2840ae72a4365bd574494e.

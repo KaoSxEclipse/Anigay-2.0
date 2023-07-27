@@ -111,15 +111,13 @@ class Shop(commands.Cog):
                         async with ctx.typing():
 
                             rarities = ['r', 'sr', 'ur']
-                            rng = packs[itemtype].copy()
-
-                            await packrng(rng)
 
                             card_list = await Database.generateCardList()
 
                             async with asqlite.connect(path_to_db + "card_data.db") as connection:
                                 async with connection.cursor() as cursor:
 
+                                    embed = discord.Embed(title=f"Pack opened!", color=0x03F76A)
                                     desc = ""
                                     for x in range(5):  # 5 cards per pack
                                         name = random.choice(card_list)
@@ -133,18 +131,18 @@ class Shop(commands.Cog):
 
                                         card_list.remove(name)
 
+                                        rng = packs[itemtype].copy()
+
+                                        await packrng(rng)
+
                                         rarity = random.choices(rarities, rng, k=1)[0]
 
-                                        if rarity in "sr ur".split(" "):
-                                            await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
-                                        else:
-                                            await Database.generateFodder(owner=user_id, index=card_index)
+                                        await Database.generateCard(index=card_index, owner=user_id, rarity=rarity, evo=1)
 
-                                        desc += f"{await fullname(rarity)} **{name}**\n\n"
+                                        embed.add_field(name="", value=f"{await fullname(rarity)} **{name}**", inline=False)
 
                                     await connection.commit()
 
-                            embed = discord.Embed(title=f"Pack opened!", description=desc, color=0x03F76A)
                             embed.set_author(name=ctx.author, icon_url=ctx.author.avatar.url)
 
                             await asyncio.sleep(2)

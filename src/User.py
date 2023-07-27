@@ -12,6 +12,7 @@ from discord.utils import get
 import Database
 from CardClass import *
 import random
+from Pagination import BotEmbedPaginator
 
 path_to_db = "../db/"
 
@@ -114,6 +115,12 @@ class User(commands.Cog):
 
                 embed = discord.Embed(title=f"{ctx.author}'s Inventory:", color=0x03F76A)
 
+                paginator = BotEmbedPaginator(self.bot)
+                page_count = 1
+                field_count = 0
+                field_number = 1
+                embed.set_footer(text=f'Page {page_count}')
+
                 for i in range( 0, len(player_inventory) ):
                     card = CardClass( player_inventory[i]['uid'], player_inventory[i]['rarity'] )
 
@@ -125,61 +132,20 @@ class User(commands.Cog):
 
                     embed.add_field(name=f"#{str(i+1)} | {card.stats['name']}  [Evo {card.data['evo']}]", value=f"{card.data['rarity'].upper()} | Exp: {card.data['exp']} | ID: {card.uid}", inline=False)
 
-                    view = View()
-                    # Adds buttons based on current page
-                    if page < 1:
-                        previous_button = Button(style=ButtonStyle.primary, label="Previous", emoji="⬅",
-                                                 custom_id="previous")
-                        view.add_item(previous_button)
+                    field_count += 1
+                    field_number += 1
 
-                    if page < total_pages:
-                        next_button = Button(style=ButtonStyle.primary, label="Next", emoji="➡️", custom_id="next")
-                        view.add_item(next_button)
+                    if field_count == 10:
+                        paginator.add_embed(embed)
+                        page_count += 1
+                        embed = discord.Embed(title=f"{ctx.author}'s Inventory:", color=0x03F76A)
+                        embed.set_footer(text=f'Page {page_count}')
+                        field_count = 0
 
-                    if View.children:
-                        embed.set_footer(text=f"Use the buttons below to navigate.            {page}/{total_pages}")
+                if field_count > 0:
+                    paginator.add_embed(embed)
 
-                await ctx.send(embed=embed, view=view)
-                await connection.commit()
-        # Listener is not working
-        @commands.Cog.listener()
-        async def on_button_click(self, interaction):
-            print("button clicked")
-            if interaction.component.custom_id == "next":
-                page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
-                await interaction.respond(type=6)
-                ctx = await self.bot.get_context(interaction.message)
-                ctx.message.content += f" {page + 1}"
-                await self.bot.invoke(ctx)
-
-            elif interaction.component.custom_id == "previous":
-                page = int(interaction.message.embeds[0].title.split()[-1].split("/")[0])
-                await interaction.respond(type=6)
-                ctx = await self.bot.get_context(interaction.message)
-                ctx.message.content += f" {page - 1}"
-                await self.bot.invoke(ctx)
-
-                await cursor.execute( "SELECT * FROM Lower WHERE owner=?", (user,) )
-                player_inventory = await cursor.fetchall()
-
-        await cursor.execute("SELECT * FROM Dex")
-        cards = await cursor.fetchall()
-
-        for ii in range( i, i+len(player_inventory) ):
-        #print("SQL", player_inventory[ii-i])
-            card_dex = player_inventory[ii-i]["dex"]
-            card_uid = player_inventory[ii-i]["uid"]
-
-            for card in cards:
-                if card_dex == card["dex"]:
-                    card_name = card["name"]
-                    break
-
-            embed.add_field(name=f"#{str(ii+1)} | {card_name}", value=f"Rare | Exp: -- | ID: {card_uid}", inline=False)
-
-            await ctx.send(embed=embed)
-
-            await connection.commit()
+                await paginator.paginate(ctx)
 
     # Select a card and assign it to the user for battling
     @commands.hybrid_command()

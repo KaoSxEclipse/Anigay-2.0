@@ -35,11 +35,9 @@ async def packrng(rng):
     elif factor2 == 0:
         rng[1] *= 0.95
 
-    factor3 = random.choices([2, 1, 0], [45, 30, 25], k=1)[0]
+    factor3 = random.choices([1, 0], [75, 25], k=1)[0]
 
-    if factor3 == 2:
+    if factor3 == 1:
         pass
-    elif factor3 == 1:
-        rng[2] *= 1.1
     elif factor3 == 0:
         rng[2] *= 0.9
